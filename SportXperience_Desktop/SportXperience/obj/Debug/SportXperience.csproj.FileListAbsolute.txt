@@ -1,0 +1,16 @@
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\bin\Debug\SportXperience.exe.config
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\bin\Debug\SportXperience.exe
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\bin\Debug\SportXperience.pdb
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXperience.csproj.AssemblyReference.cache
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXperience.Properties.Resources.resources
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXperience.MainForm.resources
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXperience.csproj.GenerateResource.cache
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXperience.csproj.CoreCompileInputs.cache
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXperience.exe
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXperience.pdb
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\bin\Debug\MonthCalendar.dll
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXpe.23A55A94.Up2Date
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXperience.View.AfegirActualitzarForm.resources
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXperience.View.LotForm.resources
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXperience.View.LoginForm.resources
+C:\Users\cv\Desktop\PROJECTEFINAL\SportXperience\SportXperience\obj\Debug\SportXperience.View.Resultats.resources
