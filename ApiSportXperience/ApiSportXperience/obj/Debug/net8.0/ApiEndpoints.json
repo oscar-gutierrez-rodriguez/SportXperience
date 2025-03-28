@@ -181,6 +181,7 @@
     ]
   },
   {
+<<<<<<< HEAD
     "ContainingType": "ApiSportXperience.Controllers.LotsController",
     "Method": "GetLots",
     "RelativePath": "api/lots",
@@ -290,6 +291,8 @@
     "ReturnTypes": []
   },
   {
+=======
+>>>>>>> origin/Api
     "ContainingType": "ApiSportXperience.Controllers.MessagesController",
     "Method": "PostMessage",
     "RelativePath": "api/messages",
@@ -379,6 +382,7 @@
     "ReturnTypes": []
   },
   {
+<<<<<<< HEAD
     "ContainingType": "ApiSportXperience.Controllers.OptionsController",
     "Method": "PostOption",
     "RelativePath": "api/options",
@@ -609,6 +613,8 @@
     ]
   },
   {
+=======
+>>>>>>> origin/Api
     "ContainingType": "ApiSportXperience.Controllers.RecommendedLevelsController",
     "Method": "GetRecommendedLevels",
     "RelativePath": "api/recommendedLevel",
@@ -655,6 +661,7 @@
     ]
   },
   {
+<<<<<<< HEAD
     "ContainingType": "ApiSportXperience.Controllers.ResultsController",
     "Method": "PostResult",
     "RelativePath": "api/results",
@@ -806,6 +813,8 @@
     ]
   },
   {
+=======
+>>>>>>> origin/Api
     "ContainingType": "ApiSportXperience.Controllers.UsersController",
     "Method": "GetUsers",
     "RelativePath": "api/users",

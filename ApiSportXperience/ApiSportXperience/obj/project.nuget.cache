@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "33ky1PPpdw8=",
   "success": true,
   "projectFilePath": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\ApiSportXperience.csproj",
+=======
+  "dgSpecHash": "c8bR0mf1YL4=",
+  "success": true,
+  "projectFilePath": "C:\\VisualStudioCode\\SportXperience\\ApiSportXperience\\ApiSportXperience\\ApiSportXperience.csproj",
+>>>>>>> origin/Api
   "expectedPackageFiles": [
     "C:\\Users\\cv\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\cv\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
