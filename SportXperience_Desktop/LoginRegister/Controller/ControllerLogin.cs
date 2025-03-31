@@ -44,7 +44,7 @@ namespace LoginRegister.Controller
         private void LinkLabelRegistrat_Click(object sender, EventArgs e)
         {
             loginForm.Hide();
-            registerForm.Show();
+            registerForm.ShowDialog();
 
 
 

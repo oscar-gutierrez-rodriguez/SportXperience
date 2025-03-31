@@ -51,6 +51,20 @@ namespace SportXperience.Controller
             fafegir.FormClosed += (s, e) => f.Show();
             lot.FormClosed += (s, e) => fafegir.Show();
             r.FormClosed += (s, e) => f.Show();
+            fafegir.buttonConfirmar.Click += ButtonConfirmar_Click;
+            lot.buttonAfegirProducte.Click += ButtonAfegirProducte_Click1;
+        }
+
+        private void ButtonAfegirProducte_Click1(object sender, EventArgs e)
+        {
+            lot.Close();
+            f.Show();
+        }
+
+        private void ButtonConfirmar_Click(object sender, EventArgs e)
+        {
+            fafegir.Close();
+            f.Show();
         }
 
         private void ButtonAfegirRsultat_Click(object sender, EventArgs e)
@@ -61,7 +75,6 @@ namespace SportXperience.Controller
 
         private void ButtonResultats_Click(object sender, EventArgs e)
         {
-            f.Hide();
             r.ShowDialog();
         }
 
@@ -84,8 +97,7 @@ namespace SportXperience.Controller
 
         private void ButtonAfegirProducte_Click(object sender, EventArgs e)
         {
-            fafegir.Hide();
-            lot.Show();
+            lot.ShowDialog();
         }
 
         private void DateTimePickerFinal_ValueChanged(object sender, EventArgs e)
@@ -155,10 +167,9 @@ namespace SportXperience.Controller
 
         private void ButtonAfegir_Click(object sender, EventArgs e)
         {
-            f.Hide();
             fafegir.dateTimePickerInici.Value = dataMin;
             fafegir.dateTimePickerFinal.Value = dataMin;
-            fafegir.Show();
+            fafegir.ShowDialog();
 
         }
     }

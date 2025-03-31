@@ -44,6 +44,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePickerNaixement = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.comboBoxGenere = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonRegistrar
@@ -111,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(83, 366);
+            this.label4.Location = new System.Drawing.Point(93, 278);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 21;
@@ -169,7 +171,7 @@
             // 
             this.dateTimePickerNaixement.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerNaixement.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNaixement.Location = new System.Drawing.Point(86, 278);
+            this.dateTimePickerNaixement.Location = new System.Drawing.Point(246, 278);
             this.dateTimePickerNaixement.Name = "dateTimePickerNaixement";
             this.dateTimePickerNaixement.Size = new System.Drawing.Size(160, 20);
             this.dateTimePickerNaixement.TabIndex = 33;
@@ -177,17 +179,36 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(83, 261);
+            this.label8.Location = new System.Drawing.Point(243, 261);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 13);
             this.label8.TabIndex = 32;
             this.label8.Text = "Data de naixement:";
+            // 
+            // comboBoxGenere
+            // 
+            this.comboBoxGenere.FormattingEnabled = true;
+            this.comboBoxGenere.Location = new System.Drawing.Point(86, 277);
+            this.comboBoxGenere.Name = "comboBoxGenere";
+            this.comboBoxGenere.Size = new System.Drawing.Size(112, 21);
+            this.comboBoxGenere.TabIndex = 34;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(83, 261);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 13);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Génere:";
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 551);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.comboBoxGenere);
             this.Controls.Add(this.dateTimePickerNaixement);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxNom);
@@ -229,5 +250,7 @@
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.DateTimePicker dateTimePickerNaixement;
         public System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBoxGenere;
+        public System.Windows.Forms.Label label9;
     }
 }
