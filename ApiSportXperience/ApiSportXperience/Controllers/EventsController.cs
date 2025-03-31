@@ -36,7 +36,46 @@ namespace ApiSportXperience.Controllers
         }
 
         [HttpGet]
-        [Route("api/events/{id}")]
+        [Route("api/events/{pagament}/{data}/{ubicacio}/{esport}")]
+        public async Task<ActionResult<IEnumerable<Event>>> GetEventFiltre(int? pagament, DateTime? data, string? ubicacio, string? esport)
+        {
+            IQueryable<Event> query = _context.Events;
+
+            if (pagament != null)
+            {
+                switch (pagament)
+                {
+                    case 0:
+                        query = query.Where(x => x.Price == 0);
+                        break;
+                    case 1:
+                        query = query.Where(x => x.Price > 0);
+                        break;
+
+                }
+            }
+
+            if (data != null)
+            {
+                query = query.Where(x => x.EndDate <= data && x.StartDate >= data);
+            }
+
+            if (!string.IsNullOrEmpty(ubicacio))
+            {
+                query = query.Where(x => x.Ubication.CityName.Contains(ubicacio));
+            }
+
+            if (!string.IsNullOrEmpty(esport))
+            {
+                query = query.Where(x => x.Sport.Name.Contains(esport));
+            }
+
+            var result = await query.ToListAsync();
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("api/events/{id:int}")]
         public async Task<ActionResult<Event>> GetEvent(int id)
         {
             Event e = await _context.Events.FindAsync(id);

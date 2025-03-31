@@ -22,14 +22,14 @@ namespace ApiSportXperience.Controllers
 
         // GET: api/Results
         [HttpGet]
-        [Route("api/results/events/{id}")]
+        [Route("api/results/events/{eventId}")]
         public async Task<ActionResult<IEnumerable<Result>>> GetResultsByEvent(int eventId)
         {
             return await _context.Results.Where(x => x.EventId == eventId).ToListAsync();
         }
 
         [HttpGet]
-        [Route("api/results/users/{id}")]
+        [Route("api/results/users/{userDni}")]
         public async Task<ActionResult<IEnumerable<Result>>> GetResultsByUser(string userDni)
         {
             return await _context.Results.Where(x => x.UserDni.Equals(userDni)).ToListAsync();

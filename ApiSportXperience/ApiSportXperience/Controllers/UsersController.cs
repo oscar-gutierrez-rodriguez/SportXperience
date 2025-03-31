@@ -30,10 +30,38 @@ namespace ApiSportXperience.Controllers
 
         // GET: api/Users/5
         [HttpGet]
-        [Route("api/users/{username}")]
-        public async Task<ActionResult<User>> GetUser(string username)
+        [Route("api/users/username/{username}")]
+        public async Task<ActionResult<User>> GetUserByUsername(string username)
         {
             var user = await _context.Users.Where(x => x.Username.Equals(username)).FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return user;
+        }
+
+        [HttpGet]
+        [Route("api/users/mail/{mail}")]
+        public async Task<ActionResult<User>> GetUserByMail(string mail)
+        {
+            var user = await _context.Users.Where(x => x.Mail.Equals(mail)).FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return user;
+        }
+
+        [HttpGet]
+        [Route("api/users/dni/{dni}")]
+        public async Task<ActionResult<User>> GetUserByDni(string dni)
+        {
+            var user = await _context.Users.Where(x => x.Dni.Equals(dni)).FirstOrDefaultAsync();
 
             if (user == null)
             {
@@ -60,31 +88,17 @@ namespace ApiSportXperience.Controllers
 
 
 
-        // POST: api/Users
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Route("api/users")]
-        public async Task<ActionResult<User>> PostUser( [FromBody] User user)
+        public async Task<ActionResult<User>> PostUser([FromBody] User user)
         {
-            _context.Users.Add(user);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (UserExists(user.Dni))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return CreatedAtAction("GetUser", new { id = user.Dni }, user);
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetUserByDni), new { id = user.Dni }, user);
         }
+
 
         // DELETE: api/Users/5
         [HttpDelete]
