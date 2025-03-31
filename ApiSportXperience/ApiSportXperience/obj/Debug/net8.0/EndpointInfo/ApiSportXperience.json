@@ -316,7 +316,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "/api/lots": {
       "get": {
         "tags": [
@@ -502,8 +501,6 @@
         }
       }
     },
-=======
->>>>>>> origin/Api
     "/api/messages/{eventId}": {
       "get": {
         "tags": [
@@ -664,7 +661,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "/api/options/products/{id}": {
       "get": {
         "tags": [
@@ -1061,8 +1057,6 @@
         }
       }
     },
-=======
->>>>>>> origin/Api
     "/api/recommendedLevel": {
       "get": {
         "tags": [
@@ -1141,7 +1135,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "/api/results/events/{id}": {
       "get": {
         "tags": [
@@ -1402,8 +1395,6 @@
         }
       }
     },
-=======
->>>>>>> origin/Api
     "/api/users": {
       "get": {
         "tags": [
