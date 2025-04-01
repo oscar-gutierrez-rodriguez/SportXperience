@@ -30,7 +30,7 @@ namespace ApiSportXperience.Controllers
 
         // GET: api/Genders/5
         [HttpGet]
-        [Route("api/gender/{id}")]
+        [Route("api/gender/{id:int}")]
         public async Task<ActionResult<Gender>> GetGender(int id)
         {
             var gender = await _context.Genders.FindAsync(id);
@@ -42,6 +42,20 @@ namespace ApiSportXperience.Controllers
 
             return gender;
         }
-        
+
+        [HttpGet]
+        [Route("api/gender/{name}")]
+        public async Task<ActionResult<Gender>> GetGenderByName(String name)
+        {
+            var gender = await _context.Genders.Where(x => x.Name.Equals(name)).FirstOrDefaultAsync();
+
+            if (gender == null)
+            {
+                return NotFound();
+            }
+
+            return gender;
+        }
+
     }
 }
