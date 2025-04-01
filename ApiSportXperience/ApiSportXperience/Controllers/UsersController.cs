@@ -92,11 +92,18 @@ namespace ApiSportXperience.Controllers
         [Route("api/users")]
         public async Task<ActionResult<User>> PostUser([FromBody] User user)
         {
+<<<<<<< HEAD
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetUserByDni), new { id = user.Dni }, user);
+=======
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetUsers", new { id = user.Dni }, user);
+>>>>>>> origin/main
         }
 
 
