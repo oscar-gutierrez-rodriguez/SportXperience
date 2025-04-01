@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiSportXperience")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c99c4f4a9fa5ef01b3eaa89b697f4c90d412775f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68083c4e84aecf3ba3baa9483f8ff2b37e19aebd")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiSportXperience")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiSportXperience")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
