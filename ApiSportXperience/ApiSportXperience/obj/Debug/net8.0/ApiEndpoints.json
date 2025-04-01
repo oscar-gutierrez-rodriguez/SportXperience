@@ -384,6 +384,37 @@
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.MessagesController",
+    "Method": "GetMessagesFiltre",
+    "RelativePath": "api/messages/{comment}/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "comment",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.Message, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.MessagesController",
     "Method": "GetMessagesByEvent",
     "RelativePath": "api/messages/{eventId}",
     "HttpMethod": "GET",
@@ -444,6 +475,68 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.MessagesController",
+    "Method": "GetMessagesOrganizer",
+    "RelativePath": "api/messages/organizer/{dniUser}/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dniUser",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.Message, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.MessagesController",
+    "Method": "GetMessagesByUser",
+    "RelativePath": "api/messages/user/{dniUser}/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dniUser",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.Message, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.OptionsController",
