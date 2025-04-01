@@ -12,6 +12,7 @@ namespace DesktopModels.Model
     public static class Repositori
     {
         static HttpClient httpClient;
+        public static User usuari;
 
         static readonly string ErrorMessage = "Error en l'API.";
         static readonly string contentType = "application/json";
@@ -36,21 +37,6 @@ namespace DesktopModels.Model
             if (la == null)
             {
                 la = new List<Gender>();
-            }
-            return la;
-        }
-
-        public static Gender GetGenderByName(string nom)
-        {
-            Gender la = null;
-            try
-            {
-                la = (Gender)MakeRequest("gender/" + nom, "GET", null, typeof(Gender)).Result;
-            }
-            catch { }
-            if (la == null)
-            {
-                la = new Gender();
             }
             return la;
         }
@@ -146,7 +132,7 @@ namespace DesktopModels.Model
         {
             Sport s = null;
 
-            s = (Sport)MakeRequest("sport/", "POST", sport, typeof(Sport)).Result;
+            s = (Sport)MakeRequest("sports/", "POST", sport, typeof(Sport)).Result;
 
             if (s == null)
             {
@@ -154,6 +140,35 @@ namespace DesktopModels.Model
             }
             return s;
         }
+
+        public static Event InsEvents(Event events)
+        {
+            Event e = null;
+
+            e = (Event)MakeRequest("events/", "POST", events, typeof(Event)).Result;
+
+            if (e == null)
+            {
+                e = new Event();
+            }
+            return e;
+        }
+
+        public static Sport GetSportByName(string nom)
+        {
+            Sport la = null;
+            try
+            {
+                la = (Sport)MakeRequest("sports/" + nom, "GET", null, typeof(Sport)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Sport();
+            }
+            return la;
+        }
+
         public static async Task<object> MakeRequest(string url, string method, object JSONcontent, Type responseType)
         ////  url: Url a partir de la base 
         ////  method: "GET"/"POST"/"PUT"/"DELETE"

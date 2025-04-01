@@ -1,7 +1,9 @@
 ﻿using DesktopModels.Model;
+using SportXperience.Model;
 using SportXperience.View;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -67,8 +69,69 @@ namespace SportXperience.Controller
 
         private void ButtonConfirmar_Click(object sender, EventArgs e)
         {
+
+            double price = 0;
+            double priceText = 0;
+            String award = "";
+
+
+            if (fafegir.checkBoxPagament.Checked)
+            {
+                if (Double.TryParse(fafegir.textBoxPreu.Text, out priceText))
+                {
+                    award = fafegir.textBoxPremi.Text;
+                    price = priceText;
+                    Insertar(award, price);
+
+                }
+                else
+                {
+                    MessageBox.Show("El valor introduït no es vàlid");
+                }
+            }
+            else
+            {
+                award = null;
+                Insertar(award, price);
+
+            }
+
             fafegir.Close();
             f.Show();
+        }
+
+        void Insertar(string award, double price)
+        {
+
+            Sport sport = new Sport
+            {
+                SportId = 0,
+                Name = fafegir.textBoxEsport.Text
+            };
+
+            Sport esport = Repositori.GetSportByName(fafegir.textBoxEsport.Text);
+
+            if (esport == null)
+            { 
+                Repositori.InsSport(sport);
+            }
+            Event ev = new Event
+            {
+                EventId = 0,
+                Name = fafegir.textBoxNom.Text,
+                StartDate = fafegir.dateTimePickerInici.Value,
+                EndDate = fafegir.dateTimePickerFinal.Value,
+                Image = null,
+                Description = fafegir.textBoxDescripcio.Text,
+                MinAge = (int?)fafegir.numericUpDownEdatMinima.Value,
+                MaxAge = (int?)fafegir.numericUpDownEdatMaxima.Value,
+                Price = price,
+                Reward = award,
+                UbicationId = 1,
+                RecommendedLevelId = (fafegir.comboBoxNivell.SelectedItem as RecommendedLevel).RecommendedLevelId,
+                SportId = Repositori.GetSportByName(fafegir.textBoxEsport.Text).SportId
+            };
+            Repositori.InsEvents(ev);
         }
 
         private void ButtonAfegirRsultat_Click(object sender, EventArgs e)

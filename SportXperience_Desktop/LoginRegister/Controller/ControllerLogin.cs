@@ -42,8 +42,18 @@ namespace LoginRegister.Controller
                 registerForm.dateTimePickerNaixement.ValueChanged += DateTimePickerNaixement_ValueChanged;
                 loginForm.buttonShowPassword.Click += ButtonShowPassword_Click;
                 registerForm.FormClosed += (s, e) => loginForm.Show();
+                loginForm.textBoxNomCorreu.KeyDown += TextBox_KeyDown;
+                loginForm.textBoxContrasenya.KeyDown += TextBox_KeyDown;
         }
 
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                ButtonIniciSessio_Click(sender, e); 
+            }
+        }
         private void ButtonShowPassword_Click(object sender, EventArgs e)
         {
             if (loginForm.textBoxContrasenya.UseSystemPasswordChar)
@@ -114,7 +124,7 @@ namespace LoginRegister.Controller
                         Dni = registerForm.textBoxDNI.Text,
                         FirstName = registerForm.textBoxNom.Text,
                         LastName = registerForm.textBoxCognoms.Text,
-                        GenderId = Repositori.GetGenderByName((registerForm.comboBoxGenere.SelectedItem as Gender).Name).GenderId,
+                        GenderId = (registerForm.comboBoxGenere.SelectedItem as Gender).GenderId,
                         BirthDate = registerForm.dateTimePickerNaixement.Value,
                         Mail = registerForm.textBoxCorreu.Text,
                         Username = registerForm.textBoxNomUsuari.Text,
@@ -147,16 +157,17 @@ namespace LoginRegister.Controller
 
         private void ButtonIniciSessio_Click(object sender, EventArgs e)
         {
-            User usuari1 = Repositori.GetUserInici(loginForm.textBoxNomCorreu.Text, loginForm.textBoxContrasenya.Text);
-            if (usuari1.Dni == null)
+            Repositori.usuari = Repositori.GetUserInici(loginForm.textBoxNomCorreu.Text, loginForm.textBoxContrasenya.Text);
+            if (Repositori.usuari.Dni == null)
             {
                 MessageBox.Show("Credencials incorrectes");
             }
             else
             {
+
                 loginForm.Hide();
                 new ControllerMain();
-            }
+            }   
 
 
         }
