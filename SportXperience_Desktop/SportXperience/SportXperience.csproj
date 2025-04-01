@@ -123,5 +123,11 @@
   <ItemGroup>
     <Folder Include="Model\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DesktopModels\DesktopModels.csproj">
+      <Project>{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}</Project>
+      <Name>DesktopModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

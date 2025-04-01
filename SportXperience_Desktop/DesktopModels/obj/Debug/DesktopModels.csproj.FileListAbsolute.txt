@@ -10,3 +10,15 @@ C:\SportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\
 C:\SportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopM.B3CD352F.Up2Date
 C:\SportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopModels.exe
 C:\SportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopModels.pdb
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\DesktopModels.exe.config
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\DesktopModels.exe
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\DesktopModels.pdb
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\Newtonsoft.Json.dll
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\Newtonsoft.Json.xml
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopModels.csproj.AssemblyReference.cache
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopModels.Properties.Resources.resources
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopModels.csproj.GenerateResource.cache
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopModels.csproj.CoreCompileInputs.cache
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopM.B3CD352F.Up2Date
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopModels.exe
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopModels.pdb

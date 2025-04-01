@@ -1,4 +1,5 @@
-﻿using SportXperience.View;
+﻿using DesktopModels.Model;
+using SportXperience.View;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -34,6 +35,9 @@ namespace SportXperience.Controller
 
             f.pictureBoxLogo.Image = Image.FromFile(@"C:\Users\cv\Desktop\PROJECTEFINAL\logo.png");
             f.pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            fafegir.comboBoxNivell.DataSource = Repositori.GetRecommendedLevel();
+            fafegir.comboBoxNivell.DisplayMember = "name";
+
         }
 
         void setListeners()

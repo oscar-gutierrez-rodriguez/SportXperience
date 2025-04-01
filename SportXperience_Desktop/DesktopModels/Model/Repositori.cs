@@ -127,6 +127,33 @@ namespace DesktopModels.Model
             return la;
         }
 
+        public static List<RecommendedLevel> GetRecommendedLevel()
+        {
+            List<RecommendedLevel> la = null;
+            try
+            {
+                la = (List<RecommendedLevel>)MakeRequest("recommendedLevel/", "GET", null, typeof(List<RecommendedLevel>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<RecommendedLevel>();
+            }
+            return la;
+        }
+
+        public static Sport InsSport(Sport sport)
+        {
+            Sport s = null;
+
+            s = (Sport)MakeRequest("sport/", "POST", sport, typeof(Sport)).Result;
+
+            if (s == null)
+            {
+                s = new Sport();
+            }
+            return s;
+        }
         public static async Task<object> MakeRequest(string url, string method, object JSONcontent, Type responseType)
         ////  url: Url a partir de la base 
         ////  method: "GET"/"POST"/"PUT"/"DELETE"
