@@ -41,6 +41,21 @@ namespace DesktopModels.Model
             return la;
         }
 
+        public static Event GetEventMax()
+        {
+            Event la = null;
+            try
+            {
+                la = (Event)MakeRequest("events/max", "GET", null, typeof(Event)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Event();
+            }
+            return la;
+        }
+
         public static User GetUserByDNI(string dni)
         {
             User la = null;
@@ -165,6 +180,34 @@ namespace DesktopModels.Model
             if (la == null)
             {
                 la = new Sport();
+            }
+            return la;
+        }
+
+        public static Participant InsParticipant(Participant participant)
+        {
+            Participant p = null;
+
+            p = (Participant)MakeRequest("participants/", "POST", participant, typeof(Participant)).Result;
+
+            if (p == null)
+            {
+                p = new Participant();
+            }
+            return p;
+        }
+
+        public static List<Event> GetEventbyUserDNI(string dni)
+        {
+            List<Event> la = null;
+            try
+            {
+                la = (List<Event>)MakeRequest("events/" + dni, "GET", null, typeof(List<Event>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<Event>();
             }
             return la;
         }

@@ -29,6 +29,15 @@ namespace ApiSportXperience.Controllers
         }
 
         [HttpGet]
+        [Route("api/events/max")]
+        public async Task<ActionResult<IEnumerable<Event>>> GetEventMax()
+        {
+            int maxId = await _context.Events.MaxAsync(x => x.EventId);
+
+            return await _context.Events.Where(x => x.EventId == maxId).ToListAsync();
+        }
+
+        [HttpGet]
         [Route("api/events/{userdni}")]
         public async Task<ActionResult<IEnumerable<Event>>> GetEventByOrganizer(String userdni)
         {

@@ -40,6 +40,8 @@ namespace SportXperience.Controller
             fafegir.comboBoxNivell.DataSource = Repositori.GetRecommendedLevel();
             fafegir.comboBoxNivell.DisplayMember = "name";
 
+            loadDataGrid();
+
         }
 
         void setListeners()
@@ -95,7 +97,7 @@ namespace SportXperience.Controller
                 Insertar(award, price);
 
             }
-
+            loadDataGrid();
             fafegir.Close();
             f.Show();
         }
@@ -125,6 +127,7 @@ namespace SportXperience.Controller
                 Description = fafegir.textBoxDescripcio.Text,
                 MinAge = (int?)fafegir.numericUpDownEdatMinima.Value,
                 MaxAge = (int?)fafegir.numericUpDownEdatMaxima.Value,
+                MaxParticipantsNumber = (int?)fafegir.numericUpDownParticipants.Value,
                 Price = price,
                 Reward = award,
                 UbicationId = 1,
@@ -132,6 +135,14 @@ namespace SportXperience.Controller
                 SportId = Repositori.GetSportByName(fafegir.textBoxEsport.Text).SportId
             };
             Repositori.InsEvents(ev);
+            Participant p = new Participant
+            {
+                Organizer = true,
+                EventId = Repositori.GetEventMax().EventId,
+                UserDni = Repositori.usuari.Dni
+            };
+
+            Repositori.InsParticipant(p);
         }
 
         private void ButtonAfegirRsultat_Click(object sender, EventArgs e)
@@ -238,6 +249,11 @@ namespace SportXperience.Controller
             fafegir.dateTimePickerFinal.Value = dataMin;
             fafegir.ShowDialog();
 
+        }
+
+        void loadDataGrid()
+        {
+            f.dataGridViewEvents.DataSource = Repositori.GetEventbyUserDNI(Repositori.usuari.Dni);
         }
     }
 }

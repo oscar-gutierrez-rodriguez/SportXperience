@@ -62,9 +62,12 @@
             this.label14 = new System.Windows.Forms.Label();
             this.labelPreu = new System.Windows.Forms.Label();
             this.labelPremi = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDownParticipants = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMinima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMaxima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownParticipants)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -390,11 +393,36 @@
             this.labelPremi.TabIndex = 46;
             this.labelPremi.Text = "Premi:";
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Enabled = false;
+            this.label2.Location = new System.Drawing.Point(956, 379);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Participants Màxims:";
+            // 
+            // numericUpDownParticipants
+            // 
+            this.numericUpDownParticipants.Location = new System.Drawing.Point(959, 404);
+            this.numericUpDownParticipants.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownParticipants.Name = "numericUpDownParticipants";
+            this.numericUpDownParticipants.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownParticipants.TabIndex = 49;
+            // 
             // AfegirActualitzarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 533);
+            this.Controls.Add(this.numericUpDownParticipants);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.labelPremi);
             this.Controls.Add(this.labelPreu);
             this.Controls.Add(this.label14);
@@ -434,6 +462,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMinima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoEvent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMaxima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownParticipants)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,5 +503,7 @@
         public System.Windows.Forms.Label labelPremi;
         public System.Windows.Forms.PictureBox pictureBoxLogoEvent;
         public System.Windows.Forms.TextBox textBoxDescripcio;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.NumericUpDown numericUpDownParticipants;
     }
 }

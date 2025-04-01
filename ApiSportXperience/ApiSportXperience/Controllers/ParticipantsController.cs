@@ -21,6 +21,14 @@ namespace ApiSportXperience.Controllers
         }
 
         // GET: api/Participants
+
+        [HttpGet]
+        [Route("api/participants")]
+        public async Task<ActionResult<IEnumerable<Participant>>> GetParticipants()
+        {
+            return await _context.Participants.ToListAsync();
+        }
+
         [HttpGet]
         [Route("api/participants/{eventId:int}")]
         public async Task<ActionResult<IEnumerable<Participant>>> GetParticipantsByEvent(int eventId)
@@ -54,7 +62,7 @@ namespace ApiSportXperience.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut]
         [Route("api/participants/{id}")]
-        public async Task<IActionResult> PutParticipant(int id, Participant participant)
+        public async Task<IActionResult> PutParticipant(int id, [FromBody] Participant participant)
         {
             if (id != participant.EventId)
             {
@@ -86,26 +94,12 @@ namespace ApiSportXperience.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Route("api/participants")]
-        public async Task<ActionResult<Participant>> PostParticipant(Participant participant)
+        public async Task<ActionResult<Participant>> PostParticipant([FromBody] Participant participant)
         {
             _context.Participants.Add(participant);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (ParticipantExists(participant.EventId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetParticipant", new { id = participant.EventId }, participant);
+            return CreatedAtAction("GetParticipants", new { id = participant.EventId }, participant);
         }
 
         // DELETE: api/Participants/5
