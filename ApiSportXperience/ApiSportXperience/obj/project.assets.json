@@ -8204,11 +8204,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\ApiSportXperience.csproj",
+      "projectUniqueName": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\ApiSportXperience.csproj",
       "projectName": "ApiSportXperience",
-      "projectPath": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\ApiSportXperience.csproj",
+      "projectPath": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\ApiSportXperience.csproj",
       "packagesPath": "C:\\Users\\cv\\.nuget\\packages\\",
-      "outputPath": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\obj\\",
+      "outputPath": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
