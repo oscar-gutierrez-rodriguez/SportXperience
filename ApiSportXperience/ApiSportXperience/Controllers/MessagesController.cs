@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiSportXperience.Models;
+using Microsoft.Extensions.Logging;
 
 namespace ApiSportXperience.Controllers
 {
@@ -22,10 +23,31 @@ namespace ApiSportXperience.Controllers
 
         // GET: api/Messages
         [HttpGet]
-        [Route("api/messages/{eventId}")]
+        [Route("api/messages/{eventId:int}")]
         public async Task<ActionResult<IEnumerable<Message>>> GetMessagesByEvent(int eventId)
         {
             return await _context.Messages.Where(x => x.EventId == eventId).ToListAsync();
+        }
+
+        [HttpGet]
+        [Route("api/messages/user/{dniUser}/{eventId}")]
+        public async Task<ActionResult<IEnumerable<Message>>> GetMessagesByUser(string dniUser, int eventId)
+        {
+            return await _context.Messages.Where(x => x.UserDni.Equals(dniUser) && x.EventId == eventId).ToListAsync();
+        }
+
+        [HttpGet]
+        [Route("api/messages/organizer/{dniUser}/{eventId}")]
+        public async Task<ActionResult<IEnumerable<Message>>> GetMessagesOrganizer(string dniUser, int eventId)
+        {
+            return await _context.Messages.Where(x => x.UserDni.Equals(dniUser) && x.EventId == eventId).ToListAsync();
+        }
+
+        [HttpGet]
+        [Route("api/messages/{comment}/{eventId}")]
+        public async Task<ActionResult<IEnumerable<Message>>> GetMessagesFiltre(String comment, int eventId)
+        {
+            return await _context.Messages.Where(x => x.Comment.Contains(comment) && x.EventId == eventId).ToListAsync();
         }
 
 
