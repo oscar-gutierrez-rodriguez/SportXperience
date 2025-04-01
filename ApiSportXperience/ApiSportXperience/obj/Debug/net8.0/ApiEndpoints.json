@@ -181,6 +181,32 @@
     ]
   },
   {
+    "ContainingType": "ApiSportXperience.Controllers.GendersController",
+    "Method": "GetGenderByName",
+    "RelativePath": "api/gender/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSportXperience.Models.Gender",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ApiSportXperience.Controllers.LotsController",
     "Method": "GetLots",
     "RelativePath": "api/lots",
@@ -488,14 +514,19 @@
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.UsersController",
-    "Method": "GetUser",
-    "RelativePath": "api/users/{username}",
+    "Method": "GetUserAndPassword",
+    "RelativePath": "api/users/{usernameOrMail}/{password}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "username",
+        "Name": "usernameOrMail",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "password",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -514,19 +545,66 @@
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.UsersController",
-    "Method": "GetUserAndPassword",
-    "RelativePath": "api/users/{usernameOrMail}/{password}",
+    "Method": "GetUserByDni",
+    "RelativePath": "api/users/dni/{dni}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "usernameOrMail",
+        "Name": "dni",
         "Type": "System.String",
         "IsRequired": true
-      },
+      }
+    ],
+    "ReturnTypes": [
       {
-        "Name": "password",
+        "Type": "ApiSportXperience.Models.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.UsersController",
+    "Method": "GetUserByMail",
+    "RelativePath": "api/users/mail/{mail}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mail",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSportXperience.Models.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.UsersController",
+    "Method": "GetUserByUsername",
+    "RelativePath": "api/users/username/{username}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
         "Type": "System.String",
         "IsRequired": true
       }

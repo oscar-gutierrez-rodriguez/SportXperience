@@ -36,6 +36,7 @@
             this.buttonIniciSessio = new System.Windows.Forms.Button();
             this.linkLabelRegistrat = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonShowPassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -79,8 +80,9 @@
             // 
             this.textBoxContrasenya.Location = new System.Drawing.Point(79, 260);
             this.textBoxContrasenya.Name = "textBoxContrasenya";
-            this.textBoxContrasenya.Size = new System.Drawing.Size(362, 20);
+            this.textBoxContrasenya.Size = new System.Drawing.Size(331, 20);
             this.textBoxContrasenya.TabIndex = 10;
+            this.textBoxContrasenya.UseSystemPasswordChar = true;
             // 
             // buttonIniciSessio
             // 
@@ -109,15 +111,27 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(157, 362);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 13);
+            this.label4.Size = new System.Drawing.Size(140, 13);
             this.label4.TabIndex = 14;
-            this.label4.Text = "No tens compte? Crean un";
+            this.label4.Text = "No tens compte? Crean una";
+            // 
+            // buttonShowPassword
+            // 
+            this.buttonShowPassword.BackColor = System.Drawing.Color.Transparent;
+            this.buttonShowPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonShowPassword.Location = new System.Drawing.Point(416, 260);
+            this.buttonShowPassword.Name = "buttonShowPassword";
+            this.buttonShowPassword.Size = new System.Drawing.Size(25, 20);
+            this.buttonShowPassword.TabIndex = 15;
+            this.buttonShowPassword.Text = "👁";
+            this.buttonShowPassword.UseVisualStyleBackColor = false;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 527);
+            this.Controls.Add(this.buttonShowPassword);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.linkLabelRegistrat);
             this.Controls.Add(this.buttonIniciSessio);
@@ -143,5 +157,6 @@
         public System.Windows.Forms.Button buttonIniciSessio;
         public System.Windows.Forms.LinkLabel linkLabelRegistrat;
         public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Button buttonShowPassword;
     }
 }

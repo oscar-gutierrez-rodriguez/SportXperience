@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ControllerLogin.cs" />
-    <Compile Include="Model\Repositori.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\LoginForm.cs">
@@ -90,8 +89,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DesktopModels\DesktopModels.csproj">
+      <Project>{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}</Project>
+      <Name>DesktopModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SportXperience\SportXperience.csproj">
       <Project>{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}</Project>
       <Name>SportXperience</Name>
