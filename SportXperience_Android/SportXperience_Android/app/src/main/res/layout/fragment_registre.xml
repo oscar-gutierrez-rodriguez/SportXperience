@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/credencials"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    tools:context=".Registre">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/baseline_account_circle_24"
+            app:tint="@color/white" />
+
+        <EditText
+            android:id="@+id/til_dni_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="DNI"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey"
+            android:textSize="12sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="12dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="40dp"/>
+
+        <EditText
+            android:id="@+id/til_nom_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey"
+            android:textSize="12sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="12dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/til_cognoms_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cognoms"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey"
+            android:textSize="12sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="12dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"/>
+
+
+        <EditText
+            android:id="@+id/til_correu_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correu electrònic"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey"
+            android:textSize="12sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="12dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/til_nomusuari_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom usuari"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey"
+            android:textSize="12sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="12dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/til_contrasenya_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contrasenya"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey"
+            android:textSize="12sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="12dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"/>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:id="@+id/toggleButton"
+            app:selectionRequired="true"
+            app:singleSelection="true"
+            app:layout_constraintTop_toBottomOf="@+id/vistaPrevia"
+            app:layout_constraintStart_toStartOf="parent">
+            <com.google.android.material.button.MaterialButton
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="@color/white"
+                android:id="@+id/genere_home"/>
+            <com.google.android.material.button.MaterialButton
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dona"
+                android:textColor="@color/white"
+                android:id="@+id/genere_dona"/>
+            <com.google.android.material.button.MaterialButton
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Altre"
+                android:id="@+id/genere_altre"/>
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Registrar-se"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/black"
+            android:id="@+id/bt_nouregistre"/>
+
+
+    </LinearLayout>
+</RelativeLayout>
