@@ -1,5 +1,6 @@
 package com.example.sportxperience_android
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -50,7 +51,8 @@ class IniciarSessio : Fragment() {
 
         binding.btIniciSessio.setOnClickListener{
             if(!binding.tilUsername.text.isNullOrEmpty() && !binding.tilContrasenya.text.isNullOrEmpty()){
-                //intent
+                val intent = Intent(context, Principal::class.java)
+                startActivity(intent)
             } else{
                 Toast.makeText(context, "No pot haver camps buits!", Toast.LENGTH_SHORT).show()
             }

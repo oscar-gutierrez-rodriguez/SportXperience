@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import com.example.sportxperience_android.databinding.FragmentRegistreBinding
 
@@ -22,6 +23,7 @@ class Registre : Fragment() {
 
     lateinit var binding: FragmentRegistreBinding
 
+    var genere = ""
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -51,9 +53,44 @@ class Registre : Fragment() {
         binding = FragmentRegistreBinding.inflate(inflater, container, false)
 
         binding.btNouregistre.setOnClickListener{
-            val transaccio = parentFragmentManager.beginTransaction()
-            transaccio.replace(R.id.fcv1, IniciarSessio())
-            transaccio.commit()
+
+            val dni = binding.tilDniReg.text
+            val nom = binding.tilNomReg.text
+            val cognoms = binding.tilCognomsReg.text
+            val correu = binding.tilCorreuReg.text
+            val nomUsuari = binding.tilNomusuariReg.text
+            val contrasenya = binding.tilContrasenyaReg.text
+
+            if(!dni.isNullOrEmpty() && !nom.isNullOrEmpty() && !cognoms.isNullOrEmpty() &&
+                !correu.isNullOrEmpty() && !nomUsuari.isNullOrEmpty() && !contrasenya.isNullOrEmpty() &&
+                !genere.isNullOrEmpty()) {
+                if(isValidDNI(dni.toString())) {
+
+                    if(isValidCorreu(correu.toString())) {
+                        val transaccio = parentFragmentManager.beginTransaction()
+                        transaccio.replace(R.id.fcv1, IniciarSessio())
+                        transaccio.commit()
+                    } else{
+                        Toast.makeText(context, "El format del correu no és correcte", Toast.LENGTH_SHORT).show()
+                    }
+                } else{
+                    Toast.makeText(context, "El format del DNI no és correcte", Toast.LENGTH_SHORT).show()
+                }
+            } else{
+                Toast.makeText(context, "No pot haver camps buits!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.genereHome.setOnClickListener{
+            genere = binding.genereHome.text.toString()
+        }
+
+        binding.genereDona.setOnClickListener{
+            genere = binding.genereDona.text.toString()
+        }
+
+        binding.genereAltre.setOnClickListener{
+            genere = binding.genereAltre.text.toString()
         }
 
         // Inflate the layout for this fragment
@@ -78,5 +115,16 @@ class Registre : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    fun isValidDNI(dni: String): Boolean {
+        val dniRegex = Regex("^[0-9]{8}[A-Z]$")
+        return dniRegex.matches(dni)
+    }
+
+
+    fun isValidCorreu(correu: String): Boolean {
+        val correuRegex = Regex("^[\\w.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")
+        return correuRegex.matches(correu)
     }
 }
