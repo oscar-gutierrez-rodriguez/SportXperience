@@ -64,6 +64,7 @@
             this.labelPremi = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDownParticipants = new System.Windows.Forms.NumericUpDown();
+            this.buttonImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMinima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMaxima)).BeginInit();
@@ -308,9 +309,11 @@
             // pictureBoxLogoEvent
             // 
             this.pictureBoxLogoEvent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxLogoEvent.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLogoEvent.Location = new System.Drawing.Point(781, 288);
             this.pictureBoxLogoEvent.Name = "pictureBoxLogoEvent";
             this.pictureBoxLogoEvent.Size = new System.Drawing.Size(277, 63);
+            this.pictureBoxLogoEvent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogoEvent.TabIndex = 38;
             this.pictureBoxLogoEvent.TabStop = false;
             this.pictureBoxLogoEvent.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -397,7 +400,6 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Location = new System.Drawing.Point(956, 379);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 13);
@@ -416,11 +418,22 @@
             this.numericUpDownParticipants.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownParticipants.TabIndex = 49;
             // 
+            // buttonImagen
+            // 
+            this.buttonImagen.Location = new System.Drawing.Point(686, 288);
+            this.buttonImagen.Name = "buttonImagen";
+            this.buttonImagen.Size = new System.Drawing.Size(75, 53);
+            this.buttonImagen.TabIndex = 50;
+            this.buttonImagen.Text = "Carregar imatge";
+            this.buttonImagen.UseVisualStyleBackColor = true;
+            this.buttonImagen.Click += new System.EventHandler(this.buttonImagen_Click);
+            // 
             // AfegirActualitzarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 533);
+            this.Controls.Add(this.buttonImagen);
             this.Controls.Add(this.numericUpDownParticipants);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelPremi);
@@ -505,5 +518,6 @@
         public System.Windows.Forms.TextBox textBoxDescripcio;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.NumericUpDown numericUpDownParticipants;
+        public System.Windows.Forms.Button buttonImagen;
     }
 }

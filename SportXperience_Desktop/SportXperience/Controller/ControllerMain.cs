@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace SportXperience.Controller
             loadData();
             setListeners();
             f.Show();
-            
+
         }
 
         void loadData()
@@ -33,8 +34,7 @@ namespace SportXperience.Controller
             f.buttonEliminar.Enabled = false;
             f.buttonActualitzar.Enabled = false;
             f.buttonAfegir.Enabled = true;
-           
-
+            fafegir.AllowDrop = true;
             f.pictureBoxLogo.Image = Image.FromFile(@"C:\Users\cv\Desktop\PROJECTEFINAL\logo.png");
             f.pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             fafegir.comboBoxNivell.DataSource = Repositori.GetRecommendedLevel();
@@ -61,7 +61,35 @@ namespace SportXperience.Controller
             r.FormClosed += (s, e) => f.Show();
             fafegir.buttonConfirmar.Click += ButtonConfirmar_Click;
             lot.buttonAfegirProducte.Click += ButtonAfegirProducte_Click1;
+            fafegir.numericUpDownEdatMaxima.ValueChanged += NumericUpDownEdatMaxima_ValueChanged;
+            fafegir.buttonImagen.Click += ButtonImagen_Click;
         }
+
+        private void ButtonImagen_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog archiu = new OpenFileDialog();
+            archiu.Title = "Imagenes";
+            archiu.ShowHelp = true;
+            if (archiu.ShowDialog() == DialogResult.OK)
+            {
+                fafegir.pictureBoxLogoEvent.Image = Image.FromFile(archiu.FileName);
+            }
+            else
+            {
+                Console.WriteLine("algo");
+            }
+        }
+
+        private void NumericUpDownEdatMaxima_ValueChanged(object sender, EventArgs e)
+        {
+            if (fafegir.numericUpDownEdatMinima.Value > fafegir.numericUpDownEdatMaxima.Value)
+            {
+                MessageBox.Show("La edat màxima no potser inferior a " + fafegir.numericUpDownEdatMinima.Value.ToString());
+                fafegir.numericUpDownEdatMaxima.Value = fafegir.numericUpDownEdatMinima.Value;
+            }
+        }
+
 
         private void ButtonAfegirProducte_Click1(object sender, EventArgs e)
         {
@@ -114,7 +142,7 @@ namespace SportXperience.Controller
             Sport esport = Repositori.GetSportByName(fafegir.textBoxEsport.Text);
 
             if (esport == null)
-            { 
+            {
                 Repositori.InsSport(sport);
             }
             Event ev = new Event
@@ -135,13 +163,16 @@ namespace SportXperience.Controller
                 SportId = Repositori.GetSportByName(fafegir.textBoxEsport.Text).SportId
             };
             Repositori.InsEvents(ev);
+
+            Event e = Repositori.GetEventMax();
+
             Participant p = new Participant
             {
                 Organizer = true,
-                EventId = Repositori.GetEventMax().EventId,
+                EventId = e.EventId,
                 UserDni = Repositori.usuari.Dni
             };
-
+            Console.WriteLine(p.EventId);
             Repositori.InsParticipant(p);
         }
 

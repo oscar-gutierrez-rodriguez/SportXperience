@@ -30,11 +30,11 @@ namespace ApiSportXperience.Controllers
 
         [HttpGet]
         [Route("api/events/max")]
-        public async Task<ActionResult<IEnumerable<Event>>> GetEventMax()
+        public async Task<ActionResult<Event>> GetEventMax()
         {
             int maxId = await _context.Events.MaxAsync(x => x.EventId);
 
-            return await _context.Events.Where(x => x.EventId == maxId).ToListAsync();
+            return await _context.Events.Where(x => x.EventId == maxId).FirstOrDefaultAsync();
         }
 
         [HttpGet]

@@ -185,7 +185,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.Event, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "ApiSportXperience.Models.Event",
         "MediaTypes": [
           "text/plain",
           "application/json",
