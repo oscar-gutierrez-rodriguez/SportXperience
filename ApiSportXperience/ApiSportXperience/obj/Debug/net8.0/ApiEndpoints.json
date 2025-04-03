@@ -377,6 +377,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ApiSportXperience.Controllers.LotsController",
+    "Method": "GetLotMax",
+    "RelativePath": "api/lots/max",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ApiSportXperience.Controllers.MessagesController",
     "Method": "PostMessage",
     "RelativePath": "api/messages",

@@ -103,9 +103,11 @@ namespace DesktopModels.Model
         public static User InsUser(User user)
         {
             User u = null;
-   
+            try
+            {
                 u = (User)MakeRequest("users/", "POST", user, typeof(User)).Result;
-            
+            }
+            catch{ }
             if (u == null)
             {
                 u = new User();
@@ -146,9 +148,11 @@ namespace DesktopModels.Model
         public static Sport InsSport(Sport sport)
         {
             Sport s = null;
-
-            s = (Sport)MakeRequest("sports/", "POST", sport, typeof(Sport)).Result;
-
+            try
+            {
+                s = (Sport)MakeRequest("sports/", "POST", sport, typeof(Sport)).Result;
+            }
+            catch { }
             if (s == null)
             {
                 s = new Sport();
@@ -159,9 +163,11 @@ namespace DesktopModels.Model
         public static Event InsEvents(Event events)
         {
             Event e = null;
-
-            e = (Event)MakeRequest("events/", "POST", events, typeof(Event)).Result;
-
+            try
+            {
+                e = (Event)MakeRequest("events/", "POST", events, typeof(Event)).Result;
+            }
+            catch { }
             if (e == null)
             {
                 e = new Event();
@@ -187,9 +193,11 @@ namespace DesktopModels.Model
         public static Participant InsParticipant(Participant participant)
         {
             Participant p = null;
-
-            p = (Participant)MakeRequest("participants/", "POST", participant, typeof(Participant)).Result;
-
+            try
+            {
+                p = (Participant)MakeRequest("participants/", "POST", participant, typeof(Participant)).Result;
+            }
+            catch { }
             if (p == null)
             {
                 p = new Participant();
@@ -209,6 +217,48 @@ namespace DesktopModels.Model
             {
                 la = new List<Event>();
             }
+            return la;
+        }
+
+        public static Lot InsLot(Lot lot)
+        {
+            Lot l = null;
+            try
+            {
+                l = (Lot)MakeRequest("lots/", "POST", lot, typeof(Lot)).Result;
+            }
+            catch { }
+            if (l == null)
+            {
+                l = new Lot();
+            }
+            return l;
+        }
+
+        public static Product InsProduct(Product product)
+        {
+            Product l = null;
+            try
+            {
+                l = (Product)MakeRequest("products/", "POST", product, typeof(Product)).Result;
+            }
+            catch { }
+            if (l == null)
+            {
+                l = new Product();
+            }
+            return l;
+        }
+
+        public static int GetLotMax()
+        {
+            int la = 0;
+            try
+            {
+                la = (int)MakeRequest("lots/max", "GET", null, typeof(int)).Result;
+            }
+            catch { }
+            
             return la;
         }
 

@@ -47,7 +47,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEvents.Location = new System.Drawing.Point(48, 99);
+            this.dataGridViewEvents.MultiSelect = false;
             this.dataGridViewEvents.Name = "dataGridViewEvents";
+            this.dataGridViewEvents.ReadOnly = true;
+            this.dataGridViewEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEvents.Size = new System.Drawing.Size(722, 390);
             this.dataGridViewEvents.TabIndex = 0;
             // 
