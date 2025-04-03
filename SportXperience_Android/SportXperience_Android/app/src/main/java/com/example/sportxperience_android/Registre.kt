@@ -1,13 +1,22 @@
 package com.example.sportxperience_android
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import com.example.sportxperience_android.Api.CrudApi
+import com.example.sportxperience_android.Api.User
 import com.example.sportxperience_android.databinding.FragmentRegistreBinding
+import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.textfield.TextInputEditText
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +33,7 @@ class Registre : Fragment() {
     lateinit var binding: FragmentRegistreBinding
 
     var genere = ""
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -31,14 +41,16 @@ class Registre : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        requireActivity().onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                val transaccio = parentFragmentManager.beginTransaction()
-                transaccio.replace(R.id.fcv1, IniciarSessio())
-                transaccio.commit()
-                parentFragmentManager.popBackStack()
-            }
-        })
+        requireActivity().onBackPressedDispatcher.addCallback(
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    val transaccio = parentFragmentManager.beginTransaction()
+                    transaccio.replace(R.id.fcv1, IniciarSessio())
+                    transaccio.commit()
+                    parentFragmentManager.popBackStack()
+                }
+            })
 
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
@@ -52,44 +64,121 @@ class Registre : Fragment() {
     ): View? {
         binding = FragmentRegistreBinding.inflate(inflater, container, false)
 
-        binding.btNouregistre.setOnClickListener{
+        binding.genereHome.isChecked = true
+        genere = binding.genereHome.text.toString()
+
+        binding.tilDataNaixement
+            .setEndIconOnClickListener {
+                val datePicker1: MaterialDatePicker<Long> =
+                    MaterialDatePicker.Builder.datePicker()
+                        .setSelection(diaActual())
+                        .setTitleText("Data de naixement").build()
+                datePicker1.show(childFragmentManager, "Data de naixement")
+
+                datePicker1.addOnPositiveButtonClickListener {
+                    val sdf1 = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                    val date1 = sdf1.format(it)
+                    binding.tieDataNaixement
+                        .setText(date1)
+                }
+            }
+
+
+        binding.btNouregistre.setOnClickListener {
 
             val dni = binding.tilDniReg.text
             val nom = binding.tilNomReg.text
             val cognoms = binding.tilCognomsReg.text
             val correu = binding.tilCorreuReg.text
             val nomUsuari = binding.tilNomusuariReg.text
-            val contrasenya = binding.tilContrasenyaReg.text
+            val contrasenya = binding.tilContrasenyareg.text
+            val dataNaixement = binding.tieDataNaixement.text
 
-            if(!dni.isNullOrEmpty() && !nom.isNullOrEmpty() && !cognoms.isNullOrEmpty() &&
+            if (dataNaixementAnteriorAvui(binding.tieDataNaixement.text.toString())) {
+
+            } else {
+                Toast.makeText(context, "La data no pot ser superior a avui!", Toast.LENGTH_SHORT)
+                    .show()
+            }
+
+            if (!dni.isNullOrEmpty() && !nom.isNullOrEmpty() && !cognoms.isNullOrEmpty() &&
                 !correu.isNullOrEmpty() && !nomUsuari.isNullOrEmpty() && !contrasenya.isNullOrEmpty() &&
-                !genere.isNullOrEmpty()) {
-                if(isValidDNI(dni.toString())) {
+                !dataNaixement.isNullOrEmpty() && !genere.isNullOrEmpty()
+            ) {
 
-                    if(isValidCorreu(correu.toString())) {
-                        val transaccio = parentFragmentManager.beginTransaction()
-                        transaccio.replace(R.id.fcv1, IniciarSessio())
-                        transaccio.commit()
-                    } else{
-                        Toast.makeText(context, "El format del correu no és correcte", Toast.LENGTH_SHORT).show()
+                if (dataNaixementAnteriorAvui(binding.tieDataNaixement.text.toString())) {
+
+                    if (isValidDNI(dni.toString())) {
+
+                        if (isValidCorreu(correu.toString())) {
+                            try {
+
+                                val api = context?.let { CrudApi(it) }
+                                val genre = api?.getGenderByName(genere)
+
+                                if (genre != null) {
+
+                                    val user = User(
+                                        formatDateToISO(dataNaixement.toString()),
+                                        dni.toString(),
+                                        nom.toString(),
+                                        null,
+                                        genre.genderId,
+                                        cognoms.toString(),
+                                        correu.toString(),
+                                        null,
+                                        null,
+                                        contrasenya.toString(),
+                                        nomUsuari.toString()
+                                    )
+
+                                    if (api.getUserByDni(user.dni) != null) {
+                                        Toast.makeText(context, "Aquest dni ja existeix",Toast.LENGTH_SHORT).show()
+                                    } else if (api.getUserByUsername(user.username) != null) {
+                                        Toast.makeText(context, "Aquest nom d'usuari ja existeix",Toast.LENGTH_SHORT).show()
+                                    } else if (api.getUserByMail(user.mail) != null) {
+                                        Toast.makeText(context, "Aquest mail ja existeix",Toast.LENGTH_SHORT).show()
+                                    } else if (api.addUser(user) != null) {
+                                        Toast.makeText(context, "T'has enregistrat correctament",Toast.LENGTH_SHORT).show()
+                                    }
+
+                                }
+                            } catch (e: Exception) {
+                                Log.i("Error en l'api", "Error en l'api")
+                            }
+
+                        } else {
+                            Toast.makeText(
+                                context,
+                                "El format del correu no és correcte",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    } else {
+                        Toast.makeText(
+                            context,
+                            "La data no pot ser superior a avui!",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
-                } else{
-                    Toast.makeText(context, "El format del DNI no és correcte", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(context, "El format del DNI no és correcte", Toast.LENGTH_SHORT)
+                        .show()
                 }
-            } else{
+            } else {
                 Toast.makeText(context, "No pot haver camps buits!", Toast.LENGTH_SHORT).show()
             }
         }
 
-        binding.genereHome.setOnClickListener{
+        binding.genereHome.setOnClickListener {
             genere = binding.genereHome.text.toString()
         }
 
-        binding.genereDona.setOnClickListener{
+        binding.genereDona.setOnClickListener {
             genere = binding.genereDona.text.toString()
         }
 
-        binding.genereAltre.setOnClickListener{
+        binding.genereAltre.setOnClickListener {
             genere = binding.genereAltre.text.toString()
         }
 
@@ -126,5 +215,39 @@ class Registre : Fragment() {
     fun isValidCorreu(correu: String): Boolean {
         val correuRegex = Regex("^[\\w.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")
         return correuRegex.matches(correu)
+    }
+
+    fun diaActual(): Long {
+        val calendar = Calendar.getInstance()
+        return calendar.timeInMillis
+    }
+
+    fun dataNaixementAnteriorAvui(date: String): Boolean {
+        val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        return try {
+            val inputDate = sdf.parse(date)
+            val today = Calendar.getInstance().apply {
+                set(Calendar.HOUR_OF_DAY, 0)
+                set(Calendar.MINUTE, 0)
+                set(Calendar.SECOND, 0)
+                set(Calendar.MILLISECOND, 0)
+            }.time
+
+            inputDate?.before(today) ?: false || inputDate == today
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+    fun formatDateToISO(date: String): String {
+        val inputFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+
+        return try {
+            val parsedDate = inputFormat.parse(date)
+            outputFormat.format(parsedDate ?: Date())
+        } catch (e: Exception) {
+            ""
+        }
     }
 }

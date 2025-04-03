@@ -2,12 +2,14 @@ package com.example.sportxperience_android
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.databinding.FragmentIniciarSessioBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -42,18 +44,36 @@ class IniciarSessio : Fragment() {
     ): View? {
         binding = FragmentIniciarSessioBinding.inflate(inflater, container, false)
 
-        binding.btRegistrarse.setOnClickListener{
+        binding.btRegistrarse.setOnClickListener {
 
             val transaccio = parentFragmentManager.beginTransaction()
             transaccio.replace(R.id.fcv1, Registre())
             transaccio.commit()
         }
 
-        binding.btIniciSessio.setOnClickListener{
-            if(!binding.tilUsername.text.isNullOrEmpty() && !binding.tilContrasenya.text.isNullOrEmpty()){
-                val intent = Intent(context, Principal::class.java)
-                startActivity(intent)
-            } else{
+        binding.btIniciSessio.setOnClickListener {
+            if (!binding.tilUsername.text.isNullOrEmpty() && !binding.tilContrasenya.text.isNullOrEmpty()) {
+
+                try {
+                    val api = context?.let { it1 -> CrudApi(it1) }
+
+                    val user = api?.getUserByUserPassword(
+                        binding.tilUsername.text.toString(),
+                        binding.tilContrasenya.text.toString()
+                    )
+
+                    if (user != null) {
+                        val intent = Intent(context, Principal::class.java)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(context, "Credencials incorrectes", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                } catch (e: Exception) {
+                    Log.i("Error en l'api", "Error en l'api")
+                }
+
+            } else {
                 Toast.makeText(context, "No pot haver camps buits!", Toast.LENGTH_SHORT).show()
             }
         }
