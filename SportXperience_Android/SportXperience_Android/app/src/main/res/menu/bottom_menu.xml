@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_inici"
+        android:icon="@drawable/inici_selector"
+        android:checked="true"
+        android:title="Inici"/>
 
+    <item
+        android:id="@+id/menu_events"
+        android:icon="@drawable/events_selector"
+        android:title="Events"/>
+
+    <item
+        android:id="@+id/menu_participacions"
+        android:icon="@drawable/baseline_sports_handball_24"
+        android:title="Participacions"/>
+
+    <item
+        android:id="@+id/menu_resultats"
+        android:icon="@drawable/resultats_selector"
+        android:title="Resultats"/>
 </menu>
