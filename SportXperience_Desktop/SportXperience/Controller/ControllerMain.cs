@@ -65,6 +65,39 @@ namespace SportXperience.Controller
             lot.buttonAfegirProducte.Click += ButtonAfegirProducte_Click1;
             fafegir.buttonImagen.Click += ButtonImagen_Click;
             fafegir.buttonEliminarProducte.Click += ButtonEliminarProducte_Click;
+            lot.buttonAfegirOpcio.Click += ButtonAfegirOpcio_Click;
+        }
+
+        private void ButtonAfegirOpcio_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(lot.textBoxNomProd.Text))
+            {
+                MessageBox.Show("No pots afegir una opcio sense el nom del producte.");
+                
+            }
+            else{
+                if (lot.checkBoxOpcio.Checked)
+                {
+                    if (OpcioRepetit(lot.textBoxNomOpProd.Text))
+                    {
+                        MessageBox.Show("No pot haver opcions repetides");
+                    }
+                    else
+                    {
+                        options.Add(lot.textBoxNomOpProd.Text);
+                        ActualitzarGridOptions();
+                    }
+                }
+            }
+        }
+
+        private void ActualitzarGridOptions()
+        {
+            List<ViewOption> viewOptions = new List<ViewOption>();
+
+            viewOptions = options.Select(x => new ViewOption(x.Normalize())).ToList();
+            lot.dataGridViewOpcions.DataSource = viewOptions;
+
         }
 
         private void ButtonEliminarProducte_Click(object sender, EventArgs e)
@@ -97,7 +130,11 @@ namespace SportXperience.Controller
 
         private void ButtonAfegirProducte_Click1(object sender, EventArgs e)
         {
-            if (ProducteRepetit(lot.textBoxNomProd.Text))
+            if (string.IsNullOrEmpty(lot.textBoxNomProd.Text))
+            {
+                MessageBox.Show("No pots afegir una opcio sense el nom del producte.");
+            }
+            else if (ProducteRepetit(lot.textBoxNomProd.Text))
             {
                 MessageBox.Show("No pot haver productes repetits");
             }
@@ -105,19 +142,30 @@ namespace SportXperience.Controller
             {
                 products.Add(lot.textBoxNomProd.Text);
                 fafegir.listBoxLot.Items.Add(lot.textBoxNomProd.Text);
+
                 NetejarDadesLot();
                 lot.Close();
                 f.Show();
-                
+
             }
         }
 
-
+        Boolean OpcioRepetit(string opcions)
+        {
+            foreach (string e in options)
+            {
+                if (e.ToLower().Equals(opcions))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         Boolean ProducteRepetit(string productes)
         {
             foreach (string e in products) 
             {
-                if (e.Equals(productes))
+                if (e.ToLower().Equals(productes))
                 {
                     return true;
                 }
@@ -253,6 +301,7 @@ namespace SportXperience.Controller
 
         void InsertarProductes()
         {
+      
             foreach (String s in products)
             {
                 Product p = new Product
@@ -295,6 +344,7 @@ namespace SportXperience.Controller
 
         private void ButtonAfegirProducte_Click(object sender, EventArgs e)
         {
+            NetejarDadesLot();
             lot.ShowDialog();
         }
 
@@ -396,6 +446,7 @@ namespace SportXperience.Controller
             lot.textBoxNomProd.Text = "";
             lot.textBoxNomOpProd.Text = "";
             lot.checkBoxOpcio.Checked = false;
+            lot.dataGridViewOpcions.DataSource = new List<ViewOption>();
         }
     }
 }

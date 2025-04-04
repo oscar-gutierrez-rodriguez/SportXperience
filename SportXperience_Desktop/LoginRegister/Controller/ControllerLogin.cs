@@ -31,8 +31,8 @@ namespace LoginRegister.Controller
             {
                 registerForm.comboBoxGenere.DataSource = Repositori.GetGender();
                 registerForm.comboBoxGenere.DisplayMember = "name";
-                loginForm.textBoxNomCorreu.Text = "Hugo10";
-                loginForm.textBoxContrasenya.Text = "123456789";
+                loginForm.textBoxNomCorreu.Text = "pepe";
+                loginForm.textBoxContrasenya.Text = "1234";
                 
             }
 
