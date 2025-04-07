@@ -62,15 +62,19 @@
             this.label14 = new System.Windows.Forms.Label();
             this.labelPreu = new System.Windows.Forms.Label();
             this.labelPremi = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDownParticipants = new System.Windows.Forms.NumericUpDown();
+            this.buttonImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMinima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoEvent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMaxima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownParticipants)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 120);
+            this.label1.Location = new System.Drawing.Point(57, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 7;
@@ -79,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 199);
+            this.label3.Location = new System.Drawing.Point(57, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 8;
@@ -88,7 +92,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(73, 288);
+            this.label4.Location = new System.Drawing.Point(57, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 9;
@@ -97,7 +101,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(73, 340);
+            this.label5.Location = new System.Drawing.Point(57, 273);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 10;
@@ -128,7 +132,7 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(606, 120);
+            this.label9.Location = new System.Drawing.Point(606, 53);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 13);
             this.label9.TabIndex = 14;
@@ -137,28 +141,28 @@
             // 
             // textBoxNom
             // 
-            this.textBoxNom.Location = new System.Drawing.Point(76, 136);
+            this.textBoxNom.Location = new System.Drawing.Point(60, 69);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNom.Size = new System.Drawing.Size(152, 20);
             this.textBoxNom.TabIndex = 17;
             // 
             // textBoxLatitud
             // 
-            this.textBoxLatitud.Location = new System.Drawing.Point(76, 229);
+            this.textBoxLatitud.Location = new System.Drawing.Point(60, 162);
             this.textBoxLatitud.Name = "textBoxLatitud";
             this.textBoxLatitud.Size = new System.Drawing.Size(56, 20);
             this.textBoxLatitud.TabIndex = 18;
             // 
             // textBoxEsport
             // 
-            this.textBoxEsport.Location = new System.Drawing.Point(76, 305);
+            this.textBoxEsport.Location = new System.Drawing.Point(60, 238);
             this.textBoxEsport.Name = "textBoxEsport";
             this.textBoxEsport.Size = new System.Drawing.Size(100, 20);
             this.textBoxEsport.TabIndex = 19;
             // 
             // textBoxLongitud
             // 
-            this.textBoxLongitud.Location = new System.Drawing.Point(168, 229);
+            this.textBoxLongitud.Location = new System.Drawing.Point(152, 162);
             this.textBoxLongitud.Name = "textBoxLongitud";
             this.textBoxLongitud.Size = new System.Drawing.Size(60, 20);
             this.textBoxLongitud.TabIndex = 20;
@@ -167,7 +171,7 @@
             // 
             this.textBoxPreu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxPreu.Enabled = false;
-            this.textBoxPreu.Location = new System.Drawing.Point(361, 171);
+            this.textBoxPreu.Location = new System.Drawing.Point(345, 104);
             this.textBoxPreu.Name = "textBoxPreu";
             this.textBoxPreu.Size = new System.Drawing.Size(56, 20);
             this.textBoxPreu.TabIndex = 23;
@@ -176,7 +180,7 @@
             // 
             this.textBoxPremi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxPremi.Enabled = false;
-            this.textBoxPremi.Location = new System.Drawing.Point(437, 170);
+            this.textBoxPremi.Location = new System.Drawing.Point(421, 103);
             this.textBoxPremi.Name = "textBoxPremi";
             this.textBoxPremi.Size = new System.Drawing.Size(56, 20);
             this.textBoxPremi.TabIndex = 24;
@@ -203,7 +207,7 @@
             // 
             this.checkBoxLot.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.checkBoxLot.AutoSize = true;
-            this.checkBoxLot.Location = new System.Drawing.Point(397, 239);
+            this.checkBoxLot.Location = new System.Drawing.Point(381, 172);
             this.checkBoxLot.Name = "checkBoxLot";
             this.checkBoxLot.Size = new System.Drawing.Size(15, 14);
             this.checkBoxLot.TabIndex = 29;
@@ -214,7 +218,7 @@
             // 
             this.checkBoxPagament.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.checkBoxPagament.AutoSize = true;
-            this.checkBoxPagament.Location = new System.Drawing.Point(428, 119);
+            this.checkBoxPagament.Location = new System.Drawing.Point(412, 52);
             this.checkBoxPagament.Name = "checkBoxPagament";
             this.checkBoxPagament.Size = new System.Drawing.Size(15, 14);
             this.checkBoxPagament.TabIndex = 30;
@@ -225,7 +229,7 @@
             // 
             this.dateTimePickerInici.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerInici.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerInici.Location = new System.Drawing.Point(76, 357);
+            this.dateTimePickerInici.Location = new System.Drawing.Point(60, 290);
             this.dateTimePickerInici.Name = "dateTimePickerInici";
             this.dateTimePickerInici.Size = new System.Drawing.Size(100, 20);
             this.dateTimePickerInici.TabIndex = 31;
@@ -234,7 +238,7 @@
             // 
             this.dateTimePickerFinal.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerFinal.Location = new System.Drawing.Point(182, 357);
+            this.dateTimePickerFinal.Location = new System.Drawing.Point(166, 290);
             this.dateTimePickerFinal.Name = "dateTimePickerFinal";
             this.dateTimePickerFinal.Size = new System.Drawing.Size(99, 20);
             this.dateTimePickerFinal.TabIndex = 32;
@@ -243,7 +247,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(348, 120);
+            this.label6.Location = new System.Drawing.Point(332, 53);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 13);
             this.label6.TabIndex = 11;
@@ -254,7 +258,7 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(348, 239);
+            this.label12.Location = new System.Drawing.Point(332, 172);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(25, 13);
             this.label12.TabIndex = 33;
@@ -265,8 +269,9 @@
             this.listBoxLot.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listBoxLot.Enabled = false;
             this.listBoxLot.FormattingEnabled = true;
-            this.listBoxLot.Location = new System.Drawing.Point(365, 272);
+            this.listBoxLot.Location = new System.Drawing.Point(349, 205);
             this.listBoxLot.Name = "listBoxLot";
+            this.listBoxLot.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBoxLot.Size = new System.Drawing.Size(120, 69);
             this.listBoxLot.TabIndex = 34;
             // 
@@ -274,7 +279,7 @@
             // 
             this.buttonEliminarProducte.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonEliminarProducte.Enabled = false;
-            this.buttonEliminarProducte.Location = new System.Drawing.Point(304, 357);
+            this.buttonEliminarProducte.Location = new System.Drawing.Point(288, 290);
             this.buttonEliminarProducte.Name = "buttonEliminarProducte";
             this.buttonEliminarProducte.Size = new System.Drawing.Size(122, 28);
             this.buttonEliminarProducte.TabIndex = 35;
@@ -285,7 +290,7 @@
             // 
             this.buttonAfegirProducte.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonAfegirProducte.Enabled = false;
-            this.buttonAfegirProducte.Location = new System.Drawing.Point(457, 357);
+            this.buttonAfegirProducte.Location = new System.Drawing.Point(441, 290);
             this.buttonAfegirProducte.Name = "buttonAfegirProducte";
             this.buttonAfegirProducte.Size = new System.Drawing.Size(124, 28);
             this.buttonAfegirProducte.TabIndex = 36;
@@ -305,9 +310,10 @@
             // pictureBoxLogoEvent
             // 
             this.pictureBoxLogoEvent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxLogoEvent.Location = new System.Drawing.Point(781, 288);
+            this.pictureBoxLogoEvent.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLogoEvent.Location = new System.Drawing.Point(781, 201);
             this.pictureBoxLogoEvent.Name = "pictureBoxLogoEvent";
-            this.pictureBoxLogoEvent.Size = new System.Drawing.Size(277, 63);
+            this.pictureBoxLogoEvent.Size = new System.Drawing.Size(277, 150);
             this.pictureBoxLogoEvent.TabIndex = 38;
             this.pictureBoxLogoEvent.TabStop = false;
             this.pictureBoxLogoEvent.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -316,7 +322,7 @@
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(606, 288);
+            this.label10.Location = new System.Drawing.Point(601, 221);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 13);
             this.label10.TabIndex = 39;
@@ -325,7 +331,7 @@
             // textBoxDescripcio
             // 
             this.textBoxDescripcio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDescripcio.Location = new System.Drawing.Point(609, 149);
+            this.textBoxDescripcio.Location = new System.Drawing.Point(609, 82);
             this.textBoxDescripcio.Multiline = true;
             this.textBoxDescripcio.Name = "textBoxDescripcio";
             this.textBoxDescripcio.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -353,7 +359,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(179, 340);
+            this.label13.Location = new System.Drawing.Point(163, 273);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(58, 13);
             this.label13.TabIndex = 43;
@@ -362,7 +368,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(165, 199);
+            this.label14.Location = new System.Drawing.Point(149, 132);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(95, 13);
             this.label14.TabIndex = 44;
@@ -373,7 +379,7 @@
             this.labelPreu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelPreu.AutoSize = true;
             this.labelPreu.Enabled = false;
-            this.labelPreu.Location = new System.Drawing.Point(360, 149);
+            this.labelPreu.Location = new System.Drawing.Point(344, 82);
             this.labelPreu.Name = "labelPreu";
             this.labelPreu.Size = new System.Drawing.Size(32, 13);
             this.labelPreu.TabIndex = 45;
@@ -384,17 +390,52 @@
             this.labelPremi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelPremi.AutoSize = true;
             this.labelPremi.Enabled = false;
-            this.labelPremi.Location = new System.Drawing.Point(434, 149);
+            this.labelPremi.Location = new System.Drawing.Point(418, 82);
             this.labelPremi.Name = "labelPremi";
             this.labelPremi.Size = new System.Drawing.Size(36, 13);
             this.labelPremi.TabIndex = 46;
             this.labelPremi.Text = "Premi:";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(956, 379);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Participants Màxims:";
+            // 
+            // numericUpDownParticipants
+            // 
+            this.numericUpDownParticipants.Location = new System.Drawing.Point(959, 404);
+            this.numericUpDownParticipants.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownParticipants.Name = "numericUpDownParticipants";
+            this.numericUpDownParticipants.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownParticipants.TabIndex = 49;
+            // 
+            // buttonImagen
+            // 
+            this.buttonImagen.Location = new System.Drawing.Point(681, 221);
+            this.buttonImagen.Name = "buttonImagen";
+            this.buttonImagen.Size = new System.Drawing.Size(75, 53);
+            this.buttonImagen.TabIndex = 50;
+            this.buttonImagen.Text = "Carregar imatge";
+            this.buttonImagen.UseVisualStyleBackColor = true;
+            this.buttonImagen.Click += new System.EventHandler(this.buttonImagen_Click);
             // 
             // AfegirActualitzarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 533);
+            this.Controls.Add(this.buttonImagen);
+            this.Controls.Add(this.numericUpDownParticipants);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.labelPremi);
             this.Controls.Add(this.labelPreu);
             this.Controls.Add(this.label14);
@@ -434,6 +475,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMinima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoEvent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMaxima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownParticipants)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,5 +516,8 @@
         public System.Windows.Forms.Label labelPremi;
         public System.Windows.Forms.PictureBox pictureBoxLogoEvent;
         public System.Windows.Forms.TextBox textBoxDescripcio;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.NumericUpDown numericUpDownParticipants;
+        public System.Windows.Forms.Button buttonImagen;
     }
 }

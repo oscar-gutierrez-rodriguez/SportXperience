@@ -51,5 +51,10 @@ namespace SportXperience.View
         {
 
         }
+
+        private void buttonImagen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

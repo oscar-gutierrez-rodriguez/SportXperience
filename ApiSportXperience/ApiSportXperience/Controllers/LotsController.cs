@@ -43,6 +43,16 @@ namespace ApiSportXperience.Controllers
             return lot;
         }
 
+        [HttpGet]
+        [Route("api/lots/max")]
+        public async Task<int> GetLotMax()
+        {
+            int maxId = await _context.Lots.MaxAsync(x => x.LotId);
+
+            return maxId;
+
+        }
+
         // PUT: api/Lots/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut]
@@ -84,7 +94,7 @@ namespace ApiSportXperience.Controllers
             _context.Lots.Add(lot);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetLot", new { id = lot.LotId }, lot);
+            return CreatedAtAction("GetLotById", new { id = lot.LotId }, lot);
         }
 
         // DELETE: api/Lots/5

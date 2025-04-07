@@ -59,12 +59,6 @@
     <Compile Include="View\AfegirActualitzarForm.Designer.cs">
       <DependentUpon>AfegirActualitzarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\LoginForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\LotForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,9 +88,6 @@
     </Compile>
     <EmbeddedResource Include="View\AfegirActualitzarForm.resx">
       <DependentUpon>AfegirActualitzarForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LotForm.resx">
       <DependentUpon>LotForm.cs</DependentUpon>

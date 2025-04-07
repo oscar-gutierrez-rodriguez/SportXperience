@@ -61,7 +61,7 @@ namespace ApiSportXperience.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut]
         [Route("api/ubications/{id}")]
-        public async Task<IActionResult> PutUbication(int id, Ubication ubication)
+        public async Task<IActionResult> PutUbication(int id, [FromBody] Ubication ubication)
         {
             if (id != ubication.UbicationId)
             {
@@ -93,7 +93,7 @@ namespace ApiSportXperience.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Route("api/ubications")]
-        public async Task<ActionResult<Ubication>> PostUbication(Ubication ubication)
+        public async Task<ActionResult<Ubication>> PostUbication( [FromBody] Ubication ubication)
         {
             _context.Ubications.Add(ubication);
             await _context.SaveChangesAsync();

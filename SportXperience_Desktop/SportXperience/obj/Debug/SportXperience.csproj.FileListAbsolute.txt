@@ -26,7 +26,6 @@ C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.csproj.AssemblyReference.cache
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.Properties.Resources.resources
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.View.AfegirActualitzarForm.resources
-C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.View.LoginForm.resources
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.View.LotForm.resources
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.MainForm.resources
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.View.Resultats.resources
