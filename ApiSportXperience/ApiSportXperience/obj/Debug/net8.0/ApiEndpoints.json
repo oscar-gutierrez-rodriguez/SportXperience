@@ -955,6 +955,37 @@
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.ProductsController",
+    "Method": "GetProducrByLotAndName",
+    "RelativePath": "api/products/{idLot}/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idLot",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSportXperience.Models.Product",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ProductsController",
     "Method": "GetProductsByLot",
     "RelativePath": "api/products/lots/{id}",
     "HttpMethod": "GET",

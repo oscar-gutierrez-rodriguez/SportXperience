@@ -20,8 +20,8 @@ namespace SportXperience.Controller
         LotForm lot = new LotForm();
         Resultats r = new Resultats();
         DateTime dataMin = DateTime.Now.AddDays(2);
-        List<string> products = new List<string>();
-        List<string> options = new List<string>();
+        List<Product> products = new List<Product>();
+        List<Option> options = new List<Option>();
 
         public ControllerMain()
         {
@@ -84,7 +84,12 @@ namespace SportXperience.Controller
                     }
                     else
                     {
-                        options.Add(lot.textBoxNomOpProd.Text);
+                        Option o = new Option
+                        {
+                            Name = lot.textBoxNomOpProd.Text,
+
+                        };
+                        options.Add(o);
                         ActualitzarGridOptions();
                     }
                 }
@@ -95,7 +100,7 @@ namespace SportXperience.Controller
         {
             List<ViewOption> viewOptions = new List<ViewOption>();
 
-            viewOptions = options.Select(x => new ViewOption(x.Normalize())).ToList();
+            viewOptions = options.Select(x => new ViewOption(x.Name)).ToList();
             lot.dataGridViewOpcions.DataSource = viewOptions;
 
         }
@@ -140,9 +145,14 @@ namespace SportXperience.Controller
             }
             else
             {
-                products.Add(lot.textBoxNomProd.Text);
+                Product p = new Product 
+                { 
+                    Name = lot.textBoxNomProd.Text,
+                    Options = options
+                };
+                products.Add(p);    
                 fafegir.listBoxLot.Items.Add(lot.textBoxNomProd.Text);
-
+                options = new List<Option>();
                 NetejarDadesLot();
                 lot.Close();
                 f.Show();
@@ -152,9 +162,9 @@ namespace SportXperience.Controller
 
         Boolean OpcioRepetit(string opcions)
         {
-            foreach (string e in options)
+            foreach (Option e in options)
             {
-                if (e.ToLower().Equals(opcions))
+                if (e.Name.ToLower().Equals(opcions))
                 {
                     return true;
                 }
@@ -163,9 +173,9 @@ namespace SportXperience.Controller
         }
         Boolean ProducteRepetit(string productes)
         {
-            foreach (string e in products) 
+            foreach (Product e in products) 
             {
-                if (e.ToLower().Equals(productes))
+                if (e.Name.ToLower().Equals(productes))
                 {
                     return true;
                 }
@@ -205,6 +215,7 @@ namespace SportXperience.Controller
                         {
                             InsertarLot();
                             InsertarProductes();
+                            InsertarOptions();
 
                         }
 
@@ -225,11 +236,13 @@ namespace SportXperience.Controller
                     {
                         InsertarLot();
                         InsertarProductes();
+                        InsertarOptions();
                     }
 
 
                 }
                 NetejarDadesAfegirActualitzar();
+                products = new List<Product>();
                 loadDataGrid();
                 fafegir.Close();
                 f.Show();
@@ -302,15 +315,34 @@ namespace SportXperience.Controller
         void InsertarProductes()
         {
       
-            foreach (String s in products)
+            foreach (Product s in products)
             {
                 Product p = new Product
                 {
                     ProductId = 0,
-                    Name = s,
+                    Name = s.Name,
                     LotId = Repositori.GetLotMax()
                 };
                 Repositori.InsProduct(p);
+                
+            }
+        }
+
+        void InsertarOptions()
+        {
+
+            foreach (Product s in products)
+            {
+                foreach (Option op in s.Options)
+                {
+                    Option o = new Option
+                    {
+                        OptionId = 0,
+                        Name = op.Name,
+                        ProductId = Repositori.GetProductsByLotIdAndName(Repositori.GetLotMax(), s.Name).ProductId
+                    };
+                    Repositori.InsOptions(o);
+                }
             }
         }
 
@@ -424,6 +456,18 @@ namespace SportXperience.Controller
         void loadDataGrid()
         {
             f.dataGridViewEvents.DataSource = Repositori.GetEventbyUserDNI(Repositori.usuari.Dni);
+            if (f.dataGridViewEvents.SelectedRows.Count != 0)
+            {
+                f.buttonEliminar.Enabled = true;
+                f.buttonActualitzar.Enabled = true;
+                f.buttonAfegir.Enabled = true;       
+            }
+            else
+            {
+                f.buttonEliminar.Enabled = false;
+                f.buttonActualitzar.Enabled = false;
+                f.buttonAfegir.Enabled = true;
+            }
         }
 
         void NetejarDadesAfegirActualitzar()
