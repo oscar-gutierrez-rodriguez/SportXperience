@@ -292,6 +292,24 @@ namespace DesktopModels.Model
             return la;
         }
 
+        public static void DelEvent(Event ev)
+        {
+            int id = ev.EventId;
+            Event e = null;
+            try
+            {
+                e = (Event)MakeRequest("events/all/" + id, "DELETE", ev, typeof(Event)).Result;
+            }
+            catch
+            {
+                if (e == null)
+                {
+                    e = new Event();
+                }
+            }
+
+        }
+
         public static async Task<object> MakeRequest(string url, string method, object JSONcontent, Type responseType)
         ////  url: Url a partir de la base 
         ////  method: "GET"/"POST"/"PUT"/"DELETE"

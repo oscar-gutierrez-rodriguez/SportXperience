@@ -68,12 +68,23 @@ namespace SportXperience.Controller
             lot.buttonAfegirOpcio.Click += ButtonAfegirOpcio_Click;
             f.dataGridViewEvents.SelectionChanged += DataGridViewEvents_SelectionChanged;
             f.buttonActualitzar.Click += ButtonActualitzar_Click;
+            f.buttonEliminar.Click += ButtonEliminar_Click;
+        }
+
+        private void ButtonEliminar_Click(object sender, EventArgs e)
+        {
+            Event ev = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as Event;
+            Repositori.DelEvent(ev);
+            loadDataGrid();
         }
 
         private void ButtonActualitzar_Click(object sender, EventArgs e)
         {
             Event ev = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as Event;
-            products = ev.Lots.SelectMany(X => X.Products).ToList();
+
+            Lot l = ev.Lots.Where(x => x.EventId == ev.EventId).FirstOrDefault(); 
+
+            //products = Repositori.Get;
             fafegir.textBoxNom.Text = ev.Name;
             fafegir.textBoxDescripcio.Text = ev.Description;
             fafegir.textBoxPremi.Text = ev.Reward;
@@ -81,8 +92,13 @@ namespace SportXperience.Controller
             fafegir.numericUpDownEdatMinima.Value = ev.MinAge.Value;
             fafegir.numericUpDownEdatMaxima.Value = ev.MaxAge.Value;
             fafegir.numericUpDownParticipants.Value = ev.MaxParticipantsNumber.Value;
-            fafegir.comboBoxNivell.SelectedValue = ev.RecommendedLevel.Name;
-            fafegir.listBoxLot.Text = products.ToString();
+            fafegir.comboBoxNivell.Text = ev.RecommendedLevel.Name;
+
+            foreach (Product p in products)
+            {
+                fafegir.listBoxLot.Items.Add(p.Name);
+            }
+
             fafegir.textBoxEsport.Text = ev.Sport.Name;
             fafegir.ShowDialog();
             
