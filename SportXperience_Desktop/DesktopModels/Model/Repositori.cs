@@ -262,6 +262,36 @@ namespace DesktopModels.Model
             return la;
         }
 
+        public static Option InsOptions(Option option)
+        {
+            Option l = null;
+            try
+            {
+                l = (Option)MakeRequest("options/", "POST", option, typeof(Option)).Result;
+            }
+            catch { }
+            if (l == null)
+            {
+                l = new Option();
+            }
+            return l;
+        }
+
+        public static Product GetProductsByLotIdAndName(int idLot,string nom)
+        {
+            Product la = null;
+            try
+            {
+                la = (Product)MakeRequest("products/"+ idLot +"/" + nom, "GET", null, typeof(Product)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Product();
+            }
+            return la;
+        }
+
         public static async Task<object> MakeRequest(string url, string method, object JSONcontent, Type responseType)
         ////  url: Url a partir de la base 
         ////  method: "GET"/"POST"/"PUT"/"DELETE"

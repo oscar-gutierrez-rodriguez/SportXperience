@@ -28,6 +28,13 @@ namespace ApiSportXperience.Controllers
             return await _context.Products.Where(x => x.LotId==id).ToListAsync();
         }
 
+        [HttpGet]
+        [Route("api/products/{idLot}/{name}")]
+        public async Task<ActionResult<Product>> GetProducrByLotAndName(int idLot, string name)
+        {
+            return await _context.Products.Where(x => x.LotId == idLot && x.Name.Equals(name) ).FirstOrDefaultAsync();
+        }
+
         // GET: api/Products/5
         [HttpGet]
         [Route("api/products/{id}")]
