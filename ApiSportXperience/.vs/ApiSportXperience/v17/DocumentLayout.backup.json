@@ -74,6 +74,31 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+              "DocumentIndex": 0,
+              "Title": "UbicationsController.cs",
+              "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\UbicationsController.cs",
+              "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\UbicationsController.cs",
+              "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\UbicationsController.cs",
+              "RelativeToolTip": "ApiSportXperience\\Controllers\\UbicationsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+=======
+              "DocumentIndex": 4,
+              "Title": "ParticipantsController.cs",
+              "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\ParticipantsController.cs",
+              "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\ParticipantsController.cs",
+              "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\ParticipantsController.cs",
+              "RelativeToolTip": "ApiSportXperience\\Controllers\\ParticipantsController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAA0wGIAAAAMAAAAAAAAAA==",
+>>>>>>> origin/Desktop
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T18:00:18.186Z"
+            },
+            {
+              "$type": "Document",
+>>>>>>> origin/Desktop
               "DocumentIndex": 6,
               "Title": "UbicationsController.cs",
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\UbicationsController.cs",
@@ -131,6 +156,9 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\LotsController.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAAAC8AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
+              "WhenOpened": "2025-04-01T17:29:51.57Z"
+=======
               "WhenOpened": "2025-04-01T17:40:22.321Z"
             },
             {
@@ -183,6 +211,23 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
+=======
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "ApiSportXperience\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAwwF4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T17:40:22.352Z",
+              "EditorCaption": ""
+>>>>>>> origin/Desktop
+            },
+            {
+              "$type": "Document",
+>>>>>>> origin/Desktop
               "DocumentIndex": 5,
               "Title": "Participant.cs",
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\Participant.cs",
