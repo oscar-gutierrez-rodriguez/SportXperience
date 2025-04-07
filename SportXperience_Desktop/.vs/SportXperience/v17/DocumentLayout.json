@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|solutionrelative:desktopmodels\\model\\repositori.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\sportxperience\\view\\lotform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|solutionrelative:sportxperience\\view\\lotform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\sportxperience\\view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|solutionrelative:sportxperience\\view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\sportxperience\\view\\lotform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|solutionrelative:sportxperience\\view\\lotform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\desktopmodels\\model\\viewoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -76,25 +76,26 @@
               "RelativeDocumentMoniker": "SportXperience\\Controller\\ControllerMain.cs",
               "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\Controller\\ControllerMain.cs",
               "RelativeToolTip": "SportXperience\\Controller\\ControllerMain.cs",
-              "ViewState": "AgIAALoBAAAAAAAAAAAAwM4BAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAwwFUAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-27T14:24:05.405Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\View\\MainForm.cs",
               "RelativeDocumentMoniker": "SportXperience\\View\\MainForm.cs",
               "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\View\\MainForm.cs [Design]",
               "RelativeToolTip": "SportXperience\\View\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T15:38:23.193Z"
+              "WhenOpened": "2025-04-03T15:38:23.193Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "LotForm.cs [Design]",
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\View\\LotForm.cs",
               "RelativeDocumentMoniker": "SportXperience\\View\\LotForm.cs",
@@ -122,7 +123,7 @@
               "RelativeDocumentMoniker": "DesktopModels\\Model\\Repositori.cs",
               "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\Repositori.cs",
               "RelativeToolTip": "DesktopModels\\Model\\Repositori.cs",
-              "ViewState": "AgIAAPcAAAAAAAAAAAAMwBMBAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAIwBMBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T15:47:30.044Z",
               "EditorCaption": ""

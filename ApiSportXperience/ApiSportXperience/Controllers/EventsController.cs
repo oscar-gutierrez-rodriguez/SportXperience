@@ -135,6 +135,11 @@ namespace ApiSportXperience.Controllers
         [Route("api/events")]
         public async Task<ActionResult<Event>> PostEvent([FromBody] Event e)
         {
+            if (e.Sport != null)
+            {
+                _context.Attach(e.Sport);
+            }
+
             _context.Events.Add(e);
             await _context.SaveChangesAsync();
 

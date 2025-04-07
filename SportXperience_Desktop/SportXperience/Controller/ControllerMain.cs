@@ -66,6 +66,42 @@ namespace SportXperience.Controller
             fafegir.buttonImagen.Click += ButtonImagen_Click;
             fafegir.buttonEliminarProducte.Click += ButtonEliminarProducte_Click;
             lot.buttonAfegirOpcio.Click += ButtonAfegirOpcio_Click;
+            f.dataGridViewEvents.SelectionChanged += DataGridViewEvents_SelectionChanged;
+            f.buttonActualitzar.Click += ButtonActualitzar_Click;
+        }
+
+        private void ButtonActualitzar_Click(object sender, EventArgs e)
+        {
+            Event ev = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as Event;
+            
+            fafegir.textBoxNom.Text = ev.Name;
+            fafegir.textBoxDescripcio.Text = ev.Description;
+            fafegir.textBoxPremi.Text = ev.Reward;
+            fafegir.textBoxPreu.Text = ev.Price.ToString();
+            fafegir.numericUpDownEdatMinima.Value = ev.MinAge.Value;
+            fafegir.numericUpDownEdatMaxima.Value = ev.MaxAge.Value;
+            fafegir.numericUpDownParticipants.Value = ev.MaxParticipantsNumber.Value;
+           // fafegir.comboBoxNivell.Text = ev.RecommendedLevel.Name;
+           // fafegir.textBoxEsport.Text = ev.Sport.Name;
+            fafegir.ShowDialog();
+            
+        }
+
+        private void DataGridViewEvents_SelectionChanged(object sender, EventArgs e)
+        {
+            if (f.dataGridViewEvents.SelectedRows.Count == 0 )
+            {
+                f.buttonEliminar.Enabled = false;
+                f.buttonActualitzar.Enabled = false;
+                f.buttonAfegir.Enabled = true;
+            }
+            else
+            {
+                f.buttonEliminar.Enabled = true;
+                f.buttonActualitzar.Enabled = true;
+                f.buttonAfegir.Enabled = true;
+            }
+
         }
 
         private void ButtonAfegirOpcio_Click(object sender, EventArgs e)
@@ -268,7 +304,8 @@ namespace SportXperience.Controller
         void InsertarEvent(string award, double price)
         {
 
-           
+            Sport s = Repositori.GetSportByName(fafegir.textBoxEsport.Text);
+
             Event ev = new Event
             {
                 EventId = 0,
@@ -284,7 +321,8 @@ namespace SportXperience.Controller
                 Reward = award,
                 UbicationId = 1,
                 RecommendedLevelId = (fafegir.comboBoxNivell.SelectedItem as RecommendedLevel).RecommendedLevelId,
-                SportId = Repositori.GetSportByName(fafegir.textBoxEsport.Text).SportId
+                SportId = s.SportId,
+                Sport = s
             };
             Repositori.InsEvents(ev);   
         }
@@ -456,18 +494,6 @@ namespace SportXperience.Controller
         void loadDataGrid()
         {
             f.dataGridViewEvents.DataSource = Repositori.GetEventbyUserDNI(Repositori.usuari.Dni);
-            if (f.dataGridViewEvents.SelectedRows.Count != 0)
-            {
-                f.buttonEliminar.Enabled = true;
-                f.buttonActualitzar.Enabled = true;
-                f.buttonAfegir.Enabled = true;       
-            }
-            else
-            {
-                f.buttonEliminar.Enabled = false;
-                f.buttonActualitzar.Enabled = false;
-                f.buttonAfegir.Enabled = true;
-            }
         }
 
         void NetejarDadesAfegirActualitzar()
