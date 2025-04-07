@@ -25,7 +25,7 @@ namespace ApiSportXperience.Controllers
         [Route("api/events")]
         public async Task<ActionResult<IEnumerable<Event>>> GetEvents()
         {
-            return await _context.Events.ToListAsync();
+            return await _context.Events.Include(x => x.Sport).ToListAsync();
         }
 
         [HttpGet]
@@ -34,14 +34,14 @@ namespace ApiSportXperience.Controllers
         {
             int maxId = await _context.Events.MaxAsync(x => x.EventId);
 
-            return await _context.Events.Where(x => x.EventId == maxId).FirstOrDefaultAsync();
+            return await _context.Events.Include(x => x.Sport).Where(x => x.EventId == maxId).FirstOrDefaultAsync();
         }
 
         [HttpGet]
         [Route("api/events/{userdni}")]
         public async Task<ActionResult<IEnumerable<Event>>> GetEventByOrganizer(String userdni)
         {
-            return await _context.Events.Where(e => e.Participants.Any(p => p.UserDni.Equals(userdni) && p.Organizer == true)).ToListAsync();
+            return await _context.Events.Include(x => x.Sport).Where(e => e.Participants.Any(p => p.UserDni.Equals(userdni) && p.Organizer == true)).ToListAsync();
         }
 
         [HttpGet]
@@ -79,7 +79,7 @@ namespace ApiSportXperience.Controllers
                 query = query.Where(x => x.Sport.Name.Contains(esport));
             }
 
-            var result = await query.ToListAsync();
+            var result = await query.Include(x => x.Sport).ToListAsync();
             return Ok(result);
         }
 
@@ -87,7 +87,7 @@ namespace ApiSportXperience.Controllers
         [Route("api/events/{id:int}")]
         public async Task<ActionResult<Event>> GetEvent(int id)
         {
-            Event e = await _context.Events.FindAsync(id);
+            Event e = await _context.Events.Include(x => x.Sport).Where( x => x.EventId == id).FirstOrDefaultAsync();
 
             if (e == null)
             {
@@ -135,6 +135,10 @@ namespace ApiSportXperience.Controllers
         [Route("api/events")]
         public async Task<ActionResult<Event>> PostEvent([FromBody] Event e)
         {
+<<<<<<< HEAD
+=======
+
+>>>>>>> Api
             if (e.Sport != null)
             {
                 _context.Attach(e.Sport);
