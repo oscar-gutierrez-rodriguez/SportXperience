@@ -119,6 +119,7 @@ class Registre : Fragment() {
                                 if (genre != null) {
 
                                     val user = User(
+                                        null,
                                         formatDateToISO(dataNaixement.toString()),
                                         dni.toString(),
                                         nom.toString(),

@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.sportxperience_android.Adapters.AdapterCarousel
 import com.example.sportxperience_android.R
+import com.example.sportxperience_android.databinding.FragmentIniciBinding
+import com.google.android.material.carousel.CarouselLayoutManager
+import com.google.android.material.carousel.CarouselSnapHelper
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,6 +22,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class Inici : Fragment() {
+    lateinit var binding: FragmentIniciBinding
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,8 +39,32 @@ class Inici : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        binding = FragmentIniciBinding.inflate(inflater, container, false)
+
+        val imageList = listOf(
+            "https://media.deloitte.com/is/image/deloitte/Deloitte-ES-TMT-modelo-deporte:Mobile?\$Responsive\$&fmt=webp&fit=stretch,1&dpr=on,2.625",
+            "https://ode.educacion.es/INTEF/es_2024032812_9110106/vistaPreviaAgrega.png",
+            "https://www.ez-dock.com/content/uploads/2020/03/what-to-bring-on-a-kayak-trip.jpg",
+            "https://tietarteve.com/wp-content/uploads/2025/01/2025-01-14-Eventos-Calamochos-Casavieja-3-copia.jpg",
+            "https://www.realista.com/wp-content/uploads/2023/01/close-up-shot-of-a-tennis-ball.jpg.webp",
+            "https://static.vecteezy.com/system/resources/thumbnails/027/829/023/small_2x/close-up-of-many-soccer-players-kicking-a-football-on-a-field-competition-scene-created-with-generative-ai-technology-free-photo.jpg",
+            "https://imagenes.elpais.com/resizer/v2/UG3F52VW4BHXFI4ZRLWJBRJG7A.jpg?auth=9f3f3cbc9b2605d9cf211a9a6d5c2bafdf665916ef0896b606e3f0587fd89184&width=1960&height=1470&smart=true"
+        )
+
+
+        val recyclerView = binding.carouselInici
+        val adapter = AdapterCarousel(imageList)
+        recyclerView.adapter = adapter
+
+        val layoutManager = CarouselLayoutManager()
+        recyclerView.layoutManager = layoutManager
+
+        val snapHelper = CarouselSnapHelper()
+        snapHelper.attachToRecyclerView(recyclerView)
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inici, container, false)
+        return binding.root
     }
 
     companion object {
