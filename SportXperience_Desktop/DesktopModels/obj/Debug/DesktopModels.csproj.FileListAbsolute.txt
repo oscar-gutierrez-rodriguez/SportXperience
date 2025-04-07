@@ -13,6 +13,7 @@ C:\SportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\DesktopModels.exe.config
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\DesktopModels.exe
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\DesktopModels.pdb
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\MaterialSkin.dll
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\Newtonsoft.Json.dll
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\Newtonsoft.Json.xml
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopModels.csproj.AssemblyReference.cache

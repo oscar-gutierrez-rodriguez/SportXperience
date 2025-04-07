@@ -73,7 +73,7 @@ namespace SportXperience.Controller
         private void ButtonActualitzar_Click(object sender, EventArgs e)
         {
             Event ev = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as Event;
-            
+            products = ev.Lots.SelectMany(X => X.Products).ToList();
             fafegir.textBoxNom.Text = ev.Name;
             fafegir.textBoxDescripcio.Text = ev.Description;
             fafegir.textBoxPremi.Text = ev.Reward;
@@ -81,8 +81,9 @@ namespace SportXperience.Controller
             fafegir.numericUpDownEdatMinima.Value = ev.MinAge.Value;
             fafegir.numericUpDownEdatMaxima.Value = ev.MaxAge.Value;
             fafegir.numericUpDownParticipants.Value = ev.MaxParticipantsNumber.Value;
-           // fafegir.comboBoxNivell.Text = ev.RecommendedLevel.Name;
-           // fafegir.textBoxEsport.Text = ev.Sport.Name;
+            fafegir.comboBoxNivell.SelectedValue = ev.RecommendedLevel.Name;
+            fafegir.listBoxLot.Text = products.ToString();
+            fafegir.textBoxEsport.Text = ev.Sport.Name;
             fafegir.ShowDialog();
             
         }
