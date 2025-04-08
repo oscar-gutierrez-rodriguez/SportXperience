@@ -43,6 +43,7 @@
             android:layout_width="140dp"
             android:layout_height="60dp"
             android:textStyle="bold"
+            android:id="@+id/bt_nivell"
             android:text="Quin és el meu nivell?"
             android:layout_marginEnd="10dp"/>
 
@@ -50,6 +51,7 @@
             android:layout_width="140dp"
             android:layout_height="60dp"
             android:textStyle="bold"
+            android:id="@+id/bt_form_contacte"
             android:text="Formulari de contacte"
             android:layout_marginStart="10dp"/>
     </LinearLayout>

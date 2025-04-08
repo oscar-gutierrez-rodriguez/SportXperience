@@ -1,8 +1,12 @@
 package com.example.sportxperience_android
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
@@ -22,6 +26,10 @@ class Principal : AppCompatActivity() {
     val participants = Participants()
     val resultats = Resultats()
 
+    val REQUEST_LOCATION_CODE = 1
+    var permisLocalitzacio = false
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,6 +41,12 @@ class Principal : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
+        }
+
+        if (comprovarSiTenimElPermis()) {
+            permisLocalitzacio = true
+        } else {
+            demanarPermisos()
         }
 
         canviFragment(inici)
@@ -64,5 +78,50 @@ class Principal : AppCompatActivity() {
         val transaccio = supportFragmentManager.beginTransaction()
         transaccio.replace(R.id.fcv_principal, frag)
         transaccio.commit()
+    }
+
+    fun comprovarSiTenimElPermis(): Boolean {
+
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED &&
+            ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            return true
+        } else {
+            return false
+        }
+
+    }
+
+
+    fun demanarPermisos() {
+
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ),
+            REQUEST_LOCATION_CODE
+        )
+
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_LOCATION_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                permisLocalitzacio = true
+            }
+        }
     }
 }

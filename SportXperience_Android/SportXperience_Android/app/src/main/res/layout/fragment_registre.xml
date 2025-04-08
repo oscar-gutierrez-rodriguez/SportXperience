@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
-    tools:context=".Registre">
+    tools:context=".Login.Registre">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -77,6 +77,29 @@
                 android:textSize="12sp"
                 android:textColor="@color/black"
                 android:id="@+id/til_cognoms_reg"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data de naixement"
+            android:id="@+id/til_dataNaixement"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/baseline_calendar_month_24"
+            app:endIconTint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundMode="outline">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:enabled="false"
+                android:textSize="12sp"
+                android:id="@+id/tie_dataNaixement"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -153,28 +176,6 @@
                 android:id="@+id/til_contrasenyareg"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Data de naixement"
-            android:id="@+id/til_dataNaixement"
-            android:layout_marginTop="10dp"
-            android:layout_marginHorizontal="30dp"
-            app:endIconMode="custom"
-            app:endIconDrawable="@drawable/baseline_calendar_month_24"
-            app:endIconTint="@color/black"
-            app:boxStrokeColor="@color/black"
-            app:boxBackgroundColor="@android:color/transparent"
-            app:boxStrokeWidth="2dp"
-            app:boxBackgroundMode="outline">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="@color/black"
-                android:enabled="false"
-                android:textSize="12sp"
-                android:id="@+id/tie_dataNaixement"/>
-        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:layout_width="match_parent"

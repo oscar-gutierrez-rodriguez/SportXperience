@@ -1,28 +1,26 @@
-package com.example.sportxperience_android
+package com.example.sportxperience_android.Login
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.User
+import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentRegistreBinding
 import com.google.android.material.datepicker.MaterialDatePicker
-import com.google.android.material.textfield.TextInputEditText
+import org.mindrot.jbcrypt.BCrypt
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [Registre.newInstance] factory method to
@@ -118,6 +116,9 @@ class Registre : Fragment() {
 
                                 if (genre != null) {
 
+                                    val hashedPassword =
+                                        BCrypt.hashpw(contrasenya.toString(), BCrypt.gensalt())
+
                                     val user = User(
                                         null,
                                         formatDateToISO(dataNaixement.toString()),
@@ -129,18 +130,34 @@ class Registre : Fragment() {
                                         correu.toString(),
                                         null,
                                         null,
-                                        contrasenya.toString(),
+                                        hashedPassword,
                                         nomUsuari.toString()
                                     )
 
                                     if (api.getUserByDni(user.dni) != null) {
-                                        Toast.makeText(context, "Aquest dni ja existeix",Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(
+                                            context,
+                                            "Aquest dni ja existeix",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
                                     } else if (api.getUserByUsername(user.username) != null) {
-                                        Toast.makeText(context, "Aquest nom d'usuari ja existeix",Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(
+                                            context,
+                                            "Aquest nom d'usuari ja existeix",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
                                     } else if (api.getUserByMail(user.mail) != null) {
-                                        Toast.makeText(context, "Aquest mail ja existeix",Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(
+                                            context,
+                                            "Aquest mail ja existeix",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
                                     } else if (api.addUser(user) != null) {
-                                        Toast.makeText(context, "T'has enregistrat correctament",Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(
+                                            context,
+                                            "T'has enregistrat correctament",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
                                     }
 
                                 }

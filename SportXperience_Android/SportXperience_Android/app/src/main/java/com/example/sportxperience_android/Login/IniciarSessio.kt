@@ -1,22 +1,21 @@
-package com.example.sportxperience_android
+package com.example.sportxperience_android.Login
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import com.example.sportxperience_android.Api.CrudApi
+import com.example.sportxperience_android.Principal
+import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentIniciarSessioBinding
+import org.mindrot.jbcrypt.BCrypt
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [IniciarSessio.newInstance] factory method to
@@ -57,14 +56,34 @@ class IniciarSessio : Fragment() {
                 try {
                     val api = context?.let { it1 -> CrudApi(it1) }
 
-                    val user = api?.getUserByUserPassword(
+                    val hashedPassword =
+                        BCrypt.hashpw(binding.tilContrasenya.text.toString(), BCrypt.gensalt())
+
+                    Log.i("contrasenya", hashedPassword)
+
+                    val user = api?.getUserByUsername(binding.tilUsername.text.toString())
+
+                    /*val user = api?.getUserByUserPassword(
                         binding.tilUsername.text.toString(),
-                        binding.tilContrasenya.text.toString()
-                    )
+                        hashedPassword
+                    )*/
 
                     if (user != null) {
-                        val intent = Intent(context, Principal::class.java)
-                        startActivity(intent)
+
+                        val esCorrecta =
+                            BCrypt.checkpw(binding.tilContrasenya.text.toString(), user.password)
+
+                        if(esCorrecta) {
+                            val intent = Intent(context, Principal::class.java)
+                            startActivity(intent)
+                        } else{
+                            Toast.makeText(
+                                context,
+                                "La contrasenya no és correcte",
+                                Toast.LENGTH_SHORT
+                            )
+                                .show()
+                        }
                     } else {
                         Toast.makeText(context, "Credencials incorrectes", Toast.LENGTH_SHORT)
                             .show()

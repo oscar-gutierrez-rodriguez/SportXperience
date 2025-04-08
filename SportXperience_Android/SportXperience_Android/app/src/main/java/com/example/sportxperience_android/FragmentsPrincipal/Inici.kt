@@ -1,11 +1,14 @@
 package com.example.sportxperience_android.FragmentsPrincipal
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.sportxperience_android.Adapters.AdapterCarousel
+import com.example.sportxperience_android.Formularis.FormulariContacte
+import com.example.sportxperience_android.Formularis.FormulariNivell
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentIniciBinding
 import com.google.android.material.carousel.CarouselLayoutManager
@@ -62,6 +65,18 @@ class Inici : Fragment() {
 
         val snapHelper = CarouselSnapHelper()
         snapHelper.attachToRecyclerView(recyclerView)
+
+
+
+        binding.btNivell.setOnClickListener{
+            val intent = Intent(context, FormulariNivell::class.java)
+            startActivity(intent)
+        }
+
+        binding.btFormContacte.setOnClickListener{
+            val intent = Intent(context, FormulariContacte::class.java)
+            startActivity(intent)
+        }
 
         // Inflate the layout for this fragment
         return binding.root
