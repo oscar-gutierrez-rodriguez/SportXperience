@@ -22,11 +22,11 @@ namespace SportXperience
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(
-                       MaterialSkin.Primary.DeepOrange100, // Color primario
-                       MaterialSkin.Primary.DeepOrange300, // Dark primary
-                       MaterialSkin.Primary.Purple700,     // Light primary (usado en algunos componentes)
-                       MaterialSkin.Accent.Red200,         // Acento
-                       MaterialSkin.TextShade.WHITE        // Color del texto
+                       MaterialSkin.Primary.Green600, 
+                       MaterialSkin.Primary.Green600, 
+                       MaterialSkin.Primary.Purple700,    
+                       MaterialSkin.Accent.Red200,         
+                       MaterialSkin.TextShade.WHITE        
                    );
         }
 

@@ -292,6 +292,21 @@ namespace DesktopModels.Model
             return la;
         }
 
+        public static List<Product> GetProductsByLotId(int idLot)
+        {
+            List<Product> la = null;
+            try
+            {
+                la = (List<Product>)MakeRequest("products/lots/" + idLot, "GET", null, typeof(List<Product>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<Product>();
+            }
+            return la;
+        }
+
         public static void DelEvent(Event ev)
         {
             int id = ev.EventId;

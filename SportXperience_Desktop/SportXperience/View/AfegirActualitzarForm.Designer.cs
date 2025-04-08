@@ -28,387 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxNom = new System.Windows.Forms.TextBox();
-            this.textBoxLatitud = new System.Windows.Forms.TextBox();
-            this.textBoxEsport = new System.Windows.Forms.TextBox();
-            this.textBoxLongitud = new System.Windows.Forms.TextBox();
-            this.textBoxPreu = new System.Windows.Forms.TextBox();
-            this.textBoxPremi = new System.Windows.Forms.TextBox();
-            this.comboBoxNivell = new System.Windows.Forms.ComboBox();
-            this.numericUpDownEdatMinima = new System.Windows.Forms.NumericUpDown();
-            this.checkBoxLot = new System.Windows.Forms.CheckBox();
-            this.checkBoxPagament = new System.Windows.Forms.CheckBox();
-            this.dateTimePickerInici = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.listBoxLot = new System.Windows.Forms.ListBox();
-            this.buttonEliminarProducte = new System.Windows.Forms.Button();
-            this.buttonAfegirProducte = new System.Windows.Forms.Button();
-            this.buttonConfirmar = new System.Windows.Forms.Button();
-            this.pictureBoxLogoEvent = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxDescripcio = new System.Windows.Forms.TextBox();
-            this.numericUpDownEdatMaxima = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.labelPreu = new System.Windows.Forms.Label();
-            this.labelPremi = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.numericUpDownParticipants = new System.Windows.Forms.NumericUpDown();
-            this.buttonImagen = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMinima)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoEvent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMaxima)).BeginInit();
+            this.numericUpDownEdatMaxima = new System.Windows.Forms.NumericUpDown();
+            this.pictureBoxLogoEvent = new System.Windows.Forms.PictureBox();
+            this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerInici = new System.Windows.Forms.DateTimePicker();
+            this.numericUpDownEdatMinima = new System.Windows.Forms.NumericUpDown();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.labelPreu = new MaterialSkin.Controls.MaterialLabel();
+            this.labelPremi = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
+            this.textBoxNom = new MaterialSkin.Controls.MaterialTextBox();
+            this.textBoxLatitud = new MaterialSkin.Controls.MaterialTextBox();
+            this.textBoxPreu = new MaterialSkin.Controls.MaterialTextBox();
+            this.textBoxLongitud = new MaterialSkin.Controls.MaterialTextBox();
+            this.textBoxPremi = new MaterialSkin.Controls.MaterialTextBox();
+            this.textBoxEsport = new MaterialSkin.Controls.MaterialTextBox();
+            this.textBoxDescripcio = new MaterialSkin.Controls.MaterialTextBox();
+            this.buttonAfegirProducte = new MaterialSkin.Controls.MaterialButton();
+            this.buttonEliminarProducte = new MaterialSkin.Controls.MaterialButton();
+            this.buttonImagen = new MaterialSkin.Controls.MaterialButton();
+            this.buttonConfirmar = new MaterialSkin.Controls.MaterialButton();
+            this.checkBoxPagament = new MaterialSkin.Controls.MaterialCheckbox();
+            this.checkBoxLot = new MaterialSkin.Controls.MaterialCheckbox();
+            this.listBoxLot = new System.Windows.Forms.ListBox();
+            this.comboBoxNivell = new System.Windows.Forms.ComboBox();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownParticipants)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMaxima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoEvent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMinima)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Nom Event: ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 132);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Ubicació latitud: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 221);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Esport: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(57, 273);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Data Inici:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(606, 379);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Edat Mínima: ";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(805, 379);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Nivell Recomanat:";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(606, 53);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 13);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Descripció:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // textBoxNom
-            // 
-            this.textBoxNom.Location = new System.Drawing.Point(60, 69);
-            this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(152, 20);
-            this.textBoxNom.TabIndex = 17;
-            // 
-            // textBoxLatitud
-            // 
-            this.textBoxLatitud.Location = new System.Drawing.Point(60, 162);
-            this.textBoxLatitud.Name = "textBoxLatitud";
-            this.textBoxLatitud.Size = new System.Drawing.Size(56, 20);
-            this.textBoxLatitud.TabIndex = 18;
-            // 
-            // textBoxEsport
-            // 
-            this.textBoxEsport.Location = new System.Drawing.Point(60, 238);
-            this.textBoxEsport.Name = "textBoxEsport";
-            this.textBoxEsport.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEsport.TabIndex = 19;
-            // 
-            // textBoxLongitud
-            // 
-            this.textBoxLongitud.Location = new System.Drawing.Point(152, 162);
-            this.textBoxLongitud.Name = "textBoxLongitud";
-            this.textBoxLongitud.Size = new System.Drawing.Size(60, 20);
-            this.textBoxLongitud.TabIndex = 20;
-            // 
-            // textBoxPreu
-            // 
-            this.textBoxPreu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBoxPreu.Enabled = false;
-            this.textBoxPreu.Location = new System.Drawing.Point(345, 104);
-            this.textBoxPreu.Name = "textBoxPreu";
-            this.textBoxPreu.Size = new System.Drawing.Size(56, 20);
-            this.textBoxPreu.TabIndex = 23;
-            // 
-            // textBoxPremi
-            // 
-            this.textBoxPremi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBoxPremi.Enabled = false;
-            this.textBoxPremi.Location = new System.Drawing.Point(421, 103);
-            this.textBoxPremi.Name = "textBoxPremi";
-            this.textBoxPremi.Size = new System.Drawing.Size(56, 20);
-            this.textBoxPremi.TabIndex = 24;
-            this.textBoxPremi.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
-            // 
-            // comboBoxNivell
-            // 
-            this.comboBoxNivell.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxNivell.FormattingEnabled = true;
-            this.comboBoxNivell.Location = new System.Drawing.Point(808, 404);
-            this.comboBoxNivell.Name = "comboBoxNivell";
-            this.comboBoxNivell.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxNivell.TabIndex = 27;
-            // 
-            // numericUpDownEdatMinima
-            // 
-            this.numericUpDownEdatMinima.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDownEdatMinima.Location = new System.Drawing.Point(622, 404);
-            this.numericUpDownEdatMinima.Name = "numericUpDownEdatMinima";
-            this.numericUpDownEdatMinima.Size = new System.Drawing.Size(57, 20);
-            this.numericUpDownEdatMinima.TabIndex = 28;
-            // 
-            // checkBoxLot
-            // 
-            this.checkBoxLot.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.checkBoxLot.AutoSize = true;
-            this.checkBoxLot.Location = new System.Drawing.Point(381, 172);
-            this.checkBoxLot.Name = "checkBoxLot";
-            this.checkBoxLot.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxLot.TabIndex = 29;
-            this.checkBoxLot.UseVisualStyleBackColor = true;
-            this.checkBoxLot.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // checkBoxPagament
-            // 
-            this.checkBoxPagament.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.checkBoxPagament.AutoSize = true;
-            this.checkBoxPagament.Location = new System.Drawing.Point(412, 52);
-            this.checkBoxPagament.Name = "checkBoxPagament";
-            this.checkBoxPagament.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxPagament.TabIndex = 30;
-            this.checkBoxPagament.UseVisualStyleBackColor = true;
-            this.checkBoxPagament.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // dateTimePickerInici
-            // 
-            this.dateTimePickerInici.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerInici.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerInici.Location = new System.Drawing.Point(60, 290);
-            this.dateTimePickerInici.Name = "dateTimePickerInici";
-            this.dateTimePickerInici.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePickerInici.TabIndex = 31;
-            // 
-            // dateTimePickerFinal
-            // 
-            this.dateTimePickerFinal.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerFinal.Location = new System.Drawing.Point(166, 290);
-            this.dateTimePickerFinal.Name = "dateTimePickerFinal";
-            this.dateTimePickerFinal.Size = new System.Drawing.Size(99, 20);
-            this.dateTimePickerFinal.TabIndex = 32;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(332, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "De pagament:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(332, 172);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(25, 13);
-            this.label12.TabIndex = 33;
-            this.label12.Text = "Lot:";
-            // 
-            // listBoxLot
-            // 
-            this.listBoxLot.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.listBoxLot.Enabled = false;
-            this.listBoxLot.FormattingEnabled = true;
-            this.listBoxLot.Location = new System.Drawing.Point(349, 205);
-            this.listBoxLot.Name = "listBoxLot";
-            this.listBoxLot.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBoxLot.Size = new System.Drawing.Size(120, 69);
-            this.listBoxLot.TabIndex = 34;
-            // 
-            // buttonEliminarProducte
-            // 
-            this.buttonEliminarProducte.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonEliminarProducte.Enabled = false;
-            this.buttonEliminarProducte.Location = new System.Drawing.Point(288, 290);
-            this.buttonEliminarProducte.Name = "buttonEliminarProducte";
-            this.buttonEliminarProducte.Size = new System.Drawing.Size(122, 28);
-            this.buttonEliminarProducte.TabIndex = 35;
-            this.buttonEliminarProducte.Text = "Eliminar Producte Lot";
-            this.buttonEliminarProducte.UseVisualStyleBackColor = true;
-            // 
-            // buttonAfegirProducte
-            // 
-            this.buttonAfegirProducte.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonAfegirProducte.Enabled = false;
-            this.buttonAfegirProducte.Location = new System.Drawing.Point(441, 290);
-            this.buttonAfegirProducte.Name = "buttonAfegirProducte";
-            this.buttonAfegirProducte.Size = new System.Drawing.Size(124, 28);
-            this.buttonAfegirProducte.TabIndex = 36;
-            this.buttonAfegirProducte.Text = "Afegir Producte Lot";
-            this.buttonAfegirProducte.UseVisualStyleBackColor = true;
-            // 
-            // buttonConfirmar
-            // 
-            this.buttonConfirmar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonConfirmar.Location = new System.Drawing.Point(988, 443);
-            this.buttonConfirmar.Name = "buttonConfirmar";
-            this.buttonConfirmar.Size = new System.Drawing.Size(117, 56);
-            this.buttonConfirmar.TabIndex = 37;
-            this.buttonConfirmar.Text = "Confirmar";
-            this.buttonConfirmar.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxLogoEvent
-            // 
-            this.pictureBoxLogoEvent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxLogoEvent.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxLogoEvent.Location = new System.Drawing.Point(781, 201);
-            this.pictureBoxLogoEvent.Name = "pictureBoxLogoEvent";
-            this.pictureBoxLogoEvent.Size = new System.Drawing.Size(277, 150);
-            this.pictureBoxLogoEvent.TabIndex = 38;
-            this.pictureBoxLogoEvent.TabStop = false;
-            this.pictureBoxLogoEvent.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(601, 221);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(65, 13);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "Logo Event:";
-            // 
-            // textBoxDescripcio
-            // 
-            this.textBoxDescripcio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxDescripcio.Location = new System.Drawing.Point(609, 82);
-            this.textBoxDescripcio.Multiline = true;
-            this.textBoxDescripcio.Name = "textBoxDescripcio";
-            this.textBoxDescripcio.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDescripcio.Size = new System.Drawing.Size(449, 113);
-            this.textBoxDescripcio.TabIndex = 40;
-            // 
-            // numericUpDownEdatMaxima
-            // 
-            this.numericUpDownEdatMaxima.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDownEdatMaxima.Location = new System.Drawing.Point(696, 404);
-            this.numericUpDownEdatMaxima.Name = "numericUpDownEdatMaxima";
-            this.numericUpDownEdatMaxima.Size = new System.Drawing.Size(57, 20);
-            this.numericUpDownEdatMaxima.TabIndex = 41;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(693, 379);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 13);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "Edat Màxima: ";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(163, 273);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 13);
-            this.label13.TabIndex = 43;
-            this.label13.Text = "Data Final:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(149, 132);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(95, 13);
-            this.label14.TabIndex = 44;
-            this.label14.Text = "Ubicació longitud: ";
-            // 
-            // labelPreu
-            // 
-            this.labelPreu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelPreu.AutoSize = true;
-            this.labelPreu.Enabled = false;
-            this.labelPreu.Location = new System.Drawing.Point(344, 82);
-            this.labelPreu.Name = "labelPreu";
-            this.labelPreu.Size = new System.Drawing.Size(32, 13);
-            this.labelPreu.TabIndex = 45;
-            this.labelPreu.Text = "Preu:";
-            // 
-            // labelPremi
-            // 
-            this.labelPremi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelPremi.AutoSize = true;
-            this.labelPremi.Enabled = false;
-            this.labelPremi.Location = new System.Drawing.Point(418, 82);
-            this.labelPremi.Name = "labelPremi";
-            this.labelPremi.Size = new System.Drawing.Size(36, 13);
-            this.labelPremi.TabIndex = 46;
-            this.labelPremi.Text = "Premi:";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(956, 379);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 13);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Participants Màxims:";
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.comboBoxNivell);
+            this.panel1.Controls.Add(this.listBoxLot);
+            this.panel1.Controls.Add(this.checkBoxLot);
+            this.panel1.Controls.Add(this.checkBoxPagament);
+            this.panel1.Controls.Add(this.buttonConfirmar);
+            this.panel1.Controls.Add(this.buttonImagen);
+            this.panel1.Controls.Add(this.buttonEliminarProducte);
+            this.panel1.Controls.Add(this.buttonAfegirProducte);
+            this.panel1.Controls.Add(this.textBoxDescripcio);
+            this.panel1.Controls.Add(this.textBoxEsport);
+            this.panel1.Controls.Add(this.textBoxPremi);
+            this.panel1.Controls.Add(this.textBoxLongitud);
+            this.panel1.Controls.Add(this.textBoxPreu);
+            this.panel1.Controls.Add(this.textBoxLatitud);
+            this.panel1.Controls.Add(this.textBoxNom);
+            this.panel1.Controls.Add(this.materialLabel16);
+            this.panel1.Controls.Add(this.materialLabel15);
+            this.panel1.Controls.Add(this.materialLabel14);
+            this.panel1.Controls.Add(this.materialLabel13);
+            this.panel1.Controls.Add(this.materialLabel12);
+            this.panel1.Controls.Add(this.materialLabel11);
+            this.panel1.Controls.Add(this.materialLabel10);
+            this.panel1.Controls.Add(this.labelPremi);
+            this.panel1.Controls.Add(this.labelPreu);
+            this.panel1.Controls.Add(this.materialLabel7);
+            this.panel1.Controls.Add(this.materialLabel6);
+            this.panel1.Controls.Add(this.materialLabel5);
+            this.panel1.Controls.Add(this.materialLabel4);
+            this.panel1.Controls.Add(this.materialLabel3);
+            this.panel1.Controls.Add(this.materialLabel2);
+            this.panel1.Controls.Add(this.materialLabel1);
+            this.panel1.Controls.Add(this.numericUpDownParticipants);
+            this.panel1.Controls.Add(this.numericUpDownEdatMaxima);
+            this.panel1.Controls.Add(this.pictureBoxLogoEvent);
+            this.panel1.Controls.Add(this.numericUpDownEdatMinima);
+            this.panel1.Controls.Add(this.dateTimePickerFinal);
+            this.panel1.Controls.Add(this.dateTimePickerInici);
+            this.panel1.Location = new System.Drawing.Point(-2, 59);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1149, 529);
+            this.panel1.TabIndex = 0;
             // 
             // numericUpDownParticipants
             // 
-            this.numericUpDownParticipants.Location = new System.Drawing.Point(959, 404);
+            this.numericUpDownParticipants.Location = new System.Drawing.Point(947, 387);
             this.numericUpDownParticipants.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -416,108 +127,545 @@
             0});
             this.numericUpDownParticipants.Name = "numericUpDownParticipants";
             this.numericUpDownParticipants.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownParticipants.TabIndex = 49;
+            this.numericUpDownParticipants.TabIndex = 86;
+            // 
+            // numericUpDownEdatMaxima
+            // 
+            this.numericUpDownEdatMaxima.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDownEdatMaxima.Location = new System.Drawing.Point(907, 279);
+            this.numericUpDownEdatMaxima.Name = "numericUpDownEdatMaxima";
+            this.numericUpDownEdatMaxima.Size = new System.Drawing.Size(57, 20);
+            this.numericUpDownEdatMaxima.TabIndex = 79;
+            // 
+            // pictureBoxLogoEvent
+            // 
+            this.pictureBoxLogoEvent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxLogoEvent.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLogoEvent.Location = new System.Drawing.Point(808, 31);
+            this.pictureBoxLogoEvent.Name = "pictureBoxLogoEvent";
+            this.pictureBoxLogoEvent.Size = new System.Drawing.Size(277, 150);
+            this.pictureBoxLogoEvent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogoEvent.TabIndex = 76;
+            this.pictureBoxLogoEvent.TabStop = false;
+            // 
+            // dateTimePickerFinal
+            // 
+            this.dateTimePickerFinal.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerFinal.Location = new System.Drawing.Point(142, 378);
+            this.dateTimePickerFinal.Name = "dateTimePickerFinal";
+            this.dateTimePickerFinal.Size = new System.Drawing.Size(99, 20);
+            this.dateTimePickerFinal.TabIndex = 70;
+            // 
+            // dateTimePickerInici
+            // 
+            this.dateTimePickerInici.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerInici.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerInici.Location = new System.Drawing.Point(36, 378);
+            this.dateTimePickerInici.Name = "dateTimePickerInici";
+            this.dateTimePickerInici.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePickerInici.TabIndex = 69;
+            // 
+            // numericUpDownEdatMinima
+            // 
+            this.numericUpDownEdatMinima.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDownEdatMinima.Location = new System.Drawing.Point(833, 279);
+            this.numericUpDownEdatMinima.Name = "numericUpDownEdatMinima";
+            this.numericUpDownEdatMinima.Size = new System.Drawing.Size(57, 20);
+            this.numericUpDownEdatMinima.TabIndex = 66;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(45, 30);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(82, 19);
+            this.materialLabel1.TabIndex = 88;
+            this.materialLabel1.Text = "Nom Event:";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(12, 144);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(115, 19);
+            this.materialLabel2.TabIndex = 89;
+            this.materialLabel2.Text = "Ubicació latitud:";
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(151, 144);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(128, 19);
+            this.materialLabel3.TabIndex = 90;
+            this.materialLabel3.Text = "Ubicació longitud:";
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.Location = new System.Drawing.Point(33, 248);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(50, 19);
+            this.materialLabel4.TabIndex = 91;
+            this.materialLabel4.Text = "Esport:";
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel5.Location = new System.Drawing.Point(33, 356);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(72, 19);
+            this.materialLabel5.TabIndex = 92;
+            this.materialLabel5.Text = "Data Inici:";
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel6.Location = new System.Drawing.Point(139, 356);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(78, 19);
+            this.materialLabel6.TabIndex = 93;
+            this.materialLabel6.Text = "Data Final:";
+            // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel7.Location = new System.Drawing.Point(324, 34);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(100, 19);
+            this.materialLabel7.TabIndex = 94;
+            this.materialLabel7.Text = "De pagament:";
+            // 
+            // labelPreu
+            // 
+            this.labelPreu.AutoSize = true;
+            this.labelPreu.Depth = 0;
+            this.labelPreu.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelPreu.Location = new System.Drawing.Point(350, 65);
+            this.labelPreu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelPreu.Name = "labelPreu";
+            this.labelPreu.Size = new System.Drawing.Size(37, 19);
+            this.labelPreu.TabIndex = 95;
+            this.labelPreu.Text = "Preu:";
+            this.labelPreu.Click += new System.EventHandler(this.labelPreu_Click);
+            // 
+            // labelPremi
+            // 
+            this.labelPremi.AutoSize = true;
+            this.labelPremi.Depth = 0;
+            this.labelPremi.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelPremi.Location = new System.Drawing.Point(436, 64);
+            this.labelPremi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelPremi.Name = "labelPremi";
+            this.labelPremi.Size = new System.Drawing.Size(46, 19);
+            this.labelPremi.TabIndex = 96;
+            this.labelPremi.Text = "Premi:";
+            // 
+            // materialLabel10
+            // 
+            this.materialLabel10.AutoSize = true;
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel10.Location = new System.Drawing.Point(416, 304);
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            this.materialLabel10.Size = new System.Drawing.Size(28, 19);
+            this.materialLabel10.TabIndex = 97;
+            this.materialLabel10.Text = "Lot:";
+            // 
+            // materialLabel11
+            // 
+            this.materialLabel11.AutoSize = true;
+            this.materialLabel11.Depth = 0;
+            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel11.Location = new System.Drawing.Point(324, 196);
+            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel11.Name = "materialLabel11";
+            this.materialLabel11.Size = new System.Drawing.Size(79, 19);
+            this.materialLabel11.TabIndex = 98;
+            this.materialLabel11.Text = "Descripció:";
+            // 
+            // materialLabel12
+            // 
+            this.materialLabel12.AutoSize = true;
+            this.materialLabel12.Depth = 0;
+            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel12.Location = new System.Drawing.Point(631, 34);
+            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel12.Name = "materialLabel12";
+            this.materialLabel12.Size = new System.Drawing.Size(84, 19);
+            this.materialLabel12.TabIndex = 99;
+            this.materialLabel12.Text = "Logo Event:";
+            // 
+            // materialLabel13
+            // 
+            this.materialLabel13.AutoSize = true;
+            this.materialLabel13.Depth = 0;
+            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel13.Location = new System.Drawing.Point(788, 248);
+            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel13.Name = "materialLabel13";
+            this.materialLabel13.Size = new System.Drawing.Size(95, 19);
+            this.materialLabel13.TabIndex = 100;
+            this.materialLabel13.Text = "Edat mínima:";
+            // 
+            // materialLabel14
+            // 
+            this.materialLabel14.AutoSize = true;
+            this.materialLabel14.Depth = 0;
+            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel14.Location = new System.Drawing.Point(889, 248);
+            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel14.Name = "materialLabel14";
+            this.materialLabel14.Size = new System.Drawing.Size(99, 19);
+            this.materialLabel14.TabIndex = 101;
+            this.materialLabel14.Text = "Edat màxima:";
+            // 
+            // materialLabel15
+            // 
+            this.materialLabel15.AutoSize = true;
+            this.materialLabel15.Depth = 0;
+            this.materialLabel15.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel15.Location = new System.Drawing.Point(746, 356);
+            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel15.Name = "materialLabel15";
+            this.materialLabel15.Size = new System.Drawing.Size(129, 19);
+            this.materialLabel15.TabIndex = 102;
+            this.materialLabel15.Text = "Nivell Recomanat:";
+            // 
+            // materialLabel16
+            // 
+            this.materialLabel16.AutoSize = true;
+            this.materialLabel16.Depth = 0;
+            this.materialLabel16.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel16.Location = new System.Drawing.Point(944, 356);
+            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel16.Name = "materialLabel16";
+            this.materialLabel16.Size = new System.Drawing.Size(151, 19);
+            this.materialLabel16.TabIndex = 103;
+            this.materialLabel16.Text = "Participants Màxims:";
+            // 
+            // textBoxNom
+            // 
+            this.textBoxNom.AnimateReadOnly = false;
+            this.textBoxNom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNom.Depth = 0;
+            this.textBoxNom.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxNom.LeadingIcon = null;
+            this.textBoxNom.Location = new System.Drawing.Point(48, 62);
+            this.textBoxNom.MaxLength = 50;
+            this.textBoxNom.MouseState = MaterialSkin.MouseState.OUT;
+            this.textBoxNom.Multiline = false;
+            this.textBoxNom.Name = "textBoxNom";
+            this.textBoxNom.Size = new System.Drawing.Size(100, 50);
+            this.textBoxNom.TabIndex = 104;
+            this.textBoxNom.Text = "";
+            this.textBoxNom.TrailingIcon = null;
+            // 
+            // textBoxLatitud
+            // 
+            this.textBoxLatitud.AnimateReadOnly = false;
+            this.textBoxLatitud.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLatitud.Depth = 0;
+            this.textBoxLatitud.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxLatitud.LeadingIcon = null;
+            this.textBoxLatitud.Location = new System.Drawing.Point(27, 165);
+            this.textBoxLatitud.MaxLength = 50;
+            this.textBoxLatitud.MouseState = MaterialSkin.MouseState.OUT;
+            this.textBoxLatitud.Multiline = false;
+            this.textBoxLatitud.Name = "textBoxLatitud";
+            this.textBoxLatitud.Size = new System.Drawing.Size(100, 50);
+            this.textBoxLatitud.TabIndex = 105;
+            this.textBoxLatitud.Text = "";
+            this.textBoxLatitud.TrailingIcon = null;
+            // 
+            // textBoxPreu
+            // 
+            this.textBoxPreu.AnimateReadOnly = false;
+            this.textBoxPreu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPreu.Depth = 0;
+            this.textBoxPreu.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxPreu.LeadingIcon = null;
+            this.textBoxPreu.Location = new System.Drawing.Point(333, 86);
+            this.textBoxPreu.MaxLength = 50;
+            this.textBoxPreu.MouseState = MaterialSkin.MouseState.OUT;
+            this.textBoxPreu.Multiline = false;
+            this.textBoxPreu.Name = "textBoxPreu";
+            this.textBoxPreu.Size = new System.Drawing.Size(100, 50);
+            this.textBoxPreu.TabIndex = 106;
+            this.textBoxPreu.Text = "";
+            this.textBoxPreu.TrailingIcon = null;
+            // 
+            // textBoxLongitud
+            // 
+            this.textBoxLongitud.AnimateReadOnly = false;
+            this.textBoxLongitud.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLongitud.Depth = 0;
+            this.textBoxLongitud.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxLongitud.LeadingIcon = null;
+            this.textBoxLongitud.Location = new System.Drawing.Point(154, 165);
+            this.textBoxLongitud.MaxLength = 50;
+            this.textBoxLongitud.MouseState = MaterialSkin.MouseState.OUT;
+            this.textBoxLongitud.Multiline = false;
+            this.textBoxLongitud.Name = "textBoxLongitud";
+            this.textBoxLongitud.Size = new System.Drawing.Size(100, 50);
+            this.textBoxLongitud.TabIndex = 107;
+            this.textBoxLongitud.Text = "";
+            this.textBoxLongitud.TrailingIcon = null;
+            // 
+            // textBoxPremi
+            // 
+            this.textBoxPremi.AnimateReadOnly = false;
+            this.textBoxPremi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPremi.Depth = 0;
+            this.textBoxPremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxPremi.LeadingIcon = null;
+            this.textBoxPremi.Location = new System.Drawing.Point(439, 86);
+            this.textBoxPremi.MaxLength = 50;
+            this.textBoxPremi.MouseState = MaterialSkin.MouseState.OUT;
+            this.textBoxPremi.Multiline = false;
+            this.textBoxPremi.Name = "textBoxPremi";
+            this.textBoxPremi.Size = new System.Drawing.Size(100, 50);
+            this.textBoxPremi.TabIndex = 108;
+            this.textBoxPremi.Text = "";
+            this.textBoxPremi.TrailingIcon = null;
+            // 
+            // textBoxEsport
+            // 
+            this.textBoxEsport.AnimateReadOnly = false;
+            this.textBoxEsport.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxEsport.Depth = 0;
+            this.textBoxEsport.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxEsport.LeadingIcon = null;
+            this.textBoxEsport.Location = new System.Drawing.Point(36, 273);
+            this.textBoxEsport.MaxLength = 50;
+            this.textBoxEsport.MouseState = MaterialSkin.MouseState.OUT;
+            this.textBoxEsport.Multiline = false;
+            this.textBoxEsport.Name = "textBoxEsport";
+            this.textBoxEsport.Size = new System.Drawing.Size(100, 50);
+            this.textBoxEsport.TabIndex = 109;
+            this.textBoxEsport.Text = "";
+            this.textBoxEsport.TrailingIcon = null;
+            // 
+            // textBoxDescripcio
+            // 
+            this.textBoxDescripcio.AnimateReadOnly = false;
+            this.textBoxDescripcio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDescripcio.Depth = 0;
+            this.textBoxDescripcio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxDescripcio.LeadingIcon = null;
+            this.textBoxDescripcio.Location = new System.Drawing.Point(327, 226);
+            this.textBoxDescripcio.MaxLength = 50;
+            this.textBoxDescripcio.MouseState = MaterialSkin.MouseState.OUT;
+            this.textBoxDescripcio.Multiline = false;
+            this.textBoxDescripcio.Name = "textBoxDescripcio";
+            this.textBoxDescripcio.Size = new System.Drawing.Size(335, 50);
+            this.textBoxDescripcio.TabIndex = 110;
+            this.textBoxDescripcio.Text = "";
+            this.textBoxDescripcio.TrailingIcon = null;
+            // 
+            // buttonAfegirProducte
+            // 
+            this.buttonAfegirProducte.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonAfegirProducte.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.buttonAfegirProducte.Depth = 0;
+            this.buttonAfegirProducte.HighEmphasis = true;
+            this.buttonAfegirProducte.Icon = null;
+            this.buttonAfegirProducte.Location = new System.Drawing.Point(481, 445);
+            this.buttonAfegirProducte.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonAfegirProducte.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonAfegirProducte.Name = "buttonAfegirProducte";
+            this.buttonAfegirProducte.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.buttonAfegirProducte.Size = new System.Drawing.Size(181, 36);
+            this.buttonAfegirProducte.TabIndex = 112;
+            this.buttonAfegirProducte.Text = "Afegir Producte Lot";
+            this.buttonAfegirProducte.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.buttonAfegirProducte.UseAccentColor = false;
+            this.buttonAfegirProducte.UseVisualStyleBackColor = true;
+            // 
+            // buttonEliminarProducte
+            // 
+            this.buttonEliminarProducte.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonEliminarProducte.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.buttonEliminarProducte.Depth = 0;
+            this.buttonEliminarProducte.HighEmphasis = true;
+            this.buttonEliminarProducte.Icon = null;
+            this.buttonEliminarProducte.Location = new System.Drawing.Point(275, 445);
+            this.buttonEliminarProducte.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonEliminarProducte.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonEliminarProducte.Name = "buttonEliminarProducte";
+            this.buttonEliminarProducte.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.buttonEliminarProducte.Size = new System.Drawing.Size(198, 36);
+            this.buttonEliminarProducte.TabIndex = 113;
+            this.buttonEliminarProducte.Text = "Eliminar Producte Lot";
+            this.buttonEliminarProducte.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.buttonEliminarProducte.UseAccentColor = false;
+            this.buttonEliminarProducte.UseVisualStyleBackColor = true;
             // 
             // buttonImagen
             // 
-            this.buttonImagen.Location = new System.Drawing.Point(681, 221);
+            this.buttonImagen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonImagen.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.buttonImagen.Depth = 0;
+            this.buttonImagen.HighEmphasis = true;
+            this.buttonImagen.Icon = null;
+            this.buttonImagen.Location = new System.Drawing.Point(634, 69);
+            this.buttonImagen.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonImagen.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonImagen.Name = "buttonImagen";
-            this.buttonImagen.Size = new System.Drawing.Size(75, 53);
-            this.buttonImagen.TabIndex = 50;
-            this.buttonImagen.Text = "Carregar imatge";
+            this.buttonImagen.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.buttonImagen.Size = new System.Drawing.Size(154, 36);
+            this.buttonImagen.TabIndex = 114;
+            this.buttonImagen.Text = "Carregar Imatge";
+            this.buttonImagen.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.buttonImagen.UseAccentColor = false;
             this.buttonImagen.UseVisualStyleBackColor = true;
-            this.buttonImagen.Click += new System.EventHandler(this.buttonImagen_Click);
+            // 
+            // buttonConfirmar
+            // 
+            this.buttonConfirmar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonConfirmar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.buttonConfirmar.Depth = 0;
+            this.buttonConfirmar.HighEmphasis = true;
+            this.buttonConfirmar.Icon = null;
+            this.buttonConfirmar.Location = new System.Drawing.Point(937, 454);
+            this.buttonConfirmar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonConfirmar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonConfirmar.Name = "buttonConfirmar";
+            this.buttonConfirmar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.buttonConfirmar.Size = new System.Drawing.Size(105, 36);
+            this.buttonConfirmar.TabIndex = 115;
+            this.buttonConfirmar.Text = "Confirmar";
+            this.buttonConfirmar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.buttonConfirmar.UseAccentColor = false;
+            this.buttonConfirmar.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPagament
+            // 
+            this.checkBoxPagament.AutoSize = true;
+            this.checkBoxPagament.Depth = 0;
+            this.checkBoxPagament.Location = new System.Drawing.Point(430, 27);
+            this.checkBoxPagament.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxPagament.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.checkBoxPagament.MouseState = MaterialSkin.MouseState.HOVER;
+            this.checkBoxPagament.Name = "checkBoxPagament";
+            this.checkBoxPagament.ReadOnly = false;
+            this.checkBoxPagament.Ripple = true;
+            this.checkBoxPagament.Size = new System.Drawing.Size(35, 37);
+            this.checkBoxPagament.TabIndex = 116;
+            this.checkBoxPagament.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxLot
+            // 
+            this.checkBoxLot.AutoSize = true;
+            this.checkBoxLot.Depth = 0;
+            this.checkBoxLot.Location = new System.Drawing.Point(455, 295);
+            this.checkBoxLot.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBoxLot.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.checkBoxLot.MouseState = MaterialSkin.MouseState.HOVER;
+            this.checkBoxLot.Name = "checkBoxLot";
+            this.checkBoxLot.ReadOnly = false;
+            this.checkBoxLot.Ripple = true;
+            this.checkBoxLot.Size = new System.Drawing.Size(35, 37);
+            this.checkBoxLot.TabIndex = 117;
+            this.checkBoxLot.UseVisualStyleBackColor = true;
+            // 
+            // listBoxLot
+            // 
+            this.listBoxLot.FormattingEnabled = true;
+            this.listBoxLot.Location = new System.Drawing.Point(419, 341);
+            this.listBoxLot.Name = "listBoxLot";
+            this.listBoxLot.Size = new System.Drawing.Size(120, 95);
+            this.listBoxLot.TabIndex = 119;
+            // 
+            // comboBoxNivell
+            // 
+            this.comboBoxNivell.FormattingEnabled = true;
+            this.comboBoxNivell.Location = new System.Drawing.Point(749, 387);
+            this.comboBoxNivell.Name = "comboBoxNivell";
+            this.comboBoxNivell.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxNivell.TabIndex = 120;
             // 
             // AfegirActualitzarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 533);
-            this.Controls.Add(this.buttonImagen);
-            this.Controls.Add(this.numericUpDownParticipants);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.labelPremi);
-            this.Controls.Add(this.labelPreu);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.numericUpDownEdatMaxima);
-            this.Controls.Add(this.textBoxDescripcio);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.pictureBoxLogoEvent);
-            this.Controls.Add(this.buttonConfirmar);
-            this.Controls.Add(this.buttonAfegirProducte);
-            this.Controls.Add(this.buttonEliminarProducte);
-            this.Controls.Add(this.listBoxLot);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.dateTimePickerFinal);
-            this.Controls.Add(this.dateTimePickerInici);
-            this.Controls.Add(this.checkBoxPagament);
-            this.Controls.Add(this.checkBoxLot);
-            this.Controls.Add(this.numericUpDownEdatMinima);
-            this.Controls.Add(this.comboBoxNivell);
-            this.Controls.Add(this.textBoxPremi);
-            this.Controls.Add(this.textBoxPreu);
-            this.Controls.Add(this.textBoxLongitud);
-            this.Controls.Add(this.textBoxEsport);
-            this.Controls.Add(this.textBoxLatitud);
-            this.Controls.Add(this.textBoxNom);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1146, 586);
+            this.Controls.Add(this.panel1);
             this.Name = "AfegirActualitzarForm";
             this.Text = "AfegirActualitzarForm";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMinima)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoEvent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMaxima)).EndInit();
+            this.Load += new System.EventHandler(this.AfegirActualitzarForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownParticipants)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMaxima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoEvent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMinima)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Label label5;
-        public System.Windows.Forms.Label label7;
-        public System.Windows.Forms.Label label8;
-        public System.Windows.Forms.Label label9;
-        public System.Windows.Forms.TextBox textBoxNom;
-        public System.Windows.Forms.TextBox textBoxLatitud;
-        public System.Windows.Forms.TextBox textBoxEsport;
-        public System.Windows.Forms.TextBox textBoxLongitud;
-        public System.Windows.Forms.TextBox textBoxPreu;
-        public System.Windows.Forms.TextBox textBoxPremi;
-        public System.Windows.Forms.Label label6;
-        public System.Windows.Forms.Label label12;
-        public System.Windows.Forms.ComboBox comboBoxNivell;
-        public System.Windows.Forms.NumericUpDown numericUpDownEdatMinima;
-        public System.Windows.Forms.CheckBox checkBoxLot;
-        public System.Windows.Forms.CheckBox checkBoxPagament;
-        public System.Windows.Forms.DateTimePicker dateTimePickerInici;
-        public System.Windows.Forms.DateTimePicker dateTimePickerFinal;
-        public System.Windows.Forms.ListBox listBoxLot;
-        public System.Windows.Forms.Button buttonEliminarProducte;
-        public System.Windows.Forms.Button buttonAfegirProducte;
-        public System.Windows.Forms.Button buttonConfirmar;
-        public System.Windows.Forms.Label label10;
-        public System.Windows.Forms.NumericUpDown numericUpDownEdatMaxima;
-        public System.Windows.Forms.Label label11;
-        public System.Windows.Forms.Label label13;
-        public System.Windows.Forms.Label label14;
-        public System.Windows.Forms.Label labelPreu;
-        public System.Windows.Forms.Label labelPremi;
-        public System.Windows.Forms.PictureBox pictureBoxLogoEvent;
-        public System.Windows.Forms.TextBox textBoxDescripcio;
-        public System.Windows.Forms.Label label2;
+
+        private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.NumericUpDown numericUpDownParticipants;
-        public System.Windows.Forms.Button buttonImagen;
+        public System.Windows.Forms.NumericUpDown numericUpDownEdatMaxima;
+        public System.Windows.Forms.PictureBox pictureBoxLogoEvent;
+        public System.Windows.Forms.NumericUpDown numericUpDownEdatMinima;
+        public System.Windows.Forms.DateTimePicker dateTimePickerFinal;
+        public System.Windows.Forms.DateTimePicker dateTimePickerInici;
+        public MaterialSkin.Controls.MaterialLabel materialLabel1;
+        public MaterialSkin.Controls.MaterialLabel materialLabel3;
+        public MaterialSkin.Controls.MaterialLabel materialLabel2;
+        public MaterialSkin.Controls.MaterialLabel materialLabel4;
+        public MaterialSkin.Controls.MaterialLabel materialLabel6;
+        public MaterialSkin.Controls.MaterialLabel materialLabel5;
+        public MaterialSkin.Controls.MaterialLabel materialLabel16;
+        public MaterialSkin.Controls.MaterialLabel materialLabel15;
+        public MaterialSkin.Controls.MaterialLabel materialLabel14;
+        public MaterialSkin.Controls.MaterialLabel materialLabel13;
+        public MaterialSkin.Controls.MaterialLabel materialLabel12;
+        public MaterialSkin.Controls.MaterialLabel materialLabel11;
+        public MaterialSkin.Controls.MaterialLabel materialLabel10;
+        public MaterialSkin.Controls.MaterialLabel labelPremi;
+        public MaterialSkin.Controls.MaterialLabel labelPreu;
+        public MaterialSkin.Controls.MaterialLabel materialLabel7;
+        public MaterialSkin.Controls.MaterialTextBox textBoxNom;
+        public MaterialSkin.Controls.MaterialTextBox textBoxDescripcio;
+        public MaterialSkin.Controls.MaterialTextBox textBoxEsport;
+        public MaterialSkin.Controls.MaterialTextBox textBoxPremi;
+        public MaterialSkin.Controls.MaterialTextBox textBoxLongitud;
+        public MaterialSkin.Controls.MaterialTextBox textBoxPreu;
+        public MaterialSkin.Controls.MaterialTextBox textBoxLatitud;
+        public MaterialSkin.Controls.MaterialCheckbox checkBoxLot;
+        public MaterialSkin.Controls.MaterialCheckbox checkBoxPagament;
+        public MaterialSkin.Controls.MaterialButton buttonConfirmar;
+        public MaterialSkin.Controls.MaterialButton buttonImagen;
+        public MaterialSkin.Controls.MaterialButton buttonEliminarProducte;
+        public MaterialSkin.Controls.MaterialButton buttonAfegirProducte;
+        public System.Windows.Forms.ListBox listBoxLot;
+        public System.Windows.Forms.ComboBox comboBoxNivell;
     }
 }

@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.buttonResultats = new MaterialSkin.Controls.MaterialButton();
             this.buttonEliminar = new MaterialSkin.Controls.MaterialButton();
             this.buttonActualitzar = new MaterialSkin.Controls.MaterialButton();
             this.buttonAfegir = new MaterialSkin.Controls.MaterialButton();
             this.monthCalendarEvents = new Pabo.Calendar.MonthCalendar();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.dataGridViewEvents = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -44,12 +44,21 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.OldLace;
+            this.panel1.BackColor = System.Drawing.Color.Honeydew;
             this.panel1.Controls.Add(this.pictureBoxLogo);
             this.panel1.Location = new System.Drawing.Point(-3, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1435, 626);
             this.panel1.TabIndex = 12;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(1301, 13);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxLogo.TabIndex = 14;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // buttonResultats
             // 
@@ -73,6 +82,7 @@
             // buttonEliminar
             // 
             this.buttonEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonEliminar.BackColor = System.Drawing.Color.Red;
             this.buttonEliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.buttonEliminar.Depth = 0;
             this.buttonEliminar.HighEmphasis = true;
@@ -87,7 +97,7 @@
             this.buttonEliminar.Text = "ELIMINAR";
             this.buttonEliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.buttonEliminar.UseAccentColor = true;
-            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.UseVisualStyleBackColor = false;
             // 
             // buttonActualitzar
             // 
@@ -120,11 +130,11 @@
             this.buttonAfegir.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonAfegir.Name = "buttonAfegir";
             this.buttonAfegir.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.buttonAfegir.Size = new System.Drawing.Size(71, 36);
+            this.buttonAfegir.Size = new System.Drawing.Size(103, 36);
             this.buttonAfegir.TabIndex = 16;
             this.buttonAfegir.Text = "AFEGIR";
             this.buttonAfegir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.buttonAfegir.UseAccentColor = true;
+            this.buttonAfegir.UseAccentColor = false;
             this.buttonAfegir.UseVisualStyleBackColor = true;
             // 
             // monthCalendarEvents
@@ -149,21 +159,12 @@
             this.monthCalendarEvents.Weekdays.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.monthCalendarEvents.Weeknumbers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(1301, 13);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(100, 50);
-            this.pictureBoxLogo.TabIndex = 14;
-            this.pictureBoxLogo.TabStop = false;
-            // 
             // dataGridViewEvents
             // 
             this.dataGridViewEvents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewEvents.BackgroundColor = System.Drawing.Color.PapayaWhip;
+            this.dataGridViewEvents.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dataGridViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEvents.Location = new System.Drawing.Point(40, 177);
             this.dataGridViewEvents.MultiSelect = false;
