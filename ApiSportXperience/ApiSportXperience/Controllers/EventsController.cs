@@ -85,7 +85,7 @@ namespace ApiSportXperience.Controllers
         public async Task<ActionResult<IEnumerable<Event>>> GetEventByOrganizer(String userdni)
         {
             return await _context.Events
-                .Include(x => x.Sport)
+                 .Include(x => x.Sport)
                 .Include(x => x.Lots)
                 .Include(x => x.Ubication)
                 .Include(x => x.RecommendedLevel)

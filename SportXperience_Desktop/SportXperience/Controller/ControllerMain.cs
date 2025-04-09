@@ -108,6 +108,7 @@ namespace SportXperience.Controller
 
         private void ButtonActualitzar_Click(object sender, EventArgs e)
         {
+            fafegir.listBoxLot.Items.Clear();
             Event ev = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as Event;
 
             Lot l = ev.Lots.Where(x => x.EventId == ev.EventId).FirstOrDefault(); 
@@ -570,6 +571,7 @@ namespace SportXperience.Controller
 
         private void ButtonAfegir_Click(object sender, EventArgs e)
         {
+            NetejarDadesAfegirActualitzar();
             fafegir.dateTimePickerInici.Value = dataMin;
             fafegir.dateTimePickerFinal.Value = dataMin;
             fafegir.ShowDialog();
@@ -594,6 +596,7 @@ namespace SportXperience.Controller
             fafegir.listBoxLot.Items.Clear();
             fafegir.checkBoxLot.Checked = false;
             fafegir.checkBoxPagament.Checked = false;
+            fafegir.comboBoxNivell.SelectedIndex = 0;
         }
 
         void NetejarDadesLot()
