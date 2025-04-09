@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.sportxperience_android.Adapters.AdapterEvents
+import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.R
+import com.example.sportxperience_android.databinding.FragmentEventsBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +25,8 @@ class Events : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var binding: FragmentEventsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,8 +39,24 @@ class Events : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        binding = FragmentEventsBinding.inflate(inflater, container, false)
+
+        binding.evTotsDos.isChecked = true
+
+        val api = context?.let { CrudApi(it) }
+
+        val events = api?.getAllEvents()
+
+        if (events != null) {
+            val adapter = context?.let { AdapterEvents(events, it) }
+
+            binding.recyclerEvents.adapter = adapter
+
+        }
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_events, container, false)
+        return binding.root
     }
 
     companion object {

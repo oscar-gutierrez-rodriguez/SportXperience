@@ -24,4 +24,9 @@ interface ApiService {
 
     @GET("/api/gender/{name}")
     suspend fun getGenderByName(@Path("name") name: String, ) : Response<Gender>
+
+
+
+    @GET("/api/events")
+    suspend fun getAllEvents() : Response<List<Event>>
 }

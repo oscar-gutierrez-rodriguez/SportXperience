@@ -131,4 +131,21 @@ class CrudApi(context: Context): CoroutineScope {
         return gender
     }
 
+
+    fun getAllEvents(): List<Event>? {
+        var events : List<Event>? = null
+        runBlocking {
+            var resposta:  Response<List<Event>>? = null
+            val cor = launch {
+                resposta = getRetrofit().create(ApiService::class.java).getAllEvents()
+            }
+            cor.join()
+            if (resposta!!.isSuccessful)
+                events = resposta!!.body()
+            else
+                events = null
+        }
+        return events
+    }
+
 }

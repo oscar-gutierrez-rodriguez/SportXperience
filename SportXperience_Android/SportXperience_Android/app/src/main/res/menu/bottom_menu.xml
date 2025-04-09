@@ -9,7 +9,7 @@
     <item
         android:id="@+id/menu_events"
         android:icon="@drawable/events_selector"
-        android:title="Events"/>
+        android:title="Esdeveniments"/>
 
     <item
         android:id="@+id/menu_participacions"

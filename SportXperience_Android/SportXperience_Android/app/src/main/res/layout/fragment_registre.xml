@@ -184,9 +184,7 @@
             android:layout_marginTop="14dp"
             android:id="@+id/toggleButton"
             app:selectionRequired="true"
-            app:singleSelection="true"
-            app:layout_constraintTop_toBottomOf="@+id/vistaPrevia"
-            app:layout_constraintStart_toStartOf="parent">
+            app:singleSelection="true">
             <com.google.android.material.button.MaterialButton
                 style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="wrap_content"
@@ -220,7 +218,6 @@
             android:textStyle="bold"
             android:backgroundTint="@color/black"
             android:id="@+id/bt_nouregistre"/>
-
 
     </LinearLayout>
 </RelativeLayout>
