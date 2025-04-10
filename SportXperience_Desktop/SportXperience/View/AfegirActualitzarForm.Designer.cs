@@ -206,6 +206,7 @@
             this.buttonEliminarProducte.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonEliminarProducte.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.buttonEliminarProducte.Depth = 0;
+            this.buttonEliminarProducte.Enabled = false;
             this.buttonEliminarProducte.HighEmphasis = true;
             this.buttonEliminarProducte.Icon = null;
             this.buttonEliminarProducte.Location = new System.Drawing.Point(275, 445);
@@ -225,6 +226,7 @@
             this.buttonAfegirProducte.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonAfegirProducte.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.buttonAfegirProducte.Depth = 0;
+            this.buttonAfegirProducte.Enabled = false;
             this.buttonAfegirProducte.HighEmphasis = true;
             this.buttonAfegirProducte.Icon = null;
             this.buttonAfegirProducte.Location = new System.Drawing.Point(481, 445);
@@ -619,7 +621,7 @@
             this.ClientSize = new System.Drawing.Size(1146, 586);
             this.Controls.Add(this.panel1);
             this.Name = "AfegirActualitzarForm";
-            this.Text = "AfegirActualitzarForm";
+            this.Text = "SportXperience";
             this.Load += new System.EventHandler(this.AfegirActualitzarForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

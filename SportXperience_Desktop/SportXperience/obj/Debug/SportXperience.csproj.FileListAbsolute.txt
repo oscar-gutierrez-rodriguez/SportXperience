@@ -35,3 +35,4 @@ C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXpe.23A55A94.Up2Date
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.exe
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.pdb
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll

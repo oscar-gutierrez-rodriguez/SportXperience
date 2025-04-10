@@ -12,6 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net;
 
 namespace LoginRegister.Controller
 {
@@ -25,17 +26,16 @@ namespace LoginRegister.Controller
                 Repositori.CreateHttpClient();
                 loadData();
                 setListeners();
+                loginForm.Shown += (s, e) => loginForm.textBoxNomCorreu.Focus();
                 Application.Run(loginForm);
-            }
+        }
 
             void loadData()
             {
                 registerForm.comboBoxGenere.DataSource = Repositori.GetGender();
                 registerForm.comboBoxGenere.DisplayMember = "name";
                 loginForm.textBoxNomCorreu.Text = "pepe";
-                loginForm.textBoxContrasenya.Text = "1234";
-                
-                
+                loginForm.textBoxContrasenya.Text = "1234";                
             }
 
             void setListeners()
@@ -48,8 +48,8 @@ namespace LoginRegister.Controller
                 registerForm.FormClosed += (s, e) => loginForm.Show();
                 loginForm.textBoxNomCorreu.KeyDown += TextBox_KeyDown;
                 loginForm.textBoxContrasenya.KeyDown += TextBox_KeyDown;
-                registerForm.buttonShowPasswordRegistrar.Click += ButtonShowPasswordRegistrar_Click;
-        }
+                registerForm.buttonShowPasswordRegistrar.Click += ButtonShowPasswordRegistrar_Click;   
+            }
 
         private void ButtonShowPasswordRegistrar_Click(object sender, EventArgs e)
         {
@@ -162,6 +162,8 @@ namespace LoginRegister.Controller
                     return;
                 }
 
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(registerForm.textBoxContrasenyaReg.Text);
+
                 User userToInsert = new User
                 {
                     Dni = dni,
@@ -171,8 +173,9 @@ namespace LoginRegister.Controller
                     BirthDate = registerForm.dateTimePickerNaixement.Value,
                     Mail = registerForm.textBoxCorreu.Text,
                     Username = registerForm.textBoxNomUsuari.Text,
-                    Password = registerForm.textBoxContrasenyaReg.Text
+                    Password = hashedPassword
                 };
+
 
                 Repositori.InsUser(userToInsert);
                 MessageBox.Show("T'has registrat correctament", "Registre", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -184,35 +187,38 @@ namespace LoginRegister.Controller
             {
                 MessageBox.Show($"Error en el registre: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
         private void LinkLabelRegistrat_Click(object sender, EventArgs e)
         {
             loginForm.Hide();
             registerForm.ShowDialog();
-
-
-
-
         }
 
         private void ButtonIniciSessio_Click(object sender, EventArgs e)
         {
-            Repositori.usuari = Repositori.GetUserInici(loginForm.textBoxNomCorreu.Text, loginForm.textBoxContrasenya.Text);
-            if (Repositori.usuari.Dni == null)
+
+            User usercorrecteUsername = Repositori.GetUserByUsername(loginForm.textBoxNomCorreu.Text);
+            User usercorrecteMail = Repositori.GetUserByMail(loginForm.textBoxNomCorreu.Text);
+
+            if (usercorrecteUsername.Dni != null)
             {
-                MessageBox.Show("Credencials incorrectes");
+                Repositori.usuari = usercorrecteUsername;                
+            }
+            else if (usercorrecteMail.Dni != null)
+            {
+                Repositori.usuari = usercorrecteMail;
+            }
+
+            if (!BCrypt.Net.BCrypt.Verify(loginForm.textBoxContrasenya.Text, Repositori.usuari.Password) && Repositori.usuari != null)
+            {
+                MessageBox.Show("Credencials incorrectes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-
                 loginForm.Hide();
                 new ControllerMain();
-            }   
-
-
+            }    
         }
     }
 }

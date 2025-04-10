@@ -41,3 +41,14 @@ C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\obj\Debug\LoginReg.436773E3.Up2Date
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\obj\Debug\LoginRegister.exe
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\obj\Debug\LoginRegister.pdb
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\BCrypt.Net-Next.dll
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Buffers.dll
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Memory.dll
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Numerics.Vectors.dll
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\BCrypt.Net-Next.xml
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Buffers.xml
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Memory.xml
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Numerics.Vectors.xml
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

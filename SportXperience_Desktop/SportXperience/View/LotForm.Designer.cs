@@ -208,7 +208,7 @@
             this.ClientSize = new System.Drawing.Size(444, 398);
             this.Controls.Add(this.panel1);
             this.Name = "LotForm";
-            this.Text = "LotForm";
+            this.Text = "Lots";
             this.Load += new System.EventHandler(this.LotForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

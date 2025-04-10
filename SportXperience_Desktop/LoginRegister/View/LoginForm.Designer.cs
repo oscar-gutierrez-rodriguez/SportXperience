@@ -160,7 +160,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.linkLabelRegistrat);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

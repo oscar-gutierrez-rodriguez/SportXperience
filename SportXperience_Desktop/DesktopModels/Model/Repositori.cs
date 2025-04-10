@@ -325,6 +325,23 @@ namespace DesktopModels.Model
 
         }
 
+        public static void UpdEvent(int id, Event ev)
+        {
+            id = ev.EventId;
+            Event e = null;
+            try
+            {
+                e = (Event)MakeRequest("events/" + id, "PUT", ev, typeof(Event)).Result;
+            }
+            catch
+            {
+                if (e == null)
+                {
+                    e = new Event();
+                }
+            }
+
+        }
         public static async Task<object> MakeRequest(string url, string method, object JSONcontent, Type responseType)
         ////  url: Url a partir de la base 
         ////  method: "GET"/"POST"/"PUT"/"DELETE"
