@@ -85,7 +85,7 @@ namespace ApiSportXperience.Controllers
         public async Task<ActionResult<IEnumerable<Event>>> GetEventByOrganizer(String userdni)
         {
             return await _context.Events
-                .Include(x => x.Sport)
+                 .Include(x => x.Sport)
                 .Include(x => x.Lots)
                 .Include(x => x.Ubication)
                 .Include(x => x.RecommendedLevel)
@@ -239,21 +239,32 @@ namespace ApiSportXperience.Controllers
 
             Lot l = await _context.Lots.Where(x => x.EventId == e.EventId).FirstOrDefaultAsync();
 
-            List<Product> products = await _context.Products.Where(x => x.LotId == l.LotId).ToListAsync();
-
-            List<Option> options = new List<Option>();
-
-            foreach (Product p in products)
+            if (l != null)
             {
-                List<Option> o = await _context.Options.Where(x => x.ProductId == p.ProductId).ToListAsync();
-                options.AddRange(o);
+
+                List<Product> products = await _context.Products.Where(x => x.LotId == l.LotId).ToListAsync();
+
+                List<Option> options = new List<Option>();
+
+                foreach (Product p in products)
+                {
+                    List<Option> o = await _context.Options.Where(x => x.ProductId == p.ProductId).ToListAsync();
+                    options.AddRange(o);
+                }
+                if (options.Count > 0)
+                {
+                    _context.Options.RemoveRange(options);
+                }
+
+                if (products.Count > 0)
+                {
+                    _context.Products.RemoveRange(products);
+                }
+
+                
+                 _context.Lots.Remove(l);
+                
             }
-
-            _context.Options.RemoveRange(options);
-
-            _context.Products.RemoveRange(products);
-
-            _context.Lots.Remove(l);
 
             _context.Participants.RemoveRange(part);
 
