@@ -23,9 +23,29 @@ namespace ApiSportXperience.Controllers
         // GET: api/Events
         [HttpGet]
         [Route("api/events")]
-        public async Task<ActionResult<IEnumerable<Event>>> GetEvents()
+        public async Task<ActionResult<IEnumerable<EventDTO>>> GetEvents()
         {
             return await _context.Events
+                .Select(x => new EventDTO
+                {
+                    EventId = x.EventId,
+                    Name = x.Name,
+                    StartDate = x.StartDate,
+                    EndDate = x.EndDate,
+                    Image = x.Image,
+                    Description = x.Description,
+                    MinAge = x.MinAge,
+                    MaxAge = x.MaxAge,
+                    MaxParticipantsNumber = x.MaxParticipantsNumber,
+                    Price = x.Price,
+                    Reward = x.Reward,
+                    UbicationId = x.UbicationId,
+                    RecommendedLevelId = x.RecommendedLevelId,
+                    SportId = x.SportId,
+                    RecommendedLevelName = _context.RecommendedLevels.Where(y => y.RecommendedLevelId == x.RecommendedLevelId).FirstOrDefault().Name,
+                    SportName = _context.Sports.Where(y => y.SportId == x.SportId).FirstOrDefault().Name,
+                    cityName = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().CityName
+                })
                 .ToListAsync();
         }
 
