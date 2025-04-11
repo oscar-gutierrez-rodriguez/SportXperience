@@ -26,12 +26,6 @@ namespace ApiSportXperience.Controllers
         public async Task<ActionResult<IEnumerable<Event>>> GetEvents()
         {
             return await _context.Events
-                .Include(x => x.Sport)
-                .Include(x => x.Lots)
-                .Include(x => x.Ubication)
-                .Include(x => x.RecommendedLevel)
-                .Include(x => x.Messages)
-                .Include(x => x.Participants)
                 .ToListAsync();
         }
 
