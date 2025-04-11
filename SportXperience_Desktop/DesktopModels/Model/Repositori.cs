@@ -325,13 +325,12 @@ namespace DesktopModels.Model
 
         }
 
-        public static void UpdEvent(int id, Event ev)
+        public static void UpdEvent(Event ev)
         {
-            id = ev.EventId;
             Event e = null;
             try
             {
-                e = (Event)MakeRequest("events/" + id, "PUT", ev, typeof(Event)).Result;
+                e = (Event)MakeRequest("events/" + ev.EventId, "PUT", ev, typeof(Event)).Result;
             }
             catch
             {
@@ -341,6 +340,35 @@ namespace DesktopModels.Model
                 }
             }
 
+        }
+
+        public static RecommendedLevel GetRecommendedLevelById(int? id)
+        {
+            RecommendedLevel la = null;
+            try
+            {
+                la = (RecommendedLevel)MakeRequest("recommendedLevel/" + id, "GET", null, typeof(RecommendedLevel)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new RecommendedLevel();
+            }
+            return la;
+        }
+        public static Sport GetSportById(int? id)
+        {
+            Sport la = null;
+            try
+            {
+                la = (Sport)MakeRequest("sports/" + id, "GET", null, typeof(Sport)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Sport();
+            }
+            return la;
         }
         public static async Task<object> MakeRequest(string url, string method, object JSONcontent, Type responseType)
         ////  url: Url a partir de la base 
