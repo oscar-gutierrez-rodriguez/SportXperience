@@ -35,12 +35,6 @@ namespace ApiSportXperience.Controllers
         {
             // Obtener todos los eventos con sus relaciones (incluyendo Ubicacion)
             var events = await _context.Events
-                .Include(x => x.Sport)
-                .Include(x => x.Lots)
-                .Include(x => x.Ubication)
-                .Include(x => x.RecommendedLevel)
-                .Include(x => x.Messages)
-                .Include(x => x.Participants)
                 .ToListAsync();
 
             // Ordenar los eventos por distancia a la ubicación proporcionada
@@ -65,12 +59,6 @@ namespace ApiSportXperience.Controllers
             int maxId = await _context.Events.MaxAsync(x => x.EventId);
 
             return await _context.Events
-                .Include(x => x.Sport)
-                .Include(x => x.Lots)
-                .Include(x => x.Ubication)
-                .Include(x => x.RecommendedLevel)
-                .Include(x => x.Messages)
-                .Include(x => x.Participants)
                 .Where(x => x.EventId == maxId).FirstOrDefaultAsync();
         }
 
@@ -79,12 +67,6 @@ namespace ApiSportXperience.Controllers
         public async Task<ActionResult<IEnumerable<Event>>> GetEventByOrganizer(String userdni)
         {
             return await _context.Events
-                 .Include(x => x.Sport)
-                .Include(x => x.Lots)
-                .Include(x => x.Ubication)
-                .Include(x => x.RecommendedLevel)
-                .Include(x => x.Messages)
-                .Include(x => x.Participants)
                 .Where(e => e.Participants.Any(p => p.UserDni.Equals(userdni) && p.Organizer == true)).ToListAsync();
         }
 
@@ -124,12 +106,6 @@ namespace ApiSportXperience.Controllers
             }
 
             var result = await query
-                .Include(x => x.Sport)
-                .Include(x => x.Lots)
-                .Include(x => x.Ubication)
-                .Include(x => x.RecommendedLevel)
-                .Include(x => x.Messages)
-                .Include(x => x.Participants)
                 .ToListAsync();
             return Ok(result);
         }
@@ -139,12 +115,6 @@ namespace ApiSportXperience.Controllers
         public async Task<ActionResult<Event>> GetEvent(int id)
         {
             Event e = await _context.Events
-                .Include(x => x.Sport)
-                .Include(x => x.Lots)
-                .Include(x => x.Ubication)
-                .Include(x => x.RecommendedLevel)
-                .Include(x => x.Messages)
-                .Include(x => x.Participants)
                 .Where( x => x.EventId == id).FirstOrDefaultAsync();
 
             if (e == null)
@@ -196,6 +166,11 @@ namespace ApiSportXperience.Controllers
 
             _context.Events.Add(e);
             await _context.SaveChangesAsync();
+
+            if (e.Sport != null)
+            {
+                 _context.Attach(e.Sport);
+            }
 
             return CreatedAtAction("GetEvent", new { id = e.EventId }, e);
         }
