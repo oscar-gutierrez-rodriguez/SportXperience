@@ -195,6 +195,19 @@ namespace LoginRegister.Controller
             registerForm.ShowDialog();
         }
 
+        private void comprovarContrasenya()
+        {
+            if (!BCrypt.Net.BCrypt.Verify(loginForm.textBoxContrasenya.Text, Repositori.usuari.Password))
+            {
+                MessageBox.Show("Credencials incorrectes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                loginForm.Hide();
+                new ControllerMain();
+            }
+        }
+
         private void ButtonIniciSessio_Click(object sender, EventArgs e)
         {
 
@@ -203,22 +216,19 @@ namespace LoginRegister.Controller
 
             if (usercorrecteUsername.Dni != null)
             {
-                Repositori.usuari = usercorrecteUsername;                
+                Repositori.usuari = usercorrecteUsername;    
+                comprovarContrasenya();
             }
             else if (usercorrecteMail.Dni != null)
             {
                 Repositori.usuari = usercorrecteMail;
-            }
-
-            if (!BCrypt.Net.BCrypt.Verify(loginForm.textBoxContrasenya.Text, Repositori.usuari.Password) && Repositori.usuari != null)
-            {
-                MessageBox.Show("Credencials incorrectes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                comprovarContrasenya();
             }
             else
             {
-                loginForm.Hide();
-                new ControllerMain();
-            }    
+                MessageBox.Show("Credencials incorrectes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+  
         }
     }
 }

@@ -12,8 +12,6 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<SportXperienceContext>();
 
-builder.Services.AddControllers().AddJsonOptions(x =>
-   x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
 var app = builder.Build();
 

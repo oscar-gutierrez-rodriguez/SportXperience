@@ -22,7 +22,7 @@ namespace SportXperience.Controller
         DateTime dataMin = DateTime.Now.AddDays(2);
         List<Product> products = new List<Product>();
         List<Option> options = new List<Option>();
-        Boolean afegir = false;
+        //Boolean afegir = false;
 
         public ControllerMain()
         {
@@ -112,9 +112,12 @@ namespace SportXperience.Controller
             fafegir.listBoxLot.Items.Clear();
             Event ev = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as Event;
 
-            Lot l = ev.Lots.Where(x => x.EventId == ev.EventId).FirstOrDefault(); 
+            Lot l = ev.Lots.Where(x => x.EventId == ev.EventId).FirstOrDefault();
 
-            products = Repositori.GetProductsByLotId(l.LotId);
+            if (l != null) {
+
+                products = Repositori.GetProductsByLotId(l.LotId);
+            }
             fafegir.textBoxNom.Text = ev.Name;
             fafegir.textBoxDescripcio.Text = ev.Description;
             fafegir.textBoxPremi.Text = ev.Reward;
@@ -139,7 +142,6 @@ namespace SportXperience.Controller
             {
                 fafegir.checkBoxLot.Checked = true;
             }
-            afegir = false;
             fafegir.ShowDialog();
             
         }
@@ -297,8 +299,8 @@ namespace SportXperience.Controller
             double price = 0;
             double priceText = 0;
             String award = "";
-            if (afegir)
-            {
+            //if (afegir)
+            //{
                 if (fafegir.numericUpDownEdatMinima.Value > fafegir.numericUpDownEdatMaxima.Value)
                 {
                     MessageBox.Show("La edat màxima no potser inferior a " + fafegir.numericUpDownEdatMinima.Value.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -316,7 +318,7 @@ namespace SportXperience.Controller
                     {
                         if (Double.TryParse(fafegir.textBoxPreu.Text, out priceText))
                         {
-                            if (!award.Equals(""))
+                            if (!fafegir.textBoxPremi.Text.Equals(""))
                             {
                                 award = fafegir.textBoxPremi.Text;
                                 price = priceText;
@@ -369,25 +371,45 @@ namespace SportXperience.Controller
 
                     }
                 }
-            }
-            else
-            {
-                if (fafegir.numericUpDownEdatMinima.Value > fafegir.numericUpDownEdatMaxima.Value)
-                {
-                    MessageBox.Show("La edat màxima no potser inferior a " + fafegir.numericUpDownEdatMinima.Value.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    fafegir.numericUpDownEdatMaxima.Value = fafegir.numericUpDownEdatMinima.Value;
-                }
-                else if (fafegir.numericUpDownParticipants.Value < 2)
-                {
-                    MessageBox.Show("Mínim ha d'haver 2 participants ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    fafegir.numericUpDownParticipants.Value = 2;
-                }
-                UpdateEvent();
-                loadDataGrid();
-                fafegir.Close();
-                f.Show();
+            //}
+            //else
+            //{
+            //    if (fafegir.numericUpDownEdatMinima.Value > fafegir.numericUpDownEdatMaxima.Value)
+            //    {
+            //        MessageBox.Show("La edat màxima no potser inferior a " + fafegir.numericUpDownEdatMinima.Value.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        fafegir.numericUpDownEdatMaxima.Value = fafegir.numericUpDownEdatMinima.Value;
+            //    }
+            //    else if (fafegir.numericUpDownParticipants.Value < 2)
+            //    {
+            //        MessageBox.Show("Mínim ha d'haver 2 participants ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        fafegir.numericUpDownParticipants.Value = 2;
+            //    }
+            //    if (fafegir.checkBoxPagament.Checked)
+            //    {
+            //        if (Double.TryParse(fafegir.textBoxPreu.Text, out priceText))
+            //        {
+            //            if (!award.Equals(""))
+            //            {
+            //                award = fafegir.textBoxPremi.Text;
+            //                price = priceText;
+            //                UpdateEvent(award, price);
+            //                loadDataGrid();
+            //                fafegir.Close();
+            //                f.Show();
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("Si l'event és de pagament ha d'haver una recompensa pel guanyador", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //            }
 
-            }
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("El valor introduït no es vàlid", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        }
+            //    }
+
+            //}
 
         }
 
@@ -428,33 +450,9 @@ namespace SportXperience.Controller
                 UbicationId = 1,
                 RecommendedLevelId = (fafegir.comboBoxNivell.SelectedItem as RecommendedLevel).RecommendedLevelId,
                 SportId = s.SportId,
-                Sport = s
+                //Sport = s
             };
             Repositori.InsEvents(ev);   
-        }
-
-        void UpdateEvent()
-        {
-            Sport s = Repositori.GetSportByName(fafegir.textBoxEsport.Text);
-
-            Event ev = new Event
-            {
-                Name = fafegir.textBoxNom.Text,
-                StartDate = fafegir.dateTimePickerInici.Value,
-                EndDate = fafegir.dateTimePickerFinal.Value,
-                Image = null,
-                Description = fafegir.textBoxDescripcio.Text,
-                MinAge = (int?)fafegir.numericUpDownEdatMinima.Value,
-                MaxAge = (int?)fafegir.numericUpDownEdatMaxima.Value,
-                MaxParticipantsNumber = (int?)fafegir.numericUpDownParticipants.Value,
-                Price = price,
-                Reward = award,
-                UbicationId = 1,
-                RecommendedLevelId = (fafegir.comboBoxNivell.SelectedItem as RecommendedLevel).RecommendedLevelId,
-                SportId = s.SportId,
-                Sport = s
-            };
-            Repositori.UpdEvent(ev.EventId,ev);
         }
 
         void InsertarParticipant()
@@ -621,7 +619,7 @@ namespace SportXperience.Controller
             NetejarDadesAfegirActualitzar();
             fafegir.dateTimePickerInici.Value = dataMin;
             fafegir.dateTimePickerFinal.Value = dataMin;
-            afegir = true;
+            //afegir = true;
             fafegir.ShowDialog();
 
         }
