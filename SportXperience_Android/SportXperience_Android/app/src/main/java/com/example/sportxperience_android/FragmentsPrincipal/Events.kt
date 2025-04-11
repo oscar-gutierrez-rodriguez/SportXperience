@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sportxperience_android.Adapters.AdapterEvents
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.R
@@ -51,9 +53,19 @@ class Events : Fragment() {
         if (events != null) {
             val adapter = context?.let { AdapterEvents(events, it) }
 
+            binding.recyclerEvents.layoutManager = LinearLayoutManager(context)
             binding.recyclerEvents.adapter = adapter
 
+            Toast.makeText(context, events.size.toString(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, events[0].name, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, events[1].name, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, events[2].name, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, events[3].name, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, events[4].name, Toast.LENGTH_SHORT).show()
+
         }
+
+        Toast.makeText(context, "es nulo", Toast.LENGTH_SHORT).show()
 
         // Inflate the layout for this fragment
         return binding.root

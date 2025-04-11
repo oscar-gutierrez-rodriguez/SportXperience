@@ -133,9 +133,9 @@ class CrudApi(context: Context): CoroutineScope {
 
 
     fun getAllEvents(): List<Event>? {
-        var events : List<Event>? = null
+        var events : Events? = null
         runBlocking {
-            var resposta:  Response<List<Event>>? = null
+            var resposta:  Response<Events>? = null
             val cor = launch {
                 resposta = getRetrofit().create(ApiService::class.java).getAllEvents()
             }
@@ -143,9 +143,25 @@ class CrudApi(context: Context): CoroutineScope {
             if (resposta!!.isSuccessful)
                 events = resposta!!.body()
             else
-                events = null
+                return@runBlocking null
         }
-        return events
+        return events!!.`$values`
+    }
+
+    fun getAllEventsByDni(dni : String): List<Event>? {
+        var events : Events? = null
+        runBlocking {
+            var resposta:  Response<Events>? = null
+            val cor = launch {
+                resposta = getRetrofit().create(ApiService::class.java).getAllEvents()
+            }
+            cor.join()
+            if (resposta!!.isSuccessful)
+                events = resposta!!.body()
+            else
+                return@runBlocking null
+        }
+        return events!!.`$values`
     }
 
 }

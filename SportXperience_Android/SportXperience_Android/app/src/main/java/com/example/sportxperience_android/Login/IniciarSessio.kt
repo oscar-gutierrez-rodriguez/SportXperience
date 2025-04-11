@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.sportxperience_android.Api.CrudApi
+import com.example.sportxperience_android.Api.User
 import com.example.sportxperience_android.Principal
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentIniciarSessioBinding
@@ -16,6 +17,8 @@ import org.mindrot.jbcrypt.BCrypt
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+var user : User? = null
 /**
  * A simple [Fragment] subclass.
  * Use the [IniciarSessio.newInstance] factory method to
@@ -61,7 +64,7 @@ class IniciarSessio : Fragment() {
 
                     Log.i("contrasenya", hashedPassword)
 
-                    val user = api?.getUserByUsername(binding.tilUsername.text.toString())
+                    user = api?.getUserByUsername(binding.tilUsername.text.toString())
 
                     /*val user = api?.getUserByUserPassword(
                         binding.tilUsername.text.toString(),
@@ -71,7 +74,7 @@ class IniciarSessio : Fragment() {
                     if (user != null) {
 
                         val esCorrecta =
-                            BCrypt.checkpw(binding.tilContrasenya.text.toString(), user.password)
+                            BCrypt.checkpw(binding.tilContrasenya.text.toString(), user!!.password)
 
                         if(esCorrecta) {
                             val intent = Intent(context, Principal::class.java)

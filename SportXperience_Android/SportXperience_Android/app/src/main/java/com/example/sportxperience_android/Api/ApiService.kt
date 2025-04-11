@@ -23,10 +23,12 @@ interface ApiService {
 
 
     @GET("/api/gender/{name}")
-    suspend fun getGenderByName(@Path("name") name: String, ) : Response<Gender>
+    suspend fun getGenderByName(@Path("name") name: String) : Response<Gender>
 
 
 
     @GET("/api/events")
-    suspend fun getAllEvents() : Response<List<Event>>
+    suspend fun getAllEvents() : Response<Events>
+    @GET("/api/events/{dni}")
+    suspend fun getAllEventsByDni(@Path("dni") dni: String) : Response<Events>
 }

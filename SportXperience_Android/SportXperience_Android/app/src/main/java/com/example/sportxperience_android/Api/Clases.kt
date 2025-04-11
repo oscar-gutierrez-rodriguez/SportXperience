@@ -39,94 +39,24 @@ data class Messages(
 )
 
 data class Event(
-    val `$id`: String,
     val description: String,
     val endDate: String,
     val eventId: Int,
     val image: Any,
-    val lots: Lots,
+    val lots: List<Any>,
     val maxAge: Int,
     val maxParticipantsNumber: Int,
-    val messages: Messages,
+    val messages: List<Any>,
     val minAge: Int,
     val name: String,
-    val participants: Participants,
+    val participants: List<Any>,
     val price: Int,
-    val recommendedLevel: RecommendedLevel,
+    val recommendedLevel: Any,
     val recommendedLevelId: Int,
     val reward: String,
-    val sport: Sport,
+    val sport: Any,
     val sportId: Int,
     val startDate: String,
-    val ubication: Ubication,
+    val ubication: Any,
     val ubicationId: Int
-)
-
-data class Events(
-    val `$id`: String,
-    val `$values`: List<ValueXX>
-)
-
-data class EventX(
-    val `$ref`: String
-)
-
-data class Lots(
-    val `$id`: String,
-    val `$values`: List<Value>
-)
-
-data class Products(
-    val `$id`: String,
-    val `$values`: List<Any>
-)
-
-data class RecommendedLevel(
-    val `$id`: String,
-    val events: Events,
-    val name: String,
-    val recommendedLevelId: Int
-)
-
-data class Results(
-    val `$id`: String,
-    val `$values`: List<Any>
-)
-
-data class Sport(
-    val `$id`: String,
-    val events: Events,
-    val name: String,
-    val sportId: Int
-)
-
-data class Ubication(
-    val `$id`: String,
-    val cityName: String,
-    val events: Events,
-    val latitude: Double,
-    val longitude: Double,
-    val ubicationId: Int
-)
-
-data class Value(
-    val `$id`: String,
-    val event: EventX,
-    val eventId: Int,
-    val lotId: Int,
-    val products: Products
-)
-
-data class ValueX(
-    val `$id`: String,
-    val event: EventX,
-    val eventId: Int,
-    val organizer: Boolean,
-    val results: Results,
-    val userDni: String,
-    val userDniNavigation: Any
-)
-
-data class ValueXX(
-    val `$ref`: String
 )

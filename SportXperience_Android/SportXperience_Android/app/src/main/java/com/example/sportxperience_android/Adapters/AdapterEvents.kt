@@ -9,7 +9,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.sportxperience_android.Api.Event
 import com.example.sportxperience_android.R
 
 class AdapterEvents (val llista:List<Event>, val context: Context): RecyclerView.Adapter<AdapterEvents.ViewHolder>() {
@@ -33,7 +32,7 @@ class AdapterEvents (val llista:List<Event>, val context: Context): RecyclerView
         //Glide.with(holder.imatge.context).load(llista[position]).into(holder.imatge)
         holder.nom.setText(llista[position].name)
         holder.data.setText(llista[position].startDate)
-        holder.esport.setText(llista[position].sport.name)
+        //holder.esport.setText(llista[position].sport.name)
 
         if(llista[position].price != 0){
             holder.preu.setText(llista[position].price.toString())
