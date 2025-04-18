@@ -83,7 +83,7 @@ namespace LoginRegister.Controller
             {
                 loginForm.textBoxContrasenya.Password = false;
                 loginForm.buttonShowPassword.Text = "";
-                loginForm.buttonShowPassword.Image = Image.FromFile(@"C:\Users\cv\Desktop\PROJECTEFINAL\invisible(1).png");
+                //loginForm.buttonShowPassword.Image = Image.FromFile(@"C:\Users\cv\Desktop\PROJECTEFINAL\invisible(1).png");
                 loginForm.textBoxContrasenya.Focus();
             }
             else

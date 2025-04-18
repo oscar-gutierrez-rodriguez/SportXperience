@@ -1,11 +1,9 @@
 C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\SportXperience.exe.config
 C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\SportXperience.exe
 C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\SportXperience.pdb
-C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\MonthCalendar.dll
 C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.csproj.AssemblyReference.cache
 C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.Properties.Resources.resources
 C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.View.AfegirActualitzarForm.resources
-C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.View.LoginForm.resources
 C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.View.LotForm.resources
 C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.MainForm.resources
 C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.View.Resultats.resources
@@ -36,3 +34,10 @@ C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.exe
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.pdb
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\DesktopModels.exe
+C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\MaterialSkin.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\Newtonsoft.Json.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\DesktopModels.pdb
+C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\DesktopModels.exe.config
+C:\SportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\Newtonsoft.Json.xml

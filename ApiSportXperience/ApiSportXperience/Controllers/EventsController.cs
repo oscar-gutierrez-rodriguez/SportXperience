@@ -195,6 +195,30 @@ namespace ApiSportXperience.Controllers
             return CreatedAtAction("GetEvent", new { id = e.EventId }, e);
         }
 
+
+        [HttpPost]
+        [Route("api/events/image")]
+        public async Task<ActionResult<Event>> PostImage(IFormFile imagen)
+        {
+
+            var nombreArchivo = Guid.NewGuid().ToString() + Path.GetExtension(imagen.FileName);
+            var rutaCarpeta = Path.Combine(Directory.GetCurrentDirectory(), "Images");
+            var rutaCompleta = Path.Combine(rutaCarpeta, nombreArchivo);
+
+            if (!Directory.Exists(rutaCarpeta))
+                Directory.CreateDirectory(rutaCarpeta);
+
+            using (var stream = new FileStream(rutaCompleta, FileMode.Create))
+            {
+                await imagen.CopyToAsync(stream);
+            }
+
+            //var url = $"{Request.Scheme}://{Request.Host}/Images/{nombreArchivo}";
+            var url = $"https://bigsparklytower60.conveyor.cloud/Images/{nombreArchivo}";
+            return Ok(new { url });
+        }
+
+
         // DELETE: api/Events/5        
         [HttpDelete]
         [Route("api/events/{id}")]

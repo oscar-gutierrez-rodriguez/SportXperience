@@ -23,6 +23,7 @@ namespace SportXperience.Controller
         List<Product> products = new List<Product>();
         List<Option> options = new List<Option>();
         Boolean afegir = false;
+        OpenFileDialog archiu = new OpenFileDialog();
 
         public ControllerMain()
         {
@@ -38,7 +39,7 @@ namespace SportXperience.Controller
             f.buttonActualitzar.Enabled = false;
             f.buttonAfegir.Enabled = true;
             fafegir.AllowDrop = true;
-            f.pictureBoxLogo.Image = Image.FromFile(@"C:\Users\cv\Desktop\PROJECTEFINAL\logo.png");
+            //f.pictureBoxLogo.Image = Image.FromFile(@"C:\Users\cv\Desktop\PROJECTEFINAL\logo.png");
             f.pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             fafegir.comboBoxNivell.DataSource = Repositori.GetRecommendedLevel();
             fafegir.comboBoxNivell.DisplayMember = "name";
@@ -231,17 +232,14 @@ namespace SportXperience.Controller
         private void ButtonImagen_Click(object sender, EventArgs e)
         {
 
-            OpenFileDialog archiu = new OpenFileDialog();
+            archiu = new OpenFileDialog();
             archiu.Title = "Imagenes";
             archiu.ShowHelp = true;
             if (archiu.ShowDialog() == DialogResult.OK)
             {
-                fafegir.pictureBoxLogoEvent.Image = Image.FromFile(archiu.FileName);
+                fafegir.pictureBoxLogoEvent.Image = Image.FromFile(archiu.FileName);               
             }
-            else
-            {
-                Console.WriteLine("algo");
-            }
+            
         }
 
 
@@ -444,8 +442,19 @@ namespace SportXperience.Controller
 
         void InsertarEvent(string award, double price)
         {
-
             Sport s = Repositori.GetSportByName(fafegir.textBoxEsport.Text);
+
+            string urlImage = null;
+
+            if (!String.IsNullOrEmpty(archiu.FileName))
+            {
+                var task = Task.Run(async () =>
+                {
+                    return await Repositori.PostImageEvent(archiu.FileName);
+                });
+
+                urlImage = task.Result;
+            }
 
             Event ev = new Event
             {
@@ -453,7 +462,7 @@ namespace SportXperience.Controller
                 Name = fafegir.textBoxNom.Text,
                 StartDate = fafegir.dateTimePickerInici.Value,
                 EndDate = fafegir.dateTimePickerFinal.Value,
-                Image = null,
+                Image = urlImage,  
                 Description = fafegir.textBoxDescripcio.Text,
                 MinAge = (int?)fafegir.numericUpDownEdatMinima.Value,
                 MaxAge = (int?)fafegir.numericUpDownEdatMaxima.Value,
@@ -464,8 +473,11 @@ namespace SportXperience.Controller
                 RecommendedLevelId = (fafegir.comboBoxNivell.SelectedItem as RecommendedLevel).RecommendedLevelId,
                 SportId = s.SportId,
             };
-            Repositori.InsEvents(ev);   
+
+            // Ahora podemos insertar el evento sin que la imagen sea null
+            Repositori.InsEvents(ev);
         }
+
 
         void UpdateEvent(string award, double price)
         {

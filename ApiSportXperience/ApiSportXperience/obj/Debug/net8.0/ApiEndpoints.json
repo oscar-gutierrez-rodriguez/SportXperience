@@ -224,6 +224,32 @@
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.EventsController",
+    "Method": "PostImage",
+    "RelativePath": "api/events/image",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imagen",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSportXperience.Models.Event",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.EventsController",
     "Method": "GetEventMax",
     "RelativePath": "api/events/max",
     "HttpMethod": "GET",

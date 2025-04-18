@@ -399,6 +399,55 @@
         }
       }
     },
+    "/api/events/image": {
+      "post": {
+        "tags": [
+          "Events"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "imagen": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "imagen": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/events/all/{id}": {
       "delete": {
         "tags": [
@@ -2899,7 +2948,6 @@
           },
           "image": {
             "type": "string",
-            "format": "byte",
             "nullable": true
           },
           "description": {
@@ -3001,7 +3049,6 @@
           },
           "image": {
             "type": "string",
-            "format": "byte",
             "nullable": true
           },
           "description": {
