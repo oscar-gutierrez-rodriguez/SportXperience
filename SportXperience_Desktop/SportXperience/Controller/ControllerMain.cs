@@ -474,7 +474,6 @@ namespace SportXperience.Controller
                 SportId = s.SportId,
             };
 
-            // Ahora podemos insertar el evento sin que la imagen sea null
             Repositori.InsEvents(ev);
         }
 

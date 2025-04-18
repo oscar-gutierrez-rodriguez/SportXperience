@@ -87,15 +87,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ApiSportXperience",
+              "Title": "ApiSportXperience.csproj",
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\ApiSportXperience.csproj",
               "RelativeDocumentMoniker": "ApiSportXperience\\ApiSportXperience.csproj",
               "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\ApiSportXperience.csproj",
               "RelativeToolTip": "ApiSportXperience\\ApiSportXperience.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-18T17:22:25.354Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-18T17:22:25.354Z"
             },
             {
               "$type": "Document",
@@ -107,8 +106,7 @@
               "RelativeToolTip": "ApiSportXperience\\Models\\EventDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAvwBQAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T13:27:21.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T13:27:21.339Z"
             },
             {
               "$type": "Document",
@@ -193,8 +191,7 @@
               "RelativeToolTip": "ApiSportXperience\\Models\\Event.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T13:27:25.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T13:27:25.024Z"
             },
             {
               "$type": "Document",
@@ -206,8 +203,7 @@
               "RelativeToolTip": "ApiSportXperience\\Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T17:40:22.352Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T17:40:22.352Z"
             },
             {
               "$type": "Document",
