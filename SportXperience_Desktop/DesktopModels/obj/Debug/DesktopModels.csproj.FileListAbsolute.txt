@@ -24,3 +24,5 @@ C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopModels.exe
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\obj\Debug\DesktopModels.pdb
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\DesktopModels\bin\Debug\MaterialSkin.dll

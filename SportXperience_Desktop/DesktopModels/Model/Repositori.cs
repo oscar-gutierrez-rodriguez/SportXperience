@@ -2,10 +2,13 @@
 using SportXperience.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DesktopModels.Model
 {
@@ -370,6 +373,42 @@ namespace DesktopModels.Model
             }
             return la;
         }
+
+        public static async Task<string> PostImageEvent(string rutaImagen)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(rutaImagen) || !File.Exists(rutaImagen))
+                    throw new Exception("Ruta de imagen inválida.");
+
+                using (var cliente = new HttpClient())
+                using (var imagenStream = File.OpenRead(rutaImagen))
+                using (var contenido = new MultipartFormDataContent())
+                {
+                    var archivo = new StreamContent(imagenStream);
+                    archivo.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
+
+                    contenido.Add(archivo, "imagen", Path.GetFileName(rutaImagen));
+
+                    string url = "https://localhost:7161/api/events/image";
+                    var response = await cliente.PostAsync(url, contenido);
+
+                    response.EnsureSuccessStatusCode();
+
+                    string json = await response.Content.ReadAsStringAsync();
+                    dynamic data = JsonConvert.DeserializeObject(json);
+                    return data.url;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error subiendo imagen: " + ex.Message);
+                return null;
+            }
+        }
+
+
+
         public static async Task<object> MakeRequest(string url, string method, object JSONcontent, Type responseType)
         ////  url: Url a partir de la base 
         ////  method: "GET"/"POST"/"PUT"/"DELETE"

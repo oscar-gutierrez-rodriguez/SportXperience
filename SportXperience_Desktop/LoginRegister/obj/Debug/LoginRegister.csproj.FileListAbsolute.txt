@@ -52,3 +52,15 @@ C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Memory.xml
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Numerics.Vectors.xml
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\BCrypt.Net-Next.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\MaterialSkin.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Buffers.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Memory.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Numerics.Vectors.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\BCrypt.Net-Next.xml
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Buffers.xml
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Memory.xml
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Numerics.Vectors.xml
+C:\SportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
