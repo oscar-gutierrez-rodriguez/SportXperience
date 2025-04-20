@@ -40,6 +40,7 @@ namespace SportXperience.Controller
             f.buttonAfegir.Enabled = true;
             fafegir.AllowDrop = true;
             //f.pictureBoxLogo.Image = Image.FromFile(@"C:\Users\cv\Desktop\PROJECTEFINAL\logo.png");
+            //f.pictureBoxLogo.Image = Image.FromFile(@"https://localhost:7161/Images/logo.png");
             f.pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             fafegir.comboBoxNivell.DataSource = Repositori.GetRecommendedLevel();
             fafegir.comboBoxNivell.DisplayMember = "name";
