@@ -35,6 +35,8 @@
         public string SportName { get; set; }
 
         public string cityName { get; set; }
+        public double? longitude { get; set; }
+        public double? latitude { get; set; }
 
 
         public EventDTO() { }

@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiSportXperience.Models;
+using Humanizer;
+using Microsoft.Extensions.Logging;
 
 namespace ApiSportXperience.Controllers
 {
@@ -44,7 +46,9 @@ namespace ApiSportXperience.Controllers
                     SportId = x.SportId,
                     RecommendedLevelName = _context.RecommendedLevels.Where(y => y.RecommendedLevelId == x.RecommendedLevelId).FirstOrDefault().Name,
                     SportName = _context.Sports.Where(y => y.SportId == x.SportId).FirstOrDefault().Name,
-                    cityName = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().CityName
+                    cityName = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().CityName,
+                    latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
+                    longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude
                 })
                 .ToListAsync();
         }
@@ -53,11 +57,9 @@ namespace ApiSportXperience.Controllers
         [Route("api/events/{lat}/{lon}")]
         public async Task<ActionResult<IEnumerable<Event>>> GetEvents(float lat, float lon)
         {
-            // Obtener todos los eventos con sus relaciones (incluyendo Ubicacion)
             var events = await _context.Events
                 .ToListAsync();
 
-            // Ordenar los eventos por distancia a la ubicación proporcionada
             var eventosOrdenados = events
                 .Select(e => new
                 {
@@ -65,10 +67,10 @@ namespace ApiSportXperience.Controllers
                     Distancia = Localitzacio.CalcularDistancia(lat, lon, (float)e.Ubication.Latitude, (float)e.Ubication.Longitude)
                 })
                 .OrderBy(x => x.Distancia)
-                .Select(x => x.Evento)  // Devolver solo los eventos
+                .Select(x => x.Evento)
                 .ToList();
 
-            return Ok(eventosOrdenados); // Retornamos la lista de eventos ordenada
+            return Ok(eventosOrdenados);
         }
 
 
@@ -91,43 +93,75 @@ namespace ApiSportXperience.Controllers
         }
 
         [HttpGet]
-        [Route("api/events/{pagament}/{data}/{ubicacio}/{esport}")]
-        public async Task<ActionResult<IEnumerable<Event>>> GetEventFiltre(int? pagament, DateTime? data, string? ubicacio, string? esport)
+        [Route("api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}")]
+        public async Task<ActionResult<IEnumerable<EventDTO>>> GetEventFiltre([FromQuery] int? pagament, [FromQuery] DateTime? data, [FromQuery] string? ubicacio, [FromQuery] string? esport, float latitude, float longitude)
         {
-            IQueryable<Event> query = _context.Events;
+            List<EventDTO> query = await _context.Events
+                .Select(x => new EventDTO
+                {
+                    EventId = x.EventId,
+                    Name = x.Name,
+                    StartDate = x.StartDate,
+                    EndDate = x.EndDate,
+                    Image = x.Image,
+                    Description = x.Description,
+                    MinAge = x.MinAge,
+                    MaxAge = x.MaxAge,
+                    MaxParticipantsNumber = x.MaxParticipantsNumber,
+                    Price = x.Price,
+                    Reward = x.Reward,
+                    UbicationId = x.UbicationId,
+                    RecommendedLevelId = x.RecommendedLevelId,
+                    SportId = x.SportId,
+                    RecommendedLevelName = _context.RecommendedLevels.Where(y => y.RecommendedLevelId == x.RecommendedLevelId).FirstOrDefault().Name,
+                    SportName = _context.Sports.Where(y => y.SportId == x.SportId).FirstOrDefault().Name,
+                    cityName = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().CityName,
+                    latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
+                    longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude
+                })
+                .ToListAsync();
 
             if (pagament != null)
             {
                 switch (pagament)
                 {
                     case 0:
-                        query = query.Where(x => x.Price == 0);
+                        query = query.Where(x => x.Price == 0).ToList();
                         break;
                     case 1:
-                        query = query.Where(x => x.Price > 0);
+                        query = query.Where(x => x.Price > 0).ToList();
                         break;
 
                 }
             }
 
+
             if (data != null)
             {
-                query = query.Where(x => x.EndDate <= data && x.StartDate >= data);
+                query = query.Where(x => x.StartDate <= data && x.EndDate >= data).ToList();
             }
 
-            if (!string.IsNullOrEmpty(ubicacio))
+            if (!string.IsNullOrWhiteSpace(ubicacio) && ubicacio.ToLower() != "null")
             {
-                query = query.Where(x => x.Ubication.CityName.Contains(ubicacio));
+                query = query.Where(x => !string.IsNullOrEmpty(x.cityName) && x.cityName.Contains(ubicacio, StringComparison.OrdinalIgnoreCase)).ToList();
             }
 
-            if (!string.IsNullOrEmpty(esport))
+            if (!string.IsNullOrWhiteSpace(esport) && esport.ToLower() != "null")
             {
-                query = query.Where(x => x.Sport.Name.Contains(esport));
+                query = query.Where(x => !string.IsNullOrEmpty(x.SportName) && x.SportName.Contains(esport, StringComparison.OrdinalIgnoreCase)).ToList();
             }
 
-            var result = await query
-                .ToListAsync();
-            return Ok(result);
+            var orderedEvents = query
+                //.Select(e => new
+                //{
+                //    Evento = e,
+                //    Distancia = Localitzacio.CalcularDistancia(latitude, longitude, (float)e.latitude, (float)e.longitude)
+                //})
+                //.OrderBy(x => x.Distancia)
+                //.Select(x => x.Evento)
+                .ToList();
+
+            return orderedEvents;
         }
 
         [HttpGet]
@@ -214,7 +248,7 @@ namespace ApiSportXperience.Controllers
             }
 
             //var url = $"{Request.Scheme}://{Request.Host}/Images/{nombreArchivo}";
-            var url = $"https://bigsparklytower60.conveyor.cloud/Images/{nombreArchivo}";
+            var url = $"Images/{nombreArchivo}";
             return Ok(new { url });
         }
 
