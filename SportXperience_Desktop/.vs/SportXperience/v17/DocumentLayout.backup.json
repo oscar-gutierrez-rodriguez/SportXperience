@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\SportXperience\\SportXperience\\SportXperience_Desktop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|C:\\SportXperience\\SportXperience\\SportXperience_Desktop\\desktopmodels\\model\\repositori.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|c:\\sportxperience\\sportxperience\\sportxperience_desktop\\desktopmodels\\model\\repositori.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|solutionrelative:desktopmodels\\model\\repositori.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|c:\\sportxperience\\sportxperience\\sportxperience_desktop\\sportxperience\\controller\\controllermain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|C:\\SportXperience\\SportXperience\\SportXperience_Desktop\\sportxperience\\controller\\controllermain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|solutionrelative:sportxperience\\controller\\controllermain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{57A8A8D7-B1E2-4D73-97B9-9598BF50E0F6}|LoginRegister\\LoginRegister.csproj|solutionrelative:loginregister\\controller\\controllerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|c:\\sportxperience\\sportxperience\\sportxperience_desktop\\desktopmodels\\model\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|C:\\SportXperience\\SportXperience\\SportXperience_Desktop\\desktopmodels\\model\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|solutionrelative:desktopmodels\\model\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -46,8 +46,7 @@
               "RelativeToolTip": "DesktopModels\\Model\\Event.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAIwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T17:59:09.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-18T17:59:09.696Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "LoginRegister\\Controller\\ControllerLogin.cs",
               "ViewState": "AgIAAEQAAAAAAAAAAAArwFUAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:26:11.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T14:26:11.369Z"
             },
             {
               "$type": "Document",
@@ -70,10 +68,9 @@
               "RelativeDocumentMoniker": "SportXperience\\Controller\\ControllerMain.cs",
               "ToolTip": "C:\\SportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\Controller\\ControllerMain.cs",
               "RelativeToolTip": "SportXperience\\Controller\\ControllerMain.cs",
-              "ViewState": "AgIAALUBAAAAAAAAAAAYwLwBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T14:24:05.405Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-27T14:24:05.405Z"
             },
             {
               "$type": "Document",
@@ -95,7 +92,7 @@
               "RelativeDocumentMoniker": "DesktopModels\\Model\\Repositori.cs",
               "ToolTip": "C:\\SportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\Repositori.cs",
               "RelativeToolTip": "DesktopModels\\Model\\Repositori.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAABoAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T15:47:30.044Z",
               "EditorCaption": ""

@@ -224,7 +224,7 @@
         }
       }
     },
-    "/api/events/{pagament}/{data}/{ubicacio}/{esport}": {
+    "/api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}": {
       "get": {
         "tags": [
           "Events"
@@ -232,8 +232,7 @@
         "parameters": [
           {
             "name": "pagament",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -241,11 +240,58 @@
           },
           {
             "name": "data",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string",
               "format": "date-time"
+            }
+          },
+          {
+            "name": "ubicacio",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "esport",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "latitude",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          {
+            "name": "longitude",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          {
+            "name": "pagament",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "data",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -273,7 +319,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Event"
+                    "$ref": "#/components/schemas/EventDTO"
                   }
                 }
               },
@@ -281,7 +327,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Event"
+                    "$ref": "#/components/schemas/EventDTO"
                   }
                 }
               },
@@ -289,7 +335,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Event"
+                    "$ref": "#/components/schemas/EventDTO"
                   }
                 }
               }
@@ -3104,6 +3150,16 @@
           },
           "cityName": {
             "type": "string",
+            "nullable": true
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double",
             "nullable": true
           }
         },

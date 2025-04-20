@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "DesktopModels\\Model\\Event.cs",
               "ToolTip": "C:\\SportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\Event.cs",
               "RelativeToolTip": "DesktopModels\\Model\\Event.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAIwBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T17:59:09.696Z",
               "EditorCaption": ""
@@ -69,10 +69,13 @@
               "RelativeDocumentMoniker": "SportXperience\\Controller\\ControllerMain.cs",
               "ToolTip": "C:\\SportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\Controller\\ControllerMain.cs",
               "RelativeToolTip": "SportXperience\\Controller\\ControllerMain.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAHQBAAAAAAAAAAAAwLUBAAANAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALwBAAAAAAAAAAAAAA==",
+>>>>>>> Api
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T14:24:05.405Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-27T14:24:05.405Z"
             },
             {
               "$type": "Document",
@@ -94,7 +97,11 @@
               "RelativeDocumentMoniker": "DesktopModels\\Model\\Repositori.cs",
               "ToolTip": "C:\\SportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\Repositori.cs",
               "RelativeToolTip": "DesktopModels\\Model\\Repositori.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAFkAAAAAAAAAAAAcwBoAAAA4AAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABIAAAAAAAAAA==",
+>>>>>>> Api
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T15:47:30.044Z",
               "EditorCaption": ""
