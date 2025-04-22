@@ -13,9 +13,10 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Path
 import kotlin.coroutines.CoroutineContext
 
-class CrudApi(context: Context): CoroutineScope {
+class CrudApi(context: Context) : CoroutineScope {
     private var job = Job()
 
     override val coroutineContext: CoroutineContext
@@ -38,11 +39,12 @@ class CrudApi(context: Context): CoroutineScope {
     }
 
     fun getUserByUserPassword(username: String, password: String): User? {
-        var usuari : User? = null
+        var usuari: User? = null
         runBlocking {
-            var resposta:  Response<User>? = null
+            var resposta: Response<User>? = null
             val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getUserByUserPassword(username, password)
+                resposta = getRetrofit().create(ApiService::class.java)
+                    .getUserByUserPassword(username, password)
             }
             cor.join()
             if (resposta!!.isSuccessful)
@@ -54,9 +56,9 @@ class CrudApi(context: Context): CoroutineScope {
     }
 
     fun getUserByDni(dni: String): User? {
-        var usuari : User? = null
+        var usuari: User? = null
         runBlocking {
-            var resposta:  Response<User>? = null
+            var resposta: Response<User>? = null
             val cor = launch {
                 resposta = getRetrofit().create(ApiService::class.java).getUserByDni(dni)
             }
@@ -70,9 +72,9 @@ class CrudApi(context: Context): CoroutineScope {
     }
 
     fun getUserByUsername(username: String): User? {
-        var usuari : User? = null
+        var usuari: User? = null
         runBlocking {
-            var resposta:  Response<User>? = null
+            var resposta: Response<User>? = null
             val cor = launch {
                 resposta = getRetrofit().create(ApiService::class.java).getUserByUsername(username)
             }
@@ -86,9 +88,9 @@ class CrudApi(context: Context): CoroutineScope {
     }
 
     fun getUserByMail(mail: String): User? {
-        var usuari : User? = null
+        var usuari: User? = null
         runBlocking {
-            var resposta:  Response<User>? = null
+            var resposta: Response<User>? = null
             val cor = launch {
                 resposta = getRetrofit().create(ApiService::class.java).getUserByMail(mail)
             }
@@ -102,11 +104,11 @@ class CrudApi(context: Context): CoroutineScope {
     }
 
 
-    fun addUser(user: User): User?{
+    fun addUser(user: User): User? {
         var afegit: User? = null
         runBlocking {
-            var resposta : Response<User>? = null
-            val cor= launch {
+            var resposta: Response<User>? = null
+            val cor = launch {
                 resposta = getRetrofit().create(ApiService::class.java).addUser(user)
             }
             cor.join()
@@ -116,9 +118,9 @@ class CrudApi(context: Context): CoroutineScope {
     }
 
     fun getGenderByName(name: String): Gender? {
-        var gender : Gender? = null
+        var gender: Gender? = null
         runBlocking {
-            var resposta:  Response<Gender>? = null
+            var resposta: Response<Gender>? = null
             val cor = launch {
                 resposta = getRetrofit().create(ApiService::class.java).getGenderByName(name)
             }
@@ -133,9 +135,9 @@ class CrudApi(context: Context): CoroutineScope {
 
 
     fun getAllEvents(): List<Event>? {
-        var events : Events? = null
+        var events: List<Event>? = null
         runBlocking {
-            var resposta:  Response<Events>? = null
+            var resposta: Response<List<Event>>? = null
             val cor = launch {
                 resposta = getRetrofit().create(ApiService::class.java).getAllEvents()
             }
@@ -145,13 +147,13 @@ class CrudApi(context: Context): CoroutineScope {
             else
                 return@runBlocking null
         }
-        return events!!.`$values`
+        return events
     }
 
-    fun getAllEventsByDni(dni : String): List<Event>? {
-        var events : Events? = null
+    fun getAllEventsByDni(dni: String): List<Event>? {
+        var events: List<Event>? = null
         runBlocking {
-            var resposta:  Response<Events>? = null
+            var resposta: Response<List<Event>>? = null
             val cor = launch {
                 resposta = getRetrofit().create(ApiService::class.java).getAllEvents()
             }
@@ -161,7 +163,31 @@ class CrudApi(context: Context): CoroutineScope {
             else
                 return@runBlocking null
         }
-        return events!!.`$values`
+        return events
+    }
+
+
+    fun getAllEventsFilter(
+        pagament: Int,
+        date: String?,
+        ubicacio: String?,
+        esport: String?,
+        latitude: Float?,
+        longitude: Float?
+    ): List<Event>? {
+        var events: List<Event>? = null
+        runBlocking {
+            var resposta: Response<List<Event>>? = null
+            val cor = launch {
+                resposta = getRetrofit().create(ApiService::class.java).getAllEventsFilter(pagament, date, ubicacio, esport, latitude, longitude)
+            }
+            cor.join()
+            if (resposta!!.isSuccessful)
+                events = resposta!!.body()
+            else
+                return@runBlocking null
+        }
+        return events
     }
 
 }

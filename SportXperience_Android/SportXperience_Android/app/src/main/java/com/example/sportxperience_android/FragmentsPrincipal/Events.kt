@@ -11,6 +11,11 @@ import com.example.sportxperience_android.Adapters.AdapterEvents
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentEventsBinding
+import com.google.android.material.datepicker.MaterialDatePicker
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,6 +34,8 @@ class Events : Fragment() {
 
     lateinit var binding: FragmentEventsBinding
 
+    private var pagament: Int = 2
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -46,26 +53,40 @@ class Events : Fragment() {
 
         binding.evTotsDos.isChecked = true
 
-        val api = context?.let { CrudApi(it) }
+        mostrarEvents()
 
-        val events = api?.getAllEvents()
 
-        if (events != null) {
-            val adapter = context?.let { AdapterEvents(events, it) }
-
-            binding.recyclerEvents.layoutManager = LinearLayoutManager(context)
-            binding.recyclerEvents.adapter = adapter
-
-            Toast.makeText(context, events.size.toString(), Toast.LENGTH_SHORT).show()
-            Toast.makeText(context, events[0].name, Toast.LENGTH_SHORT).show()
-            Toast.makeText(context, events[1].name, Toast.LENGTH_SHORT).show()
-            Toast.makeText(context, events[2].name, Toast.LENGTH_SHORT).show()
-            Toast.makeText(context, events[3].name, Toast.LENGTH_SHORT).show()
-            Toast.makeText(context, events[4].name, Toast.LENGTH_SHORT).show()
-
+        binding.evGratuit.setOnClickListener {
+            pagament = 0
+            mostrarEvents()
         }
 
-        Toast.makeText(context, "es nulo", Toast.LENGTH_SHORT).show()
+        binding.evPagament.setOnClickListener {
+            pagament = 1
+            mostrarEvents()
+        }
+
+        binding.evTotsDos.setOnClickListener {
+            pagament = 2
+            mostrarEvents()
+        }
+
+        binding.tilDataFiltre
+            .setEndIconOnClickListener {
+                val datePicker1: MaterialDatePicker<Long> =
+                    MaterialDatePicker.Builder.datePicker()
+                        .setSelection(diaActual())
+                        .setTitleText("Data de naixement").build()
+                datePicker1.show(childFragmentManager, "Data de naixement")
+
+                datePicker1.addOnPositiveButtonClickListener {
+                    val sdf1 = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                    val date1 = sdf1.format(it)
+                    binding.tieDataFiltre
+                        .setText(date1)
+                }
+            }
+
 
         // Inflate the layout for this fragment
         return binding.root
@@ -89,5 +110,43 @@ class Events : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+
+    fun mostrarEvents() {
+        val api = context?.let { CrudApi(it) }
+
+        val events = api?.getAllEventsFilter(
+            pagament,
+            formatDateToISO(binding.tilDataFiltre.toString()),
+            if (binding.tilCiutat.text.toString().isNullOrEmpty()) null else binding.tilCiutat.text.toString(),
+            if (binding.tilEsport.text.toString().isNullOrEmpty()) null else binding.tilEsport.text.toString(),
+            null,
+            null
+        )
+
+        if (events != null) {
+            val adapter = context?.let { AdapterEvents(events, it) }
+
+            binding.recyclerEvents.layoutManager = LinearLayoutManager(context)
+            binding.recyclerEvents.adapter = adapter
+        }
+    }
+
+    fun diaActual(): Long {
+        val calendar = Calendar.getInstance()
+        return calendar.timeInMillis
+    }
+
+    fun formatDateToISO(date: String): String? {
+        val inputFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+
+        return try {
+            val parsedDate = inputFormat.parse(date)
+            outputFormat.format(parsedDate ?: Date())
+        } catch (e: Exception) {
+            null
+        }
     }
 }

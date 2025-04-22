@@ -8,11 +8,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.User
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentRegistreBinding
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.textfield.TextInputEditText
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.mindrot.jbcrypt.BCrypt
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -21,6 +27,7 @@ import java.util.Locale
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
 /**
  * A simple [Fragment] subclass.
  * Use the [Registre.newInstance] factory method to
@@ -109,60 +116,75 @@ class Registre : Fragment() {
                     if (isValidDNI(dni.toString())) {
 
                         if (isValidCorreu(correu.toString())) {
-                            try {
 
-                                val api = context?.let { CrudApi(it) }
-                                val genre = api?.getGenderByName(genere)
+                            showLoading()
 
-                                if (genre != null) {
+                            lifecycleScope.launch(Dispatchers.IO) {
 
-                                    val hashedPassword =
-                                        BCrypt.hashpw(contrasenya.toString(), BCrypt.gensalt())
+                                try {
 
-                                    val user = User(
-                                        null,
-                                        formatDateToISO(dataNaixement.toString()),
-                                        dni.toString(),
-                                        nom.toString(),
-                                        null,
-                                        genre.genderId,
-                                        cognoms.toString(),
-                                        correu.toString(),
-                                        null,
-                                        null,
-                                        hashedPassword,
-                                        nomUsuari.toString()
-                                    )
+                                    withContext(Dispatchers.Main) {
+                                        val api = context?.let { CrudApi(it) }
+                                        val genre = api?.getGenderByName(genere)
 
-                                    if (api.getUserByDni(user.dni) != null) {
-                                        Toast.makeText(
-                                            context,
-                                            "Aquest dni ja existeix",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    } else if (api.getUserByUsername(user.username) != null) {
-                                        Toast.makeText(
-                                            context,
-                                            "Aquest nom d'usuari ja existeix",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    } else if (api.getUserByMail(user.mail) != null) {
-                                        Toast.makeText(
-                                            context,
-                                            "Aquest mail ja existeix",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                    } else if (api.addUser(user) != null) {
-                                        Toast.makeText(
-                                            context,
-                                            "T'has enregistrat correctament",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
+                                        if (genre != null) {
+
+                                            val hashedPassword =
+                                                BCrypt.hashpw(
+                                                    contrasenya.toString(),
+                                                    BCrypt.gensalt()
+                                                )
+
+                                            val user = User(
+                                                formatDateToISO(dataNaixement.toString()),
+                                                dni.toString(),
+                                                nom.toString(),
+                                                null,
+                                                genre.genderId,
+                                                cognoms.toString(),
+                                                correu.toString(),
+                                                null,
+                                                null,
+                                                hashedPassword,
+                                                nomUsuari.toString()
+                                            )
+
+                                            if (api.getUserByDni(user.dni) != null) {
+                                                hideLoading()
+                                                Toast.makeText(
+                                                    context,
+                                                    "Aquest dni ja existeix",
+                                                    Toast.LENGTH_SHORT
+                                                ).show()
+                                            } else if (api.getUserByUsername(user.username) != null) {
+                                                hideLoading()
+                                                Toast.makeText(
+                                                    context,
+                                                    "Aquest nom d'usuari ja existeix",
+                                                    Toast.LENGTH_SHORT
+                                                ).show()
+                                            } else if (api.getUserByMail(user.mail) != null) {
+                                                hideLoading()
+                                                Toast.makeText(
+                                                    context,
+                                                    "Aquest mail ja existeix",
+                                                    Toast.LENGTH_SHORT
+                                                ).show()
+                                            } else if (api.addUser(user) != null) {
+                                                hideLoading()
+                                                Toast.makeText(
+                                                    context,
+                                                    "T'has enregistrat correctament",
+                                                    Toast.LENGTH_SHORT
+                                                ).show()
+                                            }
+
+                                        }
                                     }
-
+                                } catch (e: Exception) {
+                                    hideLoading()
+                                    Log.i("Error en l'api", "Error en l'api")
                                 }
-                            } catch (e: Exception) {
-                                Log.i("Error en l'api", "Error en l'api")
                             }
 
                         } else {
@@ -268,4 +290,54 @@ class Registre : Fragment() {
             ""
         }
     }
+
+
+    fun showLoading() {
+        binding.loadingContainer.visibility = View.VISIBLE
+
+        disableAllViews(binding.root)
+    }
+
+    fun hideLoading() {
+        binding.loadingContainer.visibility = View.GONE
+
+        enableAllViews(binding.root)
+    }
+
+    fun disableAllViews(view: View) {
+        when (view) {
+            is MaterialButton -> {
+                view.isEnabled = false
+            }
+
+            is TextInputEditText -> {
+                view.isEnabled = false
+            }
+
+            is ViewGroup -> {
+                for (i in 0 until view.childCount) {
+                    disableAllViews(view.getChildAt(i))
+                }
+            }
+        }
+    }
+
+    fun enableAllViews(view: View) {
+        when (view) {
+            is MaterialButton -> {
+                view.isEnabled = true
+            }
+
+            is TextInputEditText -> {
+                view.isEnabled = true
+            }
+
+            is ViewGroup -> {
+                for (i in 0 until view.childCount) {
+                    enableAllViews(view.getChildAt(i))
+                }
+            }
+        }
+    }
+
 }

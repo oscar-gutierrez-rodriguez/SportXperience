@@ -6,19 +6,29 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.User
 import com.example.sportxperience_android.Principal
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentIniciarSessioBinding
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.textfield.TextInputEditText
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.mindrot.jbcrypt.BCrypt
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-var user : User? = null
+var user: User? = null
+
 /**
  * A simple [Fragment] subclass.
  * Use the [IniciarSessio.newInstance] factory method to
@@ -56,45 +66,56 @@ class IniciarSessio : Fragment() {
         binding.btIniciSessio.setOnClickListener {
             if (!binding.tilUsername.text.isNullOrEmpty() && !binding.tilContrasenya.text.isNullOrEmpty()) {
 
-                try {
-                    val api = context?.let { it1 -> CrudApi(it1) }
+                showLoading()
+                lifecycleScope.launch(Dispatchers.IO) {
+                    try {
+                        val api = context?.let { it1 -> CrudApi(it1) }
 
-                    val hashedPassword =
-                        BCrypt.hashpw(binding.tilContrasenya.text.toString(), BCrypt.gensalt())
+                        val hashedPassword =
+                            BCrypt.hashpw(binding.tilContrasenya.text.toString(), BCrypt.gensalt())
 
-                    Log.i("contrasenya", hashedPassword)
+                        user = api?.getUserByUsername(binding.tilUsername.text.toString())
 
-                    user = api?.getUserByUsername(binding.tilUsername.text.toString())
 
-                    /*val user = api?.getUserByUserPassword(
-                        binding.tilUsername.text.toString(),
-                        hashedPassword
-                    )*/
+                        withContext(Dispatchers.Main) {
+                            if (user != null) {
 
-                    if (user != null) {
+                                val esCorrecta =
+                                    BCrypt.checkpw(
+                                        binding.tilContrasenya.text.toString(),
+                                        user!!.password
+                                    )
 
-                        val esCorrecta =
-                            BCrypt.checkpw(binding.tilContrasenya.text.toString(), user!!.password)
 
-                        if(esCorrecta) {
-                            val intent = Intent(context, Principal::class.java)
-                            startActivity(intent)
-                        } else{
-                            Toast.makeText(
-                                context,
-                                "La contrasenya no és correcte",
-                                Toast.LENGTH_SHORT
-                            )
-                                .show()
+                                if (esCorrecta) {
+                                    hideLoading()
+                                    val intent = Intent(context, Principal::class.java)
+                                    startActivity(intent)
+                                } else {
+                                    hideLoading()
+                                    Toast.makeText(
+                                        context,
+                                        "Credencials incorrectes",
+                                        Toast.LENGTH_SHORT
+                                    )
+                                        .show()
+                                }
+                            } else {
+                                hideLoading()
+                                Toast.makeText(
+                                    context,
+                                    "Credencials incorrectes",
+                                    Toast.LENGTH_SHORT
+                                )
+                                    .show()
+                            }
                         }
-                    } else {
-                        Toast.makeText(context, "Credencials incorrectes", Toast.LENGTH_SHORT)
-                            .show()
+                    } catch (e: Exception) {
+                        hideLoading()
+                        Log.i("Error en l'api", "Error en l'api")
                     }
-                } catch (e: Exception) {
-                    Log.i("Error en l'api", "Error en l'api")
-                }
 
+                }
             } else {
                 Toast.makeText(context, "No pot haver camps buits!", Toast.LENGTH_SHORT).show()
             }
@@ -122,6 +143,54 @@ class IniciarSessio : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+
+    fun showLoading() {
+        binding.loadingContainer.visibility = View.VISIBLE
+        binding.btIniciSessio.isEnabled = false
+
+        disableAllViews(binding.root)
+    }
+
+    fun hideLoading() {
+        binding.loadingContainer.visibility = View.GONE
+        binding.btIniciSessio.isEnabled = true
+
+        enableAllViews(binding.root)
+    }
+
+    fun disableAllViews(view: View) {
+        when (view) {
+            is MaterialButton -> {
+                view.isEnabled = false
+            }
+            is TextInputEditText -> {
+                view.isEnabled = false
+            }
+
+            is ViewGroup -> {
+                for (i in 0 until view.childCount) {
+                    disableAllViews(view.getChildAt(i))
+                }
+            }
+        }
+    }
+
+    fun enableAllViews(view: View) {
+        when (view) {
+            is MaterialButton -> {
+                view.isEnabled = true
+            }
+            is TextInputEditText -> {
+                view.isEnabled = true
+            }
+            is ViewGroup -> {
+                for (i in 0 until view.childCount) {
+                    enableAllViews(view.getChildAt(i))
+                }
+            }
+        }
     }
 
 }
