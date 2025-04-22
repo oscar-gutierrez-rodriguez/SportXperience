@@ -328,6 +328,24 @@ namespace DesktopModels.Model
 
         }
 
+        public static void DelLot(Lot l)
+        {
+            int id = l.LotId;
+            Lot lo = null;
+            try
+            {
+                lo = (Lot)MakeRequest("lots/" + id, "DELETE", l, typeof(Lot)).Result;
+            }
+            catch
+            {
+                if (lo == null)
+                {
+                    lo = new Lot();
+                }
+            }
+
+        }
+
         public static void UpdEvent(Event ev)
         {
             Event e = null;
@@ -370,6 +388,21 @@ namespace DesktopModels.Model
             if (la == null)
             {
                 la = new Sport();
+            }
+            return la;
+        }
+
+        public static Lot GetLotByEventId(int? id)
+        {
+            Lot la = null;
+            try
+            {
+                la = (Lot)MakeRequest("lots/" + id, "GET", null, typeof(Lot)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Lot();
             }
             return la;
         }

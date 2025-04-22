@@ -21,6 +21,7 @@ namespace SportXperience.Controller
         Resultats r = new Resultats();
         DateTime dataMin = DateTime.Now.AddDays(2);
         List<Product> products = new List<Product>();
+        List<Product> Actuproducts = new List<Product>();
         List<Option> options = new List<Option>();
         Boolean afegir = false;
         OpenFileDialog archiu = new OpenFileDialog();
@@ -111,15 +112,21 @@ namespace SportXperience.Controller
 
         private void ButtonActualitzar_Click(object sender, EventArgs e)
         {
+            NetejarDadesAfegirActualitzar();
+
             fafegir.listBoxLot.Items.Clear();
             Event ev = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as Event;
 
-            Lot l = ev.Lots.Where(x => x.EventId == ev.EventId).FirstOrDefault();
+            Lot l = Repositori.GetLotByEventId(ev.EventId);
             
 
             if (l != null) {
 
                 products = Repositori.GetProductsByLotId(l.LotId);
+            }
+            else
+            {
+                products = new List<Product>();
             }
             fafegir.textBoxNom.Text = ev.Name;
             fafegir.textBoxDescripcio.Text = ev.Description;
@@ -133,6 +140,7 @@ namespace SportXperience.Controller
             foreach (Product p in products)
             {
                 fafegir.listBoxLot.Items.Add(p.Name);
+                Actuproducts.Add(p);
             }
 
             fafegir.textBoxEsport.Text = Repositori.GetSportById(ev.SportId).Name;
@@ -141,7 +149,12 @@ namespace SportXperience.Controller
             {
                 fafegir.checkBoxPagament.Checked = true;
             }
-            if (products != null)
+            else
+            {
+                fafegir.textBoxPreu.Text = "";
+                fafegir.textBoxPremi.Text = "";
+            }
+            if (products.Count() != 0)
             {
                 fafegir.checkBoxLot.Checked = true;
             }
@@ -483,15 +496,17 @@ namespace SportXperience.Controller
         {
             Event evs = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as Event;
 
-            Sport s = Repositori.GetSportByName(fafegir.textBoxEsport.Text);
+            Lot l = Repositori.GetLotByEventId(evs.EventId);
 
+            Sport s = Repositori.GetSportByName(fafegir.textBoxEsport.Text);
+         
             Event ev = new Event
             {
                 EventId = evs.EventId,
                 Name = fafegir.textBoxNom.Text,
                 StartDate = fafegir.dateTimePickerInici.Value,
                 EndDate = fafegir.dateTimePickerFinal.Value,
-                Image = null,
+                Image = evs.Image,
                 Description = fafegir.textBoxDescripcio.Text,
                 MinAge = (int?)fafegir.numericUpDownEdatMinima.Value,
                 MaxAge = (int?)fafegir.numericUpDownEdatMaxima.Value,
@@ -502,6 +517,17 @@ namespace SportXperience.Controller
                 RecommendedLevelId = (fafegir.comboBoxNivell.SelectedItem as RecommendedLevel).RecommendedLevelId,
                 SportId = s.SportId,
             };
+            
+            if (fafegir.checkBoxLot.Checked)
+            {
+                if (l.LotId == 0)
+                {
+                    InsertarLot();
+                }
+            }
+            Repositori.DelLot(l);
+            InsertarProductes();
+            InsertarOptions();
             Repositori.UpdEvent(ev);
         }
 
@@ -695,6 +721,8 @@ namespace SportXperience.Controller
             fafegir.checkBoxLot.Checked = false;
             fafegir.checkBoxPagament.Checked = false;
             fafegir.comboBoxNivell.SelectedIndex = 0;
+            fafegir.pictureBoxLogoEvent.Image = null;
+            
         }
 
         void NetejarDadesLot()

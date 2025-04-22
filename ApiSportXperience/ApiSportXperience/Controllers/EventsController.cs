@@ -138,7 +138,7 @@ namespace ApiSportXperience.Controllers
 
             if (data != null)
             {
-                query = query.Where(x => x.StartDate <= data && x.EndDate >= data).ToList();
+                query = query.Where(x => x.StartDate <= data && x.EndDate >= data).ToList();  
             }
 
             if (!string.IsNullOrWhiteSpace(ubicacio) && ubicacio.ToLower() != "null")
