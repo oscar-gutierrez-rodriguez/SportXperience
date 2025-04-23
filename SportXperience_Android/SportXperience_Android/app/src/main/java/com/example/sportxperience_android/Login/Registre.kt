@@ -99,13 +99,6 @@ class Registre : Fragment() {
             val contrasenya = binding.tilContrasenyareg.text
             val dataNaixement = binding.tieDataNaixement.text
 
-            if (dataNaixementAnteriorAvui(binding.tieDataNaixement.text.toString())) {
-
-            } else {
-                Toast.makeText(context, "La data no pot ser superior a avui!", Toast.LENGTH_SHORT)
-                    .show()
-            }
-
             if (!dni.isNullOrEmpty() && !nom.isNullOrEmpty() && !cognoms.isNullOrEmpty() &&
                 !correu.isNullOrEmpty() && !nomUsuari.isNullOrEmpty() && !contrasenya.isNullOrEmpty() &&
                 !dataNaixement.isNullOrEmpty() && !genere.isNullOrEmpty()
@@ -197,7 +190,7 @@ class Registre : Fragment() {
                     } else {
                         Toast.makeText(
                             context,
-                            "La data no pot ser superior a avui!",
+                            "La data no pot ser superior a la d'avui",
                             Toast.LENGTH_SHORT
                         ).show()
                     }

@@ -190,4 +190,37 @@ class CrudApi(context: Context) : CoroutineScope {
         return events
     }
 
+
+    fun getLotByEventId(eventId: Int): Lot? {
+        var lot: Lot? = null
+        runBlocking {
+            var resposta: Response<Lot>? = null
+            val cor = launch {
+                resposta = getRetrofit().create(ApiService::class.java).getLotByEventId(eventId)
+            }
+            cor.join()
+            if (resposta!!.isSuccessful)
+                lot = resposta!!.body()
+            else
+                return@runBlocking null
+        }
+        return lot
+    }
+
+    fun getOrganizerByEvent(eventId: Int): Participant {
+        var par: Participant? = null
+        runBlocking {
+            var resposta: Response<Participant>? = null
+            val cor = launch {
+                resposta = getRetrofit().create(ApiService::class.java).getOrganizerByEventId(eventId)
+            }
+            cor.join()
+            if (resposta!!.isSuccessful)
+                par = resposta!!.body()
+            else
+                return@runBlocking null
+        }
+        return par!!
+    }
+
 }

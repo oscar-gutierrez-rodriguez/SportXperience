@@ -46,4 +46,13 @@ interface ApiService {
         @Query("latitude") latitude: Float?,
         @Query("longitude") longitude: Float?,
     ): Response<List<Event>>
+
+
+    @GET("/api/lots/{eventId}")
+    suspend fun getLotByEventId(@Path("eventId") eventId: Int): Response<Lot>?
+
+    @GET("/api/participants/organizer/{eventId}")
+    suspend fun getOrganizerByEventId(@Path("eventId") eventId: Int): Response<Participant>
+
+
 }

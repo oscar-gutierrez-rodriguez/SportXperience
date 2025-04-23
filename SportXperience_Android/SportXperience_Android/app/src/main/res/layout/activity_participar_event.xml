@@ -43,7 +43,7 @@
                     android:layout_weight="1"
                     android:id="@+id/titolParticipar"
                     android:hint="titol"
-                    android:textSize="20sp"
+                    android:textSize="30sp"
                     android:textAlignment="center"
                     android:textStyle="bold"
                     android:layout_gravity="center"/>
@@ -77,6 +77,7 @@
                         android:layout_weight="1"
                         android:layout_margin="16dp"
                         android:text="dada1"
+                        android:id="@+id/dada1"
                         android:textAlignment="center"/>
 
                     <TextView
@@ -85,6 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
                         android:text="dada2"
+                        android:id="@+id/dada2"
                         android:textAlignment="center"/>
 
                     <TextView
@@ -93,6 +95,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
                         android:text="dada3"
+                        android:id="@+id/dada3"
                         android:textAlignment="center"/>
 
                 </LinearLayout>

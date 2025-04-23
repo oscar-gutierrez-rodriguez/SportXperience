@@ -38,7 +38,7 @@ data class Event(
     val price: Float,
     val recommendedLevelId: Int,
     val recommendedLevelName: String,
-    val reward: String,
+    val reward: String?,
     val sportId: Int,
     val sportName: String,
     val startDate: String,
@@ -46,3 +46,20 @@ data class Event(
     val latitude: Float,
     val longitude: Float
 ) : Parcelable
+
+
+data class Lot(
+    val event: Any,
+    val eventId: Int,
+    val lotId: Int,
+    val products: List<Any>
+)
+
+data class Participant(
+    val event: Any,
+    val eventId: Int,
+    val organizer: Boolean,
+    val results: List<Any>,
+    val userDni: String,
+    val userDniNavigation: Any
+)

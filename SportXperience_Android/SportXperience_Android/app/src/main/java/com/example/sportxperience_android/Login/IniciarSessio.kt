@@ -101,13 +101,42 @@ class IniciarSessio : Fragment() {
                                         .show()
                                 }
                             } else {
-                                hideLoading()
-                                Toast.makeText(
-                                    context,
-                                    "Credencials incorrectes",
-                                    Toast.LENGTH_SHORT
-                                )
-                                    .show()
+
+                                user = api?.getUserByMail(binding.tilUsername.text.toString())
+
+                                if(user != null){
+
+                                    val esCorrecta =
+                                        BCrypt.checkpw(
+                                            binding.tilContrasenya.text.toString(),
+                                            user!!.password
+                                        )
+
+
+                                    if (esCorrecta) {
+                                        hideLoading()
+                                        val intent = Intent(context, Principal::class.java)
+                                        startActivity(intent)
+                                    } else {
+                                        hideLoading()
+                                        Toast.makeText(
+                                            context,
+                                            "Credencials incorrectes",
+                                            Toast.LENGTH_SHORT
+                                        )
+                                            .show()
+                                    }
+
+                                } else {
+
+                                    hideLoading()
+                                    Toast.makeText(
+                                        context,
+                                        "Credencials incorrectes",
+                                        Toast.LENGTH_SHORT
+                                    )
+                                        .show()
+                                }
                             }
                         }
                     } catch (e: Exception) {
