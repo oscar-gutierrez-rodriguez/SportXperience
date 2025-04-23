@@ -24,7 +24,7 @@ namespace DesktopModels.Model
         {
             httpClient = new HttpClient
             {
-                BaseAddress = new Uri("https://localhost:7161/api/")
+                BaseAddress = new Uri("http://172.16.24.191:5097/api/")
             };
             httpClient.DefaultRequestHeaders.Add("Accept", contentType);
         }
@@ -306,6 +306,21 @@ namespace DesktopModels.Model
             if (la == null)
             {
                 la = new List<Product>();
+            }
+            return la;
+        }
+
+        public static List<Option> GetOptionsByProductId(int productId)
+        {
+            List<Option> la = null;
+            try
+            {
+                la = (List<Option>)MakeRequest("options/products/" + productId, "GET", null, typeof(List<Option>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<Option>();
             }
             return la;
         }

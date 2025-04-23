@@ -79,5 +79,10 @@ namespace SportXperience.View
         {
 
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

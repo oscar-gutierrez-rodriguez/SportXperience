@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,8 +41,12 @@ namespace SportXperience.Controller
             f.buttonActualitzar.Enabled = false;
             f.buttonAfegir.Enabled = true;
             fafegir.AllowDrop = true;
-            //f.pictureBoxLogo.Image = Image.FromFile(@"C:\Users\cv\Desktop\PROJECTEFINAL\logo.png");
-            //f.pictureBoxLogo.Image = Image.FromFile(@"https://localhost:7161/Images/logo.png");
+            var request = WebRequest.Create("http://172.16.24.191:5097/Images/logo.png");
+            using (var response = request.GetResponse())
+            using (var stream = response.GetResponseStream())
+            {
+                f.pictureBoxLogo.Image = Image.FromStream(stream);
+            }
             f.pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
             fafegir.comboBoxNivell.DataSource = Repositori.GetRecommendedLevel();
             fafegir.comboBoxNivell.DisplayMember = "name";
@@ -74,6 +79,39 @@ namespace SportXperience.Controller
             f.buttonActualitzar.Click += ButtonActualitzar_Click;
             f.buttonEliminar.Click += ButtonEliminar_Click;
             lot.dataGridViewOpcions.CellClick += dataGridViewOpcions_CellClick;
+            fafegir.buttonActualitzarProducte.Click += ButtonActualitzarProducte_Click;
+            fafegir.listBoxLot.Click += ListBoxLot_Click;
+        }
+
+        private void ListBoxLot_Click(object sender, EventArgs e)
+        {
+            fafegir.buttonActualitzarProducte.Enabled = true;
+        }
+
+        private void ButtonActualitzarProducte_Click(object sender, EventArgs e)
+        {
+            int prod = fafegir.listBoxLot.SelectedIndex;
+            Console.WriteLine(Actuproducts[prod].ProductId);
+
+            if (prod >= 0) 
+            {
+                if (afegir)
+                {
+                    lot.textBoxNomProd.Text = products[prod].Name;
+                    ActualitzarProductesGridOptions(products[prod].ProductId);
+                }
+                else
+                {
+                    lot.textBoxNomProd.Text = Actuproducts[prod].Name;
+                    ActualitzarProductesGridOptions(Actuproducts[prod].ProductId);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor selecciona un producto.");
+            }
+
+            lot.ShowDialog();
         }
 
         private void dataGridViewOpcions_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -232,6 +270,29 @@ namespace SportXperience.Controller
 
         }
 
+        private void ActualitzarProductesGridOptions(int ProductId)
+        {
+            List<ViewOption> viewOptions = new List<ViewOption>();
+
+            viewOptions = Repositori.GetOptionsByProductId(ProductId).Select(x => new ViewOption(x.Name)).ToList();
+            lot.dataGridViewOpcions.DataSource = viewOptions;
+
+            if (lot.dataGridViewOpcions.Columns.Contains("Eliminar"))
+            {
+                lot.dataGridViewOpcions.Columns.Remove("Eliminar");
+            }
+            DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
+            btnEliminar.Name = "Eliminar";
+            btnEliminar.HeaderText = "Eliminar";
+            btnEliminar.Text = "🗑";
+            btnEliminar.UseColumnTextForButtonValue = true;
+            btnEliminar.Width = 60;
+
+            lot.dataGridViewOpcions.Columns.Add(btnEliminar);
+
+
+        }
+
         private void ButtonEliminarProducte_Click(object sender, EventArgs e)
         { 
 
@@ -240,7 +301,14 @@ namespace SportXperience.Controller
             foreach (int index in indices)
             {
                 fafegir.listBoxLot.Items.RemoveAt(index);
-                products.RemoveAt(index);
+                if (afegir)
+                {
+                    products.RemoveAt(index);
+                }
+                else
+                {
+                    Actuproducts.RemoveAt(index);
+                }
             }
         }
         private void ButtonImagen_Click(object sender, EventArgs e)
@@ -274,7 +342,14 @@ namespace SportXperience.Controller
                     Name = lot.textBoxNomProd.Text,
                     Options = options
                 };
-                products.Add(p);    
+                if (afegir)
+                {
+                    products.Add(p);
+                }
+                else
+                {
+                    Actuproducts.Add(p);
+                }
                 fafegir.listBoxLot.Items.Add(lot.textBoxNomProd.Text);
                 options = new List<Option>();
                 NetejarDadesLot();
@@ -288,7 +363,7 @@ namespace SportXperience.Controller
         {
             foreach (Option e in options)
             {
-                if (e.Name.ToLower().Equals(opcions))
+                if (e.Name.ToLower() == opcions.ToLower())
                 {
                     return true;
                 }
@@ -299,7 +374,7 @@ namespace SportXperience.Controller
         {
             foreach (Product e in products) 
             {
-                if (e.Name.ToLower().Equals(productes))
+                if (e.Name.ToLower() == productes.ToLower())
                 {
                     return true;
                 }
@@ -428,6 +503,7 @@ namespace SportXperience.Controller
                     {
 
                         UpdateEvent(award, price);
+                        Actuproducts = new List<Product>();
                         loadDataGrid();
                         fafegir.Close();
                         f.Show();
@@ -526,8 +602,8 @@ namespace SportXperience.Controller
                 }
             }
             Repositori.DelLot(l);
-            InsertarProductes();
-            InsertarOptions();
+            InsertarActuProductes();
+            InsertarActuOptions();
             Repositori.UpdEvent(ev);
         }
 
@@ -570,10 +646,43 @@ namespace SportXperience.Controller
             }
         }
 
+        void InsertarActuProductes()
+        {
+
+            foreach (Product s in Actuproducts)
+            {
+                Product p = new Product
+                {
+                    ProductId = 0,
+                    Name = s.Name,
+                    LotId = Repositori.GetLotMax()
+                };
+                Repositori.InsProduct(p);
+
+            }
+        }
+
         void InsertarOptions()
         {
 
             foreach (Product s in products)
+            {
+                foreach (Option op in s.Options)
+                {
+                    Option o = new Option
+                    {
+                        OptionId = 0,
+                        Name = op.Name,
+                        ProductId = Repositori.GetProductsByLotIdAndName(Repositori.GetLotMax(), s.Name).ProductId
+                    };
+                    Repositori.InsOptions(o);
+                }
+            }
+        }
+        void InsertarActuOptions()
+        {
+
+            foreach (Product s in Actuproducts)
             {
                 foreach (Option op in s.Options)
                 {

@@ -66,6 +66,7 @@
             this.numericUpDownEdatMinima = new System.Windows.Forms.NumericUpDown();
             this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerInici = new System.Windows.Forms.DateTimePicker();
+            this.buttonActualitzarProducte = new MaterialSkin.Controls.MaterialButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownParticipants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMaxima)).BeginInit();
@@ -75,6 +76,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonActualitzarProducte);
             this.panel1.Controls.Add(this.comboBoxNivell);
             this.panel1.Controls.Add(this.listBoxLot);
             this.panel1.Controls.Add(this.checkBoxLot);
@@ -114,7 +116,7 @@
             this.panel1.Controls.Add(this.dateTimePickerInici);
             this.panel1.Location = new System.Drawing.Point(-2, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1149, 529);
+            this.panel1.Size = new System.Drawing.Size(1149, 541);
             this.panel1.TabIndex = 0;
             // 
             // comboBoxNivell
@@ -614,11 +616,33 @@
             this.dateTimePickerInici.Size = new System.Drawing.Size(100, 20);
             this.dateTimePickerInici.TabIndex = 69;
             // 
+            // buttonActualitzarProducte
+            // 
+            this.buttonActualitzarProducte.AutoSize = false;
+            this.buttonActualitzarProducte.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonActualitzarProducte.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.buttonActualitzarProducte.Depth = 0;
+            this.buttonActualitzarProducte.Enabled = false;
+            this.buttonActualitzarProducte.HighEmphasis = true;
+            this.buttonActualitzarProducte.Icon = null;
+            this.buttonActualitzarProducte.Location = new System.Drawing.Point(381, 492);
+            this.buttonActualitzarProducte.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonActualitzarProducte.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonActualitzarProducte.Name = "buttonActualitzarProducte";
+            this.buttonActualitzarProducte.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.buttonActualitzarProducte.Size = new System.Drawing.Size(202, 36);
+            this.buttonActualitzarProducte.TabIndex = 121;
+            this.buttonActualitzarProducte.Text = "ACTUALITZAR PRODUCTE LOT";
+            this.buttonActualitzarProducte.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.buttonActualitzarProducte.UseAccentColor = false;
+            this.buttonActualitzarProducte.UseVisualStyleBackColor = true;
+            this.buttonActualitzarProducte.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
             // AfegirActualitzarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 586);
+            this.ClientSize = new System.Drawing.Size(1146, 596);
             this.Controls.Add(this.panel1);
             this.Name = "AfegirActualitzarForm";
             this.Text = "SportXperience";
@@ -673,5 +697,6 @@
         public MaterialSkin.Controls.MaterialButton buttonAfegirProducte;
         public System.Windows.Forms.ListBox listBoxLot;
         public System.Windows.Forms.ComboBox comboBoxNivell;
+        public MaterialSkin.Controls.MaterialButton buttonActualitzarProducte;
     }
 }
