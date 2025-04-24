@@ -7,28 +7,32 @@
       "RelativeMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|solutionrelative:sportxperience\\controller\\controllermain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\desktopmodels\\model\\viewoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|solutionrelative:desktopmodels\\model\\viewoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{57A8A8D7-B1E2-4D73-97B9-9598BF50E0F6}|LoginRegister\\LoginRegister.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\loginregister\\controller\\controllerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57A8A8D7-B1E2-4D73-97B9-9598BF50E0F6}|LoginRegister\\LoginRegister.csproj|solutionrelative:loginregister\\controller\\controllerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\sportxperience\\view\\afegiractualitzarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|solutionrelative:sportxperience\\view\\afegiractualitzarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|c:\\repositorysportxperience\\sportxperience\\sportxperience_desktop\\desktopmodels\\model\\repositoriubicacions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|solutionrelative:desktopmodels\\model\\repositoriubicacions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|c:\\repositorysportxperience\\sportxperience\\sportxperience_desktop\\desktopmodels\\model\\ubicacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|solutionrelative:desktopmodels\\model\\ubicacio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\desktopmodels\\model\\repositori.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|solutionrelative:desktopmodels\\model\\repositori.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|c:\\repositorysportxperience\\sportxperience\\sportxperience_desktop\\sportxperience\\view\\afegiractualitzarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|solutionrelative:sportxperience\\view\\afegiractualitzarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\desktopmodels\\model\\viewoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|solutionrelative:desktopmodels\\model\\viewoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|c:\\repositorysportxperience\\sportxperience\\sportxperience_desktop\\sportxperience\\view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\sportxperience\\view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|solutionrelative:sportxperience\\view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\desktopmodels\\model\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01E635D9-D9BF-43C2-B5D8-2EEDFE266F2B}|DesktopModels\\DesktopModels.csproj|solutionrelative:desktopmodels\\model\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,19 +50,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
+              "Title": "Ubicacio.cs",
+              "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\Ubicacio.cs",
+              "RelativeDocumentMoniker": "DesktopModels\\Model\\Ubicacio.cs",
+              "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\Ubicacio.cs",
+              "RelativeToolTip": "DesktopModels\\Model\\Ubicacio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T17:57:00.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RepositoriUbicacions.cs",
+              "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\RepositoriUbicacions.cs",
+              "RelativeDocumentMoniker": "DesktopModels\\Model\\RepositoriUbicacions.cs",
+              "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\RepositoriUbicacions.cs",
+              "RelativeToolTip": "DesktopModels\\Model\\RepositoriUbicacions.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAqwD8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T17:48:03.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\View\\MainForm.cs",
               "RelativeDocumentMoniker": "SportXperience\\View\\MainForm.cs",
               "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\View\\MainForm.cs [Design]",
               "RelativeToolTip": "SportXperience\\View\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T14:45:38.147Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-23T14:45:38.147Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "AfegirActualitzarForm.cs [Design]",
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\View\\AfegirActualitzarForm.cs",
               "RelativeDocumentMoniker": "SportXperience\\View\\AfegirActualitzarForm.cs",
@@ -70,25 +99,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Event.cs",
-              "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\Event.cs",
-              "RelativeDocumentMoniker": "DesktopModels\\Model\\Event.cs",
-              "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\Event.cs",
-              "RelativeToolTip": "DesktopModels\\Model\\Event.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T17:59:09.696Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ControllerLogin.cs",
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\LoginRegister\\Controller\\ControllerLogin.cs",
               "RelativeDocumentMoniker": "LoginRegister\\Controller\\ControllerLogin.cs",
               "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\LoginRegister\\Controller\\ControllerLogin.cs",
               "RelativeToolTip": "LoginRegister\\Controller\\ControllerLogin.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAArwFUAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T14:26:11.369Z",
               "EditorCaption": ""
@@ -101,14 +118,14 @@
               "RelativeDocumentMoniker": "SportXperience\\Controller\\ControllerMain.cs",
               "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\Controller\\ControllerMain.cs",
               "RelativeToolTip": "SportXperience\\Controller\\ControllerMain.cs",
-              "ViewState": "AgIAAGUBAAAAAAAAAAAowG0BAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAFcCAAAAAAAAAAAmwGMCAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-27T14:24:05.405Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "ViewOption.cs",
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\ViewOption.cs",
               "RelativeDocumentMoniker": "DesktopModels\\Model\\ViewOption.cs",
@@ -121,13 +138,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Repositori.cs",
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\Repositori.cs",
               "RelativeDocumentMoniker": "DesktopModels\\Model\\Repositori.cs",
               "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\DesktopModels\\Model\\Repositori.cs",
               "RelativeToolTip": "DesktopModels\\Model\\Repositori.cs",
-              "ViewState": "AgIAACoBAAAAAAAAAAAowDgBAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAANMAAAAAAAAAAAAAANYAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T15:47:30.044Z",
               "EditorCaption": ""

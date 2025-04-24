@@ -118,6 +118,21 @@ namespace DesktopModels.Model
             return u;
         }
 
+        public static Ubication InsUbication(Ubication ubi)
+        {
+            Ubication u = null;
+            try
+            {
+                u = (Ubication)MakeRequest("ubications/", "POST", ubi, typeof(Ubication)).Result;
+            }
+            catch { }
+            if (u == null)
+            {
+                u = new Ubication();
+            }
+            return u;
+        }
+
         public static User GetUserInici(string usernameOrMail, string password)
         {
             User la = null;
@@ -192,6 +207,20 @@ namespace DesktopModels.Model
             }
             return la;
         }
+        public static Ubication GetUbicationByLatitudLongitud(double latitud, double longitud)
+        {
+            Ubication la = null;
+            try
+            {
+                la = (Ubication)MakeRequest("ubications/" + latitud + "/" + longitud, "GET", null, typeof(Ubication)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Ubication();
+            }
+            return la;
+        }
 
         public static Participant InsParticipant(Participant participant)
         {
@@ -208,17 +237,17 @@ namespace DesktopModels.Model
             return p;
         }
 
-        public static List<Event> GetEventbyUserDNI(string dni)
+        public static List<EventDTO> GetEventbyUserDNI(string dni)
         {
-            List<Event> la = null;
+            List<EventDTO> la = null;
             try
             {
-                la = (List<Event>)MakeRequest("events/" + dni, "GET", null, typeof(List<Event>)).Result;
+                la = (List<EventDTO>)MakeRequest("events/" + dni, "GET", null, typeof(List<EventDTO>)).Result;
             }
             catch { }
             if (la == null)
             {
-                la = new List<Event>();
+                la = new List<EventDTO>();
             }
             return la;
         }
@@ -418,6 +447,21 @@ namespace DesktopModels.Model
             if (la == null)
             {
                 la = new Lot();
+            }
+            return la;
+        }
+
+        public static Event GetEventById(int Id)
+        {
+            Event la = null;
+            try
+            {
+                la = (Event)MakeRequest("events/" + Id, "GET", null, typeof(Event)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Event();
             }
             return la;
         }

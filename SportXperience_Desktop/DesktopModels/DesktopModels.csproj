@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Event.cs" />
+    <Compile Include="Model\EventDTO.cs" />
     <Compile Include="Model\Gender.cs" />
     <Compile Include="Model\Lot.cs" />
     <Compile Include="Model\Message.cs" />
@@ -65,8 +66,10 @@
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\RecommendedLevel.cs" />
     <Compile Include="Model\Repositori.cs" />
+    <Compile Include="Model\RepositoriUbicacions.cs" />
     <Compile Include="Model\Result.cs" />
     <Compile Include="Model\Sport.cs" />
+    <Compile Include="Model\Ubicacio.cs" />
     <Compile Include="Model\Ubication.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\ViewOption.cs" />

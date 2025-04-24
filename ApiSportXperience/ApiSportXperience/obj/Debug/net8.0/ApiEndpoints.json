@@ -150,22 +150,22 @@
       {
         "Name": "pagament",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "data",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
+        "Type": "System.String",
+        "IsRequired": true
       },
       {
         "Name": "ubicacio",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "esport",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "latitude",
@@ -175,26 +175,6 @@
       {
         "Name": "longitude",
         "Type": "System.Single",
-        "IsRequired": true
-      },
-      {
-        "Name": "pagament",
-        "Type": "",
-        "IsRequired": true
-      },
-      {
-        "Name": "data",
-        "Type": "",
-        "IsRequired": true
-      },
-      {
-        "Name": "ubicacio",
-        "Type": "",
-        "IsRequired": true
-      },
-      {
-        "Name": "esport",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -226,7 +206,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.Event, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.EventDTO, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

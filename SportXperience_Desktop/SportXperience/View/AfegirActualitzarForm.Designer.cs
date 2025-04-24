@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonActualitzarProducte = new MaterialSkin.Controls.MaterialButton();
             this.comboBoxNivell = new System.Windows.Forms.ComboBox();
             this.listBoxLot = new System.Windows.Forms.ListBox();
             this.checkBoxLot = new MaterialSkin.Controls.MaterialCheckbox();
@@ -66,7 +67,8 @@
             this.numericUpDownEdatMinima = new System.Windows.Forms.NumericUpDown();
             this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerInici = new System.Windows.Forms.DateTimePicker();
-            this.buttonActualitzarProducte = new MaterialSkin.Controls.MaterialButton();
+            this.CheckBoxIlimitat = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownParticipants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdatMaxima)).BeginInit();
@@ -76,6 +78,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.materialLabel8);
+            this.panel1.Controls.Add(this.CheckBoxIlimitat);
             this.panel1.Controls.Add(this.buttonActualitzarProducte);
             this.panel1.Controls.Add(this.comboBoxNivell);
             this.panel1.Controls.Add(this.listBoxLot);
@@ -118,6 +122,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1149, 541);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonActualitzarProducte
+            // 
+            this.buttonActualitzarProducte.AutoSize = false;
+            this.buttonActualitzarProducte.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonActualitzarProducte.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.buttonActualitzarProducte.Depth = 0;
+            this.buttonActualitzarProducte.Enabled = false;
+            this.buttonActualitzarProducte.HighEmphasis = true;
+            this.buttonActualitzarProducte.Icon = null;
+            this.buttonActualitzarProducte.Location = new System.Drawing.Point(381, 492);
+            this.buttonActualitzarProducte.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonActualitzarProducte.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonActualitzarProducte.Name = "buttonActualitzarProducte";
+            this.buttonActualitzarProducte.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.buttonActualitzarProducte.Size = new System.Drawing.Size(202, 36);
+            this.buttonActualitzarProducte.TabIndex = 121;
+            this.buttonActualitzarProducte.Text = "ACTUALITZAR PRODUCTE LOT";
+            this.buttonActualitzarProducte.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.buttonActualitzarProducte.UseAccentColor = false;
+            this.buttonActualitzarProducte.UseVisualStyleBackColor = true;
+            this.buttonActualitzarProducte.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // comboBoxNivell
             // 
@@ -251,9 +277,8 @@
             this.textBoxDescripcio.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBoxDescripcio.LeadingIcon = null;
             this.textBoxDescripcio.Location = new System.Drawing.Point(327, 226);
-            this.textBoxDescripcio.MaxLength = 50;
+            this.textBoxDescripcio.MaxLength = 500000000;
             this.textBoxDescripcio.MouseState = MaterialSkin.MouseState.OUT;
-            this.textBoxDescripcio.Multiline = false;
             this.textBoxDescripcio.Name = "textBoxDescripcio";
             this.textBoxDescripcio.Size = new System.Drawing.Size(335, 50);
             this.textBoxDescripcio.TabIndex = 110;
@@ -369,7 +394,7 @@
             this.materialLabel16.AutoSize = true;
             this.materialLabel16.Depth = 0;
             this.materialLabel16.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel16.Location = new System.Drawing.Point(944, 356);
+            this.materialLabel16.Location = new System.Drawing.Point(944, 341);
             this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel16.Name = "materialLabel16";
             this.materialLabel16.Size = new System.Drawing.Size(151, 19);
@@ -561,7 +586,7 @@
             // 
             // numericUpDownParticipants
             // 
-            this.numericUpDownParticipants.Location = new System.Drawing.Point(947, 387);
+            this.numericUpDownParticipants.Location = new System.Drawing.Point(947, 404);
             this.numericUpDownParticipants.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -616,27 +641,32 @@
             this.dateTimePickerInici.Size = new System.Drawing.Size(100, 20);
             this.dateTimePickerInici.TabIndex = 69;
             // 
-            // buttonActualitzarProducte
+            // CheckBoxIlimitat
             // 
-            this.buttonActualitzarProducte.AutoSize = false;
-            this.buttonActualitzarProducte.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonActualitzarProducte.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.buttonActualitzarProducte.Depth = 0;
-            this.buttonActualitzarProducte.Enabled = false;
-            this.buttonActualitzarProducte.HighEmphasis = true;
-            this.buttonActualitzarProducte.Icon = null;
-            this.buttonActualitzarProducte.Location = new System.Drawing.Point(381, 492);
-            this.buttonActualitzarProducte.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.buttonActualitzarProducte.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonActualitzarProducte.Name = "buttonActualitzarProducte";
-            this.buttonActualitzarProducte.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.buttonActualitzarProducte.Size = new System.Drawing.Size(202, 36);
-            this.buttonActualitzarProducte.TabIndex = 121;
-            this.buttonActualitzarProducte.Text = "ACTUALITZAR PRODUCTE LOT";
-            this.buttonActualitzarProducte.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.buttonActualitzarProducte.UseAccentColor = false;
-            this.buttonActualitzarProducte.UseVisualStyleBackColor = true;
-            this.buttonActualitzarProducte.Click += new System.EventHandler(this.materialButton1_Click);
+            this.CheckBoxIlimitat.AutoSize = true;
+            this.CheckBoxIlimitat.Depth = 0;
+            this.CheckBoxIlimitat.Location = new System.Drawing.Point(1035, 364);
+            this.CheckBoxIlimitat.Margin = new System.Windows.Forms.Padding(0);
+            this.CheckBoxIlimitat.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.CheckBoxIlimitat.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CheckBoxIlimitat.Name = "CheckBoxIlimitat";
+            this.CheckBoxIlimitat.ReadOnly = false;
+            this.CheckBoxIlimitat.Ripple = true;
+            this.CheckBoxIlimitat.Size = new System.Drawing.Size(35, 37);
+            this.CheckBoxIlimitat.TabIndex = 122;
+            this.CheckBoxIlimitat.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel8
+            // 
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel8.Location = new System.Drawing.Point(944, 372);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(88, 19);
+            this.materialLabel8.TabIndex = 123;
+            this.materialLabel8.Text = "Sense Límit:";
             // 
             // AfegirActualitzarForm
             // 
@@ -698,5 +728,7 @@
         public System.Windows.Forms.ListBox listBoxLot;
         public System.Windows.Forms.ComboBox comboBoxNivell;
         public MaterialSkin.Controls.MaterialButton buttonActualitzarProducte;
+        public MaterialSkin.Controls.MaterialLabel materialLabel8;
+        public MaterialSkin.Controls.MaterialCheckbox CheckBoxIlimitat;
     }
 }
