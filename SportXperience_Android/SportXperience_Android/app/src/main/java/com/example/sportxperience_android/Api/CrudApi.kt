@@ -1,6 +1,7 @@
 package com.example.sportxperience_android.Api
 
 import android.content.Context
+import androidx.core.os.persistableBundleOf
 import com.example.sportxperience_android.R
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.CoroutineScope
@@ -169,7 +170,7 @@ class CrudApi(context: Context) : CoroutineScope {
 
     fun getAllEventsFilter(
         pagament: Int,
-        date: String?,
+        date: String,
         ubicacio: String?,
         esport: String?,
         latitude: Float?,
@@ -221,6 +222,34 @@ class CrudApi(context: Context) : CoroutineScope {
                 return@runBlocking null
         }
         return par!!
+    }
+
+    fun getOptionsByProduct(productId: Int): List<Option> {
+        var options: List<Option>? = null
+        runBlocking {
+            var resposta: Response<List<Option>>? = null
+            val cor = launch {
+                resposta = getRetrofit().create(ApiService::class.java).getOptionsByProduct(productId)
+            }
+            cor.join()
+            if (resposta!!.isSuccessful)
+                options = resposta!!.body()
+        }
+        return options!!
+    }
+
+    fun getProductsByLot(lotId: Int): List<Product> {
+        var products: List<Product>? = null
+        runBlocking {
+            var resposta: Response<List<Product>>? = null
+            val cor = launch {
+                resposta = getRetrofit().create(ApiService::class.java).getProductsByLot(lotId)
+            }
+            cor.join()
+            if (resposta!!.isSuccessful)
+                products = resposta!!.body()
+        }
+        return products!!
     }
 
 }

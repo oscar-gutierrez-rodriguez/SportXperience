@@ -2,13 +2,16 @@ package com.example.sportxperience_android
 
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.sportxperience_android.Adapters.AdapterEvents
+import com.example.sportxperience_android.Adapters.AdapterProducts
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Event
 import com.example.sportxperience_android.databinding.ActivityParticiparEventBinding
@@ -57,9 +60,18 @@ class ParticiparEvent : AppCompatActivity() {
         val lot = api.getLotByEventId(event!!.eventId)
 
         if(lot != null){
-            Toast.makeText(this, "exist", Toast.LENGTH_SHORT).show()
+
+            binding.noLot.visibility = View.INVISIBLE
+            val productes = api.getProductsByLot(lot.lotId)
+
+            val adapter = AdapterProducts(productes, this)
+
+            binding.recyclerProducts.layoutManager = LinearLayoutManager(this)
+            binding.recyclerProducts.adapter = adapter
+
         } else{
-            Toast.makeText(this, "no tiene lote", Toast.LENGTH_SHORT).show()
+            binding.noLot.visibility = View.VISIBLE
+            //Toast.makeText(this, "no tiene lote", Toast.LENGTH_SHORT).show()
         }
         
         binding.creadorParticipant.setText(api.getUserByDni(api.getOrganizerByEvent(event!!.eventId).userDni)!!.firstName)

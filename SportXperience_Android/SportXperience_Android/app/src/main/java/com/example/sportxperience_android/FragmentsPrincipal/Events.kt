@@ -116,14 +116,16 @@ class Events : Fragment() {
     fun mostrarEvents() {
         val api = context?.let { CrudApi(it) }
 
-        val events = api?.getAllEventsFilter(
-            pagament,
-            formatDateToISO(binding.tilDataFiltre.toString()),
-            if (binding.tilCiutat.text.toString().isNullOrEmpty()) null else binding.tilCiutat.text.toString(),
-            if (binding.tilEsport.text.toString().isNullOrEmpty()) null else binding.tilEsport.text.toString(),
-            null,
-            null
-        )
+        val events = formatDateToISO(binding.tilDataFiltre.toString())?.let {
+            api?.getAllEventsFilter(
+                pagament,
+                it,
+                if (binding.tilCiutat.text.toString().isNullOrEmpty()) "null" else binding.tilCiutat.text.toString(),
+                if (binding.tilEsport.text.toString().isNullOrEmpty()) "null" else binding.tilEsport.text.toString(),
+                null,
+                null
+            )
+        }
 
         if (events != null) {
             val adapter = context?.let { AdapterEvents(events, it) }

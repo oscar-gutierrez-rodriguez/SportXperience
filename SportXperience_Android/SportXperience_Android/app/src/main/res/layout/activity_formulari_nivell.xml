@@ -19,14 +19,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageButton
+            <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/baseline_keyboard_return_24"
+                android:src="@drawable/arrowback"
                 android:contentDescription="Tornar"
-                android:background="#3FB41F"
                 android:id="@+id/bt_tornar"
-                android:layout_margin="16dp"/>
+                android:layout_margin="16dp"
+                android:scaleType="centerInside"
+                android:padding="7dp"/>
 
             <TextView
                 android:layout_width="match_parent"

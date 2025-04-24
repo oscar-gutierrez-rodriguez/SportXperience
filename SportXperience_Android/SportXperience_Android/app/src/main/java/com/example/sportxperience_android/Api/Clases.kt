@@ -63,3 +63,18 @@ data class Participant(
     val userDni: String,
     val userDniNavigation: Any
 )
+
+data class Product(
+    val lot: Any,
+    val lotId: Int,
+    val name: String,
+    val options: List<Any>,
+    val productId: Int
+)
+
+data class Option(
+    val name: String,
+    val optionId: Int,
+    val product: Any,
+    val productId: Int
+)

@@ -39,17 +39,23 @@ interface ApiService {
 
     @GET("/api/events/{pagament}/{date}/{ubicacio}/{esport}/{latitude}/{longitude}")
     suspend fun getAllEventsFilter(
-        @Query("pagament") pagament: Int,
-        @Query("date") date: String?,
-        @Query("ubicacio") ubicacio: String?,
-        @Query("esport") esport: String?,
-        @Query("latitude") latitude: Float?,
-        @Query("longitude") longitude: Float?,
+        @Path("pagament") pagament: Int,
+        @Path("date") date: String,
+        @Path("ubicacio") ubicacio: String?,
+        @Path("esport") esport: String?,
+        @Path("latitude") latitude: Float?,
+        @Path("longitude") longitude: Float?,
     ): Response<List<Event>>
 
 
     @GET("/api/lots/{eventId}")
     suspend fun getLotByEventId(@Path("eventId") eventId: Int): Response<Lot>?
+
+    @GET("/api/products/lots/{lotId}")
+    suspend fun getProductsByLot(@Path("lotId") lotId : Int): Response<List<Product>>
+
+    @GET("/api/options/products/{productId}")
+    suspend fun getOptionsByProduct(@Path("productId") productId : Int) : Response<List<Option>>
 
     @GET("/api/participants/organizer/{eventId}")
     suspend fun getOrganizerByEventId(@Path("eventId") eventId: Int): Response<Participant>
