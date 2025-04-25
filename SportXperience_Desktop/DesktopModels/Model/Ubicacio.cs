@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,13 +9,28 @@ namespace DesktopModels.Model
 {
     public class Ubicacio
     {
-        public int idpoblacio { get; set; }
-        public int idprovincia { get; set; }
-        public string nompoblacio { get; set; }
-        public string codipostal { get; set; }
-        public double latitut { get; set; }
-        public double longitut { get; set; }
-        public int? numhabitants { get; set; }
-        public double? superficie { get; set; }
+        [JsonProperty("idpoblacio")]
+        public int IdPoblacio { get; set; }
+
+        [JsonProperty("idprovincia")]
+        public int IdProvincia { get; set; }
+
+        [JsonProperty("nompoblacio")]
+        public string NomPoblacio { get; set; }
+
+        [JsonProperty("codipostal")]
+        public string CodiPostal { get; set; }
+
+        [JsonProperty("latitut")]
+        public double Latitut { get; set; }
+
+        [JsonProperty("longitut")]
+        public double Longitut { get; set; }
+
+        [JsonProperty("numhabitants")]
+        public int? NumHabitants { get; set; }
+
+        [JsonProperty("superficie")]
+        public double? Superficie { get; set; }
     }
 }

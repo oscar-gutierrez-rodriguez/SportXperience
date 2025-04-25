@@ -1556,6 +1556,26 @@
     ]
   },
   {
+    "ContainingType": "ApiSportXperience.Controllers.UbicationsController",
+    "Method": "GetUbicationMax",
+    "RelativePath": "api/ubications/max",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSportXperience.Models.Ubication",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ApiSportXperience.Controllers.UsersController",
     "Method": "GetUsers",
     "RelativePath": "api/users",

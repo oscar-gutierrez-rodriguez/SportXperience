@@ -2620,6 +2620,35 @@
         }
       }
     },
+    "/api/ubications/max": {
+      "get": {
+        "tags": [
+          "Ubications"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ubication"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ubication"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ubication"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/ubications/{latitude}/{longitude}": {
       "get": {
         "tags": [

@@ -59,6 +59,21 @@ namespace DesktopModels.Model
             return la;
         }
 
+        public static Ubication GetUbicationMax()
+        {
+            Ubication la = null;
+            try
+            {
+                la = (Ubication)MakeRequest("ubications/max", "GET", null, typeof(Ubication)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Ubication();
+            }
+            return la;
+        }
+
         public static User GetUserByDNI(string dni)
         {
             User la = null;
@@ -432,6 +447,21 @@ namespace DesktopModels.Model
             if (la == null)
             {
                 la = new Sport();
+            }
+            return la;
+        }
+
+        public static Ubication GetUbicationById(int? id)
+        {
+            Ubication la = null;
+            try
+            {
+                la = (Ubication)MakeRequest("ubications/" + id, "GET", null, typeof(Ubication)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Ubication();
             }
             return la;
         }

@@ -44,6 +44,16 @@ namespace ApiSportXperience.Controllers
         }
 
         [HttpGet]
+        [Route("api/ubications/max")]
+        public async Task<ActionResult<Ubication>> GetUbicationMax()
+        {
+            int maxId = await _context.Ubications.MaxAsync(x => x.UbicationId);
+
+            return await _context.Ubications
+                .Where(x => x.UbicationId == maxId).FirstOrDefaultAsync();
+        }
+
+        [HttpGet]
         [Route("api/ubications/{latitude}/{longitude}")]
         public async Task<ActionResult<Ubication>> GetUbicationByLatitudeLongitude(float latitude, float longitude)
         {

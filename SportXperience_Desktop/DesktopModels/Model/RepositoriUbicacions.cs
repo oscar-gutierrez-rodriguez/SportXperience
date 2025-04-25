@@ -27,20 +27,26 @@ namespace DesktopModels.Model
             httpClient.DefaultRequestHeaders.Add("Accept", contentType);
         }
 
-        public static List<Ubicacio> GetUbicacio(double latitud, double longitud)
+        public static async Task<List<Ubicacio>> GetUbicacio(double latitud, double longitud)
         {
-            List<Ubicacio> la = null;
             try
             {
-                la = (List<Ubicacio>)MakeRequest("?latitud="+ latitud + "&longitud="+longitud, "GET", null, typeof(List<Ubicacio>)).Result;
+                string url = $"?latitud={latitud.ToString(System.Globalization.CultureInfo.InvariantCulture)}&longitud={longitud.ToString(System.Globalization.CultureInfo.InvariantCulture)}";
+                string json = await httpClient.GetStringAsync(url);
+
+                Console.WriteLine("JSON recibido:");
+                Console.WriteLine(json);
+
+                List<Ubicacio> ubicacions = JsonConvert.DeserializeObject<List<Ubicacio>>(json);
+                return ubicacions ?? new List<Ubicacio>();
             }
-            catch { }
-            if (la == null)
+            catch (Exception ex)
             {
-                la = new List<Ubicacio>();
+                Console.WriteLine($"Error al obtener ubicaciones: {ex.Message}");
+                return new List<Ubicacio>();
             }
-            return la;
         }
+
         public static async Task<object> MakeRequest(string url, string method, object JSONcontent, Type responseType)
         ////  url: Url a partir de la base 
         ////  method: "GET"/"POST"/"PUT"/"DELETE"

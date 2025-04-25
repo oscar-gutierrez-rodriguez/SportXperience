@@ -188,7 +188,7 @@ namespace SportXperience.Controller
             EventDTO ev = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as EventDTO;
 
             Lot l = Repositori.GetLotByEventId(ev.EventId);
-            
+
 
             if (l != null) {
 
@@ -206,6 +206,8 @@ namespace SportXperience.Controller
             fafegir.numericUpDownEdatMaxima.Value = ev.MaxAge.Value;
             fafegir.numericUpDownParticipants.Value = ev.MaxParticipantsNumber.Value;
             fafegir.comboBoxNivell.Text = Repositori.GetRecommendedLevelById(ev.RecommendedLevelId).Name;
+            fafegir.textBoxLatitud.Text = Repositori.GetUbicationById(ev.UbicationId).Latitude.ToString();
+            fafegir.textBoxLongitud.Text = Repositori.GetUbicationById(ev.UbicationId).Longitude.ToString();
 
             foreach (Product p in products)
             {
@@ -601,15 +603,16 @@ namespace SportXperience.Controller
             }
         }
 
-        void InsertarUbicacions()
+        private async void InsertarUbicacions()
         {
-            double lat, lng;
-            
+            double lat;
+            double lng;
+
 
             if (double.TryParse(fafegir.textBoxLatitud.Text, out lat) &&
                 double.TryParse(fafegir.textBoxLongitud.Text, out lng))
             {
-              List<Ubicacio> u = RepositoriUbicacions.GetUbicacio(42.360827, 2.999911);
+              List<Ubicacio> u = await RepositoriUbicacions.GetUbicacio(lat, lng);
 
                 if (u.Count > 0)
                 {
@@ -619,7 +622,7 @@ namespace SportXperience.Controller
                         UbicationId = 0,
                         Latitude = lat,
                         Longitude = lng,
-                        CityName = u[0].nompoblacio
+                        CityName = u[0].NomPoblacio
                     };
 
                     Ubication ubicacio = Repositori.GetUbicationByLatitudLongitud(lat, lng);
@@ -645,6 +648,7 @@ namespace SportXperience.Controller
         void InsertarEvent(string award, double price)
         {
             Sport s = Repositori.GetSportByName(fafegir.textBoxEsport.Text);
+            Ubication u = Repositori.GetUbicationMax();
 
             string urlImage = null;
 
@@ -681,7 +685,7 @@ namespace SportXperience.Controller
                     MaxParticipantsNumber = numeroParticipants,
                     Price = price,
                     Reward = award,
-                    UbicationId = 1,
+                    UbicationId = u.UbicationId,
                     RecommendedLevelId = (fafegir.comboBoxNivell.SelectedItem as RecommendedLevel).RecommendedLevelId,
                     SportId = s.SportId,
                 };
@@ -697,7 +701,10 @@ namespace SportXperience.Controller
             Lot l = Repositori.GetLotByEventId(evs.EventId);
 
             Sport s = Repositori.GetSportByName(fafegir.textBoxEsport.Text);
-         
+
+            Ubication u = Repositori.GetUbicationMax();
+
+
             Event ev = new Event
             {
                 EventId = evs.EventId,
@@ -711,7 +718,7 @@ namespace SportXperience.Controller
                 MaxParticipantsNumber = (int?)fafegir.numericUpDownParticipants.Value,
                 Price = price,
                 Reward = award,
-                UbicationId = 1,
+                UbicationId = u.UbicationId,
                 RecommendedLevelId = (fafegir.comboBoxNivell.SelectedItem as RecommendedLevel).RecommendedLevelId,
                 SportId = s.SportId,
             };
@@ -723,7 +730,8 @@ namespace SportXperience.Controller
                     InsertarLot();
                 }
             }
-            Repositori.DelLot(l);
+            InsertarUbicacions();
+            Repositori.DelLot(l);            
             InsertarActuProductes();
             InsertarActuOptions();
             Repositori.UpdEvent(ev);
