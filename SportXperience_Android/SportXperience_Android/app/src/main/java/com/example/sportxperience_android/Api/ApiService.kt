@@ -43,8 +43,8 @@ interface ApiService {
         @Path("date") date: String,
         @Path("ubicacio") ubicacio: String?,
         @Path("esport") esport: String?,
-        @Path("latitude") latitude: Float?,
-        @Path("longitude") longitude: Float?,
+        @Path("latitude") latitude: Double?,
+        @Path("longitude") longitude: Double?,
     ): Response<List<Event>>
 
 

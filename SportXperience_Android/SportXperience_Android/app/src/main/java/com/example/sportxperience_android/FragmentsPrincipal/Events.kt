@@ -5,12 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sportxperience_android.Adapters.AdapterEvents
 import com.example.sportxperience_android.Api.CrudApi
-import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentEventsBinding
+import com.example.sportxperience_android.ubicacioActual
 import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -87,6 +86,17 @@ class Events : Fragment() {
                 }
             }
 
+        binding.resetFilter.setOnClickListener{
+            binding.tieDataFiltre.setText("")
+            binding.tilCiutat.setText("")
+            binding.tilEsport.setText("")
+
+            mostrarEvents()
+        }
+
+        binding.cercarFiltre.setOnClickListener{
+            mostrarEvents()
+        }
 
         // Inflate the layout for this fragment
         return binding.root
@@ -116,16 +126,17 @@ class Events : Fragment() {
     fun mostrarEvents() {
         val api = context?.let { CrudApi(it) }
 
-        val events = formatDateToISO(binding.tilDataFiltre.toString())?.let {
+        val events = (if (binding.tieDataFiltre.text.toString().isNullOrEmpty()) "null" else formatDateToISO(binding.tieDataFiltre.text.toString()))?.let {
             api?.getAllEventsFilter(
                 pagament,
                 it,
                 if (binding.tilCiutat.text.toString().isNullOrEmpty()) "null" else binding.tilCiutat.text.toString(),
                 if (binding.tilEsport.text.toString().isNullOrEmpty()) "null" else binding.tilEsport.text.toString(),
-                null,
-                null
+                ubicacioActual!!.latitude,
+                ubicacioActual!!.longitude
             )
         }
+
 
         if (events != null) {
             val adapter = context?.let { AdapterEvents(events, it) }

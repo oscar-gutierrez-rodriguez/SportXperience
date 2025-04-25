@@ -1,7 +1,6 @@
 package com.example.sportxperience_android.Api
 
 import android.content.Context
-import androidx.core.os.persistableBundleOf
 import com.example.sportxperience_android.R
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.CoroutineScope
@@ -14,7 +13,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Path
 import kotlin.coroutines.CoroutineContext
 
 class CrudApi(context: Context) : CoroutineScope {
@@ -173,8 +171,8 @@ class CrudApi(context: Context) : CoroutineScope {
         date: String,
         ubicacio: String?,
         esport: String?,
-        latitude: Float?,
-        longitude: Float?
+        latitude: Double,
+        longitude: Double
     ): List<Event>? {
         var events: List<Event>? = null
         runBlocking {
