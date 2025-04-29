@@ -64,8 +64,6 @@ class Principal : AppCompatActivity() {
                 .addOnSuccessListener { ubicacio: Location? ->
                     if (ubicacio != null) {
                         ubicacioActual = LatLng(ubicacio.latitude, ubicacio.longitude)
-                        Toast.makeText(this, ubicacioActual!!.latitude.toString(), Toast.LENGTH_SHORT).show()
-                        Toast.makeText(this, ubicacioActual!!.longitude.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
         } else {

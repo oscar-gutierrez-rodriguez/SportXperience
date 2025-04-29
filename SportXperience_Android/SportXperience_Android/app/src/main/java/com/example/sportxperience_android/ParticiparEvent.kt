@@ -1,5 +1,6 @@
 package com.example.sportxperience_android
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -15,6 +16,9 @@ import com.example.sportxperience_android.Adapters.AdapterProducts
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Event
 import com.example.sportxperience_android.databinding.ActivityParticiparEventBinding
+import com.google.android.gms.maps.model.LatLng
+
+var eventParticipar : Event? = null
 
 class ParticiparEvent : AppCompatActivity() {
 
@@ -40,6 +44,8 @@ class ParticiparEvent : AppCompatActivity() {
             event = intent.getParcelableExtra("event", Event::class.java)
         else
             event = intent.getParcelableExtra<Event>("event")
+
+        eventParticipar = event!!
 
         binding.titolParticipar.setText(event!!.name)
         Glide.with(this).load(this.getString(R.string.ruta_api) + event!!.image).into(binding.imatgeParticipar)
@@ -71,10 +77,23 @@ class ParticiparEvent : AppCompatActivity() {
 
         } else{
             binding.noLot.visibility = View.VISIBLE
-            //Toast.makeText(this, "no tiene lote", Toast.LENGTH_SHORT).show()
         }
         
         binding.creadorParticipant.setText(api.getUserByDni(api.getOrganizerByEvent(event!!.eventId).userDni)!!.firstName)
+
+        binding.btUbicacioParticipant.setOnClickListener{
+            if(ubicacioActual != null) {
+                val intent = Intent(this, ActivityRuta::class.java)
+                startActivity(intent)
+            } else{
+                Toast.makeText(this, "No tens permís d'ubicació", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.btComentarisParticipant.setOnClickListener{
+            val intent = Intent(this, ComentarisEvent::class.java)
+            startActivity(intent)
+        }
 
         binding.btTornar.setOnClickListener{
             onBackPressed()

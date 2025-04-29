@@ -18,6 +18,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ComentarisEvent"
+            android:exported="false" />
+        <activity
+            android:name=".Prova"
+            android:exported="false" />
+        <activity
             android:name=".ActivityRuta"
             android:exported="false" />
         <activity

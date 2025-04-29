@@ -52,7 +52,9 @@ class Events : Fragment() {
 
         binding.evTotsDos.isChecked = true
 
-        mostrarEvents()
+        if(ubicacioActual != null) {
+            mostrarEvents()
+        }
 
 
         binding.evGratuit.setOnClickListener {
