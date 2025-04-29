@@ -44,6 +44,21 @@ namespace DesktopModels.Model
             return la;
         }
 
+        public static List<Ubication> GetUbicacions()
+        {
+            List<Ubication> la = null;
+            try
+            {
+                la = (List<Ubication>)MakeRequest("ubications/", "GET", null, typeof(List<Ubication>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<Ubication>();
+            }
+            return la;
+        }
+
         public static Event GetEventMax()
         {
             Event la = null;
