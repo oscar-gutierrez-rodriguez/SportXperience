@@ -79,6 +79,18 @@ data class Option(
     val productId: Int
 )
 
+data class Comment(
+    val comment: String,
+    val dniOrganizer: String,
+    val messageId: Int,
+    val publicMessage: Boolean,
+    val publishedDate: String,
+    val userDni: String
+)
+
+
+
+
 
 
 
@@ -147,3 +159,4 @@ data class Summary(
     val distance: Double,
     val duration: Double
 )
+

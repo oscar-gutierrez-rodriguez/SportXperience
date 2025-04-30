@@ -250,4 +250,18 @@ class CrudApi(context: Context) : CoroutineScope {
         return products!!
     }
 
+    fun getCommentsByEventId(eventId: Int): List<Comment> {
+        var comments: List<Comment>? = null
+        runBlocking {
+            var resposta: Response<List<Comment>>? = null
+            val cor = launch {
+                resposta = getRetrofit().create(ApiService::class.java).getCommentsByEvent(eventId)
+            }
+            cor.join()
+            if (resposta!!.isSuccessful)
+                comments = resposta!!.body()
+        }
+        return comments!!
+    }
+
 }

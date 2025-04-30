@@ -60,5 +60,8 @@ interface ApiService {
     @GET("/api/participants/organizer/{eventId}")
     suspend fun getOrganizerByEventId(@Path("eventId") eventId: Int): Response<Participant>
 
+    @GET("/api/messages/comments/{eventId}")
+    suspend fun getCommentsByEvent(@Path("eventId") eventId: Int): Response<List<Comment>>
+
 
 }
