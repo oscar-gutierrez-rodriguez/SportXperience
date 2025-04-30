@@ -29,15 +29,7 @@ namespace SportXperience.View
         }
 
         private void UbicacioForm_Load(object sender, EventArgs e)
-        {
-            dataGridViewUbicacions.DataSource = Repositori.GetUbicacions();
-            dataGridViewUbicacions.Columns["UbicationId"].Visible = false;
-            dataGridViewUbicacions.Columns["Events"].Visible = false;
-            dataGridViewUbicacions.Columns["CityName"].Width = 200;
-            dataGridViewUbicacions.Columns["CityName"].DisplayIndex = 0;
-
-
-
+        {          
             gMapControlUbi.DragButton = MouseButtons.Left;
             gMapControlUbi.CanDragMap = true;
             gMapControlUbi.MapProvider = GMapProviders.GoogleMap;
@@ -86,6 +78,18 @@ namespace SportXperience.View
         private void materialButtonAfegir_Click(object sender, EventArgs e)
         {
           
+        }
+
+        private void materialButtonSat_Click(object sender, EventArgs e)
+        {
+            gMapControlUbi.MapProvider = GMapProviders.GoogleSatelliteMap;
+
+        }
+
+        private void materialButtonOrg_Click(object sender, EventArgs e)
+        {
+            gMapControlUbi.MapProvider = GMapProviders.GoogleMap;
+
         }
     }
 }

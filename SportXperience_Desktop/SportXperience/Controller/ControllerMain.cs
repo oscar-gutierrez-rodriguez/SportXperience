@@ -30,6 +30,8 @@ namespace SportXperience.Controller
         Boolean afegir = false;
         OpenFileDialog archiu = new OpenFileDialog();
         Ubication ubication;
+        EventDTO ev;
+        private int? ubicationIdToSelect = null;
 
         public ControllerMain()
         {
@@ -106,7 +108,38 @@ namespace SportXperience.Controller
 
         private void MaterialButtonUbi_Click(object sender, EventArgs e)
         {
+            ubi.dataGridViewUbicacions.DataBindingComplete -= DataGridViewUbicacions_DataBindingComplete;
+
+            ubi.dataGridViewUbicacions.DataSource = Repositori.GetUbicacions();
+            ubi.dataGridViewUbicacions.ClearSelection();
+            ubi.dataGridViewUbicacions.Columns["UbicationId"].Visible = false;
+            ubi.dataGridViewUbicacions.Columns["Events"].Visible = false;
+            ubi.dataGridViewUbicacions.Columns["CityName"].Width = 200;
+            ubi.dataGridViewUbicacions.Columns["CityName"].DisplayIndex = 0;
+
+            if (!afegir)
+            {
+                ubicationIdToSelect = ev.UbicationId;
+                ubi.dataGridViewUbicacions.DataBindingComplete += DataGridViewUbicacions_DataBindingComplete;
+            }
+
             ubi.ShowDialog();
+        }
+
+        private void DataGridViewUbicacions_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (ubicationIdToSelect.HasValue)
+            {
+                foreach (DataGridViewRow row in ubi.dataGridViewUbicacions.Rows)
+                {
+                    if ((row.DataBoundItem as Ubication)?.UbicationId == ubicationIdToSelect)
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+                ubicationIdToSelect = null;
+            }
         }
 
         private void LotFormClosed(object sender, FormClosedEventArgs e)
@@ -208,12 +241,15 @@ namespace SportXperience.Controller
             NetejarDadesAfegirActualitzar();
 
             fafegir.listBoxLot.Items.Clear();
-            EventDTO ev = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as EventDTO;
+            ev = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as EventDTO;
+
+
 
             Lot l = Repositori.GetLotByEventId(ev.EventId);
 
 
-            if (l != null) {
+            if (l != null)
+            {
 
                 products = Repositori.GetProductsByLotId(l.LotId);
             }
@@ -231,39 +267,40 @@ namespace SportXperience.Controller
             fafegir.comboBoxNivell.Text = Repositori.GetRecommendedLevelById(ev.RecommendedLevelId).Name;
             ubi.TextBoxLatitud.Text = Repositori.GetUbicationById(ev.UbicationId).Latitude.ToString();
             ubi.TextBoxLongitud.Text = Repositori.GetUbicationById(ev.UbicationId).Longitude.ToString();
-            fafegir.materialTextBoxNomCiutat.Text = ubication.CityName;
+            fafegir.materialTextBoxNomCiutat.Text = ev.cityName;
             //Recorrer columnas datagrid seleccionar la que tiene el mismo ubicationID
-            //ubi.dataGridViewUbicacions.
+          
 
 
-            foreach (Product p in products)
-            {
-                fafegir.listBoxLot.Items.Add(p.Name);
-                p.Options = Repositori.GetOptionsByProductId(p.ProductId);
-                Actuproducts.Add(p);
-                
-            }
+                foreach (Product p in products)
+                {
+                    fafegir.listBoxLot.Items.Add(p.Name);
+                    p.Options = Repositori.GetOptionsByProductId(p.ProductId);
+                    Actuproducts.Add(p);
 
-            fafegir.textBoxEsport.Text = Repositori.GetSportById(ev.SportId).Name;
+                }
 
-            if (!string.IsNullOrEmpty(ev.Reward))
-            {
-                fafegir.checkBoxPagament.Checked = true;
+                fafegir.textBoxEsport.Text = Repositori.GetSportById(ev.SportId).Name;
+
+                if (!string.IsNullOrEmpty(ev.Reward))
+                {
+                    fafegir.checkBoxPagament.Checked = true;
+                }
+                else
+                {
+                    fafegir.checkBoxPagament.Checked = false;
+                    fafegir.textBoxPreu.Text = "";
+                    fafegir.textBoxPremi.Text = "";
+                }
+                if (products.Count() != 0)
+                {
+                    fafegir.checkBoxLot.Checked = true;
+                }
+                afegir = false;
+                fafegir.ShowDialog();
+
             }
-            else
-            {
-                fafegir.checkBoxPagament.Checked = false;
-                fafegir.textBoxPreu.Text = "";
-                fafegir.textBoxPremi.Text = "";
-            }
-            if (products.Count() != 0)
-            {
-                fafegir.checkBoxLot.Checked = true;
-            }
-            afegir = false;
-            fafegir.ShowDialog();
-            
-        }
+        
 
         private void DataGridViewEvents_SelectionChanged(object sender, EventArgs e)
         {

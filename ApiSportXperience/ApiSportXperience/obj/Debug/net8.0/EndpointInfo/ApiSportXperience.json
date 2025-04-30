@@ -822,7 +822,7 @@
         }
       }
     },
-    "/api/messages/{eventId}": {
+    "/api/messages/comments/{eventId}": {
       "get": {
         "tags": [
           "Messages"
@@ -846,7 +846,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Message"
+                    "$ref": "#/components/schemas/MessageDTO"
                   }
                 }
               },
@@ -854,7 +854,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Message"
+                    "$ref": "#/components/schemas/MessageDTO"
                   }
                 }
               },
@@ -862,7 +862,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Message"
+                    "$ref": "#/components/schemas/MessageDTO"
                   }
                 }
               }
@@ -3245,6 +3245,41 @@
           },
           "userDniNavigation": {
             "$ref": "#/components/schemas/User"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MessageDTO": {
+        "type": "object",
+        "properties": {
+          "messageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "publishedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "publicMessage": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "userDni": {
+            "type": "string",
+            "nullable": true
+          },
+          "dniOrganizer": {
+            "type": "string",
+            "nullable": true
+          },
+          "usernameOrganizer": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

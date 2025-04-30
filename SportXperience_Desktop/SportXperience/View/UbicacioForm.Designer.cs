@@ -36,6 +36,8 @@
             this.gMapControlUbi = new GMap.NET.WindowsForms.GMapControl();
             this.dataGridViewUbicacions = new System.Windows.Forms.DataGridView();
             this.materialButtonAfegirUbi = new MaterialSkin.Controls.MaterialButton();
+            this.materialButtonSat = new MaterialSkin.Controls.MaterialButton();
+            this.materialButtonOrg = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUbicacions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,7 +142,7 @@
             this.gMapControlUbi.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControlUbi.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControlUbi.ShowTileGridLines = false;
-            this.gMapControlUbi.Size = new System.Drawing.Size(527, 385);
+            this.gMapControlUbi.Size = new System.Drawing.Size(527, 356);
             this.gMapControlUbi.TabIndex = 5;
             this.gMapControlUbi.Zoom = 0D;
             this.gMapControlUbi.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gMapControlUbi_MouseDoubleClick);
@@ -169,7 +171,7 @@
             this.materialButtonAfegirUbi.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButtonAfegirUbi.Name = "materialButtonAfegirUbi";
             this.materialButtonAfegirUbi.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButtonAfegirUbi.Size = new System.Drawing.Size(105, 36);
+            this.materialButtonAfegirUbi.Size = new System.Drawing.Size(71, 36);
             this.materialButtonAfegirUbi.TabIndex = 7;
             this.materialButtonAfegirUbi.Text = "AFEGIR";
             this.materialButtonAfegirUbi.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -177,11 +179,53 @@
             this.materialButtonAfegirUbi.UseVisualStyleBackColor = true;
             this.materialButtonAfegirUbi.Click += new System.EventHandler(this.materialButtonAfegir_Click);
             // 
+            // materialButtonSat
+            // 
+            this.materialButtonSat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButtonSat.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButtonSat.Depth = 0;
+            this.materialButtonSat.HighEmphasis = true;
+            this.materialButtonSat.Icon = null;
+            this.materialButtonSat.Location = new System.Drawing.Point(106, 390);
+            this.materialButtonSat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButtonSat.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButtonSat.Name = "materialButtonSat";
+            this.materialButtonSat.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButtonSat.Size = new System.Drawing.Size(87, 36);
+            this.materialButtonSat.TabIndex = 8;
+            this.materialButtonSat.Text = "SATÉLITE";
+            this.materialButtonSat.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButtonSat.UseAccentColor = false;
+            this.materialButtonSat.UseVisualStyleBackColor = true;
+            this.materialButtonSat.Click += new System.EventHandler(this.materialButtonSat_Click);
+            // 
+            // materialButtonOrg
+            // 
+            this.materialButtonOrg.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButtonOrg.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButtonOrg.Depth = 0;
+            this.materialButtonOrg.HighEmphasis = true;
+            this.materialButtonOrg.Icon = null;
+            this.materialButtonOrg.Location = new System.Drawing.Point(373, 390);
+            this.materialButtonOrg.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButtonOrg.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButtonOrg.Name = "materialButtonOrg";
+            this.materialButtonOrg.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButtonOrg.Size = new System.Drawing.Size(71, 36);
+            this.materialButtonOrg.TabIndex = 9;
+            this.materialButtonOrg.Text = "ORIGINAL";
+            this.materialButtonOrg.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButtonOrg.UseAccentColor = false;
+            this.materialButtonOrg.UseVisualStyleBackColor = true;
+            this.materialButtonOrg.Click += new System.EventHandler(this.materialButtonOrg_Click);
+            // 
             // UbicacioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 450);
+            this.Controls.Add(this.materialButtonOrg);
+            this.Controls.Add(this.materialButtonSat);
             this.Controls.Add(this.materialButtonAfegirUbi);
             this.Controls.Add(this.dataGridViewUbicacions);
             this.Controls.Add(this.gMapControlUbi);
@@ -209,5 +253,7 @@
         public GMap.NET.WindowsForms.GMapControl gMapControlUbi;
         public System.Windows.Forms.DataGridView dataGridViewUbicacions;
         public MaterialSkin.Controls.MaterialButton materialButtonAfegirUbi;
+        public MaterialSkin.Controls.MaterialButton materialButtonSat;
+        public MaterialSkin.Controls.MaterialButton materialButtonOrg;
     }
 }
