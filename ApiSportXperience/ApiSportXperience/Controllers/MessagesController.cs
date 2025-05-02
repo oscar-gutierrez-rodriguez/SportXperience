@@ -23,10 +23,21 @@ namespace ApiSportXperience.Controllers
 
         // GET: api/Messages
         [HttpGet]
-        [Route("api/messages/{eventId:int}")]
-        public async Task<ActionResult<IEnumerable<Message>>> GetMessagesByEvent(int eventId)
+        [Route("api/messages/comments/{eventId}")]
+        public async Task<ActionResult<IEnumerable<MessageDTO>>> GetMessagesByEvent(int eventId)
         {
-            return await _context.Messages.Where(x => x.EventId == eventId).ToListAsync();
+            return await _context.Messages.Where(x => x.EventId == eventId && x.PublicMessage == true)
+                .Select( x => new MessageDTO
+                {
+                    MessageId = x.MessageId,
+                    Comment = x.Comment,
+                    PublicMessage = x.PublicMessage,
+                    PublishedDate = x.PublishedDate,
+                    UserDni = x.UserDni,
+                    DniOrganizer = _context.Participants.Where(y => y.EventId == x.EventId && y.Organizer == true).FirstOrDefault().UserDni,
+                    UsernameOrganizer = _context.Users.Where(y => y.Dni.Equals(_context.Participants.Where(y => y.EventId == x.EventId && y.Organizer == true).FirstOrDefault().UserDni)).FirstOrDefault().Username
+                })
+                .ToListAsync();
         }
 
         [HttpGet]

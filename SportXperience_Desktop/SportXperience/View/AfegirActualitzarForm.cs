@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,23 @@ using System.Windows.Forms;
 
 namespace SportXperience.View
 {
-    public partial class AfegirActualitzarForm : Form
+    public partial class AfegirActualitzarForm : MaterialForm
     {
+        readonly MaterialSkin.MaterialSkinManager materialSkinManager;
         public AfegirActualitzarForm()
         {
             InitializeComponent();
+            materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
+            materialSkinManager.EnforceBackcolorOnAllComponents = false;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(
+                       MaterialSkin.Primary.Green600,
+                       MaterialSkin.Primary.Green600,
+                       MaterialSkin.Primary.Purple700,
+                       MaterialSkin.Accent.Red200,
+                       MaterialSkin.TextShade.WHITE
+                   );
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -48,6 +61,26 @@ namespace SportXperience.View
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonImagen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AfegirActualitzarForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPreu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
         {
 
         }
