@@ -150,22 +150,26 @@
       {
         "Name": "pagament",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "data",
         "Type": "System.String",
+<<<<<<< HEAD
         "IsRequired": false
+=======
+        "IsRequired": true
+>>>>>>> Desktop
       },
       {
         "Name": "ubicacio",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "esport",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "latitude",
@@ -175,26 +179,6 @@
       {
         "Name": "longitude",
         "Type": "System.Single",
-        "IsRequired": true
-      },
-      {
-        "Name": "pagament",
-        "Type": "",
-        "IsRequired": true
-      },
-      {
-        "Name": "data",
-        "Type": "",
-        "IsRequired": true
-      },
-      {
-        "Name": "ubicacio",
-        "Type": "",
-        "IsRequired": true
-      },
-      {
-        "Name": "esport",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -226,7 +210,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.Event, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.EventDTO, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -558,32 +542,6 @@
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.MessagesController",
-    "Method": "GetMessagesByEvent",
-    "RelativePath": "api/messages/{eventId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.Message, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ApiSportXperience.Controllers.MessagesController",
     "Method": "PutMessage",
     "RelativePath": "api/messages/{id}",
     "HttpMethod": "PUT",
@@ -618,6 +576,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.MessagesController",
+    "Method": "GetMessagesByEvent",
+    "RelativePath": "api/messages/comments/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.MessageDTO, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.MessagesController",
@@ -1563,6 +1547,26 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSportXperience.Models.Ubication",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.UbicationsController",
+    "Method": "GetUbicationMax",
+    "RelativePath": "api/ubications/max",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "ApiSportXperience.Models.Ubication",

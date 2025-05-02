@@ -24,7 +24,7 @@ namespace DesktopModels.Model
         {
             httpClient = new HttpClient
             {
-                BaseAddress = new Uri("https://localhost:7161/api/")
+                BaseAddress = new Uri("http://172.16.24.191:5097/api/")
             };
             httpClient.DefaultRequestHeaders.Add("Accept", contentType);
         }
@@ -44,6 +44,21 @@ namespace DesktopModels.Model
             return la;
         }
 
+        public static List<Ubication> GetUbicacions()
+        {
+            List<Ubication> la = null;
+            try
+            {
+                la = (List<Ubication>)MakeRequest("ubications/", "GET", null, typeof(List<Ubication>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<Ubication>();
+            }
+            return la;
+        }
+
         public static Event GetEventMax()
         {
             Event la = null;
@@ -55,6 +70,21 @@ namespace DesktopModels.Model
             if (la == null)
             {
                 la = new Event();
+            }
+            return la;
+        }
+
+        public static Ubication GetUbicationMax()
+        {
+            Ubication la = null;
+            try
+            {
+                la = (Ubication)MakeRequest("ubications/max", "GET", null, typeof(Ubication)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Ubication();
             }
             return la;
         }
@@ -114,6 +144,21 @@ namespace DesktopModels.Model
             if (u == null)
             {
                 u = new User();
+            }
+            return u;
+        }
+
+        public static Ubication InsUbication(Ubication ubi)
+        {
+            Ubication u = null;
+            try
+            {
+                u = (Ubication)MakeRequest("ubications/", "POST", ubi, typeof(Ubication)).Result;
+            }
+            catch { }
+            if (u == null)
+            {
+                u = new Ubication();
             }
             return u;
         }
@@ -192,6 +237,20 @@ namespace DesktopModels.Model
             }
             return la;
         }
+        public static Ubication GetUbicationByLatitudLongitud(double latitud, double longitud)
+        {
+            Ubication la = null;
+            try
+            {
+                la = (Ubication)MakeRequest("ubications/" + latitud + "/" + longitud, "GET", null, typeof(Ubication)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Ubication();
+            }
+            return la;
+        }
 
         public static Participant InsParticipant(Participant participant)
         {
@@ -208,17 +267,17 @@ namespace DesktopModels.Model
             return p;
         }
 
-        public static List<Event> GetEventbyUserDNI(string dni)
+        public static List<EventDTO> GetEventbyUserDNI(string dni)
         {
-            List<Event> la = null;
+            List<EventDTO> la = null;
             try
             {
-                la = (List<Event>)MakeRequest("events/" + dni, "GET", null, typeof(List<Event>)).Result;
+                la = (List<EventDTO>)MakeRequest("events/" + dni, "GET", null, typeof(List<EventDTO>)).Result;
             }
             catch { }
             if (la == null)
             {
-                la = new List<Event>();
+                la = new List<EventDTO>();
             }
             return la;
         }
@@ -310,6 +369,21 @@ namespace DesktopModels.Model
             return la;
         }
 
+        public static List<Option> GetOptionsByProductId(int productId)
+        {
+            List<Option> la = null;
+            try
+            {
+                la = (List<Option>)MakeRequest("options/products/" + productId, "GET", null, typeof(List<Option>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<Option>();
+            }
+            return la;
+        }
+
         public static void DelEvent(Event ev)
         {
             int id = ev.EventId;
@@ -323,6 +397,24 @@ namespace DesktopModels.Model
                 if (e == null)
                 {
                     e = new Event();
+                }
+            }
+
+        }
+
+        public static void DelLot(Lot l)
+        {
+            int id = l.LotId;
+            Lot lo = null;
+            try
+            {
+                lo = (Lot)MakeRequest("lots/" + id, "DELETE", l, typeof(Lot)).Result;
+            }
+            catch
+            {
+                if (lo == null)
+                {
+                    lo = new Lot();
                 }
             }
 
@@ -370,6 +462,51 @@ namespace DesktopModels.Model
             if (la == null)
             {
                 la = new Sport();
+            }
+            return la;
+        }
+
+        public static Ubication GetUbicationById(int? id)
+        {
+            Ubication la = null;
+            try
+            {
+                la = (Ubication)MakeRequest("ubications/" + id, "GET", null, typeof(Ubication)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Ubication();
+            }
+            return la;
+        }
+
+        public static Lot GetLotByEventId(int? id)
+        {
+            Lot la = null;
+            try
+            {
+                la = (Lot)MakeRequest("lots/" + id, "GET", null, typeof(Lot)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Lot();
+            }
+            return la;
+        }
+
+        public static Event GetEventById(int Id)
+        {
+            Event la = null;
+            try
+            {
+                la = (Event)MakeRequest("events/" + Id, "GET", null, typeof(Event)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new Event();
             }
             return la;
         }

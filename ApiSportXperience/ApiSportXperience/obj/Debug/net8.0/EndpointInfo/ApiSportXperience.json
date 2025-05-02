@@ -199,7 +199,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Event"
+                    "$ref": "#/components/schemas/EventDTO"
                   }
                 }
               },
@@ -207,7 +207,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Event"
+                    "$ref": "#/components/schemas/EventDTO"
                   }
                 }
               },
@@ -215,7 +215,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Event"
+                    "$ref": "#/components/schemas/EventDTO"
                   }
                 }
               }
@@ -232,7 +232,8 @@
         "parameters": [
           {
             "name": "pagament",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -240,21 +241,24 @@
           },
           {
             "name": "data",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string"
             }
           },
           {
             "name": "ubicacio",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string"
             }
           },
           {
             "name": "esport",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -275,38 +279,6 @@
             "schema": {
               "type": "number",
               "format": "float"
-            }
-          },
-          {
-            "name": "pagament",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "data",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "ubicacio",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "esport",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -850,7 +822,7 @@
         }
       }
     },
-    "/api/messages/{eventId}": {
+    "/api/messages/comments/{eventId}": {
       "get": {
         "tags": [
           "Messages"
@@ -874,7 +846,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Message"
+                    "$ref": "#/components/schemas/MessageDTO"
                   }
                 }
               },
@@ -882,7 +854,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Message"
+                    "$ref": "#/components/schemas/MessageDTO"
                   }
                 }
               },
@@ -890,7 +862,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Message"
+                    "$ref": "#/components/schemas/MessageDTO"
                   }
                 }
               }
@@ -2648,6 +2620,35 @@
         }
       }
     },
+    "/api/ubications/max": {
+      "get": {
+        "tags": [
+          "Ubications"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ubication"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ubication"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ubication"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/ubications/{latitude}/{longitude}": {
       "get": {
         "tags": [
@@ -3244,6 +3245,41 @@
           },
           "userDniNavigation": {
             "$ref": "#/components/schemas/User"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MessageDTO": {
+        "type": "object",
+        "properties": {
+          "messageId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "publishedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "publicMessage": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "userDni": {
+            "type": "string",
+            "nullable": true
+          },
+          "dniOrganizer": {
+            "type": "string",
+            "nullable": true
+          },
+          "usernameOrganizer": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

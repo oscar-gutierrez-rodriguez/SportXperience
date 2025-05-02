@@ -24,6 +24,7 @@ namespace LoginRegister.Controller
             public ControllerLogin()
             {
                 Repositori.CreateHttpClient();
+                RepositoriUbicacions.CreateHttpClient();
                 loadData();
                 setListeners();
                 loginForm.Shown += (s, e) => loginForm.textBoxNomCorreu.Focus();

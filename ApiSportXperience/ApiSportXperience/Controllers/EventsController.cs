@@ -87,15 +87,40 @@ namespace ApiSportXperience.Controllers
 
         [HttpGet]
         [Route("api/events/{userdni}")]
-        public async Task<ActionResult<IEnumerable<Event>>> GetEventByOrganizer(string userdni)
+        public async Task<ActionResult<IEnumerable<EventDTO>>> GetEventByOrganizer(string userdni)
         {
             return await _context.Events
-                .Where(e => e.Participants.Any(p => p.UserDni.Equals(userdni) && p.Organizer == true)).ToListAsync();
+                .Where(e => e.Participants.Any(p => p.UserDni.Equals(userdni) && p.Organizer == true))
+                .Select(x => new EventDTO
+                {
+                    EventId = x.EventId,
+                    Name = x.Name,
+                    StartDate = x.StartDate,
+                    EndDate = x.EndDate,
+                    Image = x.Image,
+                    Description = x.Description,
+                    MinAge = x.MinAge,
+                    MaxAge = x.MaxAge,
+                    MaxParticipantsNumber = x.MaxParticipantsNumber,
+                    Price = x.Price,
+                    Reward = x.Reward,
+                    UbicationId = x.UbicationId,
+                    RecommendedLevelId = x.RecommendedLevelId,
+                    SportId = x.SportId,
+                    RecommendedLevelName = _context.RecommendedLevels.Where(y => y.RecommendedLevelId == x.RecommendedLevelId).FirstOrDefault().Name,
+                    SportName = _context.Sports.Where(y => y.SportId == x.SportId).FirstOrDefault().Name,
+                    cityName = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().CityName,
+                    latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
+                    longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude
+                }).ToListAsync();
+
+
         }
 
         [HttpGet]
         [Route("api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}")]
-        public async Task<ActionResult<IEnumerable<EventDTO>>> GetEventFiltre([FromQuery] int? pagament, [FromQuery] string? data, [FromQuery] string? ubicacio, [FromQuery] string? esport, float latitude, float longitude)
+
+        public async Task<ActionResult<IEnumerable<EventDTO>>> GetEventFiltre(int? pagament, string? data, string? ubicacio, string? esport, float latitude, float longitude)
         {
 
             List<EventDTO> query;
@@ -219,7 +244,7 @@ namespace ApiSportXperience.Controllers
         public async Task<ActionResult<Event>> GetEvent(int id)
         {
             Event e = await _context.Events
-                .Where( x => x.EventId == id).FirstOrDefaultAsync();
+                .Where(x => x.EventId == id).FirstOrDefaultAsync();
 
             if (e == null)
             {
@@ -273,7 +298,7 @@ namespace ApiSportXperience.Controllers
 
             if (e.Sport != null)
             {
-                 _context.Attach(e.Sport);
+                _context.Attach(e.Sport);
             }
 
             return CreatedAtAction("GetEvent", new { id = e.EventId }, e);
@@ -358,9 +383,9 @@ namespace ApiSportXperience.Controllers
                     _context.Products.RemoveRange(products);
                 }
 
-                
-                 _context.Lots.Remove(l);
-                
+
+                _context.Lots.Remove(l);
+
             }
 
             _context.Participants.RemoveRange(part);

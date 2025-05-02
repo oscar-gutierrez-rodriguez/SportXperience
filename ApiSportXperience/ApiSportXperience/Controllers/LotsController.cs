@@ -108,7 +108,25 @@ namespace ApiSportXperience.Controllers
                 return NotFound();
             }
 
-            _context.Lots.Remove(lot);
+                List<Product> products = await _context.Products.Where(x => x.LotId == lot.LotId).ToListAsync();
+
+                List<Option> options = new List<Option>();
+
+                foreach (Product p in products)
+                {
+                    List<Option> o = await _context.Options.Where(x => x.ProductId == p.ProductId).ToListAsync();
+                    options.AddRange(o);
+                }
+                if (options.Count > 0)
+                {
+                    _context.Options.RemoveRange(options);
+                }
+
+                if (products.Count > 0)
+                {
+                    _context.Products.RemoveRange(products);
+                }
+
             await _context.SaveChangesAsync();
 
             return NoContent();
