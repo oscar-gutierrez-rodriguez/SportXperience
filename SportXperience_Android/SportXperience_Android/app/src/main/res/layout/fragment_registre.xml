@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/credencials"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    tools:context=".Login.Registre">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/baseline_account_circle_24"
+            app:tint="@color/black" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:hint="DNI"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:id="@+id/til_dni_reg"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Nom"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:id="@+id/til_nom_reg"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Cognoms"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:id="@+id/til_cognoms_reg"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data de naixement"
+            android:id="@+id/til_dataNaixement"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/baseline_calendar_month_24"
+            app:endIconTint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundMode="outline">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:enabled="false"
+                android:textSize="12sp"
+                android:id="@+id/tie_dataNaixement"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <!--<EditText
+            android:id="@+id/til_nomusuari_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom usuari"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey"
+            android:textSize="12sp"
+            android:background="@drawable/rounded_corner"
+            android:padding="12dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"/>!-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Correu electrònic"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:id="@+id/til_correu_reg"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Nom d'usuari"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:id="@+id/til_nomusuari_reg"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Contrasenya"
+            app:passwordToggleEnabled="true"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:id="@+id/til_contrasenyareg"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="14dp"
+            android:id="@+id/toggleButton"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+            <com.google.android.material.button.MaterialButton
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="@color/black"
+                android:id="@+id/genere_home"/>
+            <com.google.android.material.button.MaterialButton
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dona"
+                android:textColor="@color/black"
+                android:id="@+id/genere_dona"/>
+            <com.google.android.material.button.MaterialButton
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Altre"
+                android:id="@+id/genere_altre"/>
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="12dp"
+            android:text="Registrar-se"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/black"
+            android:id="@+id/bt_nouregistre"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/loadingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#80000000">
+
+        <ProgressBar
+            android:id="@+id/loadingSpinner"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>
