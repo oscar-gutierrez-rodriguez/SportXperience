@@ -33,7 +33,10 @@ namespace ApiSportXperience.Controllers
         [Route("api/users/username/{username}")]
         public async Task<ActionResult<User>> GetUserByUsername(string username)
         {
-            var user = await _context.Users.Where(x => x.Username.Equals(username)).FirstOrDefaultAsync();
+            var user = _context.Users
+                .AsEnumerable() 
+                .Where(x => x.Username.Equals(username, StringComparison.Ordinal))
+                .FirstOrDefault();
 
             if (user == null)
             {
@@ -47,7 +50,10 @@ namespace ApiSportXperience.Controllers
         [Route("api/users/mail/{mail}")]
         public async Task<ActionResult<User>> GetUserByMail(string mail)
         {
-            var user = await _context.Users.Where(x => x.Mail.Equals(mail)).FirstOrDefaultAsync();
+            var user = _context.Users
+                .AsEnumerable()
+                .Where(x => x.Mail.Equals(mail, StringComparison.Ordinal))
+                .FirstOrDefault();
 
             if (user == null)
             {
@@ -76,7 +82,11 @@ namespace ApiSportXperience.Controllers
         [Route("api/users/{usernameOrMail}/{password}")]
         public async Task<ActionResult<User>> GetUserAndPassword(string usernameOrMail, string password)
         {
-            var user = await _context.Users.Where(x => (x.Username.Equals(usernameOrMail) || x.Mail.Equals(usernameOrMail)) && x.Password.Equals(password)).FirstOrDefaultAsync();
+
+            var user = _context.Users
+                .AsEnumerable()
+                .Where(x => (x.Username.Equals(usernameOrMail, StringComparison.Ordinal) || x.Mail.Equals(usernameOrMail, StringComparison.Ordinal)) && x.Password.Equals(password))
+                .FirstOrDefault();
 
             if (user == null)
             {
