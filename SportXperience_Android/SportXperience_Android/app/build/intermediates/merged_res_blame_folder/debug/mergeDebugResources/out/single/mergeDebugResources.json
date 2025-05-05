@@ -1,0 +1,262 @@
+[
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_keyboard_return_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_keyboard_return_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_manage_search_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_manage_search_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_event_available_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_event_available_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_cancel_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_cancel_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_layout_comentari.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_comentari.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_layout_chat_propi.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_chat_propi.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_remove_red_eye_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_remove_red_eye_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_activity_participar_event.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_participar_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_calendar_month_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_calendar_month_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_emoji_events_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_emoji_events_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_activity_comentaris_event.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_comentaris_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_account_circle_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_account_circle_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_search_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_search_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_fragment_resultats.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_resultats.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_layout_producte.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_producte.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_layout_event.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_layout_carousel.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_carousel.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_send_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_send_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_fragment_events.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_events.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_star_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_star_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_events_selector.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\events_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_rounded_corner.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\rounded_corner.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_outline_event_available_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\outline_event_available_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_inici_selector.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\inici_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-anydpi\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_resultats_selector.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\resultats_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_activity_ruta.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_ruta.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.sportxperience_android.app-debug-37:/layout_fragment_events.xml.flat",
+        "source": "com.example.sportxperience_android.app-main-39:/layout/fragment_events.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_sports_handball_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_sports_handball_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-anydpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.sportxperience_android.app-debug-37:/layout_activity_comentaris_event.xml.flat",
+        "source": "com.example.sportxperience_android.app-main-39:/layout/activity_comentaris_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_comment_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_comment_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_login_background.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\login_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_activity_formulari_contacte.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_formulari_contacte.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_fragment_iniciar_sessio.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_iniciar_sessio.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_activity_formulari_nivell.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_formulari_nivell.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_home_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_home_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_activity_principal.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_principal.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_locationicon.png.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\locationicon.png"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_arrowback.png.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\arrowback.png"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_border_image.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\border_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_message_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_message_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_fragment_inici.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_inici.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_layout_chat_altre.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_chat_altre.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_fragment_participants.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_participants.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_outline_home_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\outline_home_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\menu_bottom_menu.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\menu\\bottom_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\layout_fragment_registre.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_registre.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_outline_emoji_events_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\outline_emoji_events_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-debug-37:\\drawable_baseline_filter_alt_off_24.xml.flat",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\drawable\\baseline_filter_alt_off_24.xml"
+    }
+]

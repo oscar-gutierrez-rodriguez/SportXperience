@@ -1,0 +1,10 @@
+#Fri May 02 19:35:48 CEST 2025
+base.0=D\:\\DAM2\\M13\\ProjecteFinal\\SportXperience\\SportXperience\\SportXperience_Android\\SportXperience_Android\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+base.1=D\:\\DAM2\\M13\\ProjecteFinal\\SportXperience\\SportXperience\\SportXperience_Android\\SportXperience_Android\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+base.2=D\:\\DAM2\\M13\\ProjecteFinal\\SportXperience\\SportXperience\\SportXperience_Android\\SportXperience_Android\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\15\\classes.dex
+path.0=classes.dex
+path.1=0/classes.dex
+path.2=15/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex

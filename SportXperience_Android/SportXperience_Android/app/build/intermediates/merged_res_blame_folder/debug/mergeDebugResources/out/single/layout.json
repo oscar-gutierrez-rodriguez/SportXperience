@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\fragment_events.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_events.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\layout_producte.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_producte.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\fragment_iniciar_sessio.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_iniciar_sessio.xml"
+    },
+    {
+        "merged": "com.example.sportxperience_android.app-mergeDebugResources-36:/layout/fragment_events.xml",
+        "source": "com.example.sportxperience_android.app-main-39:/layout/fragment_events.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\activity_ruta.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_ruta.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\fragment_resultats.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_resultats.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\layout_event.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\layout_chat_propi.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_chat_propi.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\fragment_participants.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_participants.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\fragment_inici.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_inici.xml"
+    },
+    {
+        "merged": "com.example.sportxperience_android.app-mergeDebugResources-36:/layout/activity_comentaris_event.xml",
+        "source": "com.example.sportxperience_android.app-main-39:/layout/activity_comentaris_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\activity_formulari_nivell.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_formulari_nivell.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\activity_formulari_contacte.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_formulari_contacte.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\layout_chat_altre.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_chat_altre.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\fragment_registre.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\fragment_registre.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\layout_comentari.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_comentari.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\activity_comentaris_event.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_comentaris_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\activity_participar_event.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_participar_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\layout_carousel.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\layout_carousel.xml"
+    },
+    {
+        "merged": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-mergeDebugResources-36:\\layout\\activity_principal.xml",
+        "source": "C:\\Users\\oscar\\.gradle\\daemon\\8.7\\com.example.sportxperience_android.app-main-39:\\layout\\activity_principal.xml"
+    }
+]

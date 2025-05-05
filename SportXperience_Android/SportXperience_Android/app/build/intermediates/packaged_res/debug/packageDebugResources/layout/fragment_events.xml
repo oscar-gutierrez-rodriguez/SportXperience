@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FragmentsPrincipal.Events"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Esdeveniments"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="25dp"/>
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:id="@+id/toggleButton"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+        <com.google.android.material.button.MaterialButton
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gratuït"
+            android:textColor="@color/black"
+            android:id="@+id/ev_gratuit"/>
+        <com.google.android.material.button.MaterialButton
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pagament"
+            android:textColor="@color/black"
+            android:id="@+id/ev_pagament"/>
+        <com.google.android.material.button.MaterialButton
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Tots"
+            android:id="@+id/ev_totsDos"/>
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Esport"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/baseline_search_24"
+            app:endIconTint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:id="@+id/til_esport"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="Ciutat"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/baseline_search_24"
+            app:endIconTint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:id="@+id/til_ciutat"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Data"
+            android:id="@+id/til_dataFiltre"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"
+            app:endIconCheckable="true"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/baseline_calendar_month_24"
+            app:endIconTint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundMode="outline">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:enabled="false"
+                android:textSize="12sp"
+                android:id="@+id/tie_dataFiltre"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="165dp"
+            android:layout_height="50dp"
+            android:id="@+id/resetFilter"
+            android:text="Netejar filtres"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginStart="5dp"
+            app:icon="@drawable/baseline_filter_alt_off_24"
+            app:iconGravity="textEnd"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="165dp"
+            android:layout_height="50dp"
+            android:id="@+id/cercarFiltre"
+            android:text="Cercar"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginEnd="5dp"
+            app:icon="@drawable/baseline_manage_search_24"
+            app:iconGravity="textEnd"
+            app:iconPadding="20dp"
+            app:iconSize="25dp"/>
+
+    </LinearLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_events"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp" />
+
+</LinearLayout>

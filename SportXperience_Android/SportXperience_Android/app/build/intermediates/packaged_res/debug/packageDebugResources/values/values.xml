@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="grey">#969696</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">SportXperience_Android</string>
+    <string name="google_maps_api_key">AIzaSyClKtVsKCjnqJZ7wUq5wISshFtM7pgHjKc</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_route_api_key">5b3ce3597851110001cf62481731021656b74e7f9d586eb8f91adef0</string>
+    <string name="ruta_api">http://192.168.1.36:5097/</string>
+    <style name="Base.Theme.SportXperience_Android" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.SportXperience_Android" parent="Base.Theme.SportXperience_Android"/>
+</resources>

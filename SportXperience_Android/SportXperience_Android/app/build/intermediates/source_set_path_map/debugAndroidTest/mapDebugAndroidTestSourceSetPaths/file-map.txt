@@ -1,0 +1,6 @@
+com.example.sportxperience_android.test.app-tracing-1.2.0-0 C:\Users\oscar\.gradle\caches\transforms-4\2511d7b4e107f92f32f482d239739cbc\transformed\tracing-1.2.0\res
+com.example.sportxperience_android.test.app-core-1.6.1-1 C:\Users\oscar\.gradle\caches\transforms-4\a2bfc310d79d62bb17e5353546e34f93\transformed\core-1.6.1\res
+com.example.sportxperience_android.test.app-androidTest-2 D:\DAM2\M13\ProjecteFinal\SportXperience\SportXperience\SportXperience_Android\SportXperience_Android\app\build\generated\res\resValues\androidTest\debug
+com.example.sportxperience_android.test.app-mergeDebugAndroidTestResources-3 D:\DAM2\M13\ProjecteFinal\SportXperience\SportXperience\SportXperience_Android\SportXperience_Android\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.sportxperience_android.test.app-mergeDebugAndroidTestResources-4 D:\DAM2\M13\ProjecteFinal\SportXperience\SportXperience\SportXperience_Android\SportXperience_Android\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.sportxperience_android.test.app-debugAndroidTest-5 D:\DAM2\M13\ProjecteFinal\SportXperience\SportXperience\SportXperience_Android\SportXperience_Android\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
