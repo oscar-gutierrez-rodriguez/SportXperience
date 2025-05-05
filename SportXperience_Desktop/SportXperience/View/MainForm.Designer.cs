@@ -37,6 +37,7 @@
             this.buttonAfegir = new MaterialSkin.Controls.MaterialButton();
             this.monthCalendarEvents = new Pabo.Calendar.MonthCalendar();
             this.dataGridViewEvents = new System.Windows.Forms.DataGridView();
+            this.materialButtonProdPart = new MaterialSkin.Controls.MaterialButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).BeginInit();
@@ -45,6 +46,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Honeydew;
+            this.panel1.Controls.Add(this.materialButtonProdPart);
             this.panel1.Controls.Add(this.pictureBoxLogo);
             this.panel1.Location = new System.Drawing.Point(-3, 61);
             this.panel1.Name = "panel1";
@@ -130,7 +132,7 @@
             this.buttonAfegir.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonAfegir.Name = "buttonAfegir";
             this.buttonAfegir.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.buttonAfegir.Size = new System.Drawing.Size(103, 36);
+            this.buttonAfegir.Size = new System.Drawing.Size(71, 36);
             this.buttonAfegir.TabIndex = 16;
             this.buttonAfegir.Text = "AFEGIR";
             this.buttonAfegir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -174,6 +176,25 @@
             this.dataGridViewEvents.Size = new System.Drawing.Size(722, 451);
             this.dataGridViewEvents.TabIndex = 13;
             // 
+            // materialButtonProdPart
+            // 
+            this.materialButtonProdPart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButtonProdPart.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButtonProdPart.Depth = 0;
+            this.materialButtonProdPart.HighEmphasis = true;
+            this.materialButtonProdPart.Icon = null;
+            this.materialButtonProdPart.Location = new System.Drawing.Point(981, 505);
+            this.materialButtonProdPart.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButtonProdPart.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButtonProdPart.Name = "materialButtonProdPart";
+            this.materialButtonProdPart.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButtonProdPart.Size = new System.Drawing.Size(233, 36);
+            this.materialButtonProdPart.TabIndex = 20;
+            this.materialButtonProdPart.Text = "PRODUCTES PER PARTICIPANT";
+            this.materialButtonProdPart.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButtonProdPart.UseAccentColor = false;
+            this.materialButtonProdPart.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +213,7 @@
             this.Text = "SportXperience";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).EndInit();
             this.ResumeLayout(false);
@@ -209,6 +231,7 @@
         public MaterialSkin.Controls.MaterialButton buttonAfegir;
         public Pabo.Calendar.MonthCalendar monthCalendarEvents;
         public System.Windows.Forms.DataGridView dataGridViewEvents;
+        public MaterialSkin.Controls.MaterialButton materialButtonProdPart;
     }
 }
 

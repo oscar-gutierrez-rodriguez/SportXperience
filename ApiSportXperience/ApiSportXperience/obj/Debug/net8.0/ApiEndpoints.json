@@ -155,14 +155,7 @@
       {
         "Name": "data",
         "Type": "System.String",
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-        "IsRequired": false
-=======
         "IsRequired": true
->>>>>>> Desktop
       },
       {
         "Name": "ubicacio",

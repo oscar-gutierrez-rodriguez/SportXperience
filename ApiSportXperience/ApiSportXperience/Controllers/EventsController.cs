@@ -224,13 +224,13 @@ namespace ApiSportXperience.Controllers
             }
 
             var orderedEvents = query
-                //.Select(e => new
-                //{
-                //    Evento = e,
-                //    Distancia = Localitzacio.CalcularDistancia(latitude, longitude, (float)e.latitude, (float)e.longitude)
-                //})
-                //.OrderBy(x => x.Distancia)
-                //.Select(x => x.Evento)
+                .Select(e => new
+                {
+                    Evento = e,
+                    Distancia = Localitzacio.CalcularDistancia(latitude, longitude, (float)e.latitude, (float)e.longitude)
+                })
+                .OrderBy(x => x.Distancia)
+                .Select(x => x.Evento)
                 .ToList();
 
             return orderedEvents;
