@@ -1,4 +1,6 @@
 ﻿using DesktopModels.Model;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 using SportXperience.Model;
 using SportXperience.View;
 using System;
@@ -12,6 +14,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static GMap.NET.Entity.OpenStreetMapGraphHopperGeocodeEntity;
 
 namespace SportXperience.Controller
 {
@@ -32,7 +35,6 @@ namespace SportXperience.Controller
         Ubication ubication;
         EventDTO ev;
         private int? ubicationIdToSelect = null;
-
         public ControllerMain()
         {
             loadData();
@@ -108,9 +110,11 @@ namespace SportXperience.Controller
 
         private void MaterialButtonUbi_Click(object sender, EventArgs e)
         {
+            GMarkerGoogle marker;
+            GMapOverlay markerOverlay;
             ubi.dataGridViewUbicacions.DataBindingComplete -= DataGridViewUbicacions_DataBindingComplete;
-
-            ubi.dataGridViewUbicacions.DataSource = Repositori.GetUbicacions();
+            List<Ubication> ubicacions = Repositori.GetUbicacions();
+            ubi.dataGridViewUbicacions.DataSource = ubicacions;
             ubi.dataGridViewUbicacions.ClearSelection();
             ubi.dataGridViewUbicacions.Columns["UbicationId"].Visible = false;
             ubi.dataGridViewUbicacions.Columns["Events"].Visible = false;
@@ -120,6 +124,22 @@ namespace SportXperience.Controller
             if (!afegir)
             {
                 ubicationIdToSelect = ev.UbicationId;
+                var ubicacion = ubicacions.FirstOrDefault(u => u.UbicationId == ubicationIdToSelect);
+                if (ubicacion != null)
+                {
+                    ubi.gMapControlUbi.Position = new GMap.NET.PointLatLng((double)ubicacion.Latitude, (double)ubicacion.Longitude);
+                    marker = new GMarkerGoogle(new GMap.NET.PointLatLng((double)ubicacion.Latitude, (double)ubicacion.Longitude), GMarkerGoogleType.red);
+                    ubi.gMapControlUbi.Zoom = 14;
+                    marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                    marker.ToolTipText = string.Format("Ubicació: \n Latitud: {0}\n Longitud: {1}", (double)ubicacion.Latitude, (double)ubicacion.Longitude);
+
+                    ubi.gMapControlUbi.Overlays.Clear();
+
+                    markerOverlay = new GMapOverlay("Marcador");
+                    markerOverlay.Markers.Add(marker);
+                    ubi.gMapControlUbi.Overlays.Add(markerOverlay);
+                }
+
                 ubi.dataGridViewUbicacions.DataBindingComplete += DataGridViewUbicacions_DataBindingComplete;
             }
 

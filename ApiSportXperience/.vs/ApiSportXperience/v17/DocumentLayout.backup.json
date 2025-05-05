@@ -110,8 +110,7 @@
               "RelativeToolTip": "ApiSportXperience\\Models\\MessageDTO.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwBMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T15:02:30.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T15:02:30.543Z"
             },
             {
               "$type": "Document",
@@ -123,8 +122,7 @@
               "RelativeToolTip": "ApiSportXperience\\Models\\Message.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T14:59:18.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T14:59:18.775Z"
             },
             {
               "$type": "Document",
@@ -172,8 +170,7 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\ParticipantsController.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAiwGIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T18:00:18.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T18:00:18.186Z"
             },
             {
               "$type": "Document",
@@ -205,8 +202,8 @@
               "Title": "MessagesController.cs",
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\MessagesController.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\MessagesController.cs",
-              "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\MessagesController.cs*",
-              "RelativeToolTip": "ApiSportXperience\\Controllers\\MessagesController.cs*",
+              "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\MessagesController.cs",
+              "RelativeToolTip": "ApiSportXperience\\Controllers\\MessagesController.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAAwCQAAACMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T17:40:22.336Z",
@@ -234,8 +231,7 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\UbicationsController.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAowDQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T17:40:22.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T17:40:22.117Z"
             },
             {
               "$type": "Document",
