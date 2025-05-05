@@ -113,13 +113,10 @@ namespace ApiSportXperience.Controllers
                     latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
                     longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude
                 }).ToListAsync();
-
-
         }
 
         [HttpGet]
         [Route("api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}")]
-
         public async Task<ActionResult<IEnumerable<EventDTO>>> GetEventFiltre(int? pagament, string? data, string? ubicacio, string? esport, float latitude, float longitude)
         {
 

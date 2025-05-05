@@ -1,0 +1,44 @@
+﻿@model ApiSportXperience.Models.ParticipantOption
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ParticipantOption</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ParticipantOptionId" />
+            <div class="form-group">
+                <label asp-for="EventId" class="control-label"></label>
+                <select asp-for="EventId" class="form-control" asp-items="ViewBag.EventId"></select>
+                <span asp-validation-for="EventId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserDni" class="control-label"></label>
+                <select asp-for="UserDni" class="form-control" asp-items="ViewBag.UserDni"></select>
+                <span asp-validation-for="UserDni" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OptionId" class="control-label"></label>
+                <select asp-for="OptionId" class="form-control" asp-items="ViewBag.OptionId"></select>
+                <span asp-validation-for="OptionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

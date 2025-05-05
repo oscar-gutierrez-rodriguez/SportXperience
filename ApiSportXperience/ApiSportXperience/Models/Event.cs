@@ -13,7 +13,7 @@ public partial class Event
 
     public DateTime? EndDate { get; set; }
 
-    public string? Image { get; set; }
+    public String? Image { get; set; }
 
     public string? Description { get; set; }
 

@@ -27,6 +27,8 @@ public partial class SportXperienceContext : DbContext
 
     public virtual DbSet<Participant> Participants { get; set; }
 
+    public virtual DbSet<ParticipantOption> ParticipantOptions { get; set; }
+
     public virtual DbSet<Product> Products { get; set; }
 
     public virtual DbSet<RecommendedLevel> RecommendedLevels { get; set; }
@@ -40,13 +42,14 @@ public partial class SportXperienceContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=.\\sqlexpress; Trusted_Connection=True; Encrypt=false; Database=SportXperience");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Event>(entity =>
         {
-            entity.HasKey(e => e.EventId).HasName("PK__Event__7944C810CEAE430E");
+            entity.HasKey(e => e.EventId).HasName("PK__Event__7944C810178C24C2");
 
             entity.ToTable("Event");
 
@@ -73,20 +76,20 @@ public partial class SportXperienceContext : DbContext
 
             entity.HasOne(d => d.RecommendedLevel).WithMany(p => p.Events)
                 .HasForeignKey(d => d.RecommendedLevelId)
-                .HasConstraintName("FK__Event__Recommend__5535A963");
+                .HasConstraintName("FK__Event__Recommend__5EBF139D");
 
             entity.HasOne(d => d.Sport).WithMany(p => p.Events)
                 .HasForeignKey(d => d.SportId)
-                .HasConstraintName("FK__Event__SportId__5629CD9C");
+                .HasConstraintName("FK__Event__SportId__5FB337D6");
 
             entity.HasOne(d => d.Ubication).WithMany(p => p.Events)
                 .HasForeignKey(d => d.UbicationId)
-                .HasConstraintName("FK__Event__Ubication__5441852A");
+                .HasConstraintName("FK__Event__Ubication__60A75C0F");
         });
 
         modelBuilder.Entity<Gender>(entity =>
         {
-            entity.HasKey(e => e.GenderId).HasName("PK__Gender__4E24E9F7E71BED1D");
+            entity.HasKey(e => e.GenderId).HasName("PK__Gender__4E24E9F77FFBCA05");
 
             entity.ToTable("Gender");
 
@@ -97,18 +100,18 @@ public partial class SportXperienceContext : DbContext
 
         modelBuilder.Entity<Lot>(entity =>
         {
-            entity.HasKey(e => e.LotId).HasName("PK__Lot__4160EFADBB06B595");
+            entity.HasKey(e => e.LotId).HasName("PK__Lot__4160EFAD984385C8");
 
             entity.ToTable("Lot");
 
             entity.HasOne(d => d.Event).WithMany(p => p.Lots)
                 .HasForeignKey(d => d.EventId)
-                .HasConstraintName("FK__Lot__EventId__5CD6CB2B");
+                .HasConstraintName("FK__Lot__EventId__619B8048");
         });
 
         modelBuilder.Entity<Message>(entity =>
         {
-            entity.HasKey(e => e.MessageId).HasName("PK__Message__C87C0C9CD509C32E");
+            entity.HasKey(e => e.MessageId).HasName("PK__Message__C87C0C9CF95A8D35");
 
             entity.ToTable("Message");
 
@@ -123,16 +126,16 @@ public partial class SportXperienceContext : DbContext
 
             entity.HasOne(d => d.Event).WithMany(p => p.Messages)
                 .HasForeignKey(d => d.EventId)
-                .HasConstraintName("FK__Message__EventId__59FA5E80");
+                .HasConstraintName("FK__Message__EventId__628FA481");
 
             entity.HasOne(d => d.UserDniNavigation).WithMany(p => p.Messages)
                 .HasForeignKey(d => d.UserDni)
-                .HasConstraintName("FK__Message__UserDni__59063A47");
+                .HasConstraintName("FK__Message__UserDni__6383C8BA");
         });
 
         modelBuilder.Entity<Option>(entity =>
         {
-            entity.HasKey(e => e.OptionId).HasName("PK__Options__92C7A1FF74981288");
+            entity.HasKey(e => e.OptionId).HasName("PK__Options__92C7A1FF80719A6A");
 
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
@@ -140,12 +143,12 @@ public partial class SportXperienceContext : DbContext
 
             entity.HasOne(d => d.Product).WithMany(p => p.Options)
                 .HasForeignKey(d => d.ProductId)
-                .HasConstraintName("FK__Options__Product__628FA481");
+                .HasConstraintName("FK__Options__Product__6477ECF3");
         });
 
         modelBuilder.Entity<Participant>(entity =>
         {
-            entity.HasKey(e => new { e.EventId, e.UserDni }).HasName("PK__Particip__9BBCF967725EDEF3");
+            entity.HasKey(e => new { e.EventId, e.UserDni }).HasName("PK__Particip__9BBCF9670FE18AE7");
 
             entity.ToTable("Participant");
 
@@ -163,9 +166,28 @@ public partial class SportXperienceContext : DbContext
                 .HasConstraintName("FK__Participa__UserD__66603565");
         });
 
+        modelBuilder.Entity<ParticipantOption>(entity =>
+        {
+            entity.HasKey(e => e.ParticipantOptionId).HasName("PK__Particip__23027E48845BA326");
+
+            entity.ToTable("ParticipantOption");
+
+            entity.Property(e => e.UserDni).HasMaxLength(9);
+
+            entity.HasOne(d => d.Option).WithMany(p => p.ParticipantOptions)
+                .HasForeignKey(d => d.OptionId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Participa__Optio__70DDC3D8");
+
+            entity.HasOne(d => d.Participant).WithMany(p => p.ParticipantOptions)
+                .HasForeignKey(d => new { d.EventId, d.UserDni })
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__ParticipantOptio__6FE99F9F");
+        });
+
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.ProductId).HasName("PK__Product__B40CC6CDA8DC549D");
+            entity.HasKey(e => e.ProductId).HasName("PK__Product__B40CC6CD86C76E92");
 
             entity.ToTable("Product");
 
@@ -175,12 +197,12 @@ public partial class SportXperienceContext : DbContext
 
             entity.HasOne(d => d.Lot).WithMany(p => p.Products)
                 .HasForeignKey(d => d.LotId)
-                .HasConstraintName("FK__Product__LotId__5FB337D6");
+                .HasConstraintName("FK__Product__LotId__6754599E");
         });
 
         modelBuilder.Entity<RecommendedLevel>(entity =>
         {
-            entity.HasKey(e => e.RecommendedLevelId).HasName("PK__Recommen__401340A542AF7707");
+            entity.HasKey(e => e.RecommendedLevelId).HasName("PK__Recommen__401340A5CBD00A45");
 
             entity.ToTable("RecommendedLevel");
 
@@ -191,7 +213,7 @@ public partial class SportXperienceContext : DbContext
 
         modelBuilder.Entity<Result>(entity =>
         {
-            entity.HasKey(e => e.ResultId).HasName("PK__Result__976902081C075B00");
+            entity.HasKey(e => e.ResultId).HasName("PK__Result__976902088F04E90B");
 
             entity.ToTable("Result");
 
@@ -200,12 +222,12 @@ public partial class SportXperienceContext : DbContext
 
             entity.HasOne(d => d.Participant).WithMany(p => p.Results)
                 .HasForeignKey(d => new { d.EventId, d.UserDni })
-                .HasConstraintName("FK__Result__693CA210");
+                .HasConstraintName("FK__Result__68487DD7");
         });
 
         modelBuilder.Entity<Sport>(entity =>
         {
-            entity.HasKey(e => e.SportId).HasName("PK__Sport__7A41AF3CAE1B57EB");
+            entity.HasKey(e => e.SportId).HasName("PK__Sport__7A41AF3CBACB6F54");
 
             entity.ToTable("Sport");
 
@@ -216,7 +238,7 @@ public partial class SportXperienceContext : DbContext
 
         modelBuilder.Entity<Ubication>(entity =>
         {
-            entity.HasKey(e => e.UbicationId).HasName("PK__Ubicatio__008819ECE9A2E7D1");
+            entity.HasKey(e => e.UbicationId).HasName("PK__Ubicatio__008819EC6B03321B");
 
             entity.ToTable("Ubication");
 
@@ -229,7 +251,7 @@ public partial class SportXperienceContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Dni).HasName("PK__Users__D87608A604D62960");
+            entity.HasKey(e => e.Dni).HasName("PK__Users__D87608A682E88C87");
 
             entity.Property(e => e.Dni)
                 .HasMaxLength(9)
@@ -255,7 +277,7 @@ public partial class SportXperienceContext : DbContext
 
             entity.HasOne(d => d.Gender).WithMany(p => p.Users)
                 .HasForeignKey(d => d.GenderId)
-                .HasConstraintName("FK__Users__GenderId__4BAC3F29");
+                .HasConstraintName("FK__Users__GenderId__693CA210");
         });
 
         OnModelCreatingPartial(modelBuilder);
