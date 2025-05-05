@@ -576,3 +576,5 @@ C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\n
 C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSportXperience.pdb
 C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSportXperience.genruntimeconfig.cache
 C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ref\ApiSportXperience.dll
+C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSportXperience.RazorAssemblyInfo.cache
+C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSportXperience.RazorAssemblyInfo.cs
