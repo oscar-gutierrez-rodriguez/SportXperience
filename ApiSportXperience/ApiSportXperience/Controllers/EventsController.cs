@@ -113,8 +113,6 @@ namespace ApiSportXperience.Controllers
                     latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
                     longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude
                 }).ToListAsync();
-
-
         }
 
         [HttpGet]
