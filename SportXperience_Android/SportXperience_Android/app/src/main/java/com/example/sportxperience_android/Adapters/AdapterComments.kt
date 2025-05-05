@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sportxperience_android.Api.Comment
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Product
+import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -33,7 +34,11 @@ class AdapterComments(val llista: List<Comment>, val context: Context) :
     override fun getItemCount() = llista.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.nomUsuari.setText(llista[position].userDni)
+
+        val api = CrudApi(context)
+        val userName = api.getUserByDni(llista[position].userDni)!!.username
+
+        holder.nomUsuari.setText(userName)
         holder.text.setText(llista[position].comment)
         holder.data.setText(formatISOToDate(llista[position].publishedDate))
     }

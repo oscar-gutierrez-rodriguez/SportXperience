@@ -140,8 +140,10 @@ class IniciarSessio : Fragment() {
                             }
                         }
                     } catch (e: Exception) {
-                        hideLoading()
-                        Log.i("Error en l'api", "Error en l'api")
+                        withContext(Dispatchers.Main) {
+                            hideLoading()
+                            Toast.makeText(context, "Error!", Toast.LENGTH_SHORT).show()
+                        }
                     }
 
                 }

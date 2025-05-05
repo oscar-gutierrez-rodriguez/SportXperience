@@ -2,6 +2,7 @@ package com.example.sportxperience_android
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,8 +10,14 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sportxperience_android.Adapters.AdapterComments
 import com.example.sportxperience_android.Adapters.AdapterProducts
+import com.example.sportxperience_android.Api.CommentPost
 import com.example.sportxperience_android.Api.CrudApi
+import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.databinding.ActivityComentarisEventBinding
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 class ComentarisEvent : AppCompatActivity() {
 
@@ -32,18 +39,61 @@ class ComentarisEvent : AppCompatActivity() {
 
         binding.noLot.visibility = View.INVISIBLE
 
-        val api = CrudApi(this)
+        mostrarComentaris()
 
-        val productes = api.getCommentsByEventId(eventParticipar!!.eventId)
 
-        val adapter = AdapterComments(productes, this)
+        binding.btEnviar.setOnClickListener{
+            if(!binding.tilMissatgeInsertar.text.isNullOrEmpty()){
 
-        binding.recyclerComentaris.layoutManager = LinearLayoutManager(this)
-        binding.recyclerComentaris.adapter = adapter
+                val api = CrudApi(this)
 
-        if(productes.isEmpty()){
-            binding.noLot.visibility = View.VISIBLE
+                val commentToPost = CommentPost(
+                    binding.tilMissatgeInsertar.text.toString(),
+                    null,
+                    eventParticipar!!.eventId,
+                    null,
+                    true,
+                    getDataActual(),
+                    user!!.dni,
+                    null
+                )
+
+                api.addComment(commentToPost)
+
+                binding.tilMissatgeInsertar.setText("")
+
+                mostrarComentaris()
+
+            } else{
+                Toast.makeText(this, "No es pot enviar comentaris buits!", Toast.LENGTH_SHORT).show()
+            }
         }
 
+
     }
+
+
+    fun getDataActual(): String {
+        val formatter = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
+        val now = java.time.LocalDateTime.now()
+        return now.format(formatter)
+    }
+
+    fun mostrarComentaris(){
+        val api = CrudApi(this)
+
+        val comments = api.getCommentsByEventId(eventParticipar!!.eventId)
+
+        if(comments != null) {
+            val adapter = AdapterComments(comments, this)
+
+            binding.recyclerComentaris.layoutManager = LinearLayoutManager(this)
+            binding.recyclerComentaris.adapter = adapter
+
+            if (comments.isEmpty()) {
+                binding.noLot.visibility = View.VISIBLE
+            }
+        }
+    }
+
 }

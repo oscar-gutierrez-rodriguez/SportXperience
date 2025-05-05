@@ -70,16 +70,18 @@ class ParticiparEvent : AppCompatActivity() {
             binding.noLot.visibility = View.INVISIBLE
             val productes = api.getProductsByLot(lot.lotId)
 
-            val adapter = AdapterProducts(productes, this)
+            if(productes != null) {
+                val adapter = AdapterProducts(productes, this)
 
-            binding.recyclerProducts.layoutManager = LinearLayoutManager(this)
-            binding.recyclerProducts.adapter = adapter
+                binding.recyclerProducts.layoutManager = LinearLayoutManager(this)
+                binding.recyclerProducts.adapter = adapter
+            }
 
         } else{
             binding.noLot.visibility = View.VISIBLE
         }
         
-        binding.creadorParticipant.setText(api.getUserByDni(api.getOrganizerByEvent(event!!.eventId).userDni)!!.firstName)
+        binding.creadorParticipant.setText(api.getUserByDni(api.getOrganizerByEvent(event!!.eventId)!!.userDni)!!.firstName)
 
         binding.btUbicacioParticipant.setOnClickListener{
             if(ubicacioActual != null) {

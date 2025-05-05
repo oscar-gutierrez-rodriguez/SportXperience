@@ -62,6 +62,8 @@ interface ApiService {
 
     @GET("/api/messages/comments/{eventId}")
     suspend fun getCommentsByEvent(@Path("eventId") eventId: Int): Response<List<Comment>>
+    @POST("/api/messages/")
+    suspend fun addComment(@Body comment: CommentPost): Response<CommentPost>
 
 
 }

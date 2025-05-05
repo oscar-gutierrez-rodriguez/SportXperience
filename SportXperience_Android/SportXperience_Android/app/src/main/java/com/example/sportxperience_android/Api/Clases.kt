@@ -88,6 +88,17 @@ data class Comment(
     val userDni: String
 )
 
+data class CommentPost(
+    val comment: String,
+    val event: Any?,
+    val eventId: Int,
+    val messageId: Int?,
+    val publicMessage: Boolean,
+    val publishedDate: String,
+    val userDni: String,
+    val userDniNavigation: Any?
+)
+
 
 
 

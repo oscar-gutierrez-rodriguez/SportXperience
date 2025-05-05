@@ -34,7 +34,9 @@ class AdapterProducts(val llista: List<Product>, val context: Context) :
         val api = CrudApi(context)
         val options = api.getOptionsByProduct(llista[position].productId)
 
-        holder.numOpcions.setText("Número d'opcions: " + options.size.toString())
+        if(options != null) {
+            holder.numOpcions.setText("Número d'opcions: " + options.size.toString())
+        }
     }
 
 }
