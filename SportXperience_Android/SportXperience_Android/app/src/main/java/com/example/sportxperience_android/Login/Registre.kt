@@ -1,5 +1,6 @@
 package com.example.sportxperience_android.Login
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -144,25 +145,25 @@ class Registre : Fragment() {
 
                                             if (api.getUserByDni(user.dni) != null) {
                                                 hideLoading()
-                                                Toast.makeText(
-                                                    context,
-                                                    "Aquest dni ja existeix",
-                                                    Toast.LENGTH_SHORT
-                                                ).show()
+                                                AlertDialog.Builder(context)
+                                                    .setTitle("Advertència")
+                                                    .setMessage("Aquest dni ja existeix.")
+                                                    .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                                                    .show()
                                             } else if (api.getUserByUsername(user.username) != null) {
                                                 hideLoading()
-                                                Toast.makeText(
-                                                    context,
-                                                    "Aquest nom d'usuari ja existeix",
-                                                    Toast.LENGTH_SHORT
-                                                ).show()
+                                                AlertDialog.Builder(context)
+                                                    .setTitle("Advertència")
+                                                    .setMessage("Aquest nom d'usuari ja existeix.")
+                                                    .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                                                    .show()
                                             } else if (api.getUserByMail(user.mail) != null) {
                                                 hideLoading()
-                                                Toast.makeText(
-                                                    context,
-                                                    "Aquest mail ja existeix",
-                                                    Toast.LENGTH_SHORT
-                                                ).show()
+                                                AlertDialog.Builder(context)
+                                                    .setTitle("Advertència")
+                                                    .setMessage("Aquest mail ja existeix.")
+                                                    .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                                                    .show()
                                             } else if (api.addUser(user) != null) {
                                                 hideLoading()
                                                 Toast.makeText(
@@ -177,31 +178,42 @@ class Registre : Fragment() {
                                 } catch (e: Exception) {
                                     withContext(Dispatchers.Main) {
                                         hideLoading()
-                                        Toast.makeText(context, "Error!", Toast.LENGTH_SHORT).show()
+                                        AlertDialog.Builder(context)
+                                            .setTitle("Error")
+                                            .setMessage("Hi ha hagut un error intern.")
+                                            .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                                            .show()
                                     }
                                 }
                             }
 
                         } else {
-                            Toast.makeText(
-                                context,
-                                "El format del correu no és correcte",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            AlertDialog.Builder(context)
+                                .setTitle("Advertència")
+                                .setMessage("El format del correu no és correcte.")
+                                .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                                .show()
                         }
                     } else {
-                        Toast.makeText(
-                            context,
-                            "La data no pot ser superior a la d'avui",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        AlertDialog.Builder(context)
+                            .setTitle("Advertència")
+                            .setMessage("La data no pot ser superior a la d'avui.")
+                            .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                            .show()
                     }
                 } else {
-                    Toast.makeText(context, "El format del DNI no és correcte", Toast.LENGTH_SHORT)
+                    AlertDialog.Builder(context)
+                        .setTitle("Advertència")
+                        .setMessage("El format del DNI no és correcte.")
+                        .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
                         .show()
                 }
             } else {
-                Toast.makeText(context, "No pot haver camps buits!", Toast.LENGTH_SHORT).show()
+                AlertDialog.Builder(context)
+                    .setTitle("Advertència")
+                    .setMessage("No pot haver camps buits!")
+                    .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                    .show()
             }
         }
 

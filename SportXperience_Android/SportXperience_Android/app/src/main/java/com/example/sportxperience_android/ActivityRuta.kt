@@ -113,7 +113,7 @@ class ActivityRuta : AppCompatActivity(), CoroutineScope, OnMapReadyCallback, Go
             if(resposta != null){
                 drawRoute(gmap!!, resposta!!)
                 val distancia = (resposta!!.features[0].properties.summary.distance / 1000)
-                binding.tvDistancia.setText("Distància: " + round2Decimals(distancia).toString() + " Km")
+                binding.tvDistancia.setText(round2Decimals(distancia).toString() + " Km")
             }
         }
     }

@@ -15,8 +15,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import kotlin.coroutines.CoroutineContext
 
-// Se ha omitido el bloque de imports para enfocarnos en el cuerpo de la clase
-
 class CrudApi(context: Context) : CoroutineScope {
     private var job = Job()
 
@@ -285,4 +283,22 @@ class CrudApi(context: Context) : CoroutineScope {
         }
         return afegit
     }
+
+
+    fun getCommentsFiltre(comment : String, eventId: Int): List<Comment>? {
+        var comments: List<Comment>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<Comment>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getCommentFiltre(comment, eventId)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    comments = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return comments
+    }
+
 }

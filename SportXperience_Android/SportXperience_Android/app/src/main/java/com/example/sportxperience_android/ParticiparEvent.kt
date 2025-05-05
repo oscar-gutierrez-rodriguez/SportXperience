@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +19,7 @@ import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Event
 import com.example.sportxperience_android.databinding.ActivityParticiparEventBinding
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 var eventParticipar : Event? = null
 
@@ -96,6 +99,13 @@ class ParticiparEvent : AppCompatActivity() {
             val intent = Intent(this, ComentarisEvent::class.java)
             startActivity(intent)
         }
+
+
+        binding.btParticipar.setOnClickListener {
+            val modal = ModalBottomSheetParticipar()
+            modal.show(supportFragmentManager, "MyModalBottomSheet")
+        }
+
 
         binding.btTornar.setOnClickListener{
             onBackPressed()

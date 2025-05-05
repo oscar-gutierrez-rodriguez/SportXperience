@@ -2,9 +2,11 @@ package com.example.sportxperience_android
 
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +16,7 @@ import com.example.sportxperience_android.Api.CommentPost
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.databinding.ActivityComentarisEventBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -35,7 +38,6 @@ class ComentarisEvent : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
 
         binding.noLot.visibility = View.INVISIBLE
 
@@ -70,6 +72,15 @@ class ComentarisEvent : AppCompatActivity() {
         }
 
 
+        binding.cercarFiltre.setOnClickListener{
+            mostrarComentarisFiltre()
+        }
+
+        binding.resetFilter.setOnClickListener {
+            binding.tilMissatgeFiltre.setText("")
+            mostrarComentaris()
+        }
+
     }
 
 
@@ -92,8 +103,24 @@ class ComentarisEvent : AppCompatActivity() {
 
             if (comments.isEmpty()) {
                 binding.noLot.visibility = View.VISIBLE
+            } else{
+                binding.noLot.visibility = View.INVISIBLE
             }
         }
     }
 
+    fun mostrarComentarisFiltre() {
+        val api = CrudApi(this)
+
+        val comments = api.getCommentsFiltre(binding.tilMissatgeFiltre.text.toString() ,eventParticipar!!.eventId)
+
+        if(comments != null) {
+            val adapter = AdapterComments(comments, this)
+
+            binding.recyclerComentaris.layoutManager = LinearLayoutManager(this)
+            binding.recyclerComentaris.adapter = adapter
+        }
+    }
+
 }
+

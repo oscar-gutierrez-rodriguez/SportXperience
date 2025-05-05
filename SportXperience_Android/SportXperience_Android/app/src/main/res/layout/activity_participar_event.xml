@@ -239,14 +239,14 @@
                 android:id="@+id/creadorParticipant"/>
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="200dp"
+                android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
-                android:text="Participar"
+                android:text="Personalitzar productes"
                 android:textSize="22sp"
                 android:textStyle="bold|italic"
                 android:layout_margin="15dp"
-                android:layout_gravity="end"
+                android:layout_gravity="center"
                 android:id="@+id/bt_Participar"/>
 
         </LinearLayout>

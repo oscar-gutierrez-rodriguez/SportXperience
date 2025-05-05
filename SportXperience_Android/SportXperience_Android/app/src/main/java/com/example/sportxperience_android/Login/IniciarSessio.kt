@@ -1,5 +1,6 @@
 package com.example.sportxperience_android.Login
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -93,11 +94,10 @@ class IniciarSessio : Fragment() {
                                     startActivity(intent)
                                 } else {
                                     hideLoading()
-                                    Toast.makeText(
-                                        context,
-                                        "Credencials incorrectes",
-                                        Toast.LENGTH_SHORT
-                                    )
+                                    AlertDialog.Builder(context)
+                                        .setTitle("Advertència")
+                                        .setMessage("Credencials incorrectes.")
+                                        .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
                                         .show()
                                 }
                             } else {
@@ -119,22 +119,20 @@ class IniciarSessio : Fragment() {
                                         startActivity(intent)
                                     } else {
                                         hideLoading()
-                                        Toast.makeText(
-                                            context,
-                                            "Credencials incorrectes",
-                                            Toast.LENGTH_SHORT
-                                        )
+                                        AlertDialog.Builder(context)
+                                            .setTitle("Advertència")
+                                            .setMessage("Credencials incorrectes.")
+                                            .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
                                             .show()
                                     }
 
                                 } else {
 
                                     hideLoading()
-                                    Toast.makeText(
-                                        context,
-                                        "Credencials incorrectes",
-                                        Toast.LENGTH_SHORT
-                                    )
+                                    AlertDialog.Builder(context)
+                                        .setTitle("Advertència")
+                                        .setMessage("Credencials incorrectes.")
+                                        .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
                                         .show()
                                 }
                             }
@@ -142,13 +140,21 @@ class IniciarSessio : Fragment() {
                     } catch (e: Exception) {
                         withContext(Dispatchers.Main) {
                             hideLoading()
-                            Toast.makeText(context, "Error!", Toast.LENGTH_SHORT).show()
+                            AlertDialog.Builder(context)
+                                .setTitle("Error")
+                                .setMessage("Hi ha hagut un error intern.")
+                                .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                                .show()
                         }
                     }
 
                 }
             } else {
-                Toast.makeText(context, "No pot haver camps buits!", Toast.LENGTH_SHORT).show()
+                AlertDialog.Builder(context)
+                    .setTitle("Advertència")
+                    .setMessage("No pot haver camps buits.")
+                    .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                    .show()
             }
         }
 

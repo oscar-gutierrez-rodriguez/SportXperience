@@ -7,4 +7,16 @@
 
     <style name="Theme.SportXperience_Android" parent="Base.Theme.SportXperience_Android" />
 
+    <style name="ModalBottomSheetTheme" parent="Theme.Material3.DayNight.BottomSheetDialog">
+        <!-- Fondo del modal -->
+        <item name="bottomSheetStyle">@style/ModalBottomSheetStyle</item>
+        <!-- Oscurecimiento del fondo -->
+        <item name="android:backgroundDimAmount">0.4</item> <!-- entre 0.0 (transparente) y 1.0 (negro total) -->
+    </style>
+
+    <style name="ModalBottomSheetStyle" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+
 </resources>
