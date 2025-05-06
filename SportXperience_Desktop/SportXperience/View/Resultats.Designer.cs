@@ -32,9 +32,9 @@
             this.numericUpDownPosicio = new System.Windows.Forms.NumericUpDown();
             this.buttonAfegirPosicio = new MaterialSkin.Controls.MaterialButton();
             this.buttonAfegirRsultat = new MaterialSkin.Controls.MaterialButton();
-            this.textBoxNomParticipant = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.comboBoxNomParticipant = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPosicio)).BeginInit();
             this.SuspendLayout();
@@ -93,23 +93,6 @@
             this.buttonAfegirRsultat.UseAccentColor = false;
             this.buttonAfegirRsultat.UseVisualStyleBackColor = true;
             // 
-            // textBoxNomParticipant
-            // 
-            this.textBoxNomParticipant.AnimateReadOnly = false;
-            this.textBoxNomParticipant.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNomParticipant.Depth = 0;
-            this.textBoxNomParticipant.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBoxNomParticipant.LeadingIcon = null;
-            this.textBoxNomParticipant.Location = new System.Drawing.Point(17, 119);
-            this.textBoxNomParticipant.MaxLength = 50;
-            this.textBoxNomParticipant.MouseState = MaterialSkin.MouseState.OUT;
-            this.textBoxNomParticipant.Multiline = false;
-            this.textBoxNomParticipant.Name = "textBoxNomParticipant";
-            this.textBoxNomParticipant.Size = new System.Drawing.Size(135, 50);
-            this.textBoxNomParticipant.TabIndex = 21;
-            this.textBoxNomParticipant.Text = "";
-            this.textBoxNomParticipant.TrailingIcon = null;
-            // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
@@ -134,14 +117,22 @@
             this.materialLabel2.TabIndex = 23;
             this.materialLabel2.Text = "Posició Participant:";
             // 
+            // comboBoxNomParticipant
+            // 
+            this.comboBoxNomParticipant.FormattingEnabled = true;
+            this.comboBoxNomParticipant.Location = new System.Drawing.Point(17, 120);
+            this.comboBoxNomParticipant.Name = "comboBoxNomParticipant";
+            this.comboBoxNomParticipant.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxNomParticipant.TabIndex = 24;
+            // 
             // Resultats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 450);
+            this.Controls.Add(this.comboBoxNomParticipant);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.textBoxNomParticipant);
             this.Controls.Add(this.buttonAfegirRsultat);
             this.Controls.Add(this.buttonAfegirPosicio);
             this.Controls.Add(this.numericUpDownPosicio);
@@ -160,9 +151,9 @@
         public System.Windows.Forms.DataGridView dataGridViewResultats;
         public MaterialSkin.Controls.MaterialButton buttonAfegirPosicio;
         public MaterialSkin.Controls.MaterialButton buttonAfegirRsultat;
-        public MaterialSkin.Controls.MaterialTextBox textBoxNomParticipant;
         public MaterialSkin.Controls.MaterialLabel materialLabel1;
         public MaterialSkin.Controls.MaterialLabel materialLabel2;
         public System.Windows.Forms.NumericUpDown numericUpDownPosicio;
+        public System.Windows.Forms.ComboBox comboBoxNomParticipant;
     }
 }

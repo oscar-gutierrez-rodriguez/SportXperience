@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ApiSportXperience.Models;
+using Newtonsoft.Json;
 using SportXperience.Model;
 using System;
 using System.Collections.Generic;
@@ -510,6 +511,22 @@ namespace DesktopModels.Model
             }
             return la;
         }
+
+        public static List<ParticipantDTO> GetParticipantByEventId(int EventId)
+        {
+            List<ParticipantDTO> la = null;
+            try
+            {
+                la = (List<ParticipantDTO>)MakeRequest("participants/noorganizer/" + EventId, "GET", null, typeof(List<ParticipantDTO>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<ParticipantDTO>();
+            }
+            return la;
+        }
+
 
         public static async Task<string> PostImageEvent(string rutaImagen)
         {

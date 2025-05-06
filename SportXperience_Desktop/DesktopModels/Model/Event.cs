@@ -44,5 +44,7 @@ namespace SportXperience.Model
         public virtual Sport Sport { get; set; }
 
         public virtual Ubication Ubication { get; set; }
+
+        public Event() { }
     }
 }

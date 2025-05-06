@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.materialButtonProdPart = new MaterialSkin.Controls.MaterialButton();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.buttonResultats = new MaterialSkin.Controls.MaterialButton();
             this.buttonEliminar = new MaterialSkin.Controls.MaterialButton();
@@ -37,7 +38,6 @@
             this.buttonAfegir = new MaterialSkin.Controls.MaterialButton();
             this.monthCalendarEvents = new Pabo.Calendar.MonthCalendar();
             this.dataGridViewEvents = new System.Windows.Forms.DataGridView();
-            this.materialButtonProdPart = new MaterialSkin.Controls.MaterialButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).BeginInit();
@@ -53,10 +53,29 @@
             this.panel1.Size = new System.Drawing.Size(1435, 626);
             this.panel1.TabIndex = 12;
             // 
+            // materialButtonProdPart
+            // 
+            this.materialButtonProdPart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButtonProdPart.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButtonProdPart.Depth = 0;
+            this.materialButtonProdPart.HighEmphasis = true;
+            this.materialButtonProdPart.Icon = null;
+            this.materialButtonProdPart.Location = new System.Drawing.Point(981, 505);
+            this.materialButtonProdPart.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButtonProdPart.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButtonProdPart.Name = "materialButtonProdPart";
+            this.materialButtonProdPart.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButtonProdPart.Size = new System.Drawing.Size(233, 36);
+            this.materialButtonProdPart.TabIndex = 20;
+            this.materialButtonProdPart.Text = "PRODUCTES PER PARTICIPANT";
+            this.materialButtonProdPart.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButtonProdPart.UseAccentColor = false;
+            this.materialButtonProdPart.UseVisualStyleBackColor = true;
+            // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(1301, 13);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(1177, 23);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(100, 50);
             this.pictureBoxLogo.TabIndex = 14;
@@ -175,25 +194,6 @@
             this.dataGridViewEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEvents.Size = new System.Drawing.Size(722, 451);
             this.dataGridViewEvents.TabIndex = 13;
-            // 
-            // materialButtonProdPart
-            // 
-            this.materialButtonProdPart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButtonProdPart.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButtonProdPart.Depth = 0;
-            this.materialButtonProdPart.HighEmphasis = true;
-            this.materialButtonProdPart.Icon = null;
-            this.materialButtonProdPart.Location = new System.Drawing.Point(981, 505);
-            this.materialButtonProdPart.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButtonProdPart.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButtonProdPart.Name = "materialButtonProdPart";
-            this.materialButtonProdPart.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButtonProdPart.Size = new System.Drawing.Size(233, 36);
-            this.materialButtonProdPart.TabIndex = 20;
-            this.materialButtonProdPart.Text = "PRODUCTES PER PARTICIPANT";
-            this.materialButtonProdPart.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButtonProdPart.UseAccentColor = false;
-            this.materialButtonProdPart.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

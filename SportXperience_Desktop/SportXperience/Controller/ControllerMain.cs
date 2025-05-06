@@ -57,20 +57,21 @@ namespace SportXperience.Controller
             f.buttonActualitzar.Enabled = false;
             f.buttonAfegir.Enabled = true;
             fafegir.AllowDrop = true;
-            var request = WebRequest.Create("http://172.16.24.191:5097/Images/logo.png");
+            var request = WebRequest.Create("http://172.16.24.191:5097/Images/SportXperience_logo.png");
             using (var response = request.GetResponse())
             using (var stream = response.GetResponseStream())
             {
                 f.pictureBoxLogo.Image = Image.FromStream(stream);
             }
             f.pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            f.pictureBoxLogo.Size = new Size(200, 200);
             fafegir.comboBoxNivell.DataSource = Repositori.GetRecommendedLevel();
             fafegir.comboBoxNivell.DisplayMember = "name";
             f.monthCalendarEvents.ActiveMonth.Month = DateTime.Now.Month;
             f.monthCalendarEvents.ActiveMonth.Year = DateTime.Now.Year;
 
+            f.dataGridViewEvents.DataBindingComplete += (s, e) => Calendari();
             loadDataGrid();
-            Calendari();
 
         }
 
@@ -127,7 +128,7 @@ namespace SportXperience.Controller
                     DateItem di = new DateItem
                     {
                         Date = current.Date,
-                        BackColor1 = Color.LightGreen,
+                        BackColor1 = Color.FromArgb(196,255,186),
                     };
 
                     f.monthCalendarEvents.Dates.Add(di);
@@ -161,11 +162,12 @@ namespace SportXperience.Controller
                 DateItem di = new DateItem
                 {
                     Date = fecha.Date,
-                    BackColor1 = Color.Blue,
+                    BackColor1 = Color.FromArgb(0, 156, 80),
                 };
 
                 f.monthCalendarEvents.Dates.Add(di);
             }
+            f.monthCalendarEvents.Refresh();
         }
 
         private void MaterialButtonProdPart_Click(object sender, EventArgs e)
@@ -183,6 +185,8 @@ namespace SportXperience.Controller
 
             ubi.gMapControlUbi.Position = marker.Position;
             marker.IsVisible = true;
+
+            ubication = ubi.dataGridViewUbicacions.SelectedRows[0].DataBoundItem as Ubication;
         }
 
         private void GMapControlUbi_DoubleClick(object sender, EventArgs e)
@@ -382,7 +386,14 @@ namespace SportXperience.Controller
             fafegir.listBoxLot.Items.Clear();
             ev = f.dataGridViewEvents.SelectedRows[0].DataBoundItem as EventDTO;
 
-
+            if (ev.MaxParticipantsNumber == 0)
+            {
+                fafegir.CheckBoxIlimitat.Checked = true;
+            }
+            else
+            {
+                fafegir.CheckBoxIlimitat.Checked = false;
+            }
 
             Lot l = Repositori.GetLotByEventId(ev.EventId);
 
@@ -406,9 +417,7 @@ namespace SportXperience.Controller
             fafegir.comboBoxNivell.Text = Repositori.GetRecommendedLevelById(ev.RecommendedLevelId).Name;
             ubi.TextBoxLatitud.Text = Repositori.GetUbicationById(ev.UbicationId).Latitude.ToString();
             ubi.TextBoxLongitud.Text = Repositori.GetUbicationById(ev.UbicationId).Longitude.ToString();
-            fafegir.materialTextBoxNomCiutat.Text = ev.cityName;
-            //Recorrer columnas datagrid seleccionar la que tiene el mismo ubicationID
-          
+            fafegir.materialTextBoxNomCiutat.Text = ev.cityName;          
 
 
                 foreach (Product p in products)
@@ -451,7 +460,7 @@ namespace SportXperience.Controller
             }
             else
             {
-                f.monthCalendarEvents.Refresh();
+                f.monthCalendarEvents.Dates.Clear();
                 Calendari();      
 
                 f.buttonEliminar.Enabled = true;
@@ -747,7 +756,7 @@ namespace SportXperience.Controller
                     MessageBox.Show("La edat màxima no potser inferior a " + fafegir.numericUpDownEdatMinima.Value.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     fafegir.numericUpDownEdatMaxima.Value = fafegir.numericUpDownEdatMinima.Value;
                 }
-                else if (fafegir.numericUpDownParticipants.Value < 2)
+                else if (fafegir.numericUpDownParticipants.Value < 2 && !fafegir.CheckBoxIlimitat.Checked)
                 {
                     MessageBox.Show("Mínim ha d'haver 2 participants ", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     fafegir.numericUpDownParticipants.Value = 2;
@@ -907,21 +916,43 @@ namespace SportXperience.Controller
 
             Sport s = Repositori.GetSportByName(fafegir.textBoxEsport.Text);
 
+            string urlImage = null;
 
-            Event ev = new Event
+            if (!String.IsNullOrEmpty(archiu.FileName))
+            {
+                var task = Task.Run(async () =>
+                {
+                    return await Repositori.PostImageEvent(archiu.FileName);
+                });
+
+                urlImage = task.Result;
+            }
+
+            int numeroParticipants;
+
+            if (fafegir.CheckBoxIlimitat.Checked)
+            {
+                numeroParticipants = 0;
+            }
+            else
+            {
+                numeroParticipants = (int)fafegir.numericUpDownParticipants.Value;
+            }
+
+            Event events = new Event
             {
                 EventId = evs.EventId,
                 Name = fafegir.textBoxNom.Text,
                 StartDate = fafegir.dateTimePickerInici.Value,
                 EndDate = fafegir.dateTimePickerFinal.Value,
-                Image = evs.Image,
+                Image = urlImage,
                 Description = fafegir.textBoxDescripcio.Text,
                 MinAge = (int?)fafegir.numericUpDownEdatMinima.Value,
                 MaxAge = (int?)fafegir.numericUpDownEdatMaxima.Value,
-                MaxParticipantsNumber = (int?)fafegir.numericUpDownParticipants.Value,
+                MaxParticipantsNumber = numeroParticipants,
                 Price = price,
                 Reward = award,
-                UbicationId = ubication.UbicationId,
+                UbicationId = evs.UbicationId,
                 RecommendedLevelId = (fafegir.comboBoxNivell.SelectedItem as RecommendedLevel).RecommendedLevelId,
                 SportId = s.SportId,
             };
@@ -937,7 +968,7 @@ namespace SportXperience.Controller
             Repositori.DelLot(l);            
             InsertarActuProductes();
             InsertarActuOptions();
-            Repositori.UpdEvent(ev);
+            Repositori.UpdEvent(events);
         }
 
         void InsertarParticipant()
@@ -1038,6 +1069,8 @@ namespace SportXperience.Controller
 
         private void ButtonResultats_Click(object sender, EventArgs e)
         {
+            r.comboBoxNomParticipant.DataSource = Repositori.GetParticipantByEventId(ev.EventId);
+            r.comboBoxNomParticipant.DisplayMember = "username";
             r.ShowDialog();
         }
 
