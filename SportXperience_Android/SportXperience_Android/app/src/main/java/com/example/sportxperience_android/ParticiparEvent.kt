@@ -1,5 +1,6 @@
 package com.example.sportxperience_android
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -17,12 +18,15 @@ import com.example.sportxperience_android.Adapters.AdapterEvents
 import com.example.sportxperience_android.Adapters.AdapterProducts
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Event
+import com.example.sportxperience_android.Api.Participant
+import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.databinding.ActivityParticiparEventBinding
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 var eventParticipar : Event? = null
-
+var numOpcions : Int = 0
 class ParticiparEvent : AppCompatActivity() {
 
     lateinit var binding: ActivityParticiparEventBinding
@@ -41,6 +45,7 @@ class ParticiparEvent : AppCompatActivity() {
             insets
         }
 
+        numOpcions = 0
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
@@ -74,6 +79,7 @@ class ParticiparEvent : AppCompatActivity() {
             val productes = api.getProductsByLot(lot.lotId)
 
             if(productes != null) {
+
                 val adapter = AdapterProducts(productes, this)
 
                 binding.recyclerProducts.layoutManager = LinearLayoutManager(this)
@@ -102,8 +108,60 @@ class ParticiparEvent : AppCompatActivity() {
 
 
         binding.btParticipar.setOnClickListener {
-            val modal = ModalBottomSheetParticipar()
-            modal.show(supportFragmentManager, "MyModalBottomSheet")
+
+            if(numOpcions == 0){
+
+                val dialog = MaterialAlertDialogBuilder(this)
+                    .setBackground(getDrawable(R.drawable.fons_dialegs))
+                    .setIcon(this.getDrawable(R.drawable.baseline_sports_handball_24))
+                    .setMessage("Aquest esdeveniment no té cap producte personalitzable. Vols apuntar-te a l'esdeveniment?")
+                    .setTitle("Participació")
+                    .setPositiveButton("Acceptar") { dialog, wich ->
+                        val api = CrudApi(this)
+
+                        data class Participant(
+                            val event: Any,
+                            val eventId: Int,
+                            val organizer: Boolean,
+                            val results: List<Any>,
+                            val userDni: String,
+                            val userDniNavigation: Any
+                        )
+
+                        val p = Participant(
+                            null,
+                            eventParticipar!!.eventId,
+                            false,
+                            null,
+                            user!!.dni,
+                            null
+                        )
+
+                        if (api.addParticipant(p) != null){
+                            AlertDialog.Builder(this)
+                                .setTitle("Missatge")
+                                .setMessage("Ja ets participant d'aquest esdeveniment!")
+                                .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                                .show()
+                        } else{
+                            AlertDialog.Builder(this)
+                                .setTitle("Missatge")
+                                .setMessage("Es nulo")
+                                .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                                .show()
+                        }
+
+                    }
+                    .setNegativeButton("Cancelar") { dialog, wich ->
+                    }
+
+
+                dialog.show()
+
+            } else {
+                val modal = ModalBottomSheetParticipar()
+                modal.show(supportFragmentManager, "MyModalBottomSheet")
+            }
         }
 
 

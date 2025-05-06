@@ -69,4 +69,10 @@ interface ApiService {
     @GET("/api/messages/{comment}/{eventId}")
     suspend fun getCommentFiltre(@Path("comment") comment : String, @Path("eventId") eventId: Int): Response<List<Comment>>
 
+    @POST("/api/participants/")
+    suspend fun addParticipant(@Body participant: Participant): Response<Participant>
+
+    @POST("/api/participantsOptions/")
+    suspend fun addParticipantOption(@Body participantOption: ParticipantOption): Response<ParticipantOption>
+
 }

@@ -1,11 +1,13 @@
 package com.example.sportxperience_android
 
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,10 +16,16 @@ import com.example.sportxperience_android.Adapters.AdapterProductesOpcions
 import com.example.sportxperience_android.Adapters.AdapterProducts
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Option
+import com.example.sportxperience_android.Api.ParticipantOption
 import com.example.sportxperience_android.Api.Product
+import com.example.sportxperience_android.Login.user
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.button.MaterialButton
 
 class ModalBottomSheetParticipar: BottomSheetDialogFragment() {
+
+    lateinit var adapter: AdapterProductesOpcions
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -47,11 +55,15 @@ class ModalBottomSheetParticipar: BottomSheetDialogFragment() {
             if(productes != null) {
                 val productesAdapter = ArrayList<Product>()
 
-                for (productes in productes){
-                    //si tiene opciones añadir a la lista productesAdapter
+                for (p in productes){
+                    val options = api.getOptionsByProduct(p.productId)
+
+                    if(options != null && options.isNotEmpty()) {
+                        productesAdapter.add(p)
+                    }
                 }
 
-                val adapter = AdapterProductesOpcions(productesAdapter, requireContext())
+                adapter = AdapterProductesOpcions(productesAdapter, requireContext())
 
                 recyclerView.layoutManager = LinearLayoutManager(requireContext())
                 recyclerView.adapter = adapter
@@ -59,6 +71,36 @@ class ModalBottomSheetParticipar: BottomSheetDialogFragment() {
 
         }
 
+        val participarButton = view.findViewById<MaterialButton>(R.id.bt_Participar_bottomSheet)
+        participarButton.setOnClickListener {
+            if (adapter.allSpinnersSelected()) {
 
+                AlertDialog.Builder(context)
+                    .setTitle("Advertència")
+                    .setMessage("Hi ha productes amb opcions no vàlides.")
+                    .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                    .show()
+
+            } else {
+
+                val seleccionades = adapter.getSelectedOptions()
+                for ((producte, opcio) in seleccionades) {
+                    val participantOption = ParticipantOption(
+                        eventParticipar!!.eventId,
+                        null,
+                        opcio.optionId,
+                        null,
+                        null,
+                        user!!.dni
+                    )
+
+                    api.addParticipantOption(participantOption)
+
+                    //comprobar que esto funciona
+                }
+
+            }
+        }
     }
+
 }

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Product
 import com.example.sportxperience_android.R
+import com.example.sportxperience_android.numOpcions
 
 
 class AdapterProducts(val llista: List<Product>, val context: Context) :
@@ -36,6 +37,8 @@ class AdapterProducts(val llista: List<Product>, val context: Context) :
 
         if(options != null) {
             holder.numOpcions.setText("Número d'opcions: " + options.size.toString())
+
+            numOpcions += options.size
         }
     }
 

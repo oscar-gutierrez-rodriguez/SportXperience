@@ -19,6 +19,8 @@ import com.example.sportxperience_android.R
 class AdapterProductesOpcions(val llista: ArrayList<Product>, val context: Context) :
     RecyclerView.Adapter<AdapterProductesOpcions.ViewHolder>() {
 
+    private val selectedOptions: MutableList<Option?> = MutableList(llista.size) { null }
+
     class ViewHolder(val vista: View) : RecyclerView.ViewHolder(vista) {
         val nom = vista.findViewById<TextView>(R.id.nomProducte_card)
         val combo = vista.findViewById<Spinner>(R.id.spinner_options)
@@ -33,7 +35,7 @@ class AdapterProductesOpcions(val llista: ArrayList<Product>, val context: Conte
     override fun getItemCount() = llista.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.nom.setText(llista[position].name)
+        holder.nom.text = llista[position].name
 
         val api = CrudApi(context)
         val options = api.getOptionsByProduct(llista[position].productId)
@@ -45,39 +47,61 @@ class AdapterProductesOpcions(val llista: ArrayList<Product>, val context: Conte
             opcionesConSeparator.add("---")
             opcionesConSeparator.addAll(opciones.map { it.name })
 
-            val adapter = object : ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, opcionesConSeparator) {
-                override fun getItem(position: Int): String {
-                    return super.getItem(position).toString()
-                }
-
-                override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View {
-                    val view = super.getDropDownView(position, convertView, parent)
-                    val textView = view.findViewById<TextView>(android.R.id.text1)
-                    textView.text = getItem(position)
-                    return view
-                }
-            }
-
+            val adapter = ArrayAdapter<String>(
+                context,
+                android.R.layout.simple_spinner_item,
+                opcionesConSeparator
+            )
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             holder.combo.adapter = adapter
 
+            val selected = selectedOptions[position]
+            val index = if (selected == null) 0 else opciones.indexOfFirst { it.optionId == selected.optionId } + 1
+            if (index >= 0 && index < opcionesConSeparator.size) {
+                holder.combo.setSelection(index)
+            }
+
             holder.combo.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parentView: AdapterView<*>, view: View?, position: Int, id: Long) {
-                    if (position > 0) {
-                        val selectedOption = opciones[position - 1]
-                        val selectedOptionName = selectedOption.name
-                        val selectedOptionId = selectedOption.optionId
-                    } else{
-                        // Opcion no valida "---"
+                override fun onItemSelected(
+                    parentView: AdapterView<*>, view: View?, pos: Int, id: Long
+                ) {
+                    val adapterPos = holder.adapterPosition
+                    if (adapterPos != RecyclerView.NO_POSITION) {
+                        if (pos > 0) {
+                            val selectedOption = opciones[pos - 1]
+                            selectedOptions[adapterPos] = selectedOption
+                        } else {
+                            selectedOptions[adapterPos] = null
+                        }
                     }
                 }
 
                 override fun onNothingSelected(parentView: AdapterView<*>) {
-
+                    val adapterPos = holder.adapterPosition
+                    if (adapterPos != RecyclerView.NO_POSITION) {
+                        selectedOptions[adapterPos] = null
+                    }
                 }
             }
+
         }
 
     }
+
+    fun allSpinnersSelected(): Boolean {
+        return selectedOptions.all { it?.name == null }
+    }
+
+    fun getSelectedOptions(): List<Pair<Product, Option>> {
+        val seleccionades = mutableListOf<Pair<Product, Option>>()
+        for (i in selectedOptions.indices) {
+            val opt = selectedOptions[i]
+            if (opt != null && opt.name != "---") {
+                seleccionades.add(Pair(llista[i], opt))
+            }
+        }
+        return seleccionades
+    }
+
 
 }

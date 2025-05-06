@@ -301,4 +301,37 @@ class CrudApi(context: Context) : CoroutineScope {
         return comments
     }
 
+
+    fun addParticipant(participant: Participant): Participant? {
+        var afegit: Participant? = null
+        runBlocking {
+            try {
+                var resposta: Response<Participant>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).addParticipant(participant)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    afegit = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return afegit
+    }
+
+    fun addParticipantOption(participantOption: ParticipantOption): ParticipantOption? {
+        var afegit: ParticipantOption? = null
+        runBlocking {
+            try {
+                var resposta: Response<ParticipantOption>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).addParticipantOption(participantOption)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    afegit = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return afegit
+    }
+
 }

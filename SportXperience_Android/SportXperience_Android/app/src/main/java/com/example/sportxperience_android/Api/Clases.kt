@@ -56,12 +56,12 @@ data class Lot(
 )
 
 data class Participant(
-    val event: Any,
+    val event: Any?,
     val eventId: Int,
     val organizer: Boolean,
-    val results: List<Any>,
+    val results: List<Any>?,
     val userDni: String,
-    val userDniNavigation: Any
+    val userDniNavigation: Any?
 )
 
 data class Product(
@@ -97,6 +97,15 @@ data class CommentPost(
     val publishedDate: String,
     val userDni: String,
     val userDniNavigation: Any?
+)
+
+data class ParticipantOption(
+    val eventId: Int,
+    val option: Any?,
+    val optionId: Int,
+    val participant: Any?,
+    val participantOptionId: Int?,
+    val userDni: String
 )
 
 
