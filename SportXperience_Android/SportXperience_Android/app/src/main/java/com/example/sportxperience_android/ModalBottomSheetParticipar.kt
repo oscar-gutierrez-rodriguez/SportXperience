@@ -1,5 +1,6 @@
 package com.example.sportxperience_android
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
@@ -16,13 +17,15 @@ import com.example.sportxperience_android.Adapters.AdapterProductesOpcions
 import com.example.sportxperience_android.Adapters.AdapterProducts
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Option
+import com.example.sportxperience_android.Api.Participant
 import com.example.sportxperience_android.Api.ParticipantOption
 import com.example.sportxperience_android.Api.Product
+import com.example.sportxperience_android.FragmentsPrincipal.Events
 import com.example.sportxperience_android.Login.user
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.button.MaterialButton
 
-class ModalBottomSheetParticipar: BottomSheetDialogFragment() {
+class ModalBottomSheetParticipar : BottomSheetDialogFragment() {
 
     lateinit var adapter: AdapterProductesOpcions
 
@@ -49,16 +52,16 @@ class ModalBottomSheetParticipar: BottomSheetDialogFragment() {
 
         val lot = api.getLotByEventId(eventParticipar!!.eventId)
 
-        if(lot != null){
+        if (lot != null) {
             val productes = api.getProductsByLot(lot.lotId)
 
-            if(productes != null) {
+            if (productes != null) {
                 val productesAdapter = ArrayList<Product>()
 
-                for (p in productes){
+                for (p in productes) {
                     val options = api.getOptionsByProduct(p.productId)
 
-                    if(options != null && options.isNotEmpty()) {
+                    if (options != null && options.isNotEmpty()) {
                         productesAdapter.add(p)
                     }
                 }
@@ -83,21 +86,40 @@ class ModalBottomSheetParticipar: BottomSheetDialogFragment() {
 
             } else {
 
-                val seleccionades = adapter.getSelectedOptions()
-                for ((producte, opcio) in seleccionades) {
-                    val participantOption = ParticipantOption(
-                        eventParticipar!!.eventId,
-                        null,
-                        opcio.optionId,
-                        null,
-                        null,
-                        user!!.dni
-                    )
+                AlertDialog.Builder(context)
+                    .setTitle("Missatge")
+                    .setMessage("Ja ets participant d'aquest esdeveniment!")
+                    .setPositiveButton("Acceptar") { dialog, wich ->
+                        val p = Participant(
+                            null,
+                            eventParticipar!!.eventId,
+                            false,
+                            null,
+                            user!!.dni,
+                            null
+                        )
 
-                    api.addParticipantOption(participantOption)
+                        api.addParticipant(p)
 
-                    //comprobar que esto funciona
-                }
+                        val seleccionades = adapter.getSelectedOptions()
+                        for (opcio in seleccionades) {
+                            val participantOption = ParticipantOption(
+                                eventParticipar!!.eventId,
+                                null,
+                                opcio.optionId,
+                                null,
+                                null,
+                                user!!.dni
+                            )
+
+                            api.addParticipantOption(participantOption)
+                        }
+
+                        Events.refrescar = true
+                        dialog.dismiss()
+                        (context as? Activity)?.onBackPressed()
+                    }
+                    .show()
 
             }
         }

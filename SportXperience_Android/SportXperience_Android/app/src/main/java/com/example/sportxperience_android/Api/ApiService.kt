@@ -37,7 +37,7 @@ interface ApiService {
     @GET("/api/events/{dni}")
     suspend fun getAllEventsByDni(@Path("dni") dni: String): Response<List<Event>>
 
-    @GET("/api/events/{pagament}/{date}/{ubicacio}/{esport}/{latitude}/{longitude}")
+    @GET("/api/events/{pagament}/{date}/{ubicacio}/{esport}/{latitude}/{longitude}/{dni}")
     suspend fun getAllEventsFilter(
         @Path("pagament") pagament: Int,
         @Path("date") date: String,
@@ -45,6 +45,7 @@ interface ApiService {
         @Path("esport") esport: String?,
         @Path("latitude") latitude: Double?,
         @Path("longitude") longitude: Double?,
+        @Path("dni") dni: String,
     ): Response<List<Event>>
 
 

@@ -170,7 +170,8 @@ class CrudApi(context: Context) : CoroutineScope {
         ubicacio: String?,
         esport: String?,
         latitude: Double,
-        longitude: Double
+        longitude: Double,
+        dni: String
     ): List<Event>? {
         var events: List<Event>? = null
         runBlocking {
@@ -178,7 +179,7 @@ class CrudApi(context: Context) : CoroutineScope {
                 var resposta: Response<List<Event>>? = null
                 val cor = launch {
                     resposta = getRetrofit().create(ApiService::class.java)
-                        .getAllEventsFilter(pagament, date, ubicacio, esport, latitude, longitude)
+                        .getAllEventsFilter(pagament, date, ubicacio, esport, latitude, longitude, dni)
                 }
                 cor.join()
                 if (resposta!!.isSuccessful)

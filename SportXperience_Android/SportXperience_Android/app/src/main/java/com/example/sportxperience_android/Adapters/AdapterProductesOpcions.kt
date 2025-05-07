@@ -92,12 +92,12 @@ class AdapterProductesOpcions(val llista: ArrayList<Product>, val context: Conte
         return selectedOptions.all { it?.name == null }
     }
 
-    fun getSelectedOptions(): List<Pair<Product, Option>> {
-        val seleccionades = mutableListOf<Pair<Product, Option>>()
+    fun getSelectedOptions(): List<Option> {
+        val seleccionades = mutableListOf<Option>()
         for (i in selectedOptions.indices) {
             val opt = selectedOptions[i]
             if (opt != null && opt.name != "---") {
-                seleccionades.add(Pair(llista[i], opt))
+                seleccionades.add(opt)
             }
         }
         return seleccionades

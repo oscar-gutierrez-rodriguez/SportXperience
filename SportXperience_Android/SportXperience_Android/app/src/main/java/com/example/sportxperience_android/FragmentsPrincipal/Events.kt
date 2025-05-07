@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sportxperience_android.Adapters.AdapterEvents
 import com.example.sportxperience_android.Api.CrudApi
+import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.databinding.FragmentEventsBinding
 import com.example.sportxperience_android.ubicacioActual
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -49,6 +50,7 @@ class Events : Fragment() {
     ): View? {
 
         binding = FragmentEventsBinding.inflate(inflater, container, false)
+
 
         binding.evTotsDos.isChecked = true
 
@@ -105,6 +107,19 @@ class Events : Fragment() {
     }
 
     companion object {
+        var refrescar = false
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (refrescar) {
+            mostrarEvents()
+            refrescar = false
+        }
+    }
+
+
+    /*companion object {
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
@@ -122,7 +137,7 @@ class Events : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
-    }
+    }*/
 
 
     fun mostrarEvents() {
@@ -135,13 +150,16 @@ class Events : Fragment() {
                 if (binding.tilCiutat.text.toString().isNullOrEmpty()) "null" else binding.tilCiutat.text.toString(),
                 if (binding.tilEsport.text.toString().isNullOrEmpty()) "null" else binding.tilEsport.text.toString(),
                 ubicacioActual!!.latitude,
-                ubicacioActual!!.longitude
+                ubicacioActual!!.longitude,
+                user!!.dni
             )
         }
 
 
         if (events != null) {
-            val adapter = context?.let { AdapterEvents(events, it) }
+
+            val eventsFiltrats = events.filter { (it.maxParticipantsNumber == 0 || it.placesValides != 0) && it.participant == false}
+            val adapter = context?.let { AdapterEvents(eventsFiltrats, it) }
 
             binding.recyclerEvents.layoutManager = LinearLayoutManager(context)
             binding.recyclerEvents.adapter = adapter

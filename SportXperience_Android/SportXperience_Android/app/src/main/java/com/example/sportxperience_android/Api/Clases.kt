@@ -44,7 +44,9 @@ data class Event(
     val startDate: String,
     val ubicationId: Int,
     val latitude: Float,
-    val longitude: Float
+    val longitude: Float,
+    val participant : Boolean,
+    val placesValides : Int
 ) : Parcelable
 
 

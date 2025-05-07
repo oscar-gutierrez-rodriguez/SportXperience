@@ -19,6 +19,7 @@ import com.example.sportxperience_android.Adapters.AdapterProducts
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Event
 import com.example.sportxperience_android.Api.Participant
+import com.example.sportxperience_android.FragmentsPrincipal.Events
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.databinding.ActivityParticiparEventBinding
 import com.google.android.gms.maps.model.LatLng
@@ -119,15 +120,6 @@ class ParticiparEvent : AppCompatActivity() {
                     .setPositiveButton("Acceptar") { dialog, wich ->
                         val api = CrudApi(this)
 
-                        data class Participant(
-                            val event: Any,
-                            val eventId: Int,
-                            val organizer: Boolean,
-                            val results: List<Any>,
-                            val userDni: String,
-                            val userDniNavigation: Any
-                        )
-
                         val p = Participant(
                             null,
                             eventParticipar!!.eventId,
@@ -137,19 +129,19 @@ class ParticiparEvent : AppCompatActivity() {
                             null
                         )
 
-                        if (api.addParticipant(p) != null){
+                        if (api.addParticipant(p) != null) {
                             AlertDialog.Builder(this)
                                 .setTitle("Missatge")
                                 .setMessage("Ja ets participant d'aquest esdeveniment!")
-                                .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
-                                .show()
-                        } else{
-                            AlertDialog.Builder(this)
-                                .setTitle("Missatge")
-                                .setMessage("Es nulo")
-                                .setPositiveButton("Acceptar") { dialog, _ -> dialog.dismiss() }
+                                .setPositiveButton("Acceptar") { dialog, _ ->
+                                    Events.refrescar = true
+                                    dialog.dismiss()
+                                    onBackPressedDispatcher.onBackPressed()
+                                    onBackPressedDispatcher.onBackPressed()
+                                }
                                 .show()
                         }
+
 
                     }
                     .setNegativeButton("Cancelar") { dialog, wich ->

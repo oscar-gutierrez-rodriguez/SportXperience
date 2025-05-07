@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SportXperience_Android</string>
+    <string name="app_name">SportXperience</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ruta_api">http://172.16.24.191:5097/</string>

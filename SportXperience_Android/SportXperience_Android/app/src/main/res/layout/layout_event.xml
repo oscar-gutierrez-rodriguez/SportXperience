@@ -14,14 +14,31 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_margin="20dp"
-            android:id="@+id/imatgeEvent_card"
-            android:background="@drawable/border_image"
-            android:scaleType="centerCrop"
-            android:clipToOutline="true"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:id="@+id/placesRestants_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="places"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="4dp"/>
+
+            <ImageView
+                android:id="@+id/imatgeEvent_card"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/border_image"
+                android:scaleType="centerCrop"
+                android:clipToOutline="true"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

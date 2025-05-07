@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.sportxperience_android.Api.Event
@@ -30,6 +31,7 @@ class AdapterEvents(val llista: List<Event>, val context: Context) :
         val data = vista.findViewById<TextView>(R.id.dataEvent_card)
         val esport = vista.findViewById<TextView>(R.id.esportEvent_card)
         val preu = vista.findViewById<TextView>(R.id.preuEvent_card)
+        val placesLliures = vista.findViewById<TextView>(R.id.placesRestants_card)
     }
 
 
@@ -48,9 +50,26 @@ class AdapterEvents(val llista: List<Event>, val context: Context) :
         holder.esport.setText(llista[position].sportName)
 
         if (llista[position].price.toDouble() != 0.0) {
-            holder.preu.setText(llista[position].price.toString() + "€")
+            holder.preu.text = "%.2f€".format(llista[position].price)
+
         } else {
             holder.preu.setText("Gratuït")
+        }
+
+        if(llista[position].maxParticipantsNumber == 0){
+            holder.placesLliures.setTextColor(ContextCompat.getColor(context, android.R.color.black))
+            holder.placesLliures.setText("Sense límit")
+        } else {
+
+            if(llista[position].placesValides <= 5){
+                holder.placesLliures.setTextColor(ContextCompat.getColor(context, android.R.color.holo_red_light))
+            } else if (llista[position].placesValides <= 20){
+                holder.placesLliures.setTextColor(ContextCompat.getColor(context, android.R.color.holo_orange_light))
+            } else{
+                holder.placesLliures.setTextColor(ContextCompat.getColor(context, android.R.color.holo_green_light))
+            }
+
+            holder.placesLliures.setText("Places lliures: " + llista[position].placesValides)
         }
 
         holder.vista.setOnClickListener {
