@@ -3,28 +3,31 @@
   "WorkspaceRootPath": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\",
   "Documents": [
     {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\repositorysportxperience\\sportxperience\\apisportxperience\\apisportxperience\\models\\resultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+=======
+      "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\models\\resultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+>>>>>>> origin/Desktop
       "RelativeMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|solutionrelative:apisportxperience\\models\\resultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\repositorysportxperience\\sportxperience\\apisportxperience\\apisportxperience\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|solutionrelative:apisportxperience\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
       "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|solutionrelative:apisportxperience\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+>>>>>>> origin/Desktop
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\controllers\\resultscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|solutionrelative:apisportxperience\\controllers\\resultscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\models\\eventdtoparticipant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|solutionrelative:apisportxperience\\models\\eventdtoparticipant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\models\\participantdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|solutionrelative:apisportxperience\\models\\participantdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\controllers\\participantscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,6 +36,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\models\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|solutionrelative:apisportxperience\\models\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|solutionrelative:apisportxperience\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -61,10 +68,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|solutionrelative:apisportxperience\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\models\\participant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|solutionrelative:apisportxperience\\models\\participant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\controllers\\lotscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -104,6 +107,7 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\sportxperience\\sportxperience\\apisportxperience\\apisportxperience\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
       "AbsoluteMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|c:\\repositorysportxperience\\sportxperience\\apisportxperience\\apisportxperience\\controllers\\participantscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -195,6 +199,8 @@
 >>>>>>> origin/Desktop
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> origin/Desktop
       "RelativeMoniker": "D:0:0:{D9369121-80D1-4C4B-B087-BC3F78561273}|ApiSportXperience\\ApiSportXperience.csproj|solutionrelative:apisportxperience\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -214,34 +220,37 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> origin/Desktop
               "Title": "Result.cs",
-              "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\Result.cs",
+              "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\Result.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Models\\Result.cs",
-              "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\Result.cs",
+              "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\Result.cs",
               "RelativeToolTip": "ApiSportXperience\\Models\\Result.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T14:33:15.807Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T18:12:57.905Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ResultDTO.cs",
-              "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\ResultDTO.cs",
+              "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\ResultDTO.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Models\\ResultDTO.cs",
-              "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\ResultDTO.cs",
+              "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\ResultDTO.cs",
               "RelativeToolTip": "ApiSportXperience\\Models\\ResultDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T14:33:07.22Z",
+              "WhenOpened": "2025-05-07T18:12:58.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -257,13 +266,16 @@
               "WhenOpened": "2025-05-07T15:22:01.249Z",
 =======
 >>>>>>> origin/Desktop
+=======
+>>>>>>> origin/Desktop
               "Title": "ParticipantDTO.cs",
-              "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\ParticipantDTO.cs",
+              "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\ParticipantDTO.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Models\\ParticipantDTO.cs",
-              "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\ParticipantDTO.cs",
+              "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\ParticipantDTO.cs",
               "RelativeToolTip": "ApiSportXperience\\Models\\ParticipantDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-05-06T16:47:59.057Z",
 >>>>>>> origin/Desktop
               "EditorCaption": ""
@@ -313,6 +325,9 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T14:40:40.203Z"
+=======
+              "WhenOpened": "2025-05-07T18:12:58.212Z"
+>>>>>>> origin/Desktop
             },
             {
               "$type": "Document",
@@ -324,6 +339,7 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\LotsController.cs",
               "ViewState": "AgIAAGYAAAAAAAAAAAAmwIEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-05-07T14:40:40.208Z"
 <<<<<<< Updated upstream
 =======
@@ -337,11 +353,15 @@
               "ViewState": "AgIAAGYAAAAAAAAAAAAmwIEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T17:40:22.321Z"
+=======
+              "WhenOpened": "2025-05-07T18:12:58.214Z"
+>>>>>>> origin/Desktop
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "EventsController.cs",
+<<<<<<< HEAD
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\EventsController.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\EventsController.cs",
               "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\EventsController.cs",
@@ -377,10 +397,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "EventsController.cs",
+=======
+>>>>>>> origin/Desktop
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\EventsController.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\EventsController.cs",
               "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\EventsController.cs",
               "RelativeToolTip": "ApiSportXperience\\Controllers\\EventsController.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAHYAAAAAAAAAAAAQwJQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T14:40:40.212Z",
@@ -409,15 +432,27 @@
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
+=======
+              "ViewState": "AgIAAFYAAAAAAAAAAADwv3IAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:12:58.217Z"
+            },
+            {
+              "$type": "Document",
+>>>>>>> origin/Desktop
               "DocumentIndex": 4,
               "Title": "EventDTO.cs",
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\EventDTO.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Models\\EventDTO.cs",
               "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\EventDTO.cs",
               "RelativeToolTip": "ApiSportXperience\\Models\\EventDTO.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAADwvywAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAuwAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-05-07T14:40:40.216Z"
+=======
+              "WhenOpened": "2025-05-07T18:12:58.219Z"
+>>>>>>> origin/Desktop
             },
             {
               "$type": "Document",
@@ -427,13 +462,17 @@
               "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\ParticipantsController.cs",
               "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\ParticipantsController.cs",
               "RelativeToolTip": "ApiSportXperience\\Controllers\\ParticipantsController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAiwGIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAswDEAAABmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-05-07T14:40:40.22Z"
+=======
+              "WhenOpened": "2025-05-07T18:12:58.223Z"
+>>>>>>> origin/Desktop
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\UsersController.cs",
@@ -441,11 +480,12 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\UsersController.cs",
               "ViewState": "AgIAAGwAAAAAAAAAAAAQwIUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T14:40:40.224Z"
+              "WhenOpened": "2025-05-07T18:12:58.225Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
               "DocumentIndex": 11,
@@ -469,6 +509,8 @@
 >>>>>>> origin/Desktop
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> origin/Desktop
               "Title": "RecommendedLevelsController.cs",
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\RecommendedLevelsController.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\RecommendedLevelsController.cs",
@@ -476,7 +518,7 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\RecommendedLevelsController.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAADwvysAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T14:40:40.225Z"
+              "WhenOpened": "2025-05-07T18:12:58.228Z"
             },
             {
               "$type": "Document",
@@ -486,13 +528,17 @@
               "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\MessagesController.cs",
               "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\MessagesController.cs",
               "RelativeToolTip": "ApiSportXperience\\Controllers\\MessagesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAACMAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwCQAAACMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-05-07T14:40:40.231Z"
+=======
+              "WhenOpened": "2025-05-07T18:12:58.23Z"
+>>>>>>> origin/Desktop
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Event.cs",
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\Event.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Models\\Event.cs",
@@ -500,11 +546,11 @@
               "RelativeToolTip": "ApiSportXperience\\Models\\Event.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T14:40:40.236Z"
+              "WhenOpened": "2025-05-07T18:12:58.233Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "UbicationsController.cs",
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\UbicationsController.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\UbicationsController.cs",
@@ -512,11 +558,35 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\UbicationsController.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAowDQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T14:40:40.241Z"
+              "WhenOpened": "2025-05-07T18:12:58.236Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
+              "Title": "Message.cs",
+              "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "ApiSportXperience\\Models\\Message.cs",
+              "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\Message.cs",
+              "RelativeToolTip": "ApiSportXperience\\Models\\Message.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:12:58.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MessageDTO.cs",
+              "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\MessageDTO.cs",
+              "RelativeDocumentMoniker": "ApiSportXperience\\Models\\MessageDTO.cs",
+              "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\MessageDTO.cs",
+              "RelativeToolTip": "ApiSportXperience\\Models\\MessageDTO.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:12:58.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\ProductsController.cs",
@@ -524,7 +594,7 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAA2wCAAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T14:40:40.244Z"
+              "WhenOpened": "2025-05-07T18:12:58.245Z"
             },
             {
               "$type": "Document",
@@ -536,7 +606,7 @@
               "RelativeToolTip": "ApiSportXperience\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-07T14:40:40.245Z"
+              "WhenOpened": "2025-05-07T18:12:58.249Z"
             },
             {
               "$type": "Document",
@@ -548,6 +618,7 @@
               "RelativeToolTip": "ApiSportXperience\\Program.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-05-07T14:40:40.251Z"
             },
             {
@@ -561,6 +632,9 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T14:40:40.254Z"
+=======
+              "WhenOpened": "2025-05-07T18:12:58.251Z"
+>>>>>>> origin/Desktop
             },
             {
               "$type": "Document",
@@ -572,7 +646,7 @@
               "RelativeToolTip": "ApiSportXperience\\ApiSportXperience.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-07T14:40:40.265Z"
+              "WhenOpened": "2025-05-07T18:12:58.26Z"
             },
             {
               "$type": "Document",
@@ -583,6 +657,7 @@
               "ToolTip": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\GendersController.cs",
               "RelativeToolTip": "ApiSportXperience\\Controllers\\GendersController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
               "DocumentIndex": 5,
@@ -592,11 +667,14 @@
               "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\MessagesController.cs",
               "RelativeToolTip": "ApiSportXperience\\Controllers\\MessagesController.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAwwCQAAACMAAAAAAAAAA==",
+=======
+>>>>>>> origin/Desktop
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T17:40:22.336Z"
+              "WhenOpened": "2025-05-07T18:12:58.587Z"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 10,
               "Title": "Event.cs",
               "DocumentMoniker": "C:\\RepositorySportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\Event.cs",
@@ -691,6 +769,8 @@
 <<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> origin/Desktop
               "DocumentIndex": 15,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Properties\\launchSettings.json",
@@ -699,11 +779,12 @@
               "RelativeToolTip": "ApiSportXperience\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-07T14:40:40.894Z"
+              "WhenOpened": "2025-05-07T18:12:58.591Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
               "DocumentIndex": 16,
@@ -751,6 +832,8 @@
 >>>>>>> origin/Desktop
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> origin/Desktop
               "Title": "SportsController.cs",
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Controllers\\SportsController.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Controllers\\SportsController.cs",
@@ -758,11 +841,12 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\SportsController.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T14:40:40.897Z"
+              "WhenOpened": "2025-05-07T18:12:58.594Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -773,6 +857,8 @@
 >>>>>>> origin/Desktop
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> origin/Desktop
               "Title": "SportXperienceContext.cs",
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\SportXperienceContext.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Models\\SportXperienceContext.cs",
@@ -780,11 +866,12 @@
               "RelativeToolTip": "ApiSportXperience\\Models\\SportXperienceContext.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAvwCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T14:40:40.901Z"
+              "WhenOpened": "2025-05-07T18:12:58.596Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
@@ -795,6 +882,8 @@
 >>>>>>> origin/Desktop
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> origin/Desktop
               "Title": "User.cs",
               "DocumentMoniker": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\Models\\User.cs",
               "RelativeDocumentMoniker": "ApiSportXperience\\Models\\User.cs",
@@ -802,7 +891,7 @@
               "RelativeToolTip": "ApiSportXperience\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T14:40:40.905Z"
+              "WhenOpened": "2025-05-07T18:12:58.599Z"
             }
           ]
         }
