@@ -103,11 +103,13 @@
     <Compile Include="Model\Repositori.cs" />
     <Compile Include="Model\RepositoriUbicacions.cs" />
     <Compile Include="Model\Result.cs" />
+    <Compile Include="Model\ResultDTO.cs" />
     <Compile Include="Model\Sport.cs" />
     <Compile Include="Model\Ubicacio.cs" />
     <Compile Include="Model\Ubication.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\ViewOption.cs" />
+    <Compile Include="Model\ViewResultat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

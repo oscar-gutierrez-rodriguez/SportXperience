@@ -340,6 +340,21 @@ namespace DesktopModels.Model
             return l;
         }
 
+        public static Result InsResultats(Result result)
+        {
+            Result l = null;
+            try
+            {
+                l = (Result)MakeRequest("results/", "POST", result, typeof(Result)).Result;
+            }
+            catch { }
+            if (l == null)
+            {
+                l = new Result();
+            }
+            return l;
+        }
+
         public static Product GetProductsByLotIdAndName(int idLot,string nom)
         {
             Product la = null;

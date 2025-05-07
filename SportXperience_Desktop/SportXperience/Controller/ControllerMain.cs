@@ -1,4 +1,6 @@
-﻿using DesktopModels.Model;
+﻿using ApiSportXperience.Models;
+using DesktopModels.Model;
+using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using Pabo.Calendar;
@@ -17,6 +19,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static GMap.NET.Entity.OpenStreetMapGraphHopperGeocodeEntity;
+using Result = SportXperience.Model.Result;
 
 namespace SportXperience.Controller
 {
@@ -33,6 +36,7 @@ namespace SportXperience.Controller
         List<Product> Actuproducts = new List<Product>();
         List<Option> options = new List<Option>();
         List<Option> Actuoptions = new List<Option>();
+        List<ResultDTO> resultats = new List<ResultDTO>();
         Boolean afegir = false;
         OpenFileDialog archiu = new OpenFileDialog();
         Ubication ubication;
@@ -85,7 +89,7 @@ namespace SportXperience.Controller
             fafegir.buttonAfegirProducte.Click += ButtonAfegirProducte_Click;
             lot.checkBoxOpcio.CheckedChanged += CheckBoxOpcio_CheckedChanged;
             f.buttonResultats.Click += ButtonResultats_Click;
-            r.buttonAfegirRsultat.Click += ButtonAfegirRsultat_Click;
+            r.buttonAfegirResultat.Click += ButtonAfegirRsultat_Click;
             f.FormClosed += (s, e) => Application.Exit();
             fafegir.FormClosed += (s, e) => f.Show();
             lot.FormClosed += LotFormClosed;
@@ -108,13 +112,47 @@ namespace SportXperience.Controller
             ubi.gMapControlUbi.DoubleClick += GMapControlUbi_DoubleClick;
             ubi.dataGridViewUbicacions.CellContentClick += DataGridViewUbicacions_CellContentClick;
             f.materialButtonProdPart.Click += MaterialButtonProdPart_Click;
+            r.buttonAfegirPosicio.Click += ButtonAfegirPosicio_Click;
+            r.buttonAfegirResultat.Click += ButtonAfegirResultat_Click;
+            r.dataGridViewResultats.CellClick += DataGridViewResultats_CellClick;
+        }
+
+        private void DataGridViewResultats_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string nombre = r.dataGridViewResultats.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
+            ResultDTO delete = null;
+
+            foreach (ResultDTO o in resultats)
+            {
+                if (o.Name == nombre)
+                {
+                    delete = o;
+                    break;
+                }
+            }
+
+            if (delete != null)
+            {
+               var result = MessageBox.Show("Segur que vols eliminar aquest resultat?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    resultats.Remove(delete);
+                    ActualitzarGridResultats();
+                }
+            }
+        }
+
+        private void ButtonAfegirResultat_Click(object sender, EventArgs e)
+        {
+            InsertarResult();
         }
 
         void Calendari()
         {
 
             DateTime current;
-            
+
             foreach (DataGridViewRow row in f.dataGridViewEvents.Rows)
             {
                 var evento = row.DataBoundItem as EventDTO;
@@ -128,7 +166,7 @@ namespace SportXperience.Controller
                     DateItem di = new DateItem
                     {
                         Date = current.Date,
-                        BackColor1 = Color.FromArgb(196,255,186),
+                        BackColor1 = Color.FromArgb(196, 255, 186),
                     };
 
                     f.monthCalendarEvents.Dates.Add(di);
@@ -242,7 +280,7 @@ namespace SportXperience.Controller
                     markerOverlay = new GMapOverlay("Marcador");
                     markerOverlay.Markers.Add(marker);
                     ubi.gMapControlUbi.Overlays.Add(markerOverlay);
-                    
+
                 }
                 ubi.dataGridViewUbicacions.DataBindingComplete += DataGridViewUbicacions_DataBindingComplete;
 
@@ -264,7 +302,7 @@ namespace SportXperience.Controller
                 marker.IsVisible = false;
             }
 
-            
+
 
             ubi.ShowDialog();
         }
@@ -313,7 +351,7 @@ namespace SportXperience.Controller
         {
             int prod = fafegir.listBoxLot.SelectedIndex;
 
-            if (prod >= 0) 
+            if (prod >= 0)
             {
                 if (afegir)
                 {
@@ -333,14 +371,14 @@ namespace SportXperience.Controller
                     Actuproducts.Remove(Actuproducts[prod]);
                     lot.ShowDialog();
                 }
-            
+
             }
             else
             {
                 MessageBox.Show("Por favor selecciona un producto.");
             }
 
-            
+
         }
 
         private void dataGridViewOpcions_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -360,9 +398,14 @@ namespace SportXperience.Controller
 
             if (delete != null)
             {
-                MessageBox.Show("Segur que vols eliminar aquesta opció?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                options.Remove(delete);
-                ActualitzarGridOptions();
+               var result = MessageBox.Show("Segur que vols eliminar aquesta opció?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    options.Remove(delete);
+                    ActualitzarGridOptions();
+                }
+                
             }
 
         }
@@ -417,42 +460,42 @@ namespace SportXperience.Controller
             fafegir.comboBoxNivell.Text = Repositori.GetRecommendedLevelById(ev.RecommendedLevelId).Name;
             ubi.TextBoxLatitud.Text = Repositori.GetUbicationById(ev.UbicationId).Latitude.ToString();
             ubi.TextBoxLongitud.Text = Repositori.GetUbicationById(ev.UbicationId).Longitude.ToString();
-            fafegir.materialTextBoxNomCiutat.Text = ev.cityName;          
+            fafegir.materialTextBoxNomCiutat.Text = ev.cityName;
 
 
-                foreach (Product p in products)
-                {
-                    fafegir.listBoxLot.Items.Add(p.Name);
-                    p.Options = Repositori.GetOptionsByProductId(p.ProductId);
-                    Actuproducts.Add(p);
-
-                }
-
-                fafegir.textBoxEsport.Text = Repositori.GetSportById(ev.SportId).Name;
-
-                if (!string.IsNullOrEmpty(ev.Reward))
-                {
-                    fafegir.checkBoxPagament.Checked = true;
-                }
-                else
-                {
-                    fafegir.checkBoxPagament.Checked = false;
-                    fafegir.textBoxPreu.Text = "";
-                    fafegir.textBoxPremi.Text = "";
-                }
-                if (products.Count() != 0)
-                {
-                    fafegir.checkBoxLot.Checked = true;
-                }
-                afegir = false;
-                fafegir.ShowDialog();
+            foreach (Product p in products)
+            {
+                fafegir.listBoxLot.Items.Add(p.Name);
+                p.Options = Repositori.GetOptionsByProductId(p.ProductId);
+                Actuproducts.Add(p);
 
             }
-        
+
+            fafegir.textBoxEsport.Text = Repositori.GetSportById(ev.SportId).Name;
+
+            if (!string.IsNullOrEmpty(ev.Reward))
+            {
+                fafegir.checkBoxPagament.Checked = true;
+            }
+            else
+            {
+                fafegir.checkBoxPagament.Checked = false;
+                fafegir.textBoxPreu.Text = "";
+                fafegir.textBoxPremi.Text = "";
+            }
+            if (products.Count() != 0)
+            {
+                fafegir.checkBoxLot.Checked = true;
+            }
+            afegir = false;
+            fafegir.ShowDialog();
+
+        }
+
 
         private void DataGridViewEvents_SelectionChanged(object sender, EventArgs e)
         {
-            if (f.dataGridViewEvents.SelectedRows.Count == 0 )
+            if (f.dataGridViewEvents.SelectedRows.Count == 0)
             {
                 f.buttonEliminar.Enabled = false;
                 f.buttonActualitzar.Enabled = false;
@@ -461,7 +504,7 @@ namespace SportXperience.Controller
             else
             {
                 f.monthCalendarEvents.Dates.Clear();
-                Calendari();      
+                Calendari();
 
                 f.buttonEliminar.Enabled = true;
                 f.buttonActualitzar.Enabled = true;
@@ -472,10 +515,10 @@ namespace SportXperience.Controller
 
         private void ButtonAfegirOpcio_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(lot.textBoxNomProd.Text))
+            if (string.IsNullOrEmpty(lot.textBoxNomProd.Text))
             {
-                MessageBox.Show("No pots afegir una opcio sense el nom del producte.", "" , MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                
+                MessageBox.Show("No pots afegir una opcio sense el nom del producte.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
             else
             {
@@ -499,6 +542,26 @@ namespace SportXperience.Controller
             }
         }
 
+        private void ButtonAfegirPosicio_Click(object sender, EventArgs e)
+        {
+            if (r.numericUpDownPosicio.Value == 0)
+            {
+                MessageBox.Show("Cap participant pot tenir la posició 0.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                ResultDTO re = new ResultDTO
+                {
+                    Name = r.comboBoxNomParticipant.Text,
+                    Position = (int?)r.numericUpDownPosicio.Value,
+                    EventId = ev.EventId,
+                    UserDni = (r.comboBoxNomParticipant.SelectedItem as ParticipantDTO).UserDni
+                };
+                resultats.Add(re);
+                ActualitzarGridResultats();
+            }
+        }
+
         private void ActualitzarGridOptions()
         {
             List<ViewOption> viewOptions = new List<ViewOption>();
@@ -518,6 +581,29 @@ namespace SportXperience.Controller
             btnEliminar.Width = 60;
 
             lot.dataGridViewOpcions.Columns.Add(btnEliminar);
+
+
+        }
+
+        private void ActualitzarGridResultats()
+        {
+            List<ViewResultat> viewResultats = new List<ViewResultat>();
+
+            viewResultats = resultats.Select(x => new ViewResultat(x.Name, x.Position)).ToList();
+            r.dataGridViewResultats.DataSource = viewResultats;
+
+            if (r.dataGridViewResultats.Columns.Contains("Eliminar"))
+            {
+                r.dataGridViewResultats.Columns.Remove("Eliminar");
+            }
+            DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
+            btnEliminar.Name = "Eliminar";
+            btnEliminar.HeaderText = "Eliminar";
+            btnEliminar.Text = "🗑";
+            btnEliminar.UseColumnTextForButtonValue = true;
+            btnEliminar.Width = 60;
+
+            r.dataGridViewResultats.Columns.Add(btnEliminar);
 
 
         }
@@ -1007,6 +1093,23 @@ namespace SportXperience.Controller
                 };
                 Repositori.InsProduct(p);
                 
+            }
+        }
+
+        void InsertarResult()
+        {
+
+            foreach (ResultDTO re in resultats)
+            {
+                Result r = new Result
+                {
+                    ResultId = 0,
+                    Position = re.Position,
+                    UserDni = re.UserDni,
+                    EventId = re.EventId
+                };
+                Repositori.InsResultats(r);
+
             }
         }
 

@@ -31,7 +31,7 @@
             this.dataGridViewResultats = new System.Windows.Forms.DataGridView();
             this.numericUpDownPosicio = new System.Windows.Forms.NumericUpDown();
             this.buttonAfegirPosicio = new MaterialSkin.Controls.MaterialButton();
-            this.buttonAfegirRsultat = new MaterialSkin.Controls.MaterialButton();
+            this.buttonAfegirResultat = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.comboBoxNomParticipant = new System.Windows.Forms.ComboBox();
@@ -43,16 +43,19 @@
             // 
             this.dataGridViewResultats.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataGridViewResultats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewResultats.Location = new System.Drawing.Point(198, 115);
+            this.dataGridViewResultats.Location = new System.Drawing.Point(150, 115);
+            this.dataGridViewResultats.MultiSelect = false;
             this.dataGridViewResultats.Name = "dataGridViewResultats";
-            this.dataGridViewResultats.Size = new System.Drawing.Size(254, 150);
+            this.dataGridViewResultats.ReadOnly = true;
+            this.dataGridViewResultats.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewResultats.Size = new System.Drawing.Size(302, 150);
             this.dataGridViewResultats.TabIndex = 9;
             // 
             // numericUpDownPosicio
             // 
             this.numericUpDownPosicio.Location = new System.Drawing.Point(17, 248);
             this.numericUpDownPosicio.Name = "numericUpDownPosicio";
-            this.numericUpDownPosicio.Size = new System.Drawing.Size(135, 20);
+            this.numericUpDownPosicio.Size = new System.Drawing.Size(121, 20);
             this.numericUpDownPosicio.TabIndex = 18;
             // 
             // buttonAfegirPosicio
@@ -74,31 +77,31 @@
             this.buttonAfegirPosicio.UseAccentColor = false;
             this.buttonAfegirPosicio.UseVisualStyleBackColor = true;
             // 
-            // buttonAfegirRsultat
+            // buttonAfegirResultat
             // 
-            this.buttonAfegirRsultat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAfegirRsultat.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.buttonAfegirRsultat.Depth = 0;
-            this.buttonAfegirRsultat.HighEmphasis = true;
-            this.buttonAfegirRsultat.Icon = null;
-            this.buttonAfegirRsultat.Location = new System.Drawing.Point(297, 373);
-            this.buttonAfegirRsultat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.buttonAfegirRsultat.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonAfegirRsultat.Name = "buttonAfegirRsultat";
-            this.buttonAfegirRsultat.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.buttonAfegirRsultat.Size = new System.Drawing.Size(146, 36);
-            this.buttonAfegirRsultat.TabIndex = 20;
-            this.buttonAfegirRsultat.Text = "Afegir Resultat";
-            this.buttonAfegirRsultat.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.buttonAfegirRsultat.UseAccentColor = false;
-            this.buttonAfegirRsultat.UseVisualStyleBackColor = true;
+            this.buttonAfegirResultat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonAfegirResultat.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.buttonAfegirResultat.Depth = 0;
+            this.buttonAfegirResultat.HighEmphasis = true;
+            this.buttonAfegirResultat.Icon = null;
+            this.buttonAfegirResultat.Location = new System.Drawing.Point(297, 373);
+            this.buttonAfegirResultat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonAfegirResultat.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonAfegirResultat.Name = "buttonAfegirResultat";
+            this.buttonAfegirResultat.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.buttonAfegirResultat.Size = new System.Drawing.Size(146, 36);
+            this.buttonAfegirResultat.TabIndex = 20;
+            this.buttonAfegirResultat.Text = "Afegir Resultat";
+            this.buttonAfegirResultat.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.buttonAfegirResultat.UseAccentColor = false;
+            this.buttonAfegirResultat.UseVisualStyleBackColor = true;
             // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(14, 97);
+            this.materialLabel1.Location = new System.Drawing.Point(6, 98);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(120, 19);
@@ -110,7 +113,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(14, 226);
+            this.materialLabel2.Location = new System.Drawing.Point(6, 226);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(138, 19);
@@ -133,7 +136,7 @@
             this.Controls.Add(this.comboBoxNomParticipant);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.buttonAfegirRsultat);
+            this.Controls.Add(this.buttonAfegirResultat);
             this.Controls.Add(this.buttonAfegirPosicio);
             this.Controls.Add(this.numericUpDownPosicio);
             this.Controls.Add(this.dataGridViewResultats);
@@ -150,7 +153,7 @@
         #endregion
         public System.Windows.Forms.DataGridView dataGridViewResultats;
         public MaterialSkin.Controls.MaterialButton buttonAfegirPosicio;
-        public MaterialSkin.Controls.MaterialButton buttonAfegirRsultat;
+        public MaterialSkin.Controls.MaterialButton buttonAfegirResultat;
         public MaterialSkin.Controls.MaterialLabel materialLabel1;
         public MaterialSkin.Controls.MaterialLabel materialLabel2;
         public System.Windows.Forms.NumericUpDown numericUpDownPosicio;
