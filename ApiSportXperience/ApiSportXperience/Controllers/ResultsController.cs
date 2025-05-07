@@ -50,6 +50,21 @@ namespace ApiSportXperience.Controllers
             return result;
         }
 
+
+        [HttpGet]
+        [Route("api/results/{eventId}/{userDni}")]
+        public async Task<ActionResult<Result>> GetResult(int eventId, string userDni)
+        {
+            var result = await _context.Results.Where(x => x.EventId == eventId && x.UserDni.Equals(userDni)).FirstOrDefaultAsync();
+
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return result;
+        }
+
         // PUT: api/Results/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut]

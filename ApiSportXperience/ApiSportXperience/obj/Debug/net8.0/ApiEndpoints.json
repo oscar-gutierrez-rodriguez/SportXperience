@@ -142,7 +142,7 @@
   {
     "ContainingType": "ApiSportXperience.Controllers.EventsController",
     "Method": "GetEventFiltre",
-    "RelativePath": "api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}",
+    "RelativePath": "api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}/{dni}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -155,14 +155,7 @@
       {
         "Name": "data",
         "Type": "System.String",
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-        "IsRequired": false
-=======
         "IsRequired": true
->>>>>>> Desktop
       },
       {
         "Name": "ubicacio",
@@ -183,11 +176,16 @@
         "Name": "longitude",
         "Type": "System.Single",
         "IsRequired": true
+      },
+      {
+        "Name": "dni",
+        "Type": "System.String",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.EventDTO, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.EventDTOParticipant, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1349,6 +1347,37 @@
       {
         "Name": "result",
         "Type": "ApiSportXperience.Models.Result",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSportXperience.Models.Result",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ResultsController",
+    "Method": "GetResult",
+    "RelativePath": "api/results/{eventId}/{userDni}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userDni",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

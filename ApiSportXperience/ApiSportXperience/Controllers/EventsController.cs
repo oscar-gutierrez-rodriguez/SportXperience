@@ -116,11 +116,11 @@ namespace ApiSportXperience.Controllers
         }
 
         [HttpGet]
-        [Route("api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}")]
-        public async Task<ActionResult<IEnumerable<EventDTO>>> GetEventFiltre(int? pagament, string? data, string? ubicacio, string? esport, float latitude, float longitude)
+        [Route("api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}/{dni}")]
+        public async Task<ActionResult<IEnumerable<EventDTOParticipant>>> GetEventFiltre(int? pagament, string? data, string? ubicacio, string? esport, float latitude, float longitude, string dni)
         {
 
-            List<EventDTO> query;
+            List<EventDTOParticipant> query;
 
             if (DateTime.TryParse(data, out var targetDate))
             {
@@ -130,7 +130,7 @@ namespace ApiSportXperience.Controllers
                     .Where(x =>
                         x.StartDate < nextDay &&
                         x.EndDate >= targetDate.Date)
-                    .Select(x => new EventDTO
+                    .Select(x => new EventDTOParticipant
                     {
                         EventId = x.EventId,
                         Name = x.Name,
@@ -165,7 +165,10 @@ namespace ApiSportXperience.Controllers
                         longitude = _context.Ubications
                             .Where(y => y.UbicationId == x.UbicationId)
                             .Select(y => y.Longitude)
-                            .FirstOrDefault()
+                            .FirstOrDefault(),
+                        participant = _context.Participants.Any(p => p.EventId == x.EventId && p.UserDni == dni),
+                        placesValides = (int)(x.MaxParticipantsNumber - _context.Participants.Count(y => y.EventId == x.EventId && y.Organizer == false))
+
                     })
                     .ToListAsync();
             }
@@ -173,7 +176,7 @@ namespace ApiSportXperience.Controllers
             {
 
                 query = await _context.Events
-                    .Select(x => new EventDTO
+                    .Select(x => new EventDTOParticipant
                     {
                         EventId = x.EventId,
                         Name = x.Name,
@@ -193,7 +196,9 @@ namespace ApiSportXperience.Controllers
                         SportName = _context.Sports.Where(y => y.SportId == x.SportId).FirstOrDefault().Name,
                         cityName = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().CityName,
                         latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
-                        longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude
+                        longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude,
+                        participant = _context.Participants.Any(p => p.EventId == x.EventId && p.UserDni == dni),
+                        placesValides = (int)(x.MaxParticipantsNumber - _context.Participants.Count(y => y.EventId == x.EventId && y.Organizer == false))
                     })
                     .ToListAsync();
             }
@@ -224,13 +229,13 @@ namespace ApiSportXperience.Controllers
             }
 
             var orderedEvents = query
-                //.Select(e => new
-                //{
-                //    Evento = e,
-                //    Distancia = Localitzacio.CalcularDistancia(latitude, longitude, (float)e.latitude, (float)e.longitude)
-                //})
-                //.OrderBy(x => x.Distancia)
-                //.Select(x => x.Evento)
+                .Select(e => new
+                {
+                    Evento = e,
+                    Distancia = Localitzacio.CalcularDistancia(latitude, longitude, (float)e.latitude, (float)e.longitude)
+                })
+                .OrderBy(x => x.Distancia)
+                .Select(x => x.Evento)
                 .ToList();
 
             return orderedEvents;
