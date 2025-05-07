@@ -224,7 +224,7 @@
         }
       }
     },
-    "/api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}": {
+    "/api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}/{dni}": {
       "get": {
         "tags": [
           "Events"
@@ -280,6 +280,14 @@
               "type": "number",
               "format": "float"
             }
+          },
+          {
+            "name": "dni",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -290,7 +298,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/EventDTO"
+                    "$ref": "#/components/schemas/EventDTOParticipant"
                   }
                 }
               },
@@ -298,7 +306,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/EventDTO"
+                    "$ref": "#/components/schemas/EventDTOParticipant"
                   }
                 }
               },
@@ -306,7 +314,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/EventDTO"
+                    "$ref": "#/components/schemas/EventDTOParticipant"
                   }
                 }
               }
@@ -2542,6 +2550,54 @@
         }
       }
     },
+    "/api/results/{eventId}/{userDni}": {
+      "get": {
+        "tags": [
+          "Results"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userDni",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/results": {
       "post": {
         "tags": [
@@ -3540,6 +3596,106 @@
             "type": "number",
             "format": "double",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EventDTOParticipant": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "minAge": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "maxAge": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "maxParticipantsNumber": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "reward": {
+            "type": "string",
+            "nullable": true
+          },
+          "ubicationId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "recommendedLevelId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "sportId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "recommendedLevelName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sportName": {
+            "type": "string",
+            "nullable": true
+          },
+          "cityName": {
+            "type": "string",
+            "nullable": true
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "participant": {
+            "type": "boolean"
+          },
+          "placesValides": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
