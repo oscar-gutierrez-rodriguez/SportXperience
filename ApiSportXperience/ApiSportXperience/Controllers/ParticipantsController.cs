@@ -37,6 +37,21 @@ namespace ApiSportXperience.Controllers
         }
 
         [HttpGet]
+        [Route("api/participants/noorganizer/{eventId}")]
+        public async Task<ActionResult<IEnumerable<ParticipantDTO>>> GetNoOrganizerByEvent(int eventId)
+        {
+            return await _context.Participants
+               .Where(x => x.EventId == eventId && x.Organizer == false)
+               .Select(x => new ParticipantDTO
+               {
+                   Organizer = x.Organizer,
+                   EventId = x.EventId,
+                   UserDni = x.UserDni,
+                   username = _context.Users.Where(y => y.Dni == x.UserDni).FirstOrDefault().Username,
+               }).ToListAsync();
+        }
+
+        [HttpGet]
         [Route("api/participants/organizer/{eventId}")]
         public async Task<ActionResult<Participant>> GetOrganizerByEvent(int eventId)
         {

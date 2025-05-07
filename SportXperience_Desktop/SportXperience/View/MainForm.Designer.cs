@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.materialButtonProdPart = new MaterialSkin.Controls.MaterialButton();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.buttonResultats = new MaterialSkin.Controls.MaterialButton();
             this.buttonEliminar = new MaterialSkin.Controls.MaterialButton();
@@ -45,16 +46,36 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Honeydew;
+            this.panel1.Controls.Add(this.materialButtonProdPart);
             this.panel1.Controls.Add(this.pictureBoxLogo);
             this.panel1.Location = new System.Drawing.Point(-3, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1435, 626);
             this.panel1.TabIndex = 12;
             // 
+            // materialButtonProdPart
+            // 
+            this.materialButtonProdPart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButtonProdPart.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButtonProdPart.Depth = 0;
+            this.materialButtonProdPart.HighEmphasis = true;
+            this.materialButtonProdPart.Icon = null;
+            this.materialButtonProdPart.Location = new System.Drawing.Point(981, 505);
+            this.materialButtonProdPart.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButtonProdPart.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButtonProdPart.Name = "materialButtonProdPart";
+            this.materialButtonProdPart.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButtonProdPart.Size = new System.Drawing.Size(233, 36);
+            this.materialButtonProdPart.TabIndex = 20;
+            this.materialButtonProdPart.Text = "PRODUCTES PER PARTICIPANT";
+            this.materialButtonProdPart.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButtonProdPart.UseAccentColor = false;
+            this.materialButtonProdPart.UseVisualStyleBackColor = true;
+            // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(1301, 13);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(1177, 23);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(100, 50);
             this.pictureBoxLogo.TabIndex = 14;
@@ -130,7 +151,7 @@
             this.buttonAfegir.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonAfegir.Name = "buttonAfegir";
             this.buttonAfegir.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.buttonAfegir.Size = new System.Drawing.Size(103, 36);
+            this.buttonAfegir.Size = new System.Drawing.Size(71, 36);
             this.buttonAfegir.TabIndex = 16;
             this.buttonAfegir.Text = "AFEGIR";
             this.buttonAfegir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -192,6 +213,7 @@
             this.Text = "SportXperience";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).EndInit();
             this.ResumeLayout(false);
@@ -209,6 +231,7 @@
         public MaterialSkin.Controls.MaterialButton buttonAfegir;
         public Pabo.Calendar.MonthCalendar monthCalendarEvents;
         public System.Windows.Forms.DataGridView dataGridViewEvents;
+        public MaterialSkin.Controls.MaterialButton materialButtonProdPart;
     }
 }
 
