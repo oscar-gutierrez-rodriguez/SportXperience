@@ -9,6 +9,7 @@ using ApiSportXperience.Models;
 using Humanizer;
 using Microsoft.Extensions.Logging;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Net;
 
 namespace ApiSportXperience.Controllers
 {
@@ -113,6 +114,39 @@ namespace ApiSportXperience.Controllers
                     latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
                     longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude
                 }).ToListAsync();
+        }
+
+        [HttpGet]
+        [Route("api/events/participant/{userdni}")]
+        public async Task<ActionResult<IEnumerable<EventDTOParticipant>>> GetEventsParticipant(string userdni)
+        {
+            return await _context.Events
+                .Select(x => new EventDTOParticipant
+                {
+                    EventId = x.EventId,
+                    Name = x.Name,
+                    StartDate = x.StartDate,
+                    EndDate = x.EndDate,
+                    Image = x.Image,
+                    Description = x.Description,
+                    MinAge = x.MinAge,
+                    MaxAge = x.MaxAge,
+                    MaxParticipantsNumber = x.MaxParticipantsNumber,
+                    Price = x.Price,
+                    Reward = x.Reward,
+                    UbicationId = x.UbicationId,
+                    RecommendedLevelId = x.RecommendedLevelId,
+                    SportId = x.SportId,
+                    RecommendedLevelName = _context.RecommendedLevels.Where(y => y.RecommendedLevelId == x.RecommendedLevelId).FirstOrDefault().Name,
+                    SportName = _context.Sports.Where(y => y.SportId == x.SportId).FirstOrDefault().Name,
+                    cityName = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().CityName,
+                    latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
+                    longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude,
+                    participant = _context.Participants.Any(p => p.EventId == x.EventId && p.UserDni == userdni && p.Organizer == false),
+                    placesValides = (int)(x.MaxParticipantsNumber - _context.Participants.Count(y => y.EventId == x.EventId && y.Organizer == false))
+                })
+                .Where(x => x.participant == true)
+                .ToListAsync();
         }
 
         [HttpGet]
