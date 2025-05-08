@@ -55,26 +55,6 @@ namespace ApiSportXperience.Controllers
                 .ToListAsync();
         }
 
-        [HttpGet]
-        [Route("api/events/{lat}/{lon}")]
-        public async Task<ActionResult<IEnumerable<Event>>> GetEvents(float lat, float lon)
-        {
-            var events = await _context.Events
-                .ToListAsync();
-
-            var eventosOrdenados = events
-                .Select(e => new
-                {
-                    Evento = e,
-                    Distancia = Localitzacio.CalcularDistancia(lat, lon, (float)e.Ubication.Latitude, (float)e.Ubication.Longitude)
-                })
-                .OrderBy(x => x.Distancia)
-                .Select(x => x.Evento)
-                .ToList();
-
-            return Ok(eventosOrdenados);
-        }
-
 
         [HttpGet]
         [Route("api/events/max")]
@@ -142,7 +122,7 @@ namespace ApiSportXperience.Controllers
                     cityName = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().CityName,
                     latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
                     longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude,
-                    participant = _context.Participants.Any(p => p.EventId == x.EventId && p.UserDni == userdni && p.Organizer == false),
+                    participant = _context.Participants.Any(p => p.EventId == x.EventId && p.UserDni == userdni),
                     placesValides = (int)(x.MaxParticipantsNumber - _context.Participants.Count(y => y.EventId == x.EventId && y.Organizer == false))
                 })
                 .Where(x => x.participant == true)
@@ -411,6 +391,9 @@ namespace ApiSportXperience.Controllers
                 }
                 if (options.Count > 0)
                 {
+                    List<ParticipantOption> optionsParticipants = await _context.ParticipantOptions.Where(x => x.EventId == e.EventId).ToListAsync();
+
+                    _context.ParticipantOptions.RemoveRange(optionsParticipants);
                     _context.Options.RemoveRange(options);
                 }
 
@@ -424,6 +407,7 @@ namespace ApiSportXperience.Controllers
 
             }
 
+            // Results
             _context.Participants.RemoveRange(part);
 
             _context.Messages.RemoveRange(e.Messages);

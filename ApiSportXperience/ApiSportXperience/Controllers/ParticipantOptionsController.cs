@@ -29,6 +29,24 @@ namespace ApiSportXperience.Controllers
         }
 
         [HttpGet]
+        [Route("api/participantsOptions/events/{eventId}")]
+        public async Task<ActionResult<IEnumerable<ParticipantOptionDTO>>> GetParticipantOptionsByEvent(int eventId)
+        {
+            return await _context.ParticipantOptions
+               .Where(x => x.EventId == eventId )
+               .Select(x => new ParticipantOptionDTO
+               {
+                   ParticipantOptionId = x.ParticipantOptionId,
+                   EventId = x.EventId,
+                   UserDni = x.UserDni,
+                   OptionId = x.OptionId,
+                   Name = _context.Users.Where(y => y.Dni == x.UserDni).FirstOrDefault().Username,
+                   nomOpcio = _context.Options.Where(y => y.OptionId == x.OptionId).FirstOrDefault().Name,
+                   nomProducte = _context.Products.Where(y => y.ProductId == _context.Options.Where(y => y.OptionId == x.OptionId).FirstOrDefault().ProductId).FirstOrDefault().Name
+               }).ToListAsync();
+        }
+
+        [HttpGet]
         [Route("api/participantsOptions/{id}")]
         public async Task<ActionResult<ParticipantOption>> GetParticipantOption(int id)
         {
@@ -83,6 +101,14 @@ namespace ApiSportXperience.Controllers
             }
 
             return participantOption;
+        }
+
+        [HttpGet]
+        [Route("api/participantsOptions/events/{id}/{dni}")]
+        public async Task<ActionResult<IEnumerable<ParticipantOption>>> GetParticipantOptionByEventIdDni(int id, string dni)
+        {
+            return await _context.ParticipantOptions.Where(x => x.UserDni.Equals(dni) && x.EventId == id).ToListAsync();
+
         }
 
 

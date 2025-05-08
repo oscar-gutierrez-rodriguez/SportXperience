@@ -542,6 +542,54 @@ namespace DesktopModels.Model
             return la;
         }
 
+        public static List<ResultDTO> GetResultByEventId(int EventId)
+        {
+            List<ResultDTO> la = null;
+            try
+            {
+                la = (List<ResultDTO>)MakeRequest("results/events/" + EventId, "GET", null, typeof(List<ResultDTO>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<ResultDTO>();
+            }
+            return la;
+        }
+
+        public static void DelResultat(Result r)
+        {
+            int id = r.ResultId;
+            Result re = null;
+            try
+            {
+                re = (Result)MakeRequest("results/" + id, "DELETE", r, typeof(Result)).Result;
+            }
+            catch
+            {
+                if (re == null)
+                {
+                    re = new Result();
+                }
+            }
+
+        }
+
+        public static List<ParticipantOptionDTO> GetParticipantOptionsByEventId(int EventId)
+        {
+            List<ParticipantOptionDTO> la = null;
+            try
+            {
+                la = (List<ParticipantOptionDTO>)MakeRequest("participantsOptions/events/" + EventId, "GET", null, typeof(List<ParticipantOptionDTO>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<ParticipantOptionDTO>();
+            }
+            return la;
+        }
+
 
         public static async Task<string> PostImageEvent(string rutaImagen)
         {

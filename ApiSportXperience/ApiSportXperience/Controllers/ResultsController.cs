@@ -23,9 +23,17 @@ namespace ApiSportXperience.Controllers
         // GET: api/Results
         [HttpGet]
         [Route("api/results/events/{eventId}")]
-        public async Task<ActionResult<IEnumerable<Result>>> GetResultsByEvent(int eventId)
+        public async Task<ActionResult<IEnumerable<ResultDTO>>> GetResultsByEvent(int eventId)
         {
-            return await _context.Results.Where(x => x.EventId == eventId).ToListAsync();
+            return await _context.Results.Where(x => x.EventId == eventId)
+               .Select(x => new ResultDTO
+               {
+                   ResultId = x.ResultId,
+                   EventId = x.EventId,
+                   UserDni = x.UserDni,
+                   Name = _context.Users.Where(y => y.Dni == x.UserDni).FirstOrDefault().Username,
+                   Position = x.Position
+               }).ToListAsync();
         }
 
         [HttpGet]

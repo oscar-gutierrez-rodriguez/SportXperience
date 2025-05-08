@@ -89,64 +89,6 @@
         }
       }
     },
-    "/api/events/{lat}/{lon}": {
-      "get": {
-        "tags": [
-          "Events"
-        ],
-        "parameters": [
-          {
-            "name": "lat",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "number",
-              "format": "float"
-            }
-          },
-          {
-            "name": "lon",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "number",
-              "format": "float"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Event"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Event"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Event"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/events/max": {
       "get": {
         "tags": [
@@ -216,6 +158,54 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/EventDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/events/participant/{userdni}": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "parameters": [
+          {
+            "name": "userdni",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EventDTOParticipant"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EventDTOParticipant"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EventDTOParticipant"
                   }
                 }
               }
@@ -1443,6 +1433,55 @@
         }
       }
     },
+    "/api/participantsOptions/events/{eventId}": {
+      "get": {
+        "tags": [
+          "ParticipantOptions"
+        ],
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ParticipantOptionDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ParticipantOptionDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ParticipantOptionDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/participantsOptions/{id}": {
       "get": {
         "tags": [
@@ -1682,6 +1721,63 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ParticipantOption"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/participantsOptions/events/{id}/{dni}": {
+      "get": {
+        "tags": [
+          "ParticipantOptions"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "dni",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ParticipantOption"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ParticipantOption"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ParticipantOption"
+                  }
                 }
               }
             }
@@ -2376,7 +2472,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Result"
+                    "$ref": "#/components/schemas/ResultDTO"
                   }
                 }
               },
@@ -2384,7 +2480,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Result"
+                    "$ref": "#/components/schemas/ResultDTO"
                   }
                 }
               },
@@ -2392,7 +2488,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Result"
+                    "$ref": "#/components/schemas/ResultDTO"
                   }
                 }
               }
@@ -3936,6 +4032,40 @@
         },
         "additionalProperties": false
       },
+      "ParticipantOptionDTO": {
+        "type": "object",
+        "properties": {
+          "participantOptionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "eventId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userDni": {
+            "type": "string",
+            "nullable": true
+          },
+          "optionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "nomProducte": {
+            "type": "string",
+            "nullable": true
+          },
+          "nomOpcio": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Product": {
         "type": "object",
         "properties": {
@@ -4009,6 +4139,34 @@
           },
           "participant": {
             "$ref": "#/components/schemas/Participant"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResultDTO": {
+        "type": "object",
+        "properties": {
+          "resultId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "position": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "userDni": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -14,23 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiSportXperience")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b1f1415705288dc81995d3dd4c2e6a186ee6621")]
-=======
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+805757d092dc88f6cb29377cc3399b48be11be5d")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63fb3e605cbdc1f3a732d2818859928fbed8394b")]
->>>>>>> origin/Desktop
->>>>>>> origin/Desktop
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf1ed4affb4577e2ce21a17c8944967493fe64ae")]
->>>>>>> Stashed changes
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54ec18056275d3b73c435a22e07112dfaa5c1888")]
->>>>>>> origin/Desktop
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4a5b6113df85c27d7d52e72f05dd85eda0915ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiSportXperience")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiSportXperience")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
