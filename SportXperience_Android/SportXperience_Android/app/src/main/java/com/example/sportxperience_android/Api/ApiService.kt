@@ -2,6 +2,7 @@ package com.example.sportxperience_android.Api
 
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -75,5 +76,17 @@ interface ApiService {
 
     @POST("/api/participantsOptions/")
     suspend fun addParticipantOption(@Body participantOption: ParticipantOption): Response<ParticipantOption>
+
+    @GET("/api/events/participant/{userDni}/")
+    suspend fun getEventsParticipants(@Path("userDni") userDni : String): Response<List<Event>>
+
+    @DELETE("/api/participants/{eventId}/{userDni}")
+    suspend fun deleteParticipant(@Path("eventId") eventId : Int, @Path("userDni") userDni : String): Response<Participant>
+
+    @GET("/api/participantsOptions/events/{id}/{userDni}")
+    suspend fun getParticipantOptionByEventAndDni(@Path("id") id : Int, @Path("userDni") userDni : String): Response<List<ParticipantOption>>
+
+    @DELETE("/api/participantsOptions/{id}")
+    suspend fun deleteParticipantOption(@Path("id") id : Int): Response<ParticipantOption>
 
 }

@@ -132,7 +132,7 @@ class ParticiparEvent : AppCompatActivity() {
                         if (api.addParticipant(p) != null) {
                             AlertDialog.Builder(this)
                                 .setTitle("Missatge")
-                                .setMessage("Ja ets participant d'aquest esdeveniment!")
+                                .setMessage("Segur que vols participar en aquest event?")
                                 .setPositiveButton("Acceptar") { dialog, _ ->
                                     Events.refrescar = true
                                     dialog.dismiss()

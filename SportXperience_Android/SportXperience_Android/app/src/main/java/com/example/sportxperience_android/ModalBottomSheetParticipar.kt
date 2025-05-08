@@ -88,7 +88,7 @@ class ModalBottomSheetParticipar : BottomSheetDialogFragment() {
 
                 AlertDialog.Builder(context)
                     .setTitle("Missatge")
-                    .setMessage("Ja ets participant d'aquest esdeveniment!")
+                    .setMessage("Segur que vols participar en aquest event?")
                     .setPositiveButton("Acceptar") { dialog, wich ->
                         val p = Participant(
                             null,
@@ -118,6 +118,9 @@ class ModalBottomSheetParticipar : BottomSheetDialogFragment() {
                         Events.refrescar = true
                         dialog.dismiss()
                         (context as? Activity)?.onBackPressed()
+                    }
+                    .setNegativeButton("Cancelar") { dialog, wich ->
+                        dismiss()
                     }
                     .show()
 

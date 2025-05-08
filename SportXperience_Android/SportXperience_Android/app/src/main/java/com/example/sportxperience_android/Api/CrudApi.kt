@@ -335,4 +335,72 @@ class CrudApi(context: Context) : CoroutineScope {
         return afegit
     }
 
+
+    fun getAllEventsParticipant(dni: String): List<Event>? {
+        var events: List<Event>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<Event>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getEventsParticipants(dni)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    events = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return events
+    }
+
+
+    fun deleteParticipant(eventId: Int, userDni: String): Participant? {
+        var afegit: Participant? = null
+        runBlocking {
+            try {
+                var resposta: Response<Participant>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).deleteParticipant(eventId, userDni)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    afegit = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return afegit
+    }
+
+
+    fun getParticipantOptionByEventAndDni(eventId: Int, dni: String): List<ParticipantOption>? {
+        var events: List<ParticipantOption>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<ParticipantOption>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getParticipantOptionByEventAndDni(eventId, dni)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    events = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return events
+    }
+
+
+    fun deleteParticipantOption(id: Int): ParticipantOption? {
+        var afegit: ParticipantOption? = null
+        runBlocking {
+            try {
+                var resposta: Response<ParticipantOption>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).deleteParticipantOption(id)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    afegit = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return afegit
+    }
+
 }

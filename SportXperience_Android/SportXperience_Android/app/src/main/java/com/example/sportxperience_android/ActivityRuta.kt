@@ -80,7 +80,7 @@ class ActivityRuta : AppCompatActivity(), CoroutineScope, OnMapReadyCallback, Go
         )
 
         gmap!!.animateCamera(
-            CameraUpdateFactory.newLatLngZoom(central, 11.0f), 3000, null
+            CameraUpdateFactory.newLatLngZoom(central, 8.0f), 3000, null
         )
 
         ApiCotxe(uOrigen, uDesti)

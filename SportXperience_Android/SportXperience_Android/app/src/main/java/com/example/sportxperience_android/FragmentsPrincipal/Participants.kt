@@ -5,7 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sportxperience_android.Adapters.AdapterEvents
+import com.example.sportxperience_android.Adapters.AdapterEventsParticipar
+import com.example.sportxperience_android.Api.CrudApi
+import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
+import com.example.sportxperience_android.databinding.FragmentParticipantsBinding
+import com.example.sportxperience_android.ubicacioActual
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,6 +29,9 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class Participants : Fragment() {
+
+    lateinit var binding: FragmentParticipantsBinding
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,8 +48,14 @@ class Participants : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        binding = FragmentParticipantsBinding.inflate(inflater, container, false)
+
+        mostrarEvents()
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_participants, container, false)
+        return binding.root
     }
 
     companion object {
@@ -56,5 +76,37 @@ class Participants : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    fun mostrarEvents(){
+        val api = context?.let { CrudApi(it) }
+
+        val events = api?.getAllEventsParticipant(user!!.dni)
+
+
+        if (events != null) {
+
+            val adapter = context?.let { AdapterEventsParticipar(events, it) }
+
+            binding.recyclerEventsParticipar.layoutManager = LinearLayoutManager(context)
+            binding.recyclerEventsParticipar.adapter = adapter
+        }
+    }
+
+    fun diaActual(): Long {
+        val calendar = Calendar.getInstance()
+        return calendar.timeInMillis
+    }
+
+    fun formatDateToISO(date: String): String? {
+        val inputFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+
+        return try {
+            val parsedDate = inputFormat.parse(date)
+            outputFormat.format(parsedDate ?: Date())
+        } catch (e: Exception) {
+            null
+        }
     }
 }

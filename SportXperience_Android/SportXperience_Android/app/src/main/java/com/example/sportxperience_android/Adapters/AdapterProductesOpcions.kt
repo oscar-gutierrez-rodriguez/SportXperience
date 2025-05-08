@@ -89,7 +89,7 @@ class AdapterProductesOpcions(val llista: ArrayList<Product>, val context: Conte
     }
 
     fun allSpinnersSelected(): Boolean {
-        return selectedOptions.all { it?.name == null }
+        return selectedOptions.any { it?.name == null }
     }
 
     fun getSelectedOptions(): List<Option> {
