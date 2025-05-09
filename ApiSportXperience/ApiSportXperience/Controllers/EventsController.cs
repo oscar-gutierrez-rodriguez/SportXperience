@@ -93,14 +93,53 @@ namespace ApiSportXperience.Controllers
                     cityName = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().CityName,
                     latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
                     longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude
-                }).ToListAsync();
+                })
+                .OrderBy(x => x.StartDate)
+                .ToListAsync();
         }
 
         [HttpGet]
-        [Route("api/events/participant/{userdni}")]
-        public async Task<ActionResult<IEnumerable<EventDTOParticipant>>> GetEventsParticipant(string userdni)
+        [Route("api/events/participant/{userdni}/{data}")]
+        public async Task<ActionResult<IEnumerable<EventDTOParticipant>>> GetEventsParticipant(string userdni, string? data)
         {
-            return await _context.Events
+
+            if (DateTime.TryParse(data, out var targetDate))
+            {
+
+                var nextDay = targetDate.Date.AddDays(1);
+
+                return await _context.Events
+                    .Select(x => new EventDTOParticipant
+                    {
+                        EventId = x.EventId,
+                        Name = x.Name,
+                        StartDate = x.StartDate,
+                        EndDate = x.EndDate,
+                        Image = x.Image,
+                        Description = x.Description,
+                        MinAge = x.MinAge,
+                        MaxAge = x.MaxAge,
+                        MaxParticipantsNumber = x.MaxParticipantsNumber,
+                        Price = x.Price,
+                        Reward = x.Reward,
+                        UbicationId = x.UbicationId,
+                        RecommendedLevelId = x.RecommendedLevelId,
+                        SportId = x.SportId,
+                        RecommendedLevelName = _context.RecommendedLevels.Where(y => y.RecommendedLevelId == x.RecommendedLevelId).FirstOrDefault().Name,
+                        SportName = _context.Sports.Where(y => y.SportId == x.SportId).FirstOrDefault().Name,
+                        cityName = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().CityName,
+                        latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
+                        longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude,
+                        participant = _context.Participants.Any(p => p.EventId == x.EventId && p.UserDni == userdni),
+                        placesValides = (int)(x.MaxParticipantsNumber - _context.Participants.Count(y => y.EventId == x.EventId && y.Organizer == false))
+                    })
+                    .Where(x => x.participant == true && x.StartDate < nextDay &&
+                        x.EndDate >= targetDate.Date)
+                    .ToListAsync();
+            }
+            else
+            {
+                return await _context.Events
                 .Select(x => new EventDTOParticipant
                 {
                     EventId = x.EventId,
@@ -127,6 +166,7 @@ namespace ApiSportXperience.Controllers
                 })
                 .Where(x => x.participant == true)
                 .ToListAsync();
+            }
         }
 
         [HttpGet]
@@ -407,10 +447,11 @@ namespace ApiSportXperience.Controllers
 
             }
 
-            // Results
+            _context.Results.RemoveRange(_context.Results.Where(x => x.EventId == e.EventId));
+
             _context.Participants.RemoveRange(part);
 
-            _context.Messages.RemoveRange(e.Messages);
+            _context.Messages.RemoveRange(_context.Messages.Where(x => x.EventId == e.EventId).ToList());
 
             _context.Events.Remove(e);
             await _context.SaveChangesAsync();
