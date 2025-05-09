@@ -1,18 +1,23 @@
 package com.example.sportxperience_android.FragmentsPrincipal
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.set
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sportxperience_android.Adapters.AdapterEvents
 import com.example.sportxperience_android.Adapters.AdapterEventsParticipar
 import com.example.sportxperience_android.Api.CrudApi
+import com.example.sportxperience_android.Api.Event
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentParticipantsBinding
 import com.example.sportxperience_android.ubicacioActual
+import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -53,6 +58,42 @@ class Participants : Fragment() {
 
         mostrarEvents()
 
+        binding.tilDataFiltre
+            .setEndIconOnClickListener {
+                val datePicker1: MaterialDatePicker<Long> =
+                    MaterialDatePicker.Builder.datePicker()
+                        .setSelection(diaActual())
+                        .setTitleText("Data de naixement").build()
+                datePicker1.show(childFragmentManager, "Data de naixement")
+
+                datePicker1.addOnPositiveButtonClickListener {
+                    val sdf1 = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                    val date1 = sdf1.format(it)
+                    binding.tieDataFiltre
+                        .setText(date1)
+                }
+            }
+
+        binding.tieDataFiltre.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                mostrarEvents()
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+        })
+
+
+
+        binding.resetFilter.setOnClickListener {
+            binding.tieDataFiltre.setText("")
+            mostrarEvents()
+        }
+
 
         // Inflate the layout for this fragment
         return binding.root
@@ -81,7 +122,10 @@ class Participants : Fragment() {
     fun mostrarEvents(){
         val api = context?.let { CrudApi(it) }
 
-        val events = api?.getAllEventsParticipant(user!!.dni)
+        val events = api?.getAllEventsParticipant(
+            user!!.dni,
+            if(binding.tieDataFiltre.text.toString().isEmpty()) "null" else formatDateToISO(binding.tieDataFiltre.text.toString()).toString()
+        )
 
 
         if (events != null) {

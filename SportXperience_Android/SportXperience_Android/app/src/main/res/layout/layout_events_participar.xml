@@ -83,14 +83,16 @@
                     android:layout_height="wrap_content"
                     android:text="data inici"
                     android:textSize="14sp"
-                    android:layout_marginTop="8dp" />
+                    android:layout_marginTop="8dp"
+                    android:textStyle="italic"/>
 
                 <TextView
                     android:id="@+id/dataFinalPart_card"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="data final"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="italic"/>
             </LinearLayout>
 
 
@@ -114,7 +116,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginVertical="4dp"
-                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginHorizontal="10dp"
                         android:text="Ubicació"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -125,7 +127,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginVertical="4dp"
-                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginHorizontal="10dp"
                         android:text="Xat"
                         android:textStyle="bold"
                         app:icon="@drawable/baseline_chat_24"
@@ -136,7 +138,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginVertical="4dp"
-                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginHorizontal="10dp"
                         app:icon="@drawable/baseline_emoji_events_24"
                         android:text="Resultats"
                         android:textStyle="bold"
@@ -147,7 +149,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginVertical="4dp"
-                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginHorizontal="10dp"
                         android:text="Desapuntar-se"
                         android:textSize="14sp"
                         android:textStyle="bold"

@@ -77,8 +77,8 @@ interface ApiService {
     @POST("/api/participantsOptions/")
     suspend fun addParticipantOption(@Body participantOption: ParticipantOption): Response<ParticipantOption>
 
-    @GET("/api/events/participant/{userDni}/")
-    suspend fun getEventsParticipants(@Path("userDni") userDni : String): Response<List<Event>>
+    @GET("/api/events/participant/{userDni}/{data}")
+    suspend fun getEventsParticipants(@Path("userDni") userDni : String, @Path("data") data : String): Response<MutableList<Event>>
 
     @DELETE("/api/participants/{eventId}/{userDni}")
     suspend fun deleteParticipant(@Path("eventId") eventId : Int, @Path("userDni") userDni : String): Response<Participant>

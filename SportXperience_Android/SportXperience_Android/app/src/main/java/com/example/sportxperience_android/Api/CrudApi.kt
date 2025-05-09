@@ -336,13 +336,13 @@ class CrudApi(context: Context) : CoroutineScope {
     }
 
 
-    fun getAllEventsParticipant(dni: String): List<Event>? {
-        var events: List<Event>? = null
+    fun getAllEventsParticipant(dni: String, data: String): MutableList<Event>? {
+        var events: MutableList<Event>? = null
         runBlocking {
             try {
-                var resposta: Response<List<Event>>? = null
+                var resposta: Response<MutableList<Event>>? = null
                 val cor = launch {
-                    resposta = getRetrofit().create(ApiService::class.java).getEventsParticipants(dni)
+                    resposta = getRetrofit().create(ApiService::class.java).getEventsParticipants(dni, data)
                 }
                 cor.join()
                 if (resposta!!.isSuccessful)

@@ -32,7 +32,7 @@ import java.util.Date
 import java.util.Locale
 
 
-class AdapterEventsParticipar(val llista: List<Event>, val context: Context) :
+class AdapterEventsParticipar(val llista: MutableList<Event>, val context: Context) :
     RecyclerView.Adapter<AdapterEventsParticipar.ViewHolder>() {
 
     val urlApi = context.getString(R.string.ruta_api)
@@ -64,8 +64,8 @@ class AdapterEventsParticipar(val llista: List<Event>, val context: Context) :
         Glide.with(holder.imatge.context).load(urlApi + llista[position].image).into(holder.imatge)
         holder.nom.setText(llista[position].name)
         holder.poblacio.setText(llista[position].cityName)
-        holder.dataInici.setText(formatISOToDate(llista[position].startDate))
-        holder.dataFinal.setText(formatISOToDate("Data final: " + llista[position].endDate))
+        holder.dataInici.setText("Data inici: " + formatISOToDate(llista[position].startDate))
+        holder.dataFinal.setText("Data final: " + formatISOToDate(llista[position].endDate))
         holder.esport.setText(llista[position].sportName)
 
         holder.botoUbicacio.setOnClickListener {
@@ -96,8 +96,6 @@ class AdapterEventsParticipar(val llista: List<Event>, val context: Context) :
 
                     val participantOptions = api.getParticipantOptionByEventAndDni(llista[position].eventId, user!!.dni)
 
-                    Toast.makeText(context, participantOptions!!.size.toString(), Toast.LENGTH_SHORT).show()
-
                     if(participantOptions != null) {
                         for (p in participantOptions) {
                             api.deleteParticipantOption(p.participantOptionId!!)
@@ -105,10 +103,14 @@ class AdapterEventsParticipar(val llista: List<Event>, val context: Context) :
                     }
 
 
-                    if(api.deleteParticipant(llista[position].eventId, user!!.dni) != null){
-                        notifyDataSetChanged()
-                        dialog.dismiss()
-                    }
+                    api.deleteParticipant(llista[position].eventId, user!!.dni)
+                    llista.removeAt(position)
+                    notifyItemRemoved(position)
+                    notifyItemRangeChanged(position, llista.size)
+
+                    Toast.makeText(context, "Ja no estàs participant!", Toast.LENGTH_SHORT).show()
+                     dialog.dismiss()
+
                 }
                 .setNegativeButton("Cancelar") { dialog, wich ->
                     dialog.dismiss()
