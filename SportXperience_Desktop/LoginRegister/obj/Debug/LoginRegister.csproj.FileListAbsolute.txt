@@ -79,3 +79,4 @@ C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Data.SqlClient.xml
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Data.SQLite.xml
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\System.Security.Principal.Windows.xml
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\LoginRegister\bin\Debug\Guna.UI2.dll

@@ -77,7 +77,6 @@ namespace SportXperience.Controller
             fafegir.comboBoxNivell.DisplayMember = "name";
             f.monthCalendarEvents.ActiveMonth.Month = DateTime.Now.Month;
             f.monthCalendarEvents.ActiveMonth.Year = DateTime.Now.Year;
-
             f.dataGridViewEvents.DataBindingComplete += (s, e) => Calendari();
             loadDataGrid();
 
@@ -96,6 +95,7 @@ namespace SportXperience.Controller
             f.FormClosed += (s, e) => Application.Exit();
             fafegir.FormClosed += (s, e) => f.Show();
             lot.FormClosing += LotForm_FormClosing;
+            fafegir.FormClosing += Fafegir_FormClosing;
             r.FormClosed += (s, e) => f.Show();
             fafegir.buttonConfirmar.Click += ButtonConfirmar_Click;
             lot.buttonAfegirProducte.Click += ButtonAfegirProducte_Click1;
@@ -120,6 +120,11 @@ namespace SportXperience.Controller
             r.dataGridViewResultats.CellClick += DataGridViewResultats_CellClick;
         }
 
+        private void Fafegir_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            products = new List<Product>();
+            Actuproducts = new List<Product>();
+        }
         private void DataGridViewResultats_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string nombre = r.dataGridViewResultats.Rows[e.RowIndex].Cells["Name"].Value?.ToString();

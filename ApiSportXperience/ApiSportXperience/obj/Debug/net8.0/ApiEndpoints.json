@@ -255,13 +255,18 @@
   {
     "ContainingType": "ApiSportXperience.Controllers.EventsController",
     "Method": "GetEventsParticipant",
-    "RelativePath": "api/events/participant/{userdni}",
+    "RelativePath": "api/events/participant/{userdni}/{data}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "userdni",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "data",
         "Type": "System.String",
         "IsRequired": true
       }

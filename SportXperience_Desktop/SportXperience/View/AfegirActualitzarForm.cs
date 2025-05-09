@@ -84,5 +84,10 @@ namespace SportXperience.View
         {
 
         }
+
+        private void dateTimePickerInici_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
