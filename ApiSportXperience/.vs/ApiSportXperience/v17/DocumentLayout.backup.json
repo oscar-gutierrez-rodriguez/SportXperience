@@ -244,8 +244,7 @@
               "RelativeToolTip": "ApiSportXperience\\Models\\ParticipantOption.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T17:47:31.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T17:47:31.908Z"
             },
             {
               "$type": "Document",
@@ -257,8 +256,7 @@
               "RelativeToolTip": "ApiSportXperience\\Models\\ParticipantOptionDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T17:47:22.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T17:47:22.31Z"
             },
             {
               "$type": "Document",
@@ -270,8 +268,7 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\ResultsController.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAIwCIAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T13:29:56.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T13:29:56.319Z"
             },
             {
               "$type": "Document",
@@ -287,10 +284,14 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-05-08T13:08:02.257Z",
               "EditorCaption": ""
 =======
               "WhenOpened": "2025-05-07T18:12:57.905Z"
+>>>>>>> Stashed changes
+=======
+              "WhenOpened": "2025-05-08T13:08:02.257Z"
 >>>>>>> Stashed changes
             },
             {
@@ -304,11 +305,15 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-05-08T13:08:02.525Z",
 =======
               "WhenOpened": "2025-05-07T18:12:58.208Z",
 >>>>>>> Stashed changes
               "EditorCaption": ""
+=======
+              "WhenOpened": "2025-05-08T13:08:02.525Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -325,8 +330,12 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "WhenOpened": "2025-05-08T13:08:02.529Z",
               "EditorCaption": ""
+=======
+              "WhenOpened": "2025-05-08T13:08:02.529Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -366,8 +375,7 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\EventsController.cs",
               "ViewState": "AgIAALcAAAAAAAAAAAAkwJwBAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T13:08:02.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T13:08:02.536Z"
             },
             {
               "$type": "Document",
@@ -391,8 +399,7 @@
               "RelativeToolTip": "ApiSportXperience\\Controllers\\ParticipantsController.cs",
               "ViewState": "AgIAADMAAAAAAAAAAADwvysAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T13:08:02.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T13:08:02.54Z"
             },
             {
               "$type": "Document",

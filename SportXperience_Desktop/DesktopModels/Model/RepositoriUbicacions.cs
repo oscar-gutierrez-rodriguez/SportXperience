@@ -22,7 +22,7 @@ namespace DesktopModels.Model
         {
             httpClient = new HttpClient
             {
-                BaseAddress = new Uri("http://172.16.24.24/municipis/")
+                BaseAddress = new Uri("http://172.16.24.164/municipis/")
             };
             httpClient.DefaultRequestHeaders.Add("Accept", contentType);
         }

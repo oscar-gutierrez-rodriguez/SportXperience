@@ -27,6 +27,7 @@ namespace SportXperience.Controller
 {
     public class ControllerMain
     {
+        Boolean actualitzarLot = true;
         Boolean botoAfegir = false;
         MainForm f = new MainForm();
         AfegirActualitzarForm fafegir = new AfegirActualitzarForm();
@@ -417,38 +418,44 @@ namespace SportXperience.Controller
 
         private void ButtonActualitzarProducte_Click(object sender, EventArgs e)
         {
-            botoAfegir = false;
-
-            int prod = fafegir.listBoxLot.SelectedIndex;
-
-            if (prod >= 0)
+            if (actualitzarLot == false)
             {
-                if (afegir)
-                {
-                    lot.textBoxNomProd.Text = products[prod].Name;
-                    ActualitzarProductesGridOptions(products[prod]);
-                    Actuoptions.AddRange(products[prod].Options);
-                    options = (List<Option>)products[prod].Options;
-                    products.Remove(products[prod]);
-                    lot.ShowDialog();
-                }
-                else
-                {
-                    lot.textBoxNomProd.Text = Actuproducts[prod].Name;
-                    ActualitzarProductesGridOptions(Actuproducts[prod]);
-                    Actuoptions.AddRange(Actuproducts[prod].Options);
-                    options = (List<Option>)Actuproducts[prod].Options;
-                    Actuproducts.Remove(Actuproducts[prod]);
-                    lot.ShowDialog();
-                }
-
+                MessageBox.Show("No es poden actualitzar els productes d'un lot quan hi han participants inscrits.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Por favor selecciona un producto.");
+                botoAfegir = false;
+
+                int prod = fafegir.listBoxLot.SelectedIndex;
+
+                if (prod >= 0)
+                {
+                    if (afegir)
+                    {
+                        lot.textBoxNomProd.Text = products[prod].Name;
+                        ActualitzarProductesGridOptions(products[prod]);
+                        Actuoptions.AddRange(products[prod].Options);
+                        options = (List<Option>)products[prod].Options;
+                        products.Remove(products[prod]);
+                        lot.ShowDialog();
+                    }
+                    else
+                    {
+                        lot.textBoxNomProd.Text = Actuproducts[prod].Name;
+                        ActualitzarProductesGridOptions(Actuproducts[prod]);
+                        Actuoptions.AddRange(Actuproducts[prod].Options);
+                        options = (List<Option>)Actuproducts[prod].Options;
+                        Actuproducts.Remove(Actuproducts[prod]);
+                        lot.ShowDialog();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Siusplau selecciona un producte.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
-
-
         }
 
         private void dataGridViewOpcions_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -725,20 +732,28 @@ namespace SportXperience.Controller
         }
 
         private void ButtonEliminarProducte_Click(object sender, EventArgs e)
-        { 
+        {
 
-            List<int> indices = fafegir.listBoxLot.SelectedIndices.Cast<int>().OrderByDescending(i => i).ToList();
 
-            foreach (int index in indices)
+            if (actualitzarLot == false)
             {
-                fafegir.listBoxLot.Items.RemoveAt(index);
-                if (afegir)
+                MessageBox.Show("No es poden eliminar els productes d'un lot quan hi han participants inscrits.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                List<int> indices = fafegir.listBoxLot.SelectedIndices.Cast<int>().OrderByDescending(i => i).ToList();
+
+                foreach (int index in indices)
                 {
-                    products.RemoveAt(index);
-                }
-                else
-                {
-                    Actuproducts.RemoveAt(index);
+                    fafegir.listBoxLot.Items.RemoveAt(index);
+                    if (afegir)
+                    {
+                        products.RemoveAt(index);
+                    }
+                    else
+                    {
+                        Actuproducts.RemoveAt(index);
+                    }
                 }
             }
         }
@@ -954,6 +969,7 @@ namespace SportXperience.Controller
                                 price = priceText;
                                 UpdateEvent(award, price);
                                 Actuproducts = new List<Product>();
+                                products = new List<Product>();
                                 loadDataGrid();
                                 fafegir.Close();
                                 f.Show();
@@ -1276,16 +1292,10 @@ namespace SportXperience.Controller
         {
             r.comboBoxNomParticipant.DataSource = Repositori.GetParticipantByEventId(ev.EventId);
             r.comboBoxNomParticipant.DisplayMember = "username";
-           //resultats = new List<ResultDTO>();
             resultats = Repositori.GetResultByEventId(ev.EventId);
 
             ActualitzarGridResultats();
-            //r.dataGridViewResultats.DataSource = resultats;
 
-            //r.dataGridViewResultats.Columns["UserDni"].Visible = false;
-            //r.dataGridViewResultats.Columns["ResultId"].Visible = false;
-            //r.dataGridViewResultats.Columns["EventId"].Visible = false;
-            //r.dataGridViewResultats.Columns["Name"].DisplayIndex = 0;
 
             r.ShowDialog();
         }
@@ -1309,10 +1319,17 @@ namespace SportXperience.Controller
 
         private void ButtonAfegirProducte_Click(object sender, EventArgs e)
         {
-            
-            NetejarDadesLot();
-            botoAfegir = false;
-            lot.ShowDialog();
+
+            if (actualitzarLot == false)
+            {
+                MessageBox.Show("No es poden afegir els productes d'un lot quan hi han participants inscrits.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                NetejarDadesLot();
+                botoAfegir = false;
+                lot.ShowDialog();
+            }
         }
 
         private void DateTimePickerFinal_ValueChanged(object sender, EventArgs e)
@@ -1409,6 +1426,25 @@ namespace SportXperience.Controller
 
         void NetejarDadesAfegirActualitzar()
         {
+            if(Repositori.GetParticipantByEventId(ev.EventId).Count() > 0)
+            {
+                actualitzarLot = false;
+                fafegir.checkBoxLot.Checked = true;
+                fafegir.checkBoxLot.Enabled = false;
+                fafegir.checkBoxPagament.Checked = true;
+                fafegir.checkBoxPagament.Enabled = false;
+                fafegir.textBoxPremi.Enabled = false;
+                fafegir.textBoxPreu.Enabled = false;
+
+            }
+            else
+            {
+                actualitzarLot = true;
+                fafegir.checkBoxPagament.Checked = false;
+                fafegir.checkBoxPagament.Enabled = true;
+                fafegir.checkBoxLot.Enabled = true;
+            }
+
             fafegir.textBoxNom.Text = "";
             ubi.TextBoxLongitud.Text = "";
             ubi.TextBoxLatitud.Text = "";
@@ -1422,7 +1458,6 @@ namespace SportXperience.Controller
             fafegir.numericUpDownParticipants.Value = 0;
             fafegir.listBoxLot.Items.Clear();
             fafegir.checkBoxLot.Checked = false;
-            fafegir.checkBoxPagament.Checked = false;
             fafegir.comboBoxNivell.SelectedIndex = 0;
             fafegir.pictureBoxLogoEvent.Image = null;
             fafegir.CheckBoxIlimitat.Checked = false;
