@@ -2,21 +2,15 @@ package com.example.sportxperience_android
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sportxperience_android.Adapters.AdapterProductesOpcions
-import com.example.sportxperience_android.Adapters.AdapterProducts
 import com.example.sportxperience_android.Api.CrudApi
-import com.example.sportxperience_android.Api.Option
 import com.example.sportxperience_android.Api.Participant
 import com.example.sportxperience_android.Api.ParticipantOption
 import com.example.sportxperience_android.Api.Product

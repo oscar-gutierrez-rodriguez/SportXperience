@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sportxperience_android.Adapters.AdapterEvents
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Login.user
+import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentEventsBinding
 import com.example.sportxperience_android.ubicacioActual
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -38,6 +40,18 @@ class Events : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    val transaccio = parentFragmentManager.beginTransaction()
+                    transaccio.replace(R.id.fcv_principal, Inici())
+                    transaccio.commit()
+                    parentFragmentManager.popBackStack()
+                }
+            })
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -54,9 +68,8 @@ class Events : Fragment() {
 
         binding.evTotsDos.isChecked = true
 
-        if(ubicacioActual != null) {
-            mostrarEvents()
-        }
+        mostrarEvents()
+
 
 
         binding.evGratuit.setOnClickListener {
@@ -149,8 +162,8 @@ class Events : Fragment() {
                 it,
                 if (binding.tilCiutat.text.toString().isNullOrEmpty()) "null" else binding.tilCiutat.text.toString(),
                 if (binding.tilEsport.text.toString().isNullOrEmpty()) "null" else binding.tilEsport.text.toString(),
-                ubicacioActual!!.latitude,
-                ubicacioActual!!.longitude,
+                if (ubicacioActual != null) ubicacioActual!!.latitude else 0.0,
+                if (ubicacioActual != null) ubicacioActual!!.longitude else 0.0,
                 user!!.dni
             )
         }

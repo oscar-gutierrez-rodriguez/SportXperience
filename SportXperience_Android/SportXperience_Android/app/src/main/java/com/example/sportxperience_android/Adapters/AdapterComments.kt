@@ -8,8 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sportxperience_android.Api.Comment
 import com.example.sportxperience_android.Api.CrudApi
-import com.example.sportxperience_android.Api.Product
-import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
 import java.text.SimpleDateFormat
 import java.util.Date

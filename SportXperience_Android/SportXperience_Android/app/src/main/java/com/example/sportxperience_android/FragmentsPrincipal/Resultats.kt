@@ -5,7 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sportxperience_android.Adapters.AdapterResults
+import com.example.sportxperience_android.Api.CrudApi
+import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
+import com.example.sportxperience_android.databinding.FragmentResultatsBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,12 +25,31 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class Resultats : Fragment() {
+
+    lateinit var binding: FragmentResultatsBinding
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    val transaccio = parentFragmentManager.beginTransaction()
+                    transaccio.replace(R.id.fcv_principal, Inici())
+                    transaccio.commit()
+                    parentFragmentManager.popBackStack()
+
+                    val bottomNavigationView =
+                        requireActivity().findViewById<BottomNavigationView>(R.id.bnv1)
+                    bottomNavigationView.selectedItemId = R.id.menu_inici //comprobar que funciona y si es así ponerlo en los otros fragmentos
+                }
+            })
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -35,7 +61,11 @@ class Resultats : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_resultats, container, false)
+        binding = FragmentResultatsBinding.inflate(inflater, container, false)
+
+        mostrarResultats()
+
+        return binding.root
     }
 
     companion object {
@@ -56,5 +86,23 @@ class Resultats : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+
+    fun mostrarResultats(){
+
+        val api = CrudApi(context)
+
+        val resultats = api.getUserResults(user!!.dni)
+
+        if (resultats != null){
+
+            val adapter = AdapterResults(resultats, context)
+
+            binding.recyclerResultats.layoutManager = LinearLayoutManager(context)
+            binding.recyclerResultats.adapter = adapter
+
+        }
+
     }
 }

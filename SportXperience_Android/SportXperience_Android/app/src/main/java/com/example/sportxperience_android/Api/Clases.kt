@@ -46,6 +46,7 @@ data class Event(
     val latitude: Float,
     val longitude: Float,
     val participant : Boolean,
+    val organizer : Boolean,
     val placesValides : Int
 ) : Parcelable
 
@@ -109,6 +110,22 @@ data class ParticipantOption(
     val participantOptionId: Int?,
     val userDni: String
 )
+
+data class RecommendedLevel(
+    val events: List<Any>,
+    val name: String,
+    val recommendedLevelId: Int
+)
+
+data class Resultat(
+    val eventId: Int,
+    val name: String,
+    val position: Int,
+    val resultId: Int,
+    val userDni: String,
+    val image: String
+)
+
 
 
 

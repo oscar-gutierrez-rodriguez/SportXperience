@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FragmentsPrincipal.Events"
+    tools:context=".FragmentsPrincipal.Participants"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Esdeveniments"
+        android:text="Participacions"
         android:textAlignment="center"
         android:textSize="26sp"
         android:textStyle="bold|italic"

@@ -15,13 +15,13 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import kotlin.coroutines.CoroutineContext
 
-class CrudApi(context: Context) : CoroutineScope {
+class CrudApi(context: Context?) : CoroutineScope {
     private var job = Job()
 
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main + job
 
-    val urlApi = context.getString(R.string.ruta_api)
+    val urlApi = context!!.getString(R.string.ruta_api)
 
     private fun getClient(): OkHttpClient {
         val loggin = HttpLoggingInterceptor()
@@ -401,6 +401,40 @@ class CrudApi(context: Context) : CoroutineScope {
             } catch (_: Exception) {}
         }
         return afegit
+    }
+
+
+    fun getAllLevels(): List<RecommendedLevel>? {
+        var levels: List<RecommendedLevel>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<RecommendedLevel>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getAllLevels()
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    levels = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return levels
+    }
+
+
+    fun getUserResults(userDni: String): List<Resultat>? {
+        var resultats: List<Resultat>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<Resultat>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getUserResults(userDni)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    resultats = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return resultats
     }
 
 }

@@ -7,16 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.text.set
+import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.sportxperience_android.Adapters.AdapterEvents
 import com.example.sportxperience_android.Adapters.AdapterEventsParticipar
 import com.example.sportxperience_android.Api.CrudApi
-import com.example.sportxperience_android.Api.Event
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentParticipantsBinding
-import com.example.sportxperience_android.ubicacioActual
 import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -43,6 +40,19 @@ class Participants : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    val transaccio = parentFragmentManager.beginTransaction()
+                    transaccio.replace(R.id.fcv_principal, Inici())
+                    transaccio.commit()
+                    parentFragmentManager.popBackStack()
+                }
+            })
+
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)

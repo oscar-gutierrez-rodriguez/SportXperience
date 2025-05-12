@@ -5,16 +5,13 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.sportxperience_android.Adapters.AdapterEvents
 import com.example.sportxperience_android.Adapters.AdapterProducts
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Event
@@ -22,8 +19,6 @@ import com.example.sportxperience_android.Api.Participant
 import com.example.sportxperience_android.FragmentsPrincipal.Events
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.databinding.ActivityParticiparEventBinding
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 var eventParticipar : Event? = null

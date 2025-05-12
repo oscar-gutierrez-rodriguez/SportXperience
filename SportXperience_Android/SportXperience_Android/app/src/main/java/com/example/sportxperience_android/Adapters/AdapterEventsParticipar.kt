@@ -1,28 +1,20 @@
 package com.example.sportxperience_android.Adapters
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.sportxperience_android.ActivityRuta
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Event
-import com.example.sportxperience_android.Api.Participant
-import com.example.sportxperience_android.Api.ParticipantOption
-import com.example.sportxperience_android.FragmentsPrincipal.Events
 import com.example.sportxperience_android.Login.user
-import com.example.sportxperience_android.ParticiparEvent
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.eventParticipar
 import com.example.sportxperience_android.ubicacioActual
@@ -36,6 +28,9 @@ class AdapterEventsParticipar(val llista: MutableList<Event>, val context: Conte
     RecyclerView.Adapter<AdapterEventsParticipar.ViewHolder>() {
 
     val urlApi = context.getString(R.string.ruta_api)
+    val VIEW_TYPE_PARTICIPANT = 0
+    val VIEW_TYPE_ORGANIZER = 1
+
 
     class ViewHolder(val vista: View) : RecyclerView.ViewHolder(vista) {
         val imatge = vista.findViewById<ImageView>(R.id.imatgeEventPart_card)
@@ -48,15 +43,20 @@ class AdapterEventsParticipar(val llista: MutableList<Event>, val context: Conte
 
         val botoUbicacio = vista.findViewById<MaterialButton>(R.id.bt_ubicacio_card)
         val botoXat = vista.findViewById<MaterialButton>(R.id.bt_xat_card)
-        val botoResultats = vista.findViewById<MaterialButton>(R.id.bt_resultats_card)
-        val botoDesapuntarse = vista.findViewById<MaterialButton>(R.id.bt_desapuntarse_card)
+        val botoResultats = vista.findViewById<MaterialButton?>(R.id.bt_resultats_card)
+        val botoDesapuntarse = vista.findViewById<MaterialButton?>(R.id.bt_desapuntarse_card)
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layout = LayoutInflater.from(parent.context)
-        return ViewHolder(layout.inflate(R.layout.layout_events_participar, parent, false))
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val view = when (viewType) {
+            VIEW_TYPE_ORGANIZER -> layoutInflater.inflate(R.layout.layout_events_participar_organizer, parent, false)
+            else -> layoutInflater.inflate(R.layout.layout_events_participar, parent, false)
+        }
+        return ViewHolder(view)
     }
+
 
     override fun getItemCount() = llista.size
 
@@ -67,6 +67,12 @@ class AdapterEventsParticipar(val llista: MutableList<Event>, val context: Conte
         holder.dataInici.setText("Data inici: " + formatISOToDate(llista[position].startDate))
         holder.dataFinal.setText("Data final: " + formatISOToDate(llista[position].endDate))
         holder.esport.setText(llista[position].sportName)
+
+        if(llista[position].organizer == true){
+
+        } else{
+
+        }
 
         holder.botoUbicacio.setOnClickListener {
             if(ubicacioActual != null) {
@@ -82,11 +88,11 @@ class AdapterEventsParticipar(val llista: MutableList<Event>, val context: Conte
 
         }
 
-        holder.botoResultats.setOnClickListener {
+        holder.botoResultats?.setOnClickListener {
 
         }
 
-        holder.botoDesapuntarse.setOnClickListener {
+        holder.botoDesapuntarse?.setOnClickListener {
             AlertDialog.Builder(context)
                 .setTitle("Missatge")
                 .setMessage("Segur que vols desapuntar-te d'aquest event?")
@@ -131,5 +137,10 @@ class AdapterEventsParticipar(val llista: MutableList<Event>, val context: Conte
             ""
         }
     }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (llista[position].organizer == true) VIEW_TYPE_ORGANIZER else VIEW_TYPE_PARTICIPANT
+    }
+
 
 }

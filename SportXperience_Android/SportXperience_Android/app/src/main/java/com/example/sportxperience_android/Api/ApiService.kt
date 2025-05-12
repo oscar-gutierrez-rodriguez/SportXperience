@@ -89,4 +89,10 @@ interface ApiService {
     @DELETE("/api/participantsOptions/{id}")
     suspend fun deleteParticipantOption(@Path("id") id : Int): Response<ParticipantOption>
 
+    @GET("/api/recommendedLevel")
+    suspend fun getAllLevels() : Response<List<RecommendedLevel>>
+
+    @GET("/api/results/users/{userDni}")
+    suspend fun getUserResults(@Path("userDni") userDni: String): Response<List<Resultat>>
+
 }
