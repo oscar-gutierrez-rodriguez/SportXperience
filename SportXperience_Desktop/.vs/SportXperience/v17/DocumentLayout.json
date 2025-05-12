@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\sportxperience\\view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|c:\\repositorysportxperience\\sportxperience\\sportxperience_desktop\\sportxperience\\view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|solutionrelative:sportxperience\\view\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|c:\\repositorysportxperience\\sportxperience\\sportxperience_desktop\\sportxperience\\view\\afegiractualitzarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\sportxperience\\view\\afegiractualitzarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{95810C1F-AB3D-45E6-8FE7-58D8F78BEC31}|SportXperience\\SportXperience.csproj|solutionrelative:sportxperience\\view\\afegiractualitzarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -53,8 +53,7 @@
               "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\View\\AfegirActualitzarForm.cs [Design]",
               "RelativeToolTip": "SportXperience\\View\\AfegirActualitzarForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T16:39:24.243Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-12T16:39:24.243Z"
             },
             {
               "$type": "Document",
@@ -65,8 +64,7 @@
               "ToolTip": "C:\\RepositorySportXperience\\SportXperience\\SportXperience_Desktop\\SportXperience\\View\\ProductesParticipantForm.cs [Design]",
               "RelativeToolTip": "SportXperience\\View\\ProductesParticipantForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T16:35:57.52Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-05T16:35:57.52Z"
             },
             {
               "$type": "Document",
@@ -90,8 +88,7 @@
               "RelativeToolTip": "LoginRegister\\Controller\\ControllerLogin.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAhwFQAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:26:11.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T14:26:11.369Z"
             },
             {
               "$type": "Document",
@@ -103,8 +100,7 @@
               "RelativeToolTip": "SportXperience\\Controller\\ControllerMain.cs",
               "ViewState": "AgIAAPEAAAAAAAAAAAAUwP8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T14:24:05.405Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-27T14:24:05.405Z"
             },
             {
               "$type": "Document",
