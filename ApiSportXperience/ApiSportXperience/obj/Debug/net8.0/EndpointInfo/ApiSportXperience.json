@@ -2528,7 +2528,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Result"
+                    "$ref": "#/components/schemas/ResultDTO"
                   }
                 }
               },
@@ -2536,7 +2536,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Result"
+                    "$ref": "#/components/schemas/ResultDTO"
                   }
                 }
               },
@@ -2544,7 +2544,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Result"
+                    "$ref": "#/components/schemas/ResultDTO"
                   }
                 }
               }
@@ -4176,6 +4176,10 @@
             "nullable": true
           },
           "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "image": {
             "type": "string",
             "nullable": true
           }

@@ -298,6 +298,7 @@
             this.textBoxContrasenyaReg.SelectedText = "";
             this.textBoxContrasenyaReg.Size = new System.Drawing.Size(322, 50);
             this.textBoxContrasenyaReg.TabIndex = 150;
+            this.textBoxContrasenyaReg.UseSystemPasswordChar = true;
             // 
             // buttonShowPasswordRegistrar
             // 

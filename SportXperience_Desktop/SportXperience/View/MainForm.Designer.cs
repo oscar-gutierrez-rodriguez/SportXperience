@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.monthCalendarEvents = new Pabo.Calendar.MonthCalendar();
             this.buttonResultats = new Guna.UI2.WinForms.Guna2Button();
             this.materialButtonProdPart = new Guna.UI2.WinForms.Guna2Button();
             this.buttonEliminar = new Guna.UI2.WinForms.Guna2Button();
@@ -40,7 +41,6 @@
             this.buttonAfegir = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridViewEvents = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.monthCalendarEvents = new Pabo.Calendar.MonthCalendar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -62,6 +62,28 @@
             this.panel1.Size = new System.Drawing.Size(1927, 875);
             this.panel1.TabIndex = 12;
             // 
+            // monthCalendarEvents
+            // 
+            this.monthCalendarEvents.ActiveMonth.Month = 3;
+            this.monthCalendarEvents.ActiveMonth.Year = 2025;
+            this.monthCalendarEvents.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.monthCalendarEvents.Culture = new System.Globalization.CultureInfo("es");
+            this.monthCalendarEvents.Footer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.monthCalendarEvents.Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.monthCalendarEvents.Header.TextColor = System.Drawing.Color.White;
+            this.monthCalendarEvents.ImageList = null;
+            this.monthCalendarEvents.Location = new System.Drawing.Point(1421, 334);
+            this.monthCalendarEvents.MaxDate = new System.DateTime(2035, 3, 27, 15, 46, 19, 762);
+            this.monthCalendarEvents.MinDate = new System.DateTime(2015, 3, 27, 15, 46, 19, 762);
+            this.monthCalendarEvents.Month.BackgroundImage = null;
+            this.monthCalendarEvents.Month.DateFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.monthCalendarEvents.Month.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.monthCalendarEvents.Name = "monthCalendarEvents";
+            this.monthCalendarEvents.Size = new System.Drawing.Size(348, 213);
+            this.monthCalendarEvents.TabIndex = 15;
+            this.monthCalendarEvents.Weekdays.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.monthCalendarEvents.Weeknumbers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            // 
             // buttonResultats
             // 
             this.buttonResultats.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -72,7 +94,7 @@
             this.buttonResultats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.buttonResultats.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonResultats.ForeColor = System.Drawing.Color.White;
-            this.buttonResultats.Location = new System.Drawing.Point(1580, 646);
+            this.buttonResultats.Location = new System.Drawing.Point(1627, 682);
             this.buttonResultats.Name = "buttonResultats";
             this.buttonResultats.Size = new System.Drawing.Size(189, 45);
             this.buttonResultats.TabIndex = 145;
@@ -88,7 +110,7 @@
             this.materialButtonProdPart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.materialButtonProdPart.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.materialButtonProdPart.ForeColor = System.Drawing.Color.White;
-            this.materialButtonProdPart.Location = new System.Drawing.Point(1374, 646);
+            this.materialButtonProdPart.Location = new System.Drawing.Point(1421, 682);
             this.materialButtonProdPart.Name = "materialButtonProdPart";
             this.materialButtonProdPart.Size = new System.Drawing.Size(189, 45);
             this.materialButtonProdPart.TabIndex = 144;
@@ -104,7 +126,7 @@
             this.buttonEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.buttonEliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonEliminar.ForeColor = System.Drawing.Color.White;
-            this.buttonEliminar.Location = new System.Drawing.Point(868, 502);
+            this.buttonEliminar.Location = new System.Drawing.Point(1226, 511);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(118, 45);
             this.buttonEliminar.TabIndex = 143;
@@ -120,7 +142,7 @@
             this.buttonActualitzar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.buttonActualitzar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonActualitzar.ForeColor = System.Drawing.Color.White;
-            this.buttonActualitzar.Location = new System.Drawing.Point(868, 410);
+            this.buttonActualitzar.Location = new System.Drawing.Point(1226, 419);
             this.buttonActualitzar.Name = "buttonActualitzar";
             this.buttonActualitzar.Size = new System.Drawing.Size(118, 45);
             this.buttonActualitzar.TabIndex = 142;
@@ -136,7 +158,7 @@
             this.buttonAfegir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.buttonAfegir.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonAfegir.ForeColor = System.Drawing.Color.White;
-            this.buttonAfegir.Location = new System.Drawing.Point(868, 323);
+            this.buttonAfegir.Location = new System.Drawing.Point(1226, 332);
             this.buttonAfegir.Name = "buttonAfegir";
             this.buttonAfegir.Size = new System.Drawing.Size(118, 45);
             this.buttonAfegir.TabIndex = 141;
@@ -171,7 +193,7 @@
             this.dataGridViewEvents.Name = "dataGridViewEvents";
             this.dataGridViewEvents.ReadOnly = true;
             this.dataGridViewEvents.RowHeadersVisible = false;
-            this.dataGridViewEvents.Size = new System.Drawing.Size(722, 451);
+            this.dataGridViewEvents.Size = new System.Drawing.Size(1135, 611);
             this.dataGridViewEvents.TabIndex = 27;
             this.dataGridViewEvents.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewEvents.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -203,28 +225,6 @@
             this.pictureBoxLogo.Size = new System.Drawing.Size(144, 75);
             this.pictureBoxLogo.TabIndex = 14;
             this.pictureBoxLogo.TabStop = false;
-            // 
-            // monthCalendarEvents
-            // 
-            this.monthCalendarEvents.ActiveMonth.Month = 3;
-            this.monthCalendarEvents.ActiveMonth.Year = 2025;
-            this.monthCalendarEvents.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.monthCalendarEvents.Culture = new System.Globalization.CultureInfo("es");
-            this.monthCalendarEvents.Footer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.monthCalendarEvents.Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.monthCalendarEvents.Header.TextColor = System.Drawing.Color.White;
-            this.monthCalendarEvents.ImageList = null;
-            this.monthCalendarEvents.Location = new System.Drawing.Point(1421, 334);
-            this.monthCalendarEvents.MaxDate = new System.DateTime(2035, 3, 27, 15, 46, 19, 762);
-            this.monthCalendarEvents.MinDate = new System.DateTime(2015, 3, 27, 15, 46, 19, 762);
-            this.monthCalendarEvents.Month.BackgroundImage = null;
-            this.monthCalendarEvents.Month.DateFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.monthCalendarEvents.Month.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.monthCalendarEvents.Name = "monthCalendarEvents";
-            this.monthCalendarEvents.Size = new System.Drawing.Size(348, 213);
-            this.monthCalendarEvents.TabIndex = 15;
-            this.monthCalendarEvents.Weekdays.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.monthCalendarEvents.Weeknumbers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             // 
             // MainForm
             // 

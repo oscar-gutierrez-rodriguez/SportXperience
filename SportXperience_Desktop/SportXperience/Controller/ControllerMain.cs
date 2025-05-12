@@ -127,39 +127,44 @@ namespace SportXperience.Controller
         }
         private void DataGridViewResultats_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string nombre = r.dataGridViewResultats.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
-            ResultDTO deleteDto = null;
-            Result delete = null;
-
-            foreach (ResultDTO o in resultats)
+            Console.WriteLine(e.RowIndex);
+            if (e.ColumnIndex == 0 && e.RowIndex > -1)
             {
-                if (o.Name == nombre)
-                {
-                    deleteDto = o;
+                string nombre = r.dataGridViewResultats.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
+                ResultDTO deleteDto = null;
+                Result delete = null;
 
-                    delete = new Result
+                foreach (ResultDTO o in resultats)
+                {
+                    if (o.Name == nombre)
                     {
-                        ResultId = o.ResultId,
-                        UserDni = o.UserDni,
-                        EventId = o.EventId,
-                        Position = o.Position,
-                    };
-                    break;
+                        deleteDto = o;
 
-                }
-            }
+                        delete = new Result
+                        {
+                            ResultId = o.ResultId,
+                            UserDni = o.UserDni,
+                            EventId = o.EventId,
+                            Position = o.Position,
+                        };
+                        break;
 
-            if (delete != null)
-            {
-               var result = MessageBox.Show("Segur que vols eliminar aquest resultat?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    if (delete.ResultId != 0) {
-                        Repositori.DelResultat(delete);
                     }
-                    resultats.Remove(deleteDto);
-                    ActualitzarGridResultats();
+                }
+
+                if (delete != null)
+                {
+                    var result = MessageBox.Show("Segur que vols eliminar aquest resultat?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        if (delete.ResultId != 0)
+                        {
+                            Repositori.DelResultat(delete);
+                        }
+                        resultats.Remove(deleteDto);
+                        ActualitzarGridResultats();
+                    }
                 }
             }
         }
@@ -466,30 +471,33 @@ namespace SportXperience.Controller
         private void dataGridViewOpcions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            string nombre = lot.dataGridViewOpcions.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
-            Option delete = null;
-
-            foreach (Option o in options)
+            if (e.ColumnIndex == 1 && e.RowIndex > -1)
             {
-                if (o.Name == nombre)
+
+                string nombre = lot.dataGridViewOpcions.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
+                Option delete = null;
+
+                foreach (Option o in options)
                 {
-                    delete = o;
-                    break;
+                    if (o.Name == nombre)
+                    {
+                        delete = o;
+                        break;
+                    }
+                }
+
+                if (delete != null)
+                {
+                    var result = MessageBox.Show("Segur que vols eliminar aquesta opció?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        options.Remove(delete);
+                        ActualitzarGridOptions();
+                    }
+
                 }
             }
-
-            if (delete != null)
-            {
-               var result = MessageBox.Show("Segur que vols eliminar aquesta opció?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    options.Remove(delete);
-                    ActualitzarGridOptions();
-                }
-                
-            }
-
         }
         private void ButtonEliminar_Click(object sender, EventArgs e)
         {
@@ -1406,10 +1414,11 @@ namespace SportXperience.Controller
 
         private void ButtonAfegir_Click(object sender, EventArgs e)
         {
+            afegir = true;
             NetejarDadesAfegirActualitzar();
             fafegir.dateTimePickerInici.Value = dataMin;
             fafegir.dateTimePickerFinal.Value = dataMin;
-            afegir = true;
+            
             fafegir.ShowDialog();
 
         }
@@ -1431,7 +1440,7 @@ namespace SportXperience.Controller
 
         void NetejarDadesAfegirActualitzar()
         {
-            if(Repositori.GetParticipantByEventId(ev.EventId).Count() > 0)
+            if(Repositori.GetParticipantByEventId(ev.EventId).Count() > 0 && !afegir)
             {
                 actualitzarLot = false;
                 fafegir.checkBoxLot.Checked = true;

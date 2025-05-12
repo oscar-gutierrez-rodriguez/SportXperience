@@ -47,7 +47,8 @@ namespace ApiSportXperience.Controllers
                     UserDni = x.UserDni,
                     Position = x.Position,
                     ResultId = x.ResultId,
-                    Name = _context.Users.Where(y => y.Dni.Equals(x.UserDni)).FirstOrDefault().Username
+                    Name = _context.Events.Where(y => y.EventId == x.EventId).FirstOrDefault().Name,
+                    Image = _context.Events.Where(y => y.EventId == x.EventId).FirstOrDefault().Image
                 })
                 .ToListAsync();
         }
