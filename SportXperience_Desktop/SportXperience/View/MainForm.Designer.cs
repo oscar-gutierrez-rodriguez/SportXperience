@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialButtonProdPart = new MaterialSkin.Controls.MaterialButton();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.buttonResultats = new MaterialSkin.Controls.MaterialButton();
-            this.buttonEliminar = new MaterialSkin.Controls.MaterialButton();
-            this.buttonActualitzar = new MaterialSkin.Controls.MaterialButton();
-            this.buttonAfegir = new MaterialSkin.Controls.MaterialButton();
             this.monthCalendarEvents = new Pabo.Calendar.MonthCalendar();
-            this.dataGridViewEvents = new System.Windows.Forms.DataGridView();
+            this.dataGridViewEvents = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.buttonAfegir = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonActualitzar = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonEliminar = new Guna.UI2.WinForms.Guna2Button();
+            this.materialButtonProdPart = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonResultats = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).BeginInit();
@@ -46,31 +49,17 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Honeydew;
+            this.panel1.Controls.Add(this.buttonResultats);
             this.panel1.Controls.Add(this.materialButtonProdPart);
+            this.panel1.Controls.Add(this.buttonEliminar);
+            this.panel1.Controls.Add(this.buttonActualitzar);
+            this.panel1.Controls.Add(this.buttonAfegir);
+            this.panel1.Controls.Add(this.dataGridViewEvents);
             this.panel1.Controls.Add(this.pictureBoxLogo);
             this.panel1.Location = new System.Drawing.Point(-3, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1435, 626);
             this.panel1.TabIndex = 12;
-            // 
-            // materialButtonProdPart
-            // 
-            this.materialButtonProdPart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButtonProdPart.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButtonProdPart.Depth = 0;
-            this.materialButtonProdPart.HighEmphasis = true;
-            this.materialButtonProdPart.Icon = null;
-            this.materialButtonProdPart.Location = new System.Drawing.Point(981, 505);
-            this.materialButtonProdPart.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButtonProdPart.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButtonProdPart.Name = "materialButtonProdPart";
-            this.materialButtonProdPart.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButtonProdPart.Size = new System.Drawing.Size(233, 36);
-            this.materialButtonProdPart.TabIndex = 20;
-            this.materialButtonProdPart.Text = "PRODUCTES PER PARTICIPANT";
-            this.materialButtonProdPart.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButtonProdPart.UseAccentColor = false;
-            this.materialButtonProdPart.UseVisualStyleBackColor = true;
             // 
             // pictureBoxLogo
             // 
@@ -80,83 +69,6 @@
             this.pictureBoxLogo.Size = new System.Drawing.Size(100, 50);
             this.pictureBoxLogo.TabIndex = 14;
             this.pictureBoxLogo.TabStop = false;
-            // 
-            // buttonResultats
-            // 
-            this.buttonResultats.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonResultats.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.buttonResultats.Depth = 0;
-            this.buttonResultats.HighEmphasis = true;
-            this.buttonResultats.Icon = null;
-            this.buttonResultats.Location = new System.Drawing.Point(1219, 566);
-            this.buttonResultats.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.buttonResultats.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonResultats.Name = "buttonResultats";
-            this.buttonResultats.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.buttonResultats.Size = new System.Drawing.Size(155, 36);
-            this.buttonResultats.TabIndex = 19;
-            this.buttonResultats.Text = "AFEGIR RESULTATS";
-            this.buttonResultats.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.buttonResultats.UseAccentColor = false;
-            this.buttonResultats.UseVisualStyleBackColor = true;
-            // 
-            // buttonEliminar
-            // 
-            this.buttonEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonEliminar.BackColor = System.Drawing.Color.Red;
-            this.buttonEliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.buttonEliminar.Depth = 0;
-            this.buttonEliminar.HighEmphasis = true;
-            this.buttonEliminar.Icon = null;
-            this.buttonEliminar.Location = new System.Drawing.Point(868, 437);
-            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.buttonEliminar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.buttonEliminar.Size = new System.Drawing.Size(88, 36);
-            this.buttonEliminar.TabIndex = 18;
-            this.buttonEliminar.Text = "ELIMINAR";
-            this.buttonEliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.buttonEliminar.UseAccentColor = true;
-            this.buttonEliminar.UseVisualStyleBackColor = false;
-            // 
-            // buttonActualitzar
-            // 
-            this.buttonActualitzar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonActualitzar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.buttonActualitzar.Depth = 0;
-            this.buttonActualitzar.HighEmphasis = true;
-            this.buttonActualitzar.Icon = null;
-            this.buttonActualitzar.Location = new System.Drawing.Point(865, 352);
-            this.buttonActualitzar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.buttonActualitzar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonActualitzar.Name = "buttonActualitzar";
-            this.buttonActualitzar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.buttonActualitzar.Size = new System.Drawing.Size(118, 36);
-            this.buttonActualitzar.TabIndex = 17;
-            this.buttonActualitzar.Text = "ACTUALITZAR";
-            this.buttonActualitzar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.buttonActualitzar.UseAccentColor = false;
-            this.buttonActualitzar.UseVisualStyleBackColor = true;
-            // 
-            // buttonAfegir
-            // 
-            this.buttonAfegir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAfegir.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.buttonAfegir.Depth = 0;
-            this.buttonAfegir.HighEmphasis = true;
-            this.buttonAfegir.Icon = null;
-            this.buttonAfegir.Location = new System.Drawing.Point(865, 271);
-            this.buttonAfegir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.buttonAfegir.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonAfegir.Name = "buttonAfegir";
-            this.buttonAfegir.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.buttonAfegir.Size = new System.Drawing.Size(71, 36);
-            this.buttonAfegir.TabIndex = 16;
-            this.buttonAfegir.Text = "AFEGIR";
-            this.buttonAfegir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.buttonAfegir.UseAccentColor = false;
-            this.buttonAfegir.UseVisualStyleBackColor = true;
             // 
             // monthCalendarEvents
             // 
@@ -182,18 +94,136 @@
             // 
             // dataGridViewEvents
             // 
-            this.dataGridViewEvents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewEvents.BackgroundColor = System.Drawing.Color.Honeydew;
-            this.dataGridViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEvents.Location = new System.Drawing.Point(40, 177);
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridViewEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewEvents.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewEvents.ColumnHeadersHeight = 20;
+            this.dataGridViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEvents.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewEvents.GridColor = System.Drawing.Color.Black;
+            this.dataGridViewEvents.Location = new System.Drawing.Point(43, 116);
             this.dataGridViewEvents.MultiSelect = false;
             this.dataGridViewEvents.Name = "dataGridViewEvents";
             this.dataGridViewEvents.ReadOnly = true;
-            this.dataGridViewEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewEvents.RowHeadersVisible = false;
             this.dataGridViewEvents.Size = new System.Drawing.Size(722, 451);
-            this.dataGridViewEvents.TabIndex = 13;
+            this.dataGridViewEvents.TabIndex = 27;
+            this.dataGridViewEvents.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewEvents.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dataGridViewEvents.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dataGridViewEvents.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dataGridViewEvents.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataGridViewEvents.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewEvents.ThemeStyle.GridColor = System.Drawing.Color.Black;
+            this.dataGridViewEvents.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataGridViewEvents.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewEvents.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewEvents.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataGridViewEvents.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataGridViewEvents.ThemeStyle.HeaderStyle.Height = 20;
+            this.dataGridViewEvents.ThemeStyle.ReadOnly = true;
+            this.dataGridViewEvents.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewEvents.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridViewEvents.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewEvents.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridViewEvents.ThemeStyle.RowsStyle.Height = 22;
+            this.dataGridViewEvents.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridViewEvents.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // buttonAfegir
+            // 
+            this.buttonAfegir.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonAfegir.BorderRadius = 10;
+            this.buttonAfegir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAfegir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAfegir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonAfegir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAfegir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonAfegir.ForeColor = System.Drawing.Color.White;
+            this.buttonAfegir.Location = new System.Drawing.Point(868, 199);
+            this.buttonAfegir.Name = "buttonAfegir";
+            this.buttonAfegir.Size = new System.Drawing.Size(118, 45);
+            this.buttonAfegir.TabIndex = 141;
+            this.buttonAfegir.Text = "AFEGIR";
+            // 
+            // buttonActualitzar
+            // 
+            this.buttonActualitzar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonActualitzar.BorderRadius = 10;
+            this.buttonActualitzar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonActualitzar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonActualitzar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonActualitzar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonActualitzar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonActualitzar.ForeColor = System.Drawing.Color.White;
+            this.buttonActualitzar.Location = new System.Drawing.Point(868, 286);
+            this.buttonActualitzar.Name = "buttonActualitzar";
+            this.buttonActualitzar.Size = new System.Drawing.Size(118, 45);
+            this.buttonActualitzar.TabIndex = 142;
+            this.buttonActualitzar.Text = "ACTUALITZAR";
+            // 
+            // buttonEliminar
+            // 
+            this.buttonEliminar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonEliminar.BorderRadius = 10;
+            this.buttonEliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonEliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonEliminar.ForeColor = System.Drawing.Color.White;
+            this.buttonEliminar.Location = new System.Drawing.Point(868, 378);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(118, 45);
+            this.buttonEliminar.TabIndex = 143;
+            this.buttonEliminar.Text = "ELIMINAR";
+            // 
+            // materialButtonProdPart
+            // 
+            this.materialButtonProdPart.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.materialButtonProdPart.BorderRadius = 10;
+            this.materialButtonProdPart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.materialButtonProdPart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.materialButtonProdPart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.materialButtonProdPart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.materialButtonProdPart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.materialButtonProdPart.ForeColor = System.Drawing.Color.White;
+            this.materialButtonProdPart.Location = new System.Drawing.Point(987, 496);
+            this.materialButtonProdPart.Name = "materialButtonProdPart";
+            this.materialButtonProdPart.Size = new System.Drawing.Size(189, 45);
+            this.materialButtonProdPart.TabIndex = 144;
+            this.materialButtonProdPart.Text = "PRODUCTES PER PARTICIPANT";
+            // 
+            // buttonResultats
+            // 
+            this.buttonResultats.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonResultats.BorderRadius = 10;
+            this.buttonResultats.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonResultats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonResultats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonResultats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonResultats.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonResultats.ForeColor = System.Drawing.Color.White;
+            this.buttonResultats.Location = new System.Drawing.Point(1193, 496);
+            this.buttonResultats.Name = "buttonResultats";
+            this.buttonResultats.Size = new System.Drawing.Size(189, 45);
+            this.buttonResultats.TabIndex = 145;
+            this.buttonResultats.Text = "AFEGIR RESULTATS";
             // 
             // MainForm
             // 
@@ -201,23 +231,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1430, 684);
-            this.Controls.Add(this.buttonResultats);
-            this.Controls.Add(this.buttonEliminar);
-            this.Controls.Add(this.buttonActualitzar);
-            this.Controls.Add(this.buttonAfegir);
             this.Controls.Add(this.monthCalendarEvents);
-            this.Controls.Add(this.dataGridViewEvents);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "SportXperience";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -225,13 +248,13 @@
 
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.PictureBox pictureBoxLogo;
-        public MaterialSkin.Controls.MaterialButton buttonResultats;
-        public MaterialSkin.Controls.MaterialButton buttonEliminar;
-        public MaterialSkin.Controls.MaterialButton buttonActualitzar;
-        public MaterialSkin.Controls.MaterialButton buttonAfegir;
         public Pabo.Calendar.MonthCalendar monthCalendarEvents;
-        public System.Windows.Forms.DataGridView dataGridViewEvents;
-        public MaterialSkin.Controls.MaterialButton materialButtonProdPart;
+        public Guna.UI2.WinForms.Guna2DataGridView dataGridViewEvents;
+        public Guna.UI2.WinForms.Guna2Button buttonAfegir;
+        public Guna.UI2.WinForms.Guna2Button buttonActualitzar;
+        public Guna.UI2.WinForms.Guna2Button buttonEliminar;
+        public Guna.UI2.WinForms.Guna2Button materialButtonProdPart;
+        public Guna.UI2.WinForms.Guna2Button buttonResultats;
     }
 }
 

@@ -38,6 +38,7 @@
         public double? longitude { get; set; }
         public double? latitude { get; set; }
         public Boolean participant {  get; set; }
+        public Boolean organizer {  get; set; }
         public int placesValides { get; set; }
 
 

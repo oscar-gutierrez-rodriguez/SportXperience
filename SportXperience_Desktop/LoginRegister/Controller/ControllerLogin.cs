@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BCrypt.Net;
+using System.IO;
 
 namespace LoginRegister.Controller
 {
@@ -33,6 +34,16 @@ namespace LoginRegister.Controller
 
             void loadData()
             {
+                loginForm.buttonShowPassword.FlatStyle = FlatStyle.Flat;
+                loginForm.buttonShowPassword.BackColor = Color.White;
+                loginForm.buttonShowPassword.FlatAppearance.BorderSize = 0; 
+                loginForm.buttonShowPassword.FlatAppearance.MouseOverBackColor = Color.White;
+                loginForm.buttonShowPassword.FlatAppearance.MouseDownBackColor = Color.White;
+                registerForm.buttonShowPasswordRegistrar.FlatStyle = FlatStyle.Flat;
+                registerForm.buttonShowPasswordRegistrar.BackColor = Color.White;
+                registerForm.buttonShowPasswordRegistrar.FlatAppearance.BorderSize = 0;
+                registerForm.buttonShowPasswordRegistrar.FlatAppearance.MouseOverBackColor = Color.White;
+                registerForm.buttonShowPasswordRegistrar.FlatAppearance.MouseDownBackColor = Color.White;
                 registerForm.comboBoxGenere.DataSource = Repositori.GetGender();
                 registerForm.comboBoxGenere.DisplayMember = "name";
                 loginForm.textBoxNomCorreu.Text = "pedri";
@@ -54,17 +65,24 @@ namespace LoginRegister.Controller
 
         private void ButtonShowPasswordRegistrar_Click(object sender, EventArgs e)
         {
-            if (registerForm.textBoxContrasenyaReg.Password)
+            if (registerForm.textBoxContrasenyaReg.UseSystemPasswordChar)
             {
-                registerForm.textBoxContrasenyaReg.Password = false;
+                registerForm.textBoxContrasenyaReg.UseSystemPasswordChar = false;
                 registerForm.buttonShowPasswordRegistrar.Text = "";
-                registerForm.buttonShowPasswordRegistrar.Image = Image.FromFile(@"C:\Users\cv\Desktop\PROJECTEFINAL\invisible(1).png");
+                using (var webClient = new System.Net.WebClient())
+                {
+                    byte[] imageBytes = webClient.DownloadData("http://172.16.24.191:5097/Images/invisible(1).png");
+                    using (var ms = new MemoryStream(imageBytes))
+                    {
+                        registerForm.buttonShowPasswordRegistrar.Image = Image.FromStream(ms);
+                    }
+                }
                 registerForm.textBoxContrasenyaReg.Focus();
             }
             else
             {
                 registerForm.buttonShowPasswordRegistrar.Image = null;
-                registerForm.textBoxContrasenyaReg.Password = true;
+                registerForm.textBoxContrasenyaReg.UseSystemPasswordChar = true;
                 registerForm.buttonShowPasswordRegistrar.Text = "👁 Mostrar";
                 registerForm.textBoxContrasenyaReg.Focus();
             }
@@ -80,17 +98,24 @@ namespace LoginRegister.Controller
         }
         private void ButtonShowPassword_Click(object sender, EventArgs e)
         {
-            if (loginForm.textBoxContrasenya.Password)
+            if (loginForm.textBoxContrasenya.UseSystemPasswordChar)
             {
-                loginForm.textBoxContrasenya.Password = false;
+                loginForm.textBoxContrasenya.UseSystemPasswordChar = false;
                 loginForm.buttonShowPassword.Text = "";
-                //loginForm.buttonShowPassword.Image = Image.FromFile(@"C:\Users\cv\Desktop\PROJECTEFINAL\invisible(1).png");
+                using (var webClient = new System.Net.WebClient())
+                {
+                    byte[] imageBytes = webClient.DownloadData("http://172.16.24.191:5097/Images/invisible(1).png");
+                    using (var ms = new MemoryStream(imageBytes))
+                    {
+                        loginForm.buttonShowPassword.Image = Image.FromStream(ms);
+                    }
+                }
                 loginForm.textBoxContrasenya.Focus();
             }
             else
             {
                 loginForm.buttonShowPassword.Image = null;
-                loginForm.textBoxContrasenya.Password = true;
+                loginForm.textBoxContrasenya.UseSystemPasswordChar = true;
                 loginForm.buttonShowPassword.Text = "👁 Mostrar";
                 loginForm.textBoxContrasenya.Focus();
             }

@@ -3797,6 +3797,9 @@
           "participant": {
             "type": "boolean"
           },
+          "organizer": {
+            "type": "boolean"
+          },
           "placesValides": {
             "type": "integer",
             "format": "int32"

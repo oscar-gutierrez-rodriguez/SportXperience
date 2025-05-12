@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePickerNaixement = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxGenere = new System.Windows.Forms.ComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -39,48 +36,25 @@
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
-            this.buttonRegistrar = new MaterialSkin.Controls.MaterialButton();
-            this.textBoxDNI = new MaterialSkin.Controls.MaterialTextBox();
-            this.textBoxNom = new MaterialSkin.Controls.MaterialTextBox();
-            this.textBoxContrasenyaReg = new MaterialSkin.Controls.MaterialTextBox();
-            this.textBoxCognoms = new MaterialSkin.Controls.MaterialTextBox();
-            this.textBoxNomUsuari = new MaterialSkin.Controls.MaterialTextBox();
-            this.textBoxCorreu = new MaterialSkin.Controls.MaterialTextBox();
+            this.textBoxDNI = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBoxNom = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBoxCognoms = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comboBoxGenere = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dateTimePickerNaixement = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.textBoxCorreu = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBoxNomUsuari = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBoxContrasenyaReg = new Guna.UI2.WinForms.Guna2TextBox();
             this.buttonShowPasswordRegistrar = new System.Windows.Forms.Button();
+            this.buttonRegistrar = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(82, 318);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Nom usuari: ";
-            // 
-            // dateTimePickerNaixement
-            // 
-            this.dateTimePickerNaixement.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerNaixement.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNaixement.Location = new System.Drawing.Point(297, 318);
-            this.dateTimePickerNaixement.Name = "dateTimePickerNaixement";
-            this.dateTimePickerNaixement.Size = new System.Drawing.Size(160, 20);
-            this.dateTimePickerNaixement.TabIndex = 33;
-            // 
-            // comboBoxGenere
-            // 
-            this.comboBoxGenere.FormattingEnabled = true;
-            this.comboBoxGenere.Location = new System.Drawing.Point(75, 317);
-            this.comboBoxGenere.Name = "comboBoxGenere";
-            this.comboBoxGenere.Size = new System.Drawing.Size(112, 21);
-            this.comboBoxGenere.TabIndex = 34;
             // 
             // materialLabel1
             // 
+            this.materialLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(72, 121);
+            this.materialLabel1.Location = new System.Drawing.Point(72, 99);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(31, 19);
@@ -90,10 +64,11 @@
             // 
             // materialLabel2
             // 
+            this.materialLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(72, 209);
+            this.materialLabel2.Location = new System.Drawing.Point(72, 187);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(39, 19);
@@ -102,10 +77,11 @@
             // 
             // materialLabel3
             // 
+            this.materialLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(72, 296);
+            this.materialLabel3.Location = new System.Drawing.Point(72, 276);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(54, 19);
@@ -114,6 +90,7 @@
             // 
             // materialLabel4
             // 
+            this.materialLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -126,6 +103,7 @@
             // 
             // materialLabel5
             // 
+            this.materialLabel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -138,6 +116,7 @@
             // 
             // materialLabel6
             // 
+            this.materialLabel6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -150,10 +129,11 @@
             // 
             // materialLabel7
             // 
+            this.materialLabel7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialLabel7.AutoSize = true;
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel7.Location = new System.Drawing.Point(234, 209);
+            this.materialLabel7.Location = new System.Drawing.Point(234, 187);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(73, 19);
@@ -163,163 +143,203 @@
             // 
             // materialLabel8
             // 
+            this.materialLabel8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialLabel8.AutoSize = true;
             this.materialLabel8.Depth = 0;
             this.materialLabel8.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel8.Location = new System.Drawing.Point(294, 296);
+            this.materialLabel8.Location = new System.Drawing.Point(294, 276);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
             this.materialLabel8.Size = new System.Drawing.Size(138, 19);
             this.materialLabel8.TabIndex = 44;
             this.materialLabel8.Text = "Data de naixement:";
             // 
-            // buttonRegistrar
-            // 
-            this.buttonRegistrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonRegistrar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.buttonRegistrar.Depth = 0;
-            this.buttonRegistrar.HighEmphasis = true;
-            this.buttonRegistrar.Icon = null;
-            this.buttonRegistrar.Location = new System.Drawing.Point(202, 606);
-            this.buttonRegistrar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.buttonRegistrar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonRegistrar.Name = "buttonRegistrar";
-            this.buttonRegistrar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.buttonRegistrar.Size = new System.Drawing.Size(101, 36);
-            this.buttonRegistrar.TabIndex = 45;
-            this.buttonRegistrar.Text = "Registra\'t";
-            this.buttonRegistrar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.buttonRegistrar.UseAccentColor = false;
-            this.buttonRegistrar.UseVisualStyleBackColor = true;
-            // 
             // textBoxDNI
             // 
-            this.textBoxDNI.AnimateReadOnly = false;
-            this.textBoxDNI.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxDNI.Depth = 0;
-            this.textBoxDNI.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBoxDNI.LeadingIcon = null;
-            this.textBoxDNI.Location = new System.Drawing.Point(75, 143);
-            this.textBoxDNI.MaxLength = 50;
-            this.textBoxDNI.MouseState = MaterialSkin.MouseState.OUT;
-            this.textBoxDNI.Multiline = false;
+            this.textBoxDNI.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxDNI.DefaultText = "";
+            this.textBoxDNI.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxDNI.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxDNI.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxDNI.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxDNI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxDNI.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxDNI.ForeColor = System.Drawing.Color.Black;
+            this.textBoxDNI.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxDNI.Location = new System.Drawing.Point(75, 121);
             this.textBoxDNI.Name = "textBoxDNI";
-            this.textBoxDNI.Size = new System.Drawing.Size(120, 50);
-            this.textBoxDNI.TabIndex = 46;
-            this.textBoxDNI.Text = "";
-            this.textBoxDNI.TrailingIcon = null;
+            this.textBoxDNI.PlaceholderText = "";
+            this.textBoxDNI.SelectedText = "";
+            this.textBoxDNI.Size = new System.Drawing.Size(141, 50);
+            this.textBoxDNI.TabIndex = 54;
+            this.textBoxDNI.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // textBoxNom
             // 
-            this.textBoxNom.AnimateReadOnly = false;
-            this.textBoxNom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNom.Depth = 0;
-            this.textBoxNom.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBoxNom.LeadingIcon = null;
-            this.textBoxNom.Location = new System.Drawing.Point(75, 231);
-            this.textBoxNom.MaxLength = 50;
-            this.textBoxNom.MouseState = MaterialSkin.MouseState.OUT;
-            this.textBoxNom.Multiline = false;
+            this.textBoxNom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxNom.DefaultText = "";
+            this.textBoxNom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxNom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxNom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxNom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxNom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxNom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxNom.ForeColor = System.Drawing.Color.Black;
+            this.textBoxNom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxNom.Location = new System.Drawing.Point(75, 209);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(120, 50);
-            this.textBoxNom.TabIndex = 47;
-            this.textBoxNom.Text = "";
-            this.textBoxNom.TrailingIcon = null;
-            // 
-            // textBoxContrasenyaReg
-            // 
-            this.textBoxContrasenyaReg.AnimateReadOnly = false;
-            this.textBoxContrasenyaReg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxContrasenyaReg.Depth = 0;
-            this.textBoxContrasenyaReg.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBoxContrasenyaReg.LeadingIcon = null;
-            this.textBoxContrasenyaReg.Location = new System.Drawing.Point(75, 549);
-            this.textBoxContrasenyaReg.MaxLength = 50;
-            this.textBoxContrasenyaReg.MouseState = MaterialSkin.MouseState.OUT;
-            this.textBoxContrasenyaReg.Multiline = false;
-            this.textBoxContrasenyaReg.Name = "textBoxContrasenyaReg";
-            this.textBoxContrasenyaReg.Password = true;
-            this.textBoxContrasenyaReg.Size = new System.Drawing.Size(322, 50);
-            this.textBoxContrasenyaReg.TabIndex = 49;
-            this.textBoxContrasenyaReg.Text = "";
-            this.textBoxContrasenyaReg.TrailingIcon = null;
+            this.textBoxNom.PlaceholderText = "";
+            this.textBoxNom.SelectedText = "";
+            this.textBoxNom.Size = new System.Drawing.Size(141, 50);
+            this.textBoxNom.TabIndex = 55;
             // 
             // textBoxCognoms
             // 
-            this.textBoxCognoms.AnimateReadOnly = false;
-            this.textBoxCognoms.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCognoms.Depth = 0;
-            this.textBoxCognoms.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBoxCognoms.LeadingIcon = null;
-            this.textBoxCognoms.Location = new System.Drawing.Point(237, 231);
-            this.textBoxCognoms.MaxLength = 50;
-            this.textBoxCognoms.MouseState = MaterialSkin.MouseState.OUT;
-            this.textBoxCognoms.Multiline = false;
+            this.textBoxCognoms.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxCognoms.DefaultText = "";
+            this.textBoxCognoms.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxCognoms.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxCognoms.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxCognoms.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxCognoms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxCognoms.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxCognoms.ForeColor = System.Drawing.Color.Black;
+            this.textBoxCognoms.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxCognoms.Location = new System.Drawing.Point(237, 209);
             this.textBoxCognoms.Name = "textBoxCognoms";
+            this.textBoxCognoms.PlaceholderText = "";
+            this.textBoxCognoms.SelectedText = "";
             this.textBoxCognoms.Size = new System.Drawing.Size(220, 50);
-            this.textBoxCognoms.TabIndex = 50;
-            this.textBoxCognoms.Text = "";
-            this.textBoxCognoms.TrailingIcon = null;
+            this.textBoxCognoms.TabIndex = 56;
             // 
-            // textBoxNomUsuari
+            // comboBoxGenere
             // 
-            this.textBoxNomUsuari.AnimateReadOnly = false;
-            this.textBoxNomUsuari.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNomUsuari.Depth = 0;
-            this.textBoxNomUsuari.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBoxNomUsuari.LeadingIcon = null;
-            this.textBoxNomUsuari.Location = new System.Drawing.Point(75, 465);
-            this.textBoxNomUsuari.MaxLength = 50;
-            this.textBoxNomUsuari.MouseState = MaterialSkin.MouseState.OUT;
-            this.textBoxNomUsuari.Multiline = false;
-            this.textBoxNomUsuari.Name = "textBoxNomUsuari";
-            this.textBoxNomUsuari.Size = new System.Drawing.Size(322, 50);
-            this.textBoxNomUsuari.TabIndex = 51;
-            this.textBoxNomUsuari.Text = "";
-            this.textBoxNomUsuari.TrailingIcon = null;
+            this.comboBoxGenere.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxGenere.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxGenere.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGenere.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxGenere.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxGenere.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxGenere.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxGenere.ItemHeight = 30;
+            this.comboBoxGenere.Location = new System.Drawing.Point(75, 294);
+            this.comboBoxGenere.Name = "comboBoxGenere";
+            this.comboBoxGenere.Size = new System.Drawing.Size(140, 36);
+            this.comboBoxGenere.TabIndex = 57;
+            // 
+            // dateTimePickerNaixement
+            // 
+            this.dateTimePickerNaixement.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerNaixement.Checked = true;
+            this.dateTimePickerNaixement.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerNaixement.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dateTimePickerNaixement.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerNaixement.Location = new System.Drawing.Point(297, 294);
+            this.dateTimePickerNaixement.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePickerNaixement.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerNaixement.Name = "dateTimePickerNaixement";
+            this.dateTimePickerNaixement.Size = new System.Drawing.Size(122, 36);
+            this.dateTimePickerNaixement.TabIndex = 147;
+            this.dateTimePickerNaixement.Value = new System.DateTime(2025, 5, 9, 17, 43, 0, 174);
             // 
             // textBoxCorreu
             // 
-            this.textBoxCorreu.AnimateReadOnly = false;
-            this.textBoxCorreu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCorreu.Depth = 0;
-            this.textBoxCorreu.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.textBoxCorreu.LeadingIcon = null;
+            this.textBoxCorreu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxCorreu.DefaultText = "";
+            this.textBoxCorreu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxCorreu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxCorreu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxCorreu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxCorreu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxCorreu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxCorreu.ForeColor = System.Drawing.Color.Black;
+            this.textBoxCorreu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxCorreu.Location = new System.Drawing.Point(75, 375);
-            this.textBoxCorreu.MaxLength = 50;
-            this.textBoxCorreu.MouseState = MaterialSkin.MouseState.OUT;
-            this.textBoxCorreu.Multiline = false;
             this.textBoxCorreu.Name = "textBoxCorreu";
+            this.textBoxCorreu.PlaceholderText = "";
+            this.textBoxCorreu.SelectedText = "";
             this.textBoxCorreu.Size = new System.Drawing.Size(322, 50);
-            this.textBoxCorreu.TabIndex = 52;
-            this.textBoxCorreu.Text = "";
-            this.textBoxCorreu.TrailingIcon = null;
-            this.textBoxCorreu.TextChanged += new System.EventHandler(this.textBoxCorreu_TextChanged);
+            this.textBoxCorreu.TabIndex = 148;
+            // 
+            // textBoxNomUsuari
+            // 
+            this.textBoxNomUsuari.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxNomUsuari.DefaultText = "";
+            this.textBoxNomUsuari.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxNomUsuari.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxNomUsuari.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxNomUsuari.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxNomUsuari.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxNomUsuari.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxNomUsuari.ForeColor = System.Drawing.Color.Black;
+            this.textBoxNomUsuari.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxNomUsuari.Location = new System.Drawing.Point(75, 465);
+            this.textBoxNomUsuari.Name = "textBoxNomUsuari";
+            this.textBoxNomUsuari.PlaceholderText = "";
+            this.textBoxNomUsuari.SelectedText = "";
+            this.textBoxNomUsuari.Size = new System.Drawing.Size(322, 50);
+            this.textBoxNomUsuari.TabIndex = 149;
+            // 
+            // textBoxContrasenyaReg
+            // 
+            this.textBoxContrasenyaReg.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxContrasenyaReg.DefaultText = "";
+            this.textBoxContrasenyaReg.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxContrasenyaReg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxContrasenyaReg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxContrasenyaReg.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxContrasenyaReg.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxContrasenyaReg.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxContrasenyaReg.ForeColor = System.Drawing.Color.Black;
+            this.textBoxContrasenyaReg.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxContrasenyaReg.Location = new System.Drawing.Point(75, 549);
+            this.textBoxContrasenyaReg.Name = "textBoxContrasenyaReg";
+            this.textBoxContrasenyaReg.PlaceholderText = "";
+            this.textBoxContrasenyaReg.SelectedText = "";
+            this.textBoxContrasenyaReg.Size = new System.Drawing.Size(322, 50);
+            this.textBoxContrasenyaReg.TabIndex = 150;
             // 
             // buttonShowPasswordRegistrar
             // 
+            this.buttonShowPasswordRegistrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonShowPasswordRegistrar.BackColor = System.Drawing.Color.Transparent;
             this.buttonShowPasswordRegistrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonShowPasswordRegistrar.Location = new System.Drawing.Point(360, 562);
+            this.buttonShowPasswordRegistrar.Location = new System.Drawing.Point(356, 564);
             this.buttonShowPasswordRegistrar.Name = "buttonShowPasswordRegistrar";
             this.buttonShowPasswordRegistrar.Size = new System.Drawing.Size(25, 20);
-            this.buttonShowPasswordRegistrar.TabIndex = 53;
+            this.buttonShowPasswordRegistrar.TabIndex = 151;
             this.buttonShowPasswordRegistrar.Text = "👁";
             this.buttonShowPasswordRegistrar.UseVisualStyleBackColor = false;
+            // 
+            // buttonRegistrar
+            // 
+            this.buttonRegistrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonRegistrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonRegistrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonRegistrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonRegistrar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonRegistrar.ForeColor = System.Drawing.Color.White;
+            this.buttonRegistrar.Location = new System.Drawing.Point(174, 605);
+            this.buttonRegistrar.Name = "buttonRegistrar";
+            this.buttonRegistrar.Size = new System.Drawing.Size(180, 45);
+            this.buttonRegistrar.TabIndex = 152;
+            this.buttonRegistrar.Text = "REGISTRA\'T";
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 672);
+            this.Controls.Add(this.buttonRegistrar);
             this.Controls.Add(this.buttonShowPasswordRegistrar);
-            this.Controls.Add(this.textBoxCorreu);
-            this.Controls.Add(this.textBoxNomUsuari);
-            this.Controls.Add(this.textBoxCognoms);
             this.Controls.Add(this.textBoxContrasenyaReg);
+            this.Controls.Add(this.textBoxNomUsuari);
+            this.Controls.Add(this.textBoxCorreu);
+            this.Controls.Add(this.dateTimePickerNaixement);
+            this.Controls.Add(this.comboBoxGenere);
+            this.Controls.Add(this.textBoxCognoms);
             this.Controls.Add(this.textBoxNom);
             this.Controls.Add(this.textBoxDNI);
-            this.Controls.Add(this.buttonRegistrar);
             this.Controls.Add(this.materialLabel8);
             this.Controls.Add(this.materialLabel7);
             this.Controls.Add(this.materialLabel6);
@@ -328,9 +348,6 @@
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.comboBoxGenere);
-            this.Controls.Add(this.dateTimePickerNaixement);
-            this.Controls.Add(this.label4);
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
             this.Load += new System.EventHandler(this.RegisterForm_Load);
@@ -340,9 +357,6 @@
         }
 
         #endregion
-        public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.DateTimePicker dateTimePickerNaixement;
-        public System.Windows.Forms.ComboBox comboBoxGenere;
         public MaterialSkin.Controls.MaterialLabel materialLabel1;
         public MaterialSkin.Controls.MaterialLabel materialLabel2;
         public MaterialSkin.Controls.MaterialLabel materialLabel3;
@@ -351,13 +365,15 @@
         public MaterialSkin.Controls.MaterialLabel materialLabel6;
         public MaterialSkin.Controls.MaterialLabel materialLabel7;
         public MaterialSkin.Controls.MaterialLabel materialLabel8;
-        public MaterialSkin.Controls.MaterialButton buttonRegistrar;
-        public MaterialSkin.Controls.MaterialTextBox textBoxDNI;
-        public MaterialSkin.Controls.MaterialTextBox textBoxNom;
-        public MaterialSkin.Controls.MaterialTextBox textBoxContrasenyaReg;
-        public MaterialSkin.Controls.MaterialTextBox textBoxCognoms;
-        public MaterialSkin.Controls.MaterialTextBox textBoxNomUsuari;
-        public MaterialSkin.Controls.MaterialTextBox textBoxCorreu;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dateTimePickerNaixement;
         public System.Windows.Forms.Button buttonShowPasswordRegistrar;
+        public Guna.UI2.WinForms.Guna2TextBox textBoxDNI;
+        public Guna.UI2.WinForms.Guna2TextBox textBoxNom;
+        public Guna.UI2.WinForms.Guna2TextBox textBoxCognoms;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBoxGenere;
+        public Guna.UI2.WinForms.Guna2TextBox textBoxCorreu;
+        public Guna.UI2.WinForms.Guna2TextBox textBoxNomUsuari;
+        public Guna.UI2.WinForms.Guna2TextBox textBoxContrasenyaReg;
+        public Guna.UI2.WinForms.Guna2Button buttonRegistrar;
     }
 }

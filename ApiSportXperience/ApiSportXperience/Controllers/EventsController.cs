@@ -131,6 +131,7 @@ namespace ApiSportXperience.Controllers
                         latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
                         longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude,
                         participant = _context.Participants.Any(p => p.EventId == x.EventId && p.UserDni == userdni),
+                        organizer = _context.Participants.Any(p => p.EventId == x.EventId && p.UserDni == userdni && p.Organizer == true),
                         placesValides = (int)(x.MaxParticipantsNumber - _context.Participants.Count(y => y.EventId == x.EventId && y.Organizer == false))
                     })
                     .Where(x => x.participant == true && x.StartDate < nextDay &&
@@ -162,6 +163,7 @@ namespace ApiSportXperience.Controllers
                     latitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Latitude,
                     longitude = _context.Ubications.Where(y => y.UbicationId == x.UbicationId).FirstOrDefault().Longitude,
                     participant = _context.Participants.Any(p => p.EventId == x.EventId && p.UserDni == userdni),
+                    organizer = _context.Participants.Any(p => p.EventId == x.EventId && p.UserDni == userdni && p.Organizer == true),
                     placesValides = (int)(x.MaxParticipantsNumber - _context.Participants.Count(y => y.EventId == x.EventId && y.Organizer == false))
                 })
                 .Where(x => x.participant == true)
