@@ -16,6 +16,8 @@ import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Event
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
+import com.example.sportxperience_android.Resultats_Event
+import com.example.sportxperience_android.Xat
 import com.example.sportxperience_android.eventParticipar
 import com.example.sportxperience_android.ubicacioActual
 import com.google.android.material.button.MaterialButton
@@ -80,16 +82,20 @@ class AdapterEventsParticipar(val llista: MutableList<Event>, val context: Conte
                 val intent = Intent(context, ActivityRuta::class.java)
                 context.startActivity(intent)
             } else{
-                Toast.makeText(context, "No tens permís d'ubicació", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "No tens permís d'ubicació o no tens la ubicació activada!", Toast.LENGTH_SHORT).show()
             }
         }
 
         holder.botoXat.setOnClickListener {
-
+            val intent = Intent(context, Xat::class.java)
+            context.startActivity(intent)
         }
 
         holder.botoResultats?.setOnClickListener {
+            eventParticipar = llista[position]
 
+            val intent = Intent(context, Resultats_Event::class.java)
+            context.startActivity(intent)
         }
 
         holder.botoDesapuntarse?.setOnClickListener {
@@ -106,6 +112,12 @@ class AdapterEventsParticipar(val llista: MutableList<Event>, val context: Conte
                         for (p in participantOptions) {
                             api.deleteParticipantOption(p.participantOptionId!!)
                         }
+                    }
+
+                    val resultat = api.getResultsByEventIdAndUserDni(llista[position].eventId, user!!.dni)
+
+                    if(resultat != null) {
+                        api.deleteResult(resultat.resultId)
                     }
 
 

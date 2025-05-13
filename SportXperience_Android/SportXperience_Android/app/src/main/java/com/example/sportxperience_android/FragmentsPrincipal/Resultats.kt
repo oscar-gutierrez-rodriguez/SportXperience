@@ -46,7 +46,7 @@ class Resultats : Fragment() {
 
                     val bottomNavigationView =
                         requireActivity().findViewById<BottomNavigationView>(R.id.bnv1)
-                    bottomNavigationView.selectedItemId = R.id.menu_inici //comprobar que funciona y si es así ponerlo en los otros fragmentos
+                    bottomNavigationView.selectedItemId = R.id.menu_inici
                 }
             })
 
@@ -97,7 +97,13 @@ class Resultats : Fragment() {
 
         if (resultats != null){
 
-            val adapter = AdapterResults(resultats, context)
+            val adapter : AdapterResults
+            if(!binding.tieFiltre.text.toString().isNullOrEmpty()){
+                val resultatsFiltrats = resultats.filter { (it.name.contains(binding.tieFiltre.text.toString()))}
+                adapter = AdapterResults(resultatsFiltrats, context)
+            } else{
+                adapter = AdapterResults(resultats, context)
+            }
 
             binding.recyclerResultats.layoutManager = LinearLayoutManager(context)
             binding.recyclerResultats.adapter = adapter

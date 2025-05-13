@@ -95,4 +95,13 @@ interface ApiService {
     @GET("/api/results/users/{userDni}")
     suspend fun getUserResults(@Path("userDni") userDni: String): Response<List<Resultat>>
 
+    @GET("/api/results/events/{eventId}")
+    suspend fun getResultatsByEventId(@Path("eventId") eventId: Int): Response<List<Resultat>>
+
+    @GET("/api/results/{eventId}/{userDni}")
+    suspend fun getResultatsByEventIdAndUserDni(@Path("eventId") eventId: Int, @Path("userDni") userDni: String): Response<ResultatNoDTO>
+
+    @DELETE("/api/results/{id}")
+    suspend fun deleteResultat(@Path("id") id : Int): Response<ResultatNoDTO>
+
 }

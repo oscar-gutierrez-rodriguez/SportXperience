@@ -20,8 +20,10 @@ class AdapterResults(val llista: List<Resultat>, val context: Context?) :
 
     class ViewHolder(val vista: View) : RecyclerView.ViewHolder(vista) {
         val imatge = vista.findViewById<ImageView>(R.id.imatgeResultat_card)
+        val medalla = vista.findViewById<ImageView>(R.id.medallaResultat_card)
         val nom = vista.findViewById<TextView>(R.id.nomResultat_card)
         val posicio = vista.findViewById<TextView>(R.id.posicioResultat_card)
+        val missatge = vista.findViewById<TextView>(R.id.missatge_resultat_card)
     }
 
 
@@ -37,6 +39,28 @@ class AdapterResults(val llista: List<Resultat>, val context: Context?) :
         holder.nom.setText(llista[position].name)
         holder.posicio.setText(llista[position].position.toString())
 
+
+        when(llista[position].position){
+            1 -> {
+                holder.medalla.setImageResource(R.drawable.medallaoro)
+                holder.missatge.setText("Enhorabona!")
+                holder.posicio.setTextColor(context!!.resources.getColor(R.color.dorado))
+            }
+            2 -> {
+                holder.medalla.setImageResource(R.drawable.medallaplata)
+                holder.missatge.setText("Enhorabona!")
+                holder.posicio.setTextColor(context!!.resources.getColor(R.color.plata))
+            }
+            3 -> {
+                holder.medalla.setImageResource(R.drawable.medallabronce)
+                holder.missatge.setText("Enhorabona!")
+                holder.posicio.setTextColor(context!!.resources.getColor(R.color.bronce))
+            }
+            else -> {
+                holder.medalla.setImageResource(R.drawable.coronalaurel)
+                holder.missatge.setText("Segueix intentant-ho!")
+            }
+        }
 
         holder.vista.setOnClickListener {
             /*val intent = Intent(context, ParticiparEvent::class.java)

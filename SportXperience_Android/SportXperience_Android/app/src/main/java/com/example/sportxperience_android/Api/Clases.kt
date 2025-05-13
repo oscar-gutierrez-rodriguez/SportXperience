@@ -126,6 +126,16 @@ data class Resultat(
     val image: String
 )
 
+data class ResultatNoDTO(
+    val eventId: Int,
+    val participant: Any,
+    val position: Int,
+    val resultId: Int,
+    val userDni: String
+)
+
+
+
 
 
 

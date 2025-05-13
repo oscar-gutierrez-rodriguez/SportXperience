@@ -14,6 +14,7 @@ import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentParticipantsBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -49,6 +50,10 @@ class Participants : Fragment() {
                     transaccio.replace(R.id.fcv_principal, Inici())
                     transaccio.commit()
                     parentFragmentManager.popBackStack()
+
+                    val bottomNavigationView =
+                        requireActivity().findViewById<BottomNavigationView>(R.id.bnv1)
+                    bottomNavigationView.selectedItemId = R.id.menu_inici
                 }
             })
 

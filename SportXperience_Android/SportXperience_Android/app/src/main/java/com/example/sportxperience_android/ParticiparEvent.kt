@@ -93,7 +93,7 @@ class ParticiparEvent : AppCompatActivity() {
                 val intent = Intent(this, ActivityRuta::class.java)
                 startActivity(intent)
             } else{
-                Toast.makeText(this, "No tens permís d'ubicació", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "No tens permís d'ubicació o no tens la ubicació activada!", Toast.LENGTH_SHORT).show()
             }
         }
 

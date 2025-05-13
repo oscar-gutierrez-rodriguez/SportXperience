@@ -437,4 +437,57 @@ class CrudApi(context: Context?) : CoroutineScope {
         return resultats
     }
 
+
+    fun getResultsByEventId(eventId: Int): List<Resultat>? {
+        var resultats: List<Resultat>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<Resultat>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getResultatsByEventId(eventId)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    resultats = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return resultats
+    }
+
+
+    fun getResultsByEventIdAndUserDni(eventId: Int, userDni: String): ResultatNoDTO? {
+        var resultats : ResultatNoDTO? = null
+        runBlocking {
+            try {
+                var resposta: Response<ResultatNoDTO>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getResultatsByEventIdAndUserDni(eventId, userDni)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    resultats = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return resultats
+    }
+
+
+    fun deleteResult(id: Int): ResultatNoDTO? {
+        var eliminat: ResultatNoDTO? = null
+        runBlocking {
+            try {
+                var resposta: Response<ResultatNoDTO>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).deleteResultat(id)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    eliminat = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return eliminat
+    }
+
+
+
 }
