@@ -127,8 +127,8 @@ namespace SportXperience.Controller
         }
         private void DataGridViewResultats_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Console.WriteLine(e.RowIndex);
-            if (e.ColumnIndex == 0 && e.RowIndex > -1)
+            Console.WriteLine(e.ColumnIndex);
+            if (e.ColumnIndex == 2 || e.ColumnIndex == 0 && e.RowIndex > -1)
             {
                 string nombre = r.dataGridViewResultats.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
                 ResultDTO deleteDto = null;
@@ -184,7 +184,7 @@ namespace SportXperience.Controller
             {
                 if(r.ResultId == 0)
                 {
-                    InsertarResult();
+                    InsertarResult(r);
                 }
             }
             r.Close();
@@ -286,15 +286,17 @@ namespace SportXperience.Controller
         private void DataGridViewUbicacions_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             filaSeleccionada = e.RowIndex;
+            if (filaSeleccionada != -1)
+            {
+                ubi.TextBoxLatitud.Text = ubi.dataGridViewUbicacions.Rows[filaSeleccionada].Cells[1].Value.ToString();
+                ubi.TextBoxLongitud.Text = ubi.dataGridViewUbicacions.Rows[filaSeleccionada].Cells[2].Value.ToString();
+                marker.Position = new GMap.NET.PointLatLng(Convert.ToDouble(ubi.TextBoxLatitud.Text), Convert.ToDouble(ubi.TextBoxLongitud.Text));
 
-            ubi.TextBoxLatitud.Text = ubi.dataGridViewUbicacions.Rows[filaSeleccionada].Cells[1].Value.ToString();
-            ubi.TextBoxLongitud.Text = ubi.dataGridViewUbicacions.Rows[filaSeleccionada].Cells[2].Value.ToString();
-            marker.Position = new GMap.NET.PointLatLng(Convert.ToDouble(ubi.TextBoxLatitud.Text), Convert.ToDouble(ubi.TextBoxLongitud.Text));
+                ubi.gMapControlUbi.Position = marker.Position;
+                marker.IsVisible = true;
 
-            ubi.gMapControlUbi.Position = marker.Position;
-            marker.IsVisible = true;
-
-            ubication = ubi.dataGridViewUbicacions.SelectedRows[0].DataBoundItem as Ubication;
+                ubication = ubi.dataGridViewUbicacions.SelectedRows[0].DataBoundItem as Ubication;
+            }
         }
 
         private void GMapControlUbi_DoubleClick(object sender, EventArgs e)
@@ -716,8 +718,7 @@ namespace SportXperience.Controller
             btnEliminar.UseColumnTextForButtonValue = true;
             btnEliminar.Width = 60;
 
-            r.dataGridViewResultats.Columns.Add(btnEliminar);
-
+            r.dataGridViewResultats.Columns.Insert(2, btnEliminar);
 
         }
 
@@ -836,10 +837,20 @@ namespace SportXperience.Controller
 
         private void ButtonAfegirProducte_Click1(object sender, EventArgs e)
         {
-            botoAfegir = true;
-            AfegirProducte();
-            fafegir.Show();
-            lot.Close();
+            if (lot.dataGridViewOpcions.Rows.Count == 0)
+            {
+                botoAfegir = true;
+                fafegir.Show();
+                lot.Close();
+
+            }
+            else
+            {
+                botoAfegir = true;
+                AfegirProducte();
+                fafegir.Show();
+                lot.Close();
+            }      
         }
 
         Boolean OpcioRepetit(string opcions)
@@ -1233,21 +1244,9 @@ namespace SportXperience.Controller
                 
             }
         }
-        void InsertarResult()
+        void InsertarResult(Result r)
         {
-
-            foreach (ResultDTO re in resultats)
-            {
-                Result r = new Result
-                {
-                    ResultId = 0,
-                    Position = re.Position,
-                    UserDni = re.UserDni,
-                    EventId = re.EventId
-                };
-                Repositori.InsResultats(r);
-
-            }
+            Repositori.InsResultats(r);
         }
 
         void InsertarActuProductes()

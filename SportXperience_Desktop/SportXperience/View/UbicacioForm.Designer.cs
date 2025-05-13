@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gMapControlUbi = new GMap.NET.WindowsForms.GMapControl();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -46,6 +46,9 @@
             // 
             // gMapControlUbi
             // 
+            this.gMapControlUbi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gMapControlUbi.Bearing = 0F;
             this.gMapControlUbi.CanDragMap = true;
             this.gMapControlUbi.EmptyTileColor = System.Drawing.Color.Navy;
@@ -66,16 +69,17 @@
             this.gMapControlUbi.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControlUbi.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControlUbi.ShowTileGridLines = false;
-            this.gMapControlUbi.Size = new System.Drawing.Size(527, 356);
+            this.gMapControlUbi.Size = new System.Drawing.Size(613, 356);
             this.gMapControlUbi.TabIndex = 25;
             this.gMapControlUbi.Zoom = 0D;
             // 
             // materialLabel2
             // 
+            this.materialLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(577, 186);
+            this.materialLabel2.Location = new System.Drawing.Point(660, 186);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(68, 19);
@@ -84,10 +88,11 @@
             // 
             // materialLabel1
             // 
+            this.materialLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(577, 98);
+            this.materialLabel1.Location = new System.Drawing.Point(660, 98);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(55, 19);
@@ -96,34 +101,36 @@
             // 
             // dataGridViewUbicacions
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dataGridViewUbicacions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dataGridViewUbicacions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewUbicacions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewUbicacions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewUbicacions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewUbicacions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewUbicacions.ColumnHeadersHeight = 20;
             this.dataGridViewUbicacions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewUbicacions.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewUbicacions.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewUbicacions.GridColor = System.Drawing.Color.Black;
-            this.dataGridViewUbicacions.Location = new System.Drawing.Point(579, 277);
+            this.dataGridViewUbicacions.Location = new System.Drawing.Point(662, 277);
             this.dataGridViewUbicacions.MultiSelect = false;
             this.dataGridViewUbicacions.Name = "dataGridViewUbicacions";
             this.dataGridViewUbicacions.ReadOnly = true;
             this.dataGridViewUbicacions.RowHeadersVisible = false;
-            this.dataGridViewUbicacions.Size = new System.Drawing.Size(243, 177);
+            this.dataGridViewUbicacions.Size = new System.Drawing.Size(375, 177);
             this.dataGridViewUbicacions.TabIndex = 30;
             this.dataGridViewUbicacions.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewUbicacions.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -149,6 +156,7 @@
             // 
             // TextBoxLatitud
             // 
+            this.TextBoxLatitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxLatitud.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxLatitud.DefaultText = "";
             this.TextBoxLatitud.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -159,7 +167,7 @@
             this.TextBoxLatitud.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxLatitud.ForeColor = System.Drawing.Color.Black;
             this.TextBoxLatitud.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBoxLatitud.Location = new System.Drawing.Point(579, 120);
+            this.TextBoxLatitud.Location = new System.Drawing.Point(662, 120);
             this.TextBoxLatitud.Name = "TextBoxLatitud";
             this.TextBoxLatitud.PlaceholderText = "";
             this.TextBoxLatitud.SelectedText = "";
@@ -168,6 +176,7 @@
             // 
             // TextBoxLongitud
             // 
+            this.TextBoxLongitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxLongitud.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextBoxLongitud.DefaultText = "";
             this.TextBoxLongitud.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -178,7 +187,7 @@
             this.TextBoxLongitud.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxLongitud.ForeColor = System.Drawing.Color.Black;
             this.TextBoxLongitud.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBoxLongitud.Location = new System.Drawing.Point(579, 208);
+            this.TextBoxLongitud.Location = new System.Drawing.Point(662, 208);
             this.TextBoxLongitud.Name = "TextBoxLongitud";
             this.TextBoxLongitud.PlaceholderText = "";
             this.TextBoxLongitud.SelectedText = "";
@@ -187,7 +196,7 @@
             // 
             // materialButtonSat
             // 
-            this.materialButtonSat.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.materialButtonSat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.materialButtonSat.BorderRadius = 10;
             this.materialButtonSat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.materialButtonSat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -204,7 +213,7 @@
             // 
             // materialButtonOrg
             // 
-            this.materialButtonOrg.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.materialButtonOrg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.materialButtonOrg.BorderRadius = 10;
             this.materialButtonOrg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.materialButtonOrg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -221,7 +230,7 @@
             // 
             // materialButtonAfegirUbi
             // 
-            this.materialButtonAfegirUbi.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.materialButtonAfegirUbi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButtonAfegirUbi.BorderRadius = 10;
             this.materialButtonAfegirUbi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.materialButtonAfegirUbi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -229,7 +238,7 @@
             this.materialButtonAfegirUbi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.materialButtonAfegirUbi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.materialButtonAfegirUbi.ForeColor = System.Drawing.Color.White;
-            this.materialButtonAfegirUbi.Location = new System.Drawing.Point(579, 466);
+            this.materialButtonAfegirUbi.Location = new System.Drawing.Point(662, 466);
             this.materialButtonAfegirUbi.Name = "materialButtonAfegirUbi";
             this.materialButtonAfegirUbi.Size = new System.Drawing.Size(112, 33);
             this.materialButtonAfegirUbi.TabIndex = 145;
@@ -237,7 +246,7 @@
             // 
             // materialButtonConfirmarUbi
             // 
-            this.materialButtonConfirmarUbi.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.materialButtonConfirmarUbi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButtonConfirmarUbi.BorderRadius = 10;
             this.materialButtonConfirmarUbi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.materialButtonConfirmarUbi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -245,7 +254,7 @@
             this.materialButtonConfirmarUbi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.materialButtonConfirmarUbi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.materialButtonConfirmarUbi.ForeColor = System.Drawing.Color.White;
-            this.materialButtonConfirmarUbi.Location = new System.Drawing.Point(710, 466);
+            this.materialButtonConfirmarUbi.Location = new System.Drawing.Point(925, 466);
             this.materialButtonConfirmarUbi.Name = "materialButtonConfirmarUbi";
             this.materialButtonConfirmarUbi.Size = new System.Drawing.Size(112, 33);
             this.materialButtonConfirmarUbi.TabIndex = 146;
@@ -255,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 527);
+            this.ClientSize = new System.Drawing.Size(1095, 527);
             this.Controls.Add(this.materialButtonConfirmarUbi);
             this.Controls.Add(this.materialButtonAfegirUbi);
             this.Controls.Add(this.materialButtonOrg);

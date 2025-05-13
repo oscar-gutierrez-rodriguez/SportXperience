@@ -32,21 +32,24 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAfegirProducte = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonAfegirOpcio = new Guna.UI2.WinForms.Guna2Button();
+            this.textBoxNomOpProd = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBoxNomProd = new Guna.UI2.WinForms.Guna2TextBox();
+            this.checkBoxOpcio = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            this.dataGridViewOpcions = new Guna.UI2.WinForms.Guna2DataGridView();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.labelOpProd = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.dataGridViewOpcions = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.checkBoxOpcio = new Guna.UI2.WinForms.Guna2CustomCheckBox();
-            this.textBoxNomProd = new Guna.UI2.WinForms.Guna2TextBox();
-            this.textBoxNomOpProd = new Guna.UI2.WinForms.Guna2TextBox();
-            this.buttonAfegirOpcio = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonAfegirProducte = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpcions)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Honeydew;
             this.panel1.Controls.Add(this.buttonAfegirProducte);
             this.panel1.Controls.Add(this.buttonAfegirOpcio);
@@ -62,47 +65,100 @@
             this.panel1.Size = new System.Drawing.Size(455, 341);
             this.panel1.TabIndex = 0;
             // 
-            // materialLabel3
+            // buttonAfegirProducte
             // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(14, 108);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(137, 19);
-            this.materialLabel3.TabIndex = 25;
-            this.materialLabel3.Text = "Opció del producte:";
+            this.buttonAfegirProducte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAfegirProducte.BorderRadius = 10;
+            this.buttonAfegirProducte.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAfegirProducte.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAfegirProducte.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonAfegirProducte.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAfegirProducte.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonAfegirProducte.ForeColor = System.Drawing.Color.White;
+            this.buttonAfegirProducte.Location = new System.Drawing.Point(299, 285);
+            this.buttonAfegirProducte.Name = "buttonAfegirProducte";
+            this.buttonAfegirProducte.Size = new System.Drawing.Size(129, 33);
+            this.buttonAfegirProducte.TabIndex = 143;
+            this.buttonAfegirProducte.Text = "AFEGIR PRODUCTE";
             // 
-            // labelOpProd
+            // buttonAfegirOpcio
             // 
-            this.labelOpProd.AutoSize = true;
-            this.labelOpProd.Depth = 0;
-            this.labelOpProd.Enabled = false;
-            this.labelOpProd.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelOpProd.Location = new System.Drawing.Point(23, 160);
-            this.labelOpProd.MouseState = MaterialSkin.MouseState.HOVER;
-            this.labelOpProd.Name = "labelOpProd";
-            this.labelOpProd.Size = new System.Drawing.Size(151, 19);
-            this.labelOpProd.TabIndex = 23;
-            this.labelOpProd.Text = "Nom Opció Producte:";
+            this.buttonAfegirOpcio.BorderRadius = 10;
+            this.buttonAfegirOpcio.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAfegirOpcio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAfegirOpcio.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonAfegirOpcio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAfegirOpcio.Enabled = false;
+            this.buttonAfegirOpcio.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonAfegirOpcio.ForeColor = System.Drawing.Color.White;
+            this.buttonAfegirOpcio.Location = new System.Drawing.Point(62, 224);
+            this.buttonAfegirOpcio.Name = "buttonAfegirOpcio";
+            this.buttonAfegirOpcio.Size = new System.Drawing.Size(112, 33);
+            this.buttonAfegirOpcio.TabIndex = 142;
+            this.buttonAfegirOpcio.Text = "AFEGIR OPCIÓ";
             // 
-            // materialLabel1
+            // textBoxNomOpProd
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(23, 23);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(106, 19);
-            this.materialLabel1.TabIndex = 22;
-            this.materialLabel1.Text = "Nom Producte:";
+            this.textBoxNomOpProd.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxNomOpProd.DefaultText = "";
+            this.textBoxNomOpProd.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxNomOpProd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxNomOpProd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxNomOpProd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxNomOpProd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxNomOpProd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxNomOpProd.ForeColor = System.Drawing.Color.Black;
+            this.textBoxNomOpProd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxNomOpProd.Location = new System.Drawing.Point(21, 182);
+            this.textBoxNomOpProd.Name = "textBoxNomOpProd";
+            this.textBoxNomOpProd.PlaceholderText = "";
+            this.textBoxNomOpProd.SelectedText = "";
+            this.textBoxNomOpProd.Size = new System.Drawing.Size(145, 36);
+            this.textBoxNomOpProd.TabIndex = 136;
+            // 
+            // textBoxNomProd
+            // 
+            this.textBoxNomProd.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxNomProd.DefaultText = "";
+            this.textBoxNomProd.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxNomProd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxNomProd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxNomProd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxNomProd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxNomProd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxNomProd.ForeColor = System.Drawing.Color.Black;
+            this.textBoxNomProd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxNomProd.Location = new System.Drawing.Point(21, 48);
+            this.textBoxNomProd.Name = "textBoxNomProd";
+            this.textBoxNomProd.PlaceholderText = "";
+            this.textBoxNomProd.SelectedText = "";
+            this.textBoxNomProd.Size = new System.Drawing.Size(145, 36);
+            this.textBoxNomProd.TabIndex = 135;
+            // 
+            // checkBoxOpcio
+            // 
+            this.checkBoxOpcio.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxOpcio.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkBoxOpcio.CheckedState.BorderRadius = 2;
+            this.checkBoxOpcio.CheckedState.BorderThickness = 0;
+            this.checkBoxOpcio.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkBoxOpcio.Location = new System.Drawing.Point(157, 104);
+            this.checkBoxOpcio.Name = "checkBoxOpcio";
+            this.checkBoxOpcio.Size = new System.Drawing.Size(22, 29);
+            this.checkBoxOpcio.TabIndex = 134;
+            this.checkBoxOpcio.Text = "guna2CustomCheckBox1";
+            this.checkBoxOpcio.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkBoxOpcio.UncheckedState.BorderRadius = 2;
+            this.checkBoxOpcio.UncheckedState.BorderThickness = 0;
+            this.checkBoxOpcio.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // dataGridViewOpcions
             // 
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.dataGridViewOpcions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewOpcions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewOpcions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -152,93 +208,42 @@
             this.dataGridViewOpcions.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewOpcions.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // checkBoxOpcio
+            // materialLabel3
             // 
-            this.checkBoxOpcio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkBoxOpcio.BackColor = System.Drawing.Color.Transparent;
-            this.checkBoxOpcio.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.checkBoxOpcio.CheckedState.BorderRadius = 2;
-            this.checkBoxOpcio.CheckedState.BorderThickness = 0;
-            this.checkBoxOpcio.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.checkBoxOpcio.Location = new System.Drawing.Point(157, 104);
-            this.checkBoxOpcio.Name = "checkBoxOpcio";
-            this.checkBoxOpcio.Size = new System.Drawing.Size(22, 29);
-            this.checkBoxOpcio.TabIndex = 134;
-            this.checkBoxOpcio.Text = "guna2CustomCheckBox1";
-            this.checkBoxOpcio.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.checkBoxOpcio.UncheckedState.BorderRadius = 2;
-            this.checkBoxOpcio.UncheckedState.BorderThickness = 0;
-            this.checkBoxOpcio.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(14, 108);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(137, 19);
+            this.materialLabel3.TabIndex = 25;
+            this.materialLabel3.Text = "Opció del producte:";
             // 
-            // textBoxNomProd
+            // labelOpProd
             // 
-            this.textBoxNomProd.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxNomProd.DefaultText = "";
-            this.textBoxNomProd.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxNomProd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxNomProd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxNomProd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxNomProd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxNomProd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBoxNomProd.ForeColor = System.Drawing.Color.Black;
-            this.textBoxNomProd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxNomProd.Location = new System.Drawing.Point(21, 48);
-            this.textBoxNomProd.Name = "textBoxNomProd";
-            this.textBoxNomProd.PlaceholderText = "";
-            this.textBoxNomProd.SelectedText = "";
-            this.textBoxNomProd.Size = new System.Drawing.Size(145, 36);
-            this.textBoxNomProd.TabIndex = 135;
+            this.labelOpProd.AutoSize = true;
+            this.labelOpProd.Depth = 0;
+            this.labelOpProd.Enabled = false;
+            this.labelOpProd.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.labelOpProd.Location = new System.Drawing.Point(23, 160);
+            this.labelOpProd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelOpProd.Name = "labelOpProd";
+            this.labelOpProd.Size = new System.Drawing.Size(151, 19);
+            this.labelOpProd.TabIndex = 23;
+            this.labelOpProd.Text = "Nom Opció Producte:";
             // 
-            // textBoxNomOpProd
+            // materialLabel1
             // 
-            this.textBoxNomOpProd.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxNomOpProd.DefaultText = "";
-            this.textBoxNomOpProd.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxNomOpProd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxNomOpProd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxNomOpProd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxNomOpProd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxNomOpProd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBoxNomOpProd.ForeColor = System.Drawing.Color.Black;
-            this.textBoxNomOpProd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxNomOpProd.Location = new System.Drawing.Point(21, 182);
-            this.textBoxNomOpProd.Name = "textBoxNomOpProd";
-            this.textBoxNomOpProd.PlaceholderText = "";
-            this.textBoxNomOpProd.SelectedText = "";
-            this.textBoxNomOpProd.Size = new System.Drawing.Size(145, 36);
-            this.textBoxNomOpProd.TabIndex = 136;
-            // 
-            // buttonAfegirOpcio
-            // 
-            this.buttonAfegirOpcio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonAfegirOpcio.BorderRadius = 10;
-            this.buttonAfegirOpcio.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonAfegirOpcio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonAfegirOpcio.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonAfegirOpcio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonAfegirOpcio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonAfegirOpcio.ForeColor = System.Drawing.Color.White;
-            this.buttonAfegirOpcio.Location = new System.Drawing.Point(62, 224);
-            this.buttonAfegirOpcio.Name = "buttonAfegirOpcio";
-            this.buttonAfegirOpcio.Size = new System.Drawing.Size(112, 33);
-            this.buttonAfegirOpcio.TabIndex = 142;
-            this.buttonAfegirOpcio.Text = "AFEGIR OPCIÓ";
-            // 
-            // buttonAfegirProducte
-            // 
-            this.buttonAfegirProducte.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonAfegirProducte.BorderRadius = 10;
-            this.buttonAfegirProducte.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonAfegirProducte.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonAfegirProducte.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonAfegirProducte.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonAfegirProducte.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonAfegirProducte.ForeColor = System.Drawing.Color.White;
-            this.buttonAfegirProducte.Location = new System.Drawing.Point(299, 285);
-            this.buttonAfegirProducte.Name = "buttonAfegirProducte";
-            this.buttonAfegirProducte.Size = new System.Drawing.Size(129, 33);
-            this.buttonAfegirProducte.TabIndex = 143;
-            this.buttonAfegirProducte.Text = "AFEGIR PRODUCTE";
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(23, 23);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(106, 19);
+            this.materialLabel1.TabIndex = 22;
+            this.materialLabel1.Text = "Nom Producte:";
             // 
             // LotForm
             // 

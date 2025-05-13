@@ -70,6 +70,9 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dataGridViewResultats.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewResultats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewResultats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -96,7 +99,7 @@
             this.dataGridViewResultats.ReadOnly = true;
             this.dataGridViewResultats.RowHeadersVisible = false;
             this.dataGridViewResultats.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewResultats.Size = new System.Drawing.Size(302, 151);
+            this.dataGridViewResultats.Size = new System.Drawing.Size(302, 167);
             this.dataGridViewResultats.TabIndex = 27;
             this.dataGridViewResultats.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewResultats.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -152,7 +155,6 @@
             // 
             // buttonAfegirPosicio
             // 
-            this.buttonAfegirPosicio.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonAfegirPosicio.BorderRadius = 10;
             this.buttonAfegirPosicio.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonAfegirPosicio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -168,7 +170,7 @@
             // 
             // buttonAfegirResultat
             // 
-            this.buttonAfegirResultat.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonAfegirResultat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAfegirResultat.BorderRadius = 10;
             this.buttonAfegirResultat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonAfegirResultat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

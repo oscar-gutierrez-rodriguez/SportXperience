@@ -87,6 +87,7 @@
             // 
             // buttonIniciSessio
             // 
+            this.buttonIniciSessio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonIniciSessio.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonIniciSessio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonIniciSessio.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -101,6 +102,7 @@
             // 
             // textBoxContrasenya
             // 
+            this.textBoxContrasenya.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxContrasenya.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxContrasenya.DefaultText = "";
             this.textBoxContrasenya.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -133,6 +135,7 @@
             // 
             // textBoxNomCorreu
             // 
+            this.textBoxNomCorreu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNomCorreu.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxNomCorreu.DefaultText = "";
             this.textBoxNomCorreu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

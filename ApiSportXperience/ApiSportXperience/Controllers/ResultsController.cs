@@ -33,7 +33,9 @@ namespace ApiSportXperience.Controllers
                    UserDni = x.UserDni,
                    Name = _context.Users.Where(y => y.Dni == x.UserDni).FirstOrDefault().Username,
                    Position = x.Position
-               }).ToListAsync();
+               })
+               .OrderBy(x => x.Position)
+               .ToListAsync();
         }
 
         [HttpGet]

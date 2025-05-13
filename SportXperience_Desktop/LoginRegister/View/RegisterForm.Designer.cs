@@ -156,6 +156,7 @@
             // 
             // textBoxDNI
             // 
+            this.textBoxDNI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxDNI.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxDNI.DefaultText = "";
             this.textBoxDNI.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -176,6 +177,7 @@
             // 
             // textBoxNom
             // 
+            this.textBoxNom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNom.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxNom.DefaultText = "";
             this.textBoxNom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -195,6 +197,7 @@
             // 
             // textBoxCognoms
             // 
+            this.textBoxCognoms.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxCognoms.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxCognoms.DefaultText = "";
             this.textBoxCognoms.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -214,6 +217,7 @@
             // 
             // comboBoxGenere
             // 
+            this.comboBoxGenere.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxGenere.BackColor = System.Drawing.Color.Transparent;
             this.comboBoxGenere.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxGenere.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -229,7 +233,7 @@
             // 
             // dateTimePickerNaixement
             // 
-            this.dateTimePickerNaixement.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePickerNaixement.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePickerNaixement.Checked = true;
             this.dateTimePickerNaixement.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerNaixement.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -244,6 +248,7 @@
             // 
             // textBoxCorreu
             // 
+            this.textBoxCorreu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxCorreu.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxCorreu.DefaultText = "";
             this.textBoxCorreu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -263,6 +268,7 @@
             // 
             // textBoxNomUsuari
             // 
+            this.textBoxNomUsuari.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNomUsuari.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxNomUsuari.DefaultText = "";
             this.textBoxNomUsuari.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -282,6 +288,7 @@
             // 
             // textBoxContrasenyaReg
             // 
+            this.textBoxContrasenyaReg.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxContrasenyaReg.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxContrasenyaReg.DefaultText = "";
             this.textBoxContrasenyaReg.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -314,6 +321,7 @@
             // 
             // buttonRegistrar
             // 
+            this.buttonRegistrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonRegistrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonRegistrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonRegistrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
