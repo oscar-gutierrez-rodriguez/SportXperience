@@ -15,6 +15,8 @@ import com.example.sportxperience_android.numOpcions
 class AdapterProducts(val llista: List<Product>, val context: Context) :
     RecyclerView.Adapter<AdapterProducts.ViewHolder>() {
 
+    val api = CrudApi(context)
+
     class ViewHolder(val vista: View) : RecyclerView.ViewHolder(vista) {
         val nom = vista.findViewById<TextView>(R.id.nomProducte_card)
         val numOpcions = vista.findViewById<TextView>(R.id.numopcions_card)
@@ -32,7 +34,6 @@ class AdapterProducts(val llista: List<Product>, val context: Context) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.nom.setText(llista[position].name)
 
-        val api = CrudApi(context)
         val options = api.getOptionsByProduct(llista[position].productId)
 
         if(options != null) {

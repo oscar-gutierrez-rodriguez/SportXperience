@@ -18,6 +18,7 @@ import com.example.sportxperience_android.R
 class AdapterProductesOpcions(val llista: ArrayList<Product>, val context: Context) :
     RecyclerView.Adapter<AdapterProductesOpcions.ViewHolder>() {
 
+    val api = CrudApi(context)
     private val selectedOptions: MutableList<Option?> = MutableList(llista.size) { null }
 
     class ViewHolder(val vista: View) : RecyclerView.ViewHolder(vista) {
@@ -36,7 +37,6 @@ class AdapterProductesOpcions(val llista: ArrayList<Product>, val context: Conte
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.nom.text = llista[position].name
 
-        val api = CrudApi(context)
         val options = api.getOptionsByProduct(llista[position].productId)
 
         if (options != null) {

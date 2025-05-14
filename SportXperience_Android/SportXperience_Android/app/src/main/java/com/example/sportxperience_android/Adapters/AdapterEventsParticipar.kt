@@ -30,6 +30,7 @@ class AdapterEventsParticipar(val llista: MutableList<Event>, val context: Conte
     RecyclerView.Adapter<AdapterEventsParticipar.ViewHolder>() {
 
     val urlApi = context.getString(R.string.ruta_api)
+    val api = CrudApi(context)
     val VIEW_TYPE_PARTICIPANT = 0
     val VIEW_TYPE_ORGANIZER = 1
 
@@ -87,6 +88,7 @@ class AdapterEventsParticipar(val llista: MutableList<Event>, val context: Conte
         }
 
         holder.botoXat.setOnClickListener {
+            eventParticipar = llista[position]
             val intent = Intent(context, Xat::class.java)
             context.startActivity(intent)
         }
@@ -103,8 +105,6 @@ class AdapterEventsParticipar(val llista: MutableList<Event>, val context: Conte
                 .setTitle("Missatge")
                 .setMessage("Segur que vols desapuntar-te d'aquest event?")
                 .setPositiveButton("Acceptar") { dialog, wich ->
-
-                    val api = CrudApi(context)
 
                     val participantOptions = api.getParticipantOptionByEventAndDni(llista[position].eventId, user!!.dni)
 

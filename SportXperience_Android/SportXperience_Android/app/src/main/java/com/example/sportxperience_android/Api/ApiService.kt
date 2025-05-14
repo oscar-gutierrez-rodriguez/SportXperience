@@ -104,4 +104,7 @@ interface ApiService {
     @DELETE("/api/results/{id}")
     suspend fun deleteResultat(@Path("id") id : Int): Response<ResultatNoDTO>
 
+    @GET("/api/messages/chat/{eventId}")
+    suspend fun getChatByEvent(@Path("eventId") eventId: Int): Response<List<Comment>>
+
 }

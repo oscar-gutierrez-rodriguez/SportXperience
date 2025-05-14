@@ -88,7 +88,8 @@ data class Comment(
     val messageId: Int,
     val publicMessage: Boolean,
     val publishedDate: String,
-    val userDni: String
+    val userDni: String,
+    val usernameOrganizer: String
 )
 
 data class CommentPost(

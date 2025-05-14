@@ -16,6 +16,8 @@ import java.util.Locale
 class AdapterComments(val llista: List<Comment>, val context: Context) :
     RecyclerView.Adapter<AdapterComments.ViewHolder>() {
 
+    val api = CrudApi(context)
+
     class ViewHolder(val vista: View) : RecyclerView.ViewHolder(vista) {
         val nomUsuari = vista.findViewById<TextView>(R.id.comentariNomUsuari_card)
         val text = vista.findViewById<TextView>(R.id.comentariText_card)
@@ -33,7 +35,6 @@ class AdapterComments(val llista: List<Comment>, val context: Context) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val api = CrudApi(context)
         val userName = api.getUserByDni(llista[position].userDni)!!.username
 
         holder.nomUsuari.setText(userName)

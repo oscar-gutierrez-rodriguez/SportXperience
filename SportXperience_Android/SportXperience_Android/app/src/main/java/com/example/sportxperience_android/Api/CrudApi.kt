@@ -488,6 +488,20 @@ class CrudApi(context: Context?) : CoroutineScope {
         return eliminat
     }
 
-
+    fun getChatByEventId(eventId: Int): List<Comment>? {
+        var comments: List<Comment>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<Comment>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getChatByEvent(eventId)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    comments = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return comments
+    }
 
 }
