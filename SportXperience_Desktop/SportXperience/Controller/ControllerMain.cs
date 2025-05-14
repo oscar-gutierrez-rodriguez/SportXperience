@@ -1435,6 +1435,28 @@ namespace SportXperience.Controller
             f.dataGridViewEvents.Columns["SportId"].Visible = false;
             f.dataGridViewEvents.Columns["Latitude"].Visible = false;
             f.dataGridViewEvents.Columns["Longitude"].Visible = false;
+
+            f.dataGridViewEvents.EnableHeadersVisualStyles = false;
+            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.BackColor = Color.MediumSeaGreen;
+            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            f.dataGridViewEvents.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(224, 255, 240);
+            f.dataGridViewEvents.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
+
+            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.BackColor = Color.MediumSeaGreen;
+            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            f.dataGridViewEvents.EnableHeadersVisualStyles = false;
+
+            f.dataGridViewEvents.DefaultCellStyle.BackColor = Color.Honeydew;
+            f.dataGridViewEvents.DefaultCellStyle.ForeColor = Color.Black;
+
+            f.dataGridViewEvents.MultiSelect = false;
+            f.dataGridViewEvents.DefaultCellStyle.SelectionBackColor = Color.MediumAquamarine;
+            f.dataGridViewEvents.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            f.dataGridViewEvents.GridColor = Color.LightGreen;
+            f.dataGridViewEvents.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            f.dataGridViewEvents.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
         }
 
         void NetejarDadesAfegirActualitzar()

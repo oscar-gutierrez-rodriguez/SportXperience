@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.monthCalendarEvents = new Pabo.Calendar.MonthCalendar();
@@ -93,8 +93,9 @@
             this.buttonResultats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonResultats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonResultats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonResultats.FillColor = System.Drawing.Color.LightGreen;
             this.buttonResultats.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonResultats.ForeColor = System.Drawing.Color.White;
+            this.buttonResultats.ForeColor = System.Drawing.Color.Black;
             this.buttonResultats.Location = new System.Drawing.Point(1627, 682);
             this.buttonResultats.Name = "buttonResultats";
             this.buttonResultats.Size = new System.Drawing.Size(189, 45);
@@ -109,8 +110,9 @@
             this.materialButtonProdPart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.materialButtonProdPart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.materialButtonProdPart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.materialButtonProdPart.FillColor = System.Drawing.Color.LightGreen;
             this.materialButtonProdPart.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.materialButtonProdPart.ForeColor = System.Drawing.Color.White;
+            this.materialButtonProdPart.ForeColor = System.Drawing.Color.Black;
             this.materialButtonProdPart.Location = new System.Drawing.Point(1421, 682);
             this.materialButtonProdPart.Name = "materialButtonProdPart";
             this.materialButtonProdPart.Size = new System.Drawing.Size(189, 45);
@@ -125,6 +127,7 @@
             this.buttonEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonEliminar.FillColor = System.Drawing.Color.Tomato;
             this.buttonEliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonEliminar.ForeColor = System.Drawing.Color.White;
             this.buttonEliminar.Location = new System.Drawing.Point(1226, 511);
@@ -141,8 +144,9 @@
             this.buttonActualitzar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonActualitzar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonActualitzar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonActualitzar.FillColor = System.Drawing.Color.LightGreen;
             this.buttonActualitzar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonActualitzar.ForeColor = System.Drawing.Color.White;
+            this.buttonActualitzar.ForeColor = System.Drawing.Color.Black;
             this.buttonActualitzar.Location = new System.Drawing.Point(1226, 419);
             this.buttonActualitzar.Name = "buttonActualitzar";
             this.buttonActualitzar.Size = new System.Drawing.Size(118, 45);
@@ -157,8 +161,9 @@
             this.buttonAfegir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAfegir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonAfegir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAfegir.FillColor = System.Drawing.Color.LightGreen;
             this.buttonAfegir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonAfegir.ForeColor = System.Drawing.Color.White;
+            this.buttonAfegir.ForeColor = System.Drawing.Color.Black;
             this.buttonAfegir.Location = new System.Drawing.Point(1226, 332);
             this.buttonAfegir.Name = "buttonAfegir";
             this.buttonAfegir.Size = new System.Drawing.Size(118, 45);
@@ -167,27 +172,28 @@
             // 
             // dataGridViewEvents
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dataGridViewEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridViewEvents.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewEvents.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dataGridViewEvents.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewEvents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewEvents.ColumnHeadersHeight = 20;
             this.dataGridViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewEvents.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEvents.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewEvents.GridColor = System.Drawing.Color.Black;
             this.dataGridViewEvents.Location = new System.Drawing.Point(43, 116);
             this.dataGridViewEvents.MultiSelect = false;
@@ -201,7 +207,7 @@
             this.dataGridViewEvents.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.dataGridViewEvents.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dataGridViewEvents.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataGridViewEvents.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewEvents.ThemeStyle.BackColor = System.Drawing.Color.Honeydew;
             this.dataGridViewEvents.ThemeStyle.GridColor = System.Drawing.Color.Black;
             this.dataGridViewEvents.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dataGridViewEvents.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
