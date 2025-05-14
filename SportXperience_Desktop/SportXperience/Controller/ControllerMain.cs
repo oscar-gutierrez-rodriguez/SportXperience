@@ -1436,10 +1436,6 @@ namespace SportXperience.Controller
             f.dataGridViewEvents.Columns["Latitude"].Visible = false;
             f.dataGridViewEvents.Columns["Longitude"].Visible = false;
 
-            f.dataGridViewEvents.EnableHeadersVisualStyles = false;
-            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.BackColor = Color.MediumSeaGreen;
-            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
             f.dataGridViewEvents.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(224, 255, 240);
             f.dataGridViewEvents.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
 
