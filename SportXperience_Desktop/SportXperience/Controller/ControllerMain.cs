@@ -3,6 +3,7 @@ using DesktopModels.Model;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
+using Guna.UI2.WinForms;
 using MaterialSkin.Animations;
 using Pabo.Calendar;
 using SportXperience.Model;
@@ -195,6 +196,11 @@ namespace SportXperience.Controller
         {
 
             DateTime current;
+
+            f.monthCalendarEvents.Header.BackColor1 = Color.MediumSeaGreen;
+            f.monthCalendarEvents.Header.BackColor2 = Color.MediumSeaGreen;
+            f.monthCalendarEvents.Header.TextColor = Color.White;
+            f.monthCalendarEvents.Weekdays.TextColor = Color.MediumSeaGreen;
 
             foreach (DataGridViewRow row in f.dataGridViewEvents.Rows)
             {
@@ -1439,16 +1445,19 @@ namespace SportXperience.Controller
             f.dataGridViewEvents.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(224, 255, 240);
             f.dataGridViewEvents.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
 
-            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.BackColor = Color.MediumSeaGreen;
-            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            f.dataGridViewEvents.EnableHeadersVisualStyles = false;
-
             f.dataGridViewEvents.DefaultCellStyle.BackColor = Color.Honeydew;
             f.dataGridViewEvents.DefaultCellStyle.ForeColor = Color.Black;
 
+            f.dataGridViewEvents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             f.dataGridViewEvents.MultiSelect = false;
-            f.dataGridViewEvents.DefaultCellStyle.SelectionBackColor = Color.MediumAquamarine;
+            f.dataGridViewEvents.DefaultCellStyle.SelectionBackColor = Color.FromArgb(196, 255, 186);
             f.dataGridViewEvents.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            f.dataGridViewEvents.EnableHeadersVisualStyles = false;
+            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.BackColor = Color.MediumSeaGreen;
+            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.MediumSeaGreen;
+            f.dataGridViewEvents.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
 
             f.dataGridViewEvents.GridColor = Color.LightGreen;
             f.dataGridViewEvents.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;

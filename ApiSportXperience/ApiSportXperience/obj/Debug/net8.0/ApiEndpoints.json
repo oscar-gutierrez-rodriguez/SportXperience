@@ -580,6 +580,32 @@
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.MessagesController",
+    "Method": "GetMessagesChatByEvent",
+    "RelativePath": "api/messages/chat/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.MessageDTO, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.MessagesController",
     "Method": "GetMessagesByEvent",
     "RelativePath": "api/messages/comments/{eventId}",
     "HttpMethod": "GET",
