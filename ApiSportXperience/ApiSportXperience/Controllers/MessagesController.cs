@@ -40,6 +40,27 @@ namespace ApiSportXperience.Controllers
                 .ToListAsync();
         }
 
+
+        // GET: api/Messages
+        [HttpGet]
+        [Route("api/messages/chat/{eventId}")]
+        public async Task<ActionResult<IEnumerable<MessageDTO>>> GetMessagesChatByEvent(int eventId)
+        {
+            return await _context.Messages.Where(x => x.EventId == eventId && x.PublicMessage == false)
+                .Select(x => new MessageDTO
+                {
+                    MessageId = x.MessageId,
+                    Comment = x.Comment,
+                    PublicMessage = x.PublicMessage,
+                    PublishedDate = x.PublishedDate,
+                    UserDni = x.UserDni,
+                    DniOrganizer = _context.Participants.Where(y => y.EventId == x.EventId && y.Organizer == true).FirstOrDefault().UserDni,
+                    UsernameOrganizer = _context.Users.Where(y => y.Dni.Equals(_context.Participants.Where(y => y.EventId == x.EventId && y.Organizer == true).FirstOrDefault().UserDni)).FirstOrDefault().Username
+                })
+                .ToListAsync();
+        }
+
+
         [HttpGet]
         [Route("api/messages/user/{dniUser}/{eventId}")]
         public async Task<ActionResult<IEnumerable<Message>>> GetMessagesByUser(string dniUser, int eventId)
