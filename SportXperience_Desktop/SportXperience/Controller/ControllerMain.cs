@@ -28,6 +28,8 @@ namespace SportXperience.Controller
 {
     public class ControllerMain
     {
+        int eliminarResult = 0;
+        int eliminarOpcio = 0;
         Boolean actualitzarLot = true;
         Boolean botoAfegir = false;
         MainForm f = new MainForm();
@@ -129,8 +131,11 @@ namespace SportXperience.Controller
         private void DataGridViewResultats_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Console.WriteLine(e.ColumnIndex);
-            if (e.ColumnIndex == 2 || e.ColumnIndex == 0 && e.RowIndex > -1)
+           
+
+            if (e.ColumnIndex == eliminarResult && e.RowIndex > -1)
             {
+                eliminarResult = 2;
                 string nombre = r.dataGridViewResultats.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
                 ResultDTO deleteDto = null;
                 Result delete = null;
@@ -165,6 +170,9 @@ namespace SportXperience.Controller
                         }
                         resultats.Remove(deleteDto);
                         ActualitzarGridResultats();
+                    }
+                    else{
+                        eliminarResult = 0; 
                     }
                 }
             }
@@ -271,6 +279,28 @@ namespace SportXperience.Controller
             pr.dataGridViewProdPar.Columns["EventId"].Visible = false;
             pr.dataGridViewProdPar.Columns["ParticipantOptionId"].Visible = false;
 
+            pr.dataGridViewProdPar.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(224, 255, 240);
+            pr.dataGridViewProdPar.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
+
+            pr.dataGridViewProdPar.DefaultCellStyle.BackColor = Color.Honeydew;
+            pr.dataGridViewProdPar.DefaultCellStyle.ForeColor = Color.Black;
+
+            pr.dataGridViewProdPar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            pr.dataGridViewProdPar.MultiSelect = false;
+            pr.dataGridViewProdPar.DefaultCellStyle.SelectionBackColor = Color.FromArgb(196, 255, 186);
+            pr.dataGridViewProdPar.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            pr.dataGridViewProdPar.EnableHeadersVisualStyles = false;
+            pr.dataGridViewProdPar.ColumnHeadersDefaultCellStyle.BackColor = Color.MediumSeaGreen;
+            pr.dataGridViewProdPar.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            pr.dataGridViewProdPar.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.MediumSeaGreen;
+            pr.dataGridViewProdPar.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+
+            pr.dataGridViewProdPar.GridColor = Color.LightGreen;
+            pr.dataGridViewProdPar.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            pr.dataGridViewProdPar.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+
             List<ParticipantOptionDTO> opcions = pr.dataGridViewProdPar.DataSource as List<ParticipantOptionDTO>;
 
             if (opcions == null)
@@ -285,6 +315,27 @@ namespace SportXperience.Controller
                 .ToList();
 
             pr.dataGridViewTotal.DataSource = totals;
+
+            pr.dataGridViewTotal.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(224, 255, 240);
+            pr.dataGridViewTotal.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
+
+            pr.dataGridViewTotal.DefaultCellStyle.BackColor = Color.Honeydew;
+            pr.dataGridViewTotal.DefaultCellStyle.ForeColor = Color.Black;
+
+            pr.dataGridViewTotal.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            pr.dataGridViewTotal.MultiSelect = false;
+            pr.dataGridViewTotal.DefaultCellStyle.SelectionBackColor = Color.FromArgb(196, 255, 186);
+            pr.dataGridViewTotal.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            pr.dataGridViewTotal.EnableHeadersVisualStyles = false;
+            pr.dataGridViewTotal.ColumnHeadersDefaultCellStyle.BackColor = Color.MediumSeaGreen;
+            pr.dataGridViewTotal.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            pr.dataGridViewTotal.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.MediumSeaGreen;
+            pr.dataGridViewTotal.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+
+            pr.dataGridViewTotal.GridColor = Color.LightGreen;
+            pr.dataGridViewTotal.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            pr.dataGridViewTotal.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             pr.ShowDialog();
         }
@@ -324,10 +375,11 @@ namespace SportXperience.Controller
             ubi.Close();
         }
 
-        private void MaterialButtonAfegirUbi_Click(object sender, EventArgs e)
+        private async void MaterialButtonAfegirUbi_Click(object sender, EventArgs e)
         {
-            InsertarUbicacions();
-            ubi.dataGridViewUbicacions.DataSource = Repositori.GetUbicacions();
+            await InsertarUbicacions();
+            List<Ubication> ubicacions  = Repositori.GetUbicacions();
+            ubi.dataGridViewUbicacions.DataSource = ubicacions;
         }
 
         private void MaterialButtonUbi_Click(object sender, EventArgs e)
@@ -338,8 +390,30 @@ namespace SportXperience.Controller
             ubi.dataGridViewUbicacions.ClearSelection();
             ubi.dataGridViewUbicacions.Columns["UbicationId"].Visible = false;
             ubi.dataGridViewUbicacions.Columns["Events"].Visible = false;
-            ubi.dataGridViewUbicacions.Columns["CityName"].Width = 200;
             ubi.dataGridViewUbicacions.Columns["CityName"].DisplayIndex = 0;
+            ubi.dataGridViewUbicacions.Columns["CityName"].Width = 200;
+
+            ubi.dataGridViewUbicacions.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(224, 255, 240);
+            ubi.dataGridViewUbicacions.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
+
+            ubi.dataGridViewUbicacions.DefaultCellStyle.BackColor = Color.Honeydew;
+            ubi.dataGridViewUbicacions.DefaultCellStyle.ForeColor = Color.Black;
+
+            ubi.dataGridViewUbicacions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            ubi.dataGridViewUbicacions.MultiSelect = false;
+            ubi.dataGridViewUbicacions.DefaultCellStyle.SelectionBackColor = Color.FromArgb(196, 255, 186);
+            ubi.dataGridViewUbicacions.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            ubi.dataGridViewUbicacions.EnableHeadersVisualStyles = false;
+            ubi.dataGridViewUbicacions.ColumnHeadersDefaultCellStyle.BackColor = Color.MediumSeaGreen;
+            ubi.dataGridViewUbicacions.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            ubi.dataGridViewUbicacions.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.MediumSeaGreen;
+            ubi.dataGridViewUbicacions.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+
+            ubi.dataGridViewUbicacions.GridColor = Color.LightGreen;
+            ubi.dataGridViewUbicacions.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            ubi.dataGridViewUbicacions.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
 
             if (!afegir)
             {
@@ -436,6 +510,7 @@ namespace SportXperience.Controller
 
         private void ButtonActualitzarProducte_Click(object sender, EventArgs e)
         {
+            eliminarOpcio = 0;
             if (actualitzarLot == false)
             {
                 MessageBox.Show("No es poden actualitzar els productes d'un lot quan hi han participants inscrits.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -479,9 +554,9 @@ namespace SportXperience.Controller
         private void dataGridViewOpcions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.ColumnIndex == 1 && e.RowIndex > -1)
+            if (e.ColumnIndex == eliminarOpcio && e.RowIndex > -1)
             {
-
+                eliminarOpcio = 1;
                 string nombre = lot.dataGridViewOpcions.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
                 Option delete = null;
 
@@ -502,6 +577,10 @@ namespace SportXperience.Controller
                     {
                         options.Remove(delete);
                         ActualitzarGridOptions();
+                    }
+                    else
+                    {
+                        eliminarOpcio = 0;
                     }
 
                 }
@@ -629,6 +708,7 @@ namespace SportXperience.Controller
 
         private void ButtonAfegirOpcio_Click(object sender, EventArgs e)
         {
+            eliminarOpcio = 1;
             if (string.IsNullOrEmpty(lot.textBoxNomProd.Text))
             {
                 MessageBox.Show("No pots afegir una opcio sense el nom del producte.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -703,7 +783,7 @@ namespace SportXperience.Controller
 
             lot.dataGridViewOpcions.Columns.Add(btnEliminar);
 
-
+            DataGridOpcionsColor();
         }
 
         private void ActualitzarGridResultats()
@@ -724,7 +804,29 @@ namespace SportXperience.Controller
             btnEliminar.UseColumnTextForButtonValue = true;
             btnEliminar.Width = 60;
 
-            r.dataGridViewResultats.Columns.Insert(2, btnEliminar);
+            r.dataGridViewResultats.Columns.Add(btnEliminar);
+
+            r.dataGridViewResultats.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(224, 255, 240);
+            r.dataGridViewResultats.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
+
+            r.dataGridViewResultats.DefaultCellStyle.BackColor = Color.Honeydew;
+            r.dataGridViewResultats.DefaultCellStyle.ForeColor = Color.Black;
+
+            r.dataGridViewResultats.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            r.dataGridViewResultats.MultiSelect = false;
+            r.dataGridViewResultats.DefaultCellStyle.SelectionBackColor = Color.FromArgb(196, 255, 186);
+            r.dataGridViewResultats.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            r.dataGridViewResultats.EnableHeadersVisualStyles = false;
+            r.dataGridViewResultats.ColumnHeadersDefaultCellStyle.BackColor = Color.MediumSeaGreen;
+            r.dataGridViewResultats.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            r.dataGridViewResultats.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.MediumSeaGreen;
+            r.dataGridViewResultats.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+
+            r.dataGridViewResultats.GridColor = Color.LightGreen;
+            r.dataGridViewResultats.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            r.dataGridViewResultats.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
 
         }
 
@@ -748,7 +850,31 @@ namespace SportXperience.Controller
 
             lot.dataGridViewOpcions.Columns.Add(btnEliminar);
 
+            DataGridOpcionsColor();
+        }
 
+        void DataGridOpcionsColor()
+        {
+            lot.dataGridViewOpcions.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(224, 255, 240);
+            lot.dataGridViewOpcions.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
+
+            lot.dataGridViewOpcions.DefaultCellStyle.BackColor = Color.Honeydew;
+            lot.dataGridViewOpcions.DefaultCellStyle.ForeColor = Color.Black;
+
+            lot.dataGridViewOpcions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            lot.dataGridViewOpcions.MultiSelect = false;
+            lot.dataGridViewOpcions.DefaultCellStyle.SelectionBackColor = Color.FromArgb(196, 255, 186);
+            lot.dataGridViewOpcions.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            lot.dataGridViewOpcions.EnableHeadersVisualStyles = false;
+            lot.dataGridViewOpcions.ColumnHeadersDefaultCellStyle.BackColor = Color.MediumSeaGreen;
+            lot.dataGridViewOpcions.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            lot.dataGridViewOpcions.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.MediumSeaGreen;
+            lot.dataGridViewOpcions.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
+
+            lot.dataGridViewOpcions.GridColor = Color.LightGreen;
+            lot.dataGridViewOpcions.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            lot.dataGridViewOpcions.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
         }
 
         private void ButtonEliminarProducte_Click(object sender, EventArgs e)
@@ -924,7 +1050,7 @@ namespace SportXperience.Controller
                                 award = fafegir.textBoxPremi.Text;
                                 price = priceText;
                                 InsertarSport();
-                                InsertarUbicacions();
+                                //InsertarUbicacions();
                                 InsertarEvent(award, price);
                                 InsertarParticipant();
                                 if (fafegir.checkBoxLot.Checked)
@@ -957,7 +1083,7 @@ namespace SportXperience.Controller
                     {
                         award = null;
                         InsertarSport();
-                        InsertarUbicacions();
+                        //InsertarUbicacions();
                         InsertarEvent(award, price);
                         InsertarParticipant();
                         if (fafegir.checkBoxLot.Checked)
@@ -1049,7 +1175,9 @@ namespace SportXperience.Controller
             }
         }
 
-        private async void InsertarUbicacions()
+        private async 
+        Task
+InsertarUbicacions()
         {
             double lat;
             double lng;
@@ -1085,7 +1213,7 @@ namespace SportXperience.Controller
             }
             else
             {
-                MessageBox.Show("Por favor, introduce valores válidos para latitud y longitud.");
+                MessageBox.Show("Si us plau, introdueix valors vàlids per latitud i longitud.");
             }
 
            
@@ -1205,7 +1333,7 @@ namespace SportXperience.Controller
                     InsertarLot();
                 }
             }
-            InsertarUbicacions();
+            //InsertarUbicacions();
             Repositori.DelLot(l);            
             InsertarActuProductes();
             InsertarActuOptions();
@@ -1308,6 +1436,7 @@ namespace SportXperience.Controller
 
         private void ButtonResultats_Click(object sender, EventArgs e)
         {
+            eliminarResult = 0;
             r.comboBoxNomParticipant.DataSource = Repositori.GetParticipantByEventId(ev.EventId);
             r.comboBoxNomParticipant.DisplayMember = "username";
             resultats = Repositori.GetResultByEventId(ev.EventId);
@@ -1509,6 +1638,7 @@ namespace SportXperience.Controller
             lot.textBoxNomProd.Text = "";
             lot.textBoxNomOpProd.Text = "";
             lot.checkBoxOpcio.Checked = false;
+            lot.textBoxNomOpProd.Enabled = false;
             lot.dataGridViewOpcions.DataSource = new List<ViewOption>();
         }
     }

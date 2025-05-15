@@ -71,6 +71,7 @@
             this.dataGridViewTotal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewTotal.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dataGridViewTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -103,7 +104,7 @@
             this.dataGridViewTotal.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.dataGridViewTotal.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dataGridViewTotal.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataGridViewTotal.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewTotal.ThemeStyle.BackColor = System.Drawing.Color.Honeydew;
             this.dataGridViewTotal.ThemeStyle.GridColor = System.Drawing.Color.Black;
             this.dataGridViewTotal.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dataGridViewTotal.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -177,6 +178,7 @@
             this.dataGridViewProdPar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProdPar.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dataGridViewProdPar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -209,7 +211,7 @@
             this.dataGridViewProdPar.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.dataGridViewProdPar.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dataGridViewProdPar.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataGridViewProdPar.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewProdPar.ThemeStyle.BackColor = System.Drawing.Color.Honeydew;
             this.dataGridViewProdPar.ThemeStyle.GridColor = System.Drawing.Color.Black;
             this.dataGridViewProdPar.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dataGridViewProdPar.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

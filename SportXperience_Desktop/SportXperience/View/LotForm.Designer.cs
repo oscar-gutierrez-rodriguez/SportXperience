@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.materialLabel1);
             this.panel1.Location = new System.Drawing.Point(-3, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 341);
+            this.panel1.Size = new System.Drawing.Size(484, 419);
             this.panel1.TabIndex = 0;
             // 
             // buttonAfegirProducte
@@ -73,9 +73,10 @@
             this.buttonAfegirProducte.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAfegirProducte.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonAfegirProducte.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAfegirProducte.FillColor = System.Drawing.Color.LightGreen;
             this.buttonAfegirProducte.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonAfegirProducte.ForeColor = System.Drawing.Color.White;
-            this.buttonAfegirProducte.Location = new System.Drawing.Point(299, 285);
+            this.buttonAfegirProducte.ForeColor = System.Drawing.Color.Black;
+            this.buttonAfegirProducte.Location = new System.Drawing.Point(328, 363);
             this.buttonAfegirProducte.Name = "buttonAfegirProducte";
             this.buttonAfegirProducte.Size = new System.Drawing.Size(129, 33);
             this.buttonAfegirProducte.TabIndex = 143;
@@ -89,8 +90,9 @@
             this.buttonAfegirOpcio.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonAfegirOpcio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.buttonAfegirOpcio.Enabled = false;
+            this.buttonAfegirOpcio.FillColor = System.Drawing.Color.LightGreen;
             this.buttonAfegirOpcio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonAfegirOpcio.ForeColor = System.Drawing.Color.White;
+            this.buttonAfegirOpcio.ForeColor = System.Drawing.Color.Black;
             this.buttonAfegirOpcio.Location = new System.Drawing.Point(62, 224);
             this.buttonAfegirOpcio.Name = "buttonAfegirOpcio";
             this.buttonAfegirOpcio.Size = new System.Drawing.Size(112, 33);
@@ -105,6 +107,7 @@
             this.textBoxNomOpProd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textBoxNomOpProd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxNomOpProd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxNomOpProd.Enabled = false;
             this.textBoxNomOpProd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxNomOpProd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxNomOpProd.ForeColor = System.Drawing.Color.Black;
@@ -141,7 +144,8 @@
             this.checkBoxOpcio.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.checkBoxOpcio.CheckedState.BorderRadius = 2;
             this.checkBoxOpcio.CheckedState.BorderThickness = 0;
-            this.checkBoxOpcio.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkBoxOpcio.CheckedState.FillColor = System.Drawing.Color.LightGreen;
+            this.checkBoxOpcio.CheckMarkColor = System.Drawing.Color.Black;
             this.checkBoxOpcio.Location = new System.Drawing.Point(157, 104);
             this.checkBoxOpcio.Name = "checkBoxOpcio";
             this.checkBoxOpcio.Size = new System.Drawing.Size(22, 29);
@@ -159,6 +163,7 @@
             this.dataGridViewOpcions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewOpcions.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dataGridViewOpcions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -184,14 +189,14 @@
             this.dataGridViewOpcions.Name = "dataGridViewOpcions";
             this.dataGridViewOpcions.ReadOnly = true;
             this.dataGridViewOpcions.RowHeadersVisible = false;
-            this.dataGridViewOpcions.Size = new System.Drawing.Size(240, 151);
+            this.dataGridViewOpcions.Size = new System.Drawing.Size(269, 229);
             this.dataGridViewOpcions.TabIndex = 28;
             this.dataGridViewOpcions.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewOpcions.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dataGridViewOpcions.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.dataGridViewOpcions.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dataGridViewOpcions.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataGridViewOpcions.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewOpcions.ThemeStyle.BackColor = System.Drawing.Color.Honeydew;
             this.dataGridViewOpcions.ThemeStyle.GridColor = System.Drawing.Color.Black;
             this.dataGridViewOpcions.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dataGridViewOpcions.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -249,8 +254,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 398);
+            this.ClientSize = new System.Drawing.Size(476, 476);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LotForm";
             this.Text = "Lots";
             this.Load += new System.EventHandler(this.LotForm_Load);
