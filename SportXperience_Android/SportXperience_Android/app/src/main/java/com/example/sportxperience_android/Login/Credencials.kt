@@ -11,23 +11,39 @@ import com.example.sportxperience_android.databinding.ActivityMainBinding
 
 class Credencials : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv1)
+        currentFragment?.let {
+            supportFragmentManager.putFragment(outState, "currentFragment", it)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.credencials)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        iniciarFragment(IniciarSessio())
+        if (savedInstanceState != null) {
+            val restoredFragment = supportFragmentManager.getFragment(savedInstanceState, "currentFragment")
+            if (restoredFragment != null) {
+                iniciarFragment(restoredFragment)
+            }
+        } else {
+            iniciarFragment(IniciarSessio())
+        }
     }
 
-    fun iniciarFragment(frag: Fragment){
+    private fun iniciarFragment(frag: Fragment) {
         val transaccio = supportFragmentManager.beginTransaction()
         transaccio.replace(R.id.fcv1, frag)
         transaccio.commit()

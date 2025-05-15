@@ -1,7 +1,9 @@
 package com.example.sportxperience_android
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +16,7 @@ import com.example.sportxperience_android.Api.CommentPost
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.databinding.ActivityXatBinding
+import com.google.android.material.textfield.TextInputEditText
 
 class Xat : AppCompatActivity() {
 
@@ -79,10 +82,37 @@ class Xat : AppCompatActivity() {
             binding.recyclerMissatges.layoutManager = LinearLayoutManager(this)
             binding.recyclerMissatges.adapter = adapter
 
+            binding.recyclerMissatges.scrollToPosition(adapter.itemCount - 1)
+
             if (chat.isEmpty()) {
                 binding.noChat.visibility = View.VISIBLE
             } else{
                 binding.noChat.visibility = View.INVISIBLE
+            }
+        }
+
+
+        binding.main.viewTreeObserver.addOnGlobalLayoutListener {
+            val rect = Rect()
+            binding.main.getWindowVisibleDisplayFrame(rect)
+            val screenHeight = binding.main.rootView.height
+            val keypadHeight = screenHeight - rect.bottom
+
+            val inputArea = binding.commentContainer
+
+            if (keypadHeight > screenHeight * 0.15) {
+                if (binding.tilMissatgeInsertar.hasFocus()) {
+                    inputArea.post {
+                        val inputHeight = inputArea.height
+                        inputArea.translationY = -(keypadHeight - inputHeight - 25).toFloat()
+
+                    }
+                }
+            } else {
+                if (binding.tilMissatgeInsertar.hasFocus()) {
+                    inputArea.translationY = 0f
+                }
+                clearAllEditTextFocus(binding.main)
             }
         }
     }
@@ -91,5 +121,15 @@ class Xat : AppCompatActivity() {
         val formatter = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
         val now = java.time.LocalDateTime.now()
         return now.format(formatter)
+    }
+
+    fun clearAllEditTextFocus(view: View) {
+        if (view is TextInputEditText && view.hasFocus()) {
+            view.clearFocus()
+        } else if (view is ViewGroup) {
+            for (i in 0 until view.childCount) {
+                clearAllEditTextFocus(view.getChildAt(i))
+            }
+        }
     }
 }

@@ -1,7 +1,12 @@
 package com.example.sportxperience_android
 
+import android.content.Context
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +18,7 @@ import com.example.sportxperience_android.Api.CommentPost
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.databinding.ActivityComentarisEventBinding
+import com.google.android.material.textfield.TextInputEditText
 
 class ComentarisEvent : AppCompatActivity() {
 
@@ -21,6 +27,8 @@ class ComentarisEvent : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
 
         binding = ActivityComentarisEventBinding.inflate(layoutInflater)
 
@@ -33,11 +41,11 @@ class ComentarisEvent : AppCompatActivity() {
 
         binding.noLot.visibility = View.INVISIBLE
 
-        mostrarComentaris()
+        mostrarComentarisInici()
 
 
-        binding.btEnviar.setOnClickListener{
-            if(!binding.tilMissatgeInsertar.text.isNullOrEmpty()){
+        binding.btEnviar.setOnClickListener {
+            if (!binding.tilMissatgeInsertar.text.isNullOrEmpty()) {
 
                 val api = CrudApi(this)
 
@@ -56,22 +64,64 @@ class ComentarisEvent : AppCompatActivity() {
 
                 binding.tilMissatgeInsertar.setText("")
 
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(binding.tilMissatgeInsertar.windowToken, 0)
+                binding.tilMissatgeInsertar.clearFocus()
+
                 mostrarComentaris()
 
-            } else{
-                Toast.makeText(this, "No es pot enviar comentaris buits!", Toast.LENGTH_SHORT).show()
+
+            } else {
+                Toast.makeText(this, "No es pot enviar comentaris buits!", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 
 
-        binding.cercarFiltre.setOnClickListener{
+        binding.cercarFiltre.setOnClickListener {
+            binding.tilMissatgeFiltre.clearFocus()
             mostrarComentarisFiltre()
         }
 
         binding.resetFilter.setOnClickListener {
+            binding.tilMissatgeFiltre.clearFocus()
+
+            var vacio = false
+            if (binding.tilMissatgeFiltre.text.isNullOrEmpty()) {
+                vacio = true
+            }
+
             binding.tilMissatgeFiltre.setText("")
-            mostrarComentaris()
+
+            if (!vacio) {
+                mostrarComentaris()
+            }
         }
+
+        binding.main.viewTreeObserver.addOnGlobalLayoutListener {
+            val rect = Rect()
+            binding.main.getWindowVisibleDisplayFrame(rect)
+            val screenHeight = binding.main.rootView.height
+            val keypadHeight = screenHeight - rect.bottom
+
+            val inputArea = binding.inputArea
+
+            if (keypadHeight > screenHeight * 0.15) {
+                if (binding.tilMissatgeInsertar.hasFocus()) {
+                    inputArea.post {
+                        val inputHeight = inputArea.height
+                        inputArea.translationY = -(keypadHeight - inputHeight + 25).toFloat()
+
+                    }
+                }
+            } else {
+                if (binding.tilMissatgeInsertar.hasFocus()) {
+                    inputArea.translationY = 0f
+                }
+                clearAllEditTextFocus(binding.main)
+            }
+        }
+
 
     }
 
@@ -82,12 +132,12 @@ class ComentarisEvent : AppCompatActivity() {
         return now.format(formatter)
     }
 
-    fun mostrarComentaris(){
+    fun mostrarComentarisInici() {
         val api = CrudApi(this)
 
         val comments = api.getCommentsByEventId(eventParticipar!!.eventId)
 
-        if(comments != null) {
+        if (comments != null) {
             val adapter = AdapterComments(comments, this)
 
             binding.recyclerComentaris.layoutManager = LinearLayoutManager(this)
@@ -95,7 +145,28 @@ class ComentarisEvent : AppCompatActivity() {
 
             if (comments.isEmpty()) {
                 binding.noLot.visibility = View.VISIBLE
-            } else{
+            } else {
+                binding.noLot.visibility = View.INVISIBLE
+            }
+        }
+    }
+
+    fun mostrarComentaris() {
+        val api = CrudApi(this)
+
+        val comments = api.getCommentsByEventId(eventParticipar!!.eventId)
+
+        if (comments != null) {
+            val adapter = AdapterComments(comments, this)
+
+            binding.recyclerComentaris.layoutManager = LinearLayoutManager(this)
+            binding.recyclerComentaris.adapter = adapter
+
+            binding.recyclerComentaris.scrollToPosition(adapter.itemCount - 1)
+
+            if (comments.isEmpty()) {
+                binding.noLot.visibility = View.VISIBLE
+            } else {
                 binding.noLot.visibility = View.INVISIBLE
             }
         }
@@ -104,13 +175,29 @@ class ComentarisEvent : AppCompatActivity() {
     fun mostrarComentarisFiltre() {
         val api = CrudApi(this)
 
-        val comments = api.getCommentsFiltre(binding.tilMissatgeFiltre.text.toString() ,eventParticipar!!.eventId)
+        val comments = api.getCommentsFiltre(
+            binding.tilMissatgeFiltre.text.toString(),
+            eventParticipar!!.eventId
+        )
 
-        if(comments != null) {
+        if (comments != null) {
             val adapter = AdapterComments(comments, this)
 
             binding.recyclerComentaris.layoutManager = LinearLayoutManager(this)
             binding.recyclerComentaris.adapter = adapter
+
+            binding.recyclerComentaris.scrollToPosition(adapter.itemCount - 1)
+        }
+    }
+
+
+    fun clearAllEditTextFocus(view: View) {
+        if (view is TextInputEditText && view.hasFocus()) {
+            view.clearFocus()
+        } else if (view is ViewGroup) {
+            for (i in 0 until view.childCount) {
+                clearAllEditTextFocus(view.getChildAt(i))
+            }
         }
     }
 

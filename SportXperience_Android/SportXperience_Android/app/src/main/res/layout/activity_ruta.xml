@@ -1,76 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ActivityRuta">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/mapContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_above="@id/cardRuta"
+        android:layout_marginBottom="20dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ubicació"
-            android:textAlignment="center"
-            android:textSize="26sp"
-            android:textStyle="bold|italic"
-            android:layout_marginTop="50dp"/>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="20dp"
-            android:layout_marginHorizontal="70dp"
-            app:cardElevation="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginVertical="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18dp"
-                    android:text="Distància: "
-                    android:textStyle="bold"
-                    android:textAlignment="viewEnd"/>
-
-                <TextView
-                    android:id="@+id/tv_distancia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16dp"
-                    android:textAlignment="viewStart"/>
-            </LinearLayout>
-
-
-
-        </androidx.cardview.widget.CardView>
-
-        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <fragment
             android:id="@+id/rutes"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".Rutes">
+            android:layout_height="match_parent" />
 
+        <com.leinardi.android.speeddial.SpeedDialView
+            android:id="@+id/speedDial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="64dp"
+            app:sdMainFabOpenedIconColor="@color/black"
+            app:sdMainFabClosedIconColor="@color/black"
+            app:sdMainFabClosedSrc="@drawable/baseline_map_24"
+            app:sdMainFabOpenedSrc="@drawable/baseline_close_24"
+            app:sdMainFabOpenedBackgroundColor="@color/greenDark"
+            app:sdMainFabClosedBackgroundColor="@color/mensaje"/>
+    </FrameLayout>
 
-        </fragment>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRuta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="40dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Distància: "
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textAlignment="viewEnd" />
+
+            <TextView
+                android:id="@+id/tv_distancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textAlignment="viewStart"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <RelativeLayout
         android:id="@+id/loadingContainer"
@@ -86,6 +83,5 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true" />
     </RelativeLayout>
-
 
 </RelativeLayout>

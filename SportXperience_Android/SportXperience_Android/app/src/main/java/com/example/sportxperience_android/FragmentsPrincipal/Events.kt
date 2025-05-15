@@ -1,5 +1,6 @@
 package com.example.sportxperience_android.FragmentsPrincipal
 
+import android.graphics.Rect
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import com.example.sportxperience_android.databinding.FragmentEventsBinding
 import com.example.sportxperience_android.ubicacioActual
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -38,6 +40,8 @@ class Events : Fragment() {
     lateinit var binding: FragmentEventsBinding
 
     private var pagament: Int = 2
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -120,6 +124,19 @@ class Events : Fragment() {
             mostrarEvents()
         }
 
+
+        binding.main.viewTreeObserver.addOnGlobalLayoutListener {
+            val rect = Rect()
+            binding.main.getWindowVisibleDisplayFrame(rect)
+            val screenHeight = binding.main.rootView.height
+            val keypadHeight = screenHeight - rect.bottom
+
+
+            if (!(keypadHeight > screenHeight * 0.15)) {
+                clearAllEditTextFocus(binding.main)
+            }
+        }
+
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -198,6 +215,16 @@ class Events : Fragment() {
             outputFormat.format(parsedDate ?: Date())
         } catch (e: Exception) {
             null
+        }
+    }
+
+    fun clearAllEditTextFocus(view: View) {
+        if (view is TextInputEditText && view.hasFocus()) {
+            view.clearFocus()
+        } else if (view is ViewGroup) {
+            for (i in 0 until view.childCount) {
+                clearAllEditTextFocus(view.getChildAt(i))
+            }
         }
     }
 }
