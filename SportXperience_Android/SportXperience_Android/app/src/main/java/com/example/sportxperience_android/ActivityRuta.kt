@@ -2,6 +2,7 @@ package com.example.sportxperience_android
 
 import android.Manifest
 import android.content.Intent
+import android.graphics.Color
 import android.location.Location
 import android.net.Uri
 import android.os.Bundle
@@ -50,11 +51,16 @@ class ActivityRuta : AppCompatActivity(), CoroutineScope, OnMapReadyCallback, Go
             insets
         }
 
+        binding.normal.isChecked = true
+
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.rutes) as SupportMapFragment
 
-        mapFragment.getMapAsync(this)
+        mapFragment.getMapAsync { googleMap ->
+            googleMap.mapType = GoogleMap.MAP_TYPE_NORMAL
+        }
 
+        mapFragment.getMapAsync(this)
 
         val speedDialView = binding.speedDial
 
@@ -97,6 +103,24 @@ class ActivityRuta : AppCompatActivity(), CoroutineScope, OnMapReadyCallback, Go
                 else -> false
             }
         }
+
+
+        binding.normal.setOnClickListener {
+            gmap?.let { map ->
+                val currentCamera = map.cameraPosition
+                map.mapType = GoogleMap.MAP_TYPE_NORMAL
+                map.moveCamera(CameraUpdateFactory.newCameraPosition(currentCamera))
+            }
+        }
+
+        binding.satelit.setOnClickListener {
+            gmap?.let { map ->
+                val currentCamera = map.cameraPosition
+                map.mapType = GoogleMap.MAP_TYPE_HYBRID
+                map.moveCamera(CameraUpdateFactory.newCameraPosition(currentCamera))
+            }
+        }
+
     }
 
 
@@ -157,17 +181,21 @@ class ActivityRuta : AppCompatActivity(), CoroutineScope, OnMapReadyCallback, Go
     }
 
 
-    private fun drawRoute(map: GoogleMap, coordenades : Ruta){
-        val polyLineOptions = PolylineOptions()
-        coordenades.features[0].geometry.coordinates.forEach {
-            polyLineOptions.add(LatLng(it[1], it[0]))
+    private fun drawRoute(map: GoogleMap, coordenades: Ruta) {
+        val polyLineOptions = PolylineOptions().apply {
+            coordenades.features[0].geometry.coordinates.forEach {
+                add(LatLng(it[1], it[0]))
+            }
+            color(Color.RED)
+            width(8f)
+            geodesic(true)
         }
 
-        runOnUiThread{
-            val ply = map.addPolyline(polyLineOptions)
+        runOnUiThread {
+            map.addPolyline(polyLineOptions)
         }
-
     }
+
 
     private fun ApiCotxe(uOrigen : LatLng, uDesti: LatLng){
 

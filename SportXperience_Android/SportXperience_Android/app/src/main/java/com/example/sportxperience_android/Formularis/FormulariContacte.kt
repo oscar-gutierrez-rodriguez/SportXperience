@@ -3,8 +3,11 @@ package com.example.sportxperience_android.Formularis
 import android.app.AlertDialog
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.graphics.Rect
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.ActivityFormulariContacteBinding
+import com.google.android.material.textfield.TextInputEditText
 
 class FormulariContacte : AppCompatActivity() {
 
@@ -73,8 +77,32 @@ class FormulariContacte : AppCompatActivity() {
         }
 
 
+        binding.main.viewTreeObserver.addOnGlobalLayoutListener {
+            val rect = Rect()
+            binding.main.getWindowVisibleDisplayFrame(rect)
+            val screenHeight = binding.main.rootView.height
+            val keypadHeight = screenHeight - rect.bottom
+
+
+            if (!(keypadHeight > screenHeight * 0.15)) {
+                clearAllEditTextFocus(binding.main)
+            }
+        }
+
+
         binding.btTornar.setOnClickListener {
             onBackPressed()
         }
     }
+
+    fun clearAllEditTextFocus(view: View) {
+        if (view is TextInputEditText && view.hasFocus()) {
+            view.clearFocus()
+        } else if (view is ViewGroup) {
+            for (i in 0 until view.childCount) {
+                clearAllEditTextFocus(view.getChildAt(i))
+            }
+        }
+    }
+
 }

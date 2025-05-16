@@ -7,5 +7,5 @@
         android:title="Bici" />
     <item
         android:id="@+id/opc_caminar"
-        android:title="Caminando" />
+        android:title="Caminando"/>
 </menu>

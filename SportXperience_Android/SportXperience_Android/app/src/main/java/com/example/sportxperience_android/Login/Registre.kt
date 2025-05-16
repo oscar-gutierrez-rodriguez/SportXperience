@@ -1,6 +1,7 @@
 package com.example.sportxperience_android.Login
 
 import android.app.AlertDialog
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -228,6 +229,18 @@ class Registre : Fragment() {
             genere = binding.genereAltre.text.toString()
         }
 
+
+        binding.credencials.viewTreeObserver.addOnGlobalLayoutListener {
+            val rect = Rect()
+            binding.credencials.getWindowVisibleDisplayFrame(rect)
+            val screenHeight = binding.credencials.rootView.height
+            val keypadHeight = screenHeight - rect.bottom
+
+
+            if (!(keypadHeight > screenHeight * 0.15)) {
+                clearAllEditTextFocus(binding.credencials)
+            }
+        }
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -342,6 +355,16 @@ class Registre : Fragment() {
                 for (i in 0 until view.childCount) {
                     enableAllViews(view.getChildAt(i))
                 }
+            }
+        }
+    }
+
+    fun clearAllEditTextFocus(view: View) {
+        if (view is TextInputEditText && view.hasFocus()) {
+            view.clearFocus()
+        } else if (view is ViewGroup) {
+            for (i in 0 until view.childCount) {
+                clearAllEditTextFocus(view.getChildAt(i))
             }
         }
     }

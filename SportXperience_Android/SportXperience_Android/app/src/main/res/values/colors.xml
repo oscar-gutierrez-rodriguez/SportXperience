@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="grey">#969696</color>
+    <color name="gray">#969696</color>
     <color name="dorado">#fcc417</color>
     <color name="plata">#cecdd2</color>
     <color name="bronce">#f79429</color>
