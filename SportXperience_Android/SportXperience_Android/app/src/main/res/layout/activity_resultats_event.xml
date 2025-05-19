@@ -13,14 +13,24 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/arrowback"
+            android:contentDescription="Tornar"
+            android:id="@+id/bt_tornar"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerInside"
+            android:padding="7dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Resultats de l'event"
             android:textAlignment="center"
             android:textSize="26sp"
-            android:textStyle="bold|italic"
-            android:layout_marginTop="25dp"/>
+            android:textStyle="bold|italic"/>
 
 
         <androidx.cardview.widget.CardView

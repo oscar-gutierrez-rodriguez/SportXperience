@@ -122,6 +122,9 @@ class ComentarisEvent : AppCompatActivity() {
             }
         }
 
+        binding.btTornar.setOnClickListener {
+            super.onBackPressed()
+        }
 
     }
 

@@ -34,10 +34,11 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:spinnerMode="dropdown"
             android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="20dp"/>
+            android:layout_marginHorizontal="10dp"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/spinner_color" />
+
 
     </LinearLayout>
 

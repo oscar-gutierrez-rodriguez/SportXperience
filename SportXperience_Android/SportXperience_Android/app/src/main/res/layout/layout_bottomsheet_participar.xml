@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="#FBF7F7"
+        android:background="@color/md_theme_background"
         android:orientation="vertical">
 
         <ImageView

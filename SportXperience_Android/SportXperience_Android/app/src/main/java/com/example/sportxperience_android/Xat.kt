@@ -67,6 +67,10 @@ class Xat : AppCompatActivity() {
             }
         }
 
+        binding.btTornar.setOnClickListener {
+            super.onBackPressed()
+        }
+
     }
 
 

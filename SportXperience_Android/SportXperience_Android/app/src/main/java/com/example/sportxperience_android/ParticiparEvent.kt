@@ -2,8 +2,12 @@ package com.example.sportxperience_android
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.StyleSpan
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -54,11 +58,16 @@ class ParticiparEvent : AppCompatActivity() {
         binding.titolParticipar.setText(event!!.name)
         Glide.with(this).load(this.getString(R.string.ruta_api) + event!!.image).into(binding.imatgeParticipar)
         binding.descripcioParticipant.setText(event!!.description)
-        binding.dada1.setText(event!!.recommendedLevelName)
+        val spannable = SpannableString("Nivell: ${event!!.recommendedLevelName}")
+        spannable.setSpan(StyleSpan(Typeface.BOLD), 0, 7, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        binding.dada1.setText(spannable)
+
 
 
         if(!event!!.reward.isNullOrEmpty()) {
-            binding.dada2.setText(event!!.reward)
+            val spannable = SpannableString("Premi: ${event!!.reward}")
+            spannable.setSpan(StyleSpan(Typeface.BOLD), 0, 6, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            binding.dada2.setText(spannable)
         } else{
             binding.dada2.setText("Sense premi")
         }
@@ -86,7 +95,7 @@ class ParticiparEvent : AppCompatActivity() {
             binding.noLot.visibility = View.VISIBLE
         }
         
-        binding.creadorParticipant.setText(api.getUserByDni(api.getOrganizerByEvent(event!!.eventId)!!.userDni)!!.firstName)
+        binding.creadorParticipant.setText("Creador: " + api.getUserByDni(api.getOrganizerByEvent(event!!.eventId)!!.userDni)!!.firstName)
 
         binding.btUbicacioParticipant.setOnClickListener{
             if(ubicacioActual != null) {

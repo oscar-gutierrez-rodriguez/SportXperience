@@ -33,6 +33,11 @@ class Resultats_Event : AppCompatActivity() {
 
         mostrarResultats()
 
+
+        binding.btTornar.setOnClickListener {
+            onBackPressed()
+        }
+
     }
 
 

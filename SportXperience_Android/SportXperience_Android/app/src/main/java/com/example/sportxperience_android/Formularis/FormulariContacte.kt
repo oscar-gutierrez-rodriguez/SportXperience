@@ -48,10 +48,10 @@ class FormulariContacte : AppCompatActivity() {
                 val destinatari2 = "hugo_cabecerasantiago@iescarlesvallbona.cat"
                 val destinataris = "$destinatari1,$destinatari2"
 
-                val assumpte = Uri.encode(binding.tilAssumpte.text.toString())
-                val missatgeUsuari = Uri.encode(binding.tilDescripcio.text.toString())
+                val assumpte = binding.tilAssumpte.text.toString()
+                val missatgeUsuari = binding.tilDescripcio.text.toString()
 
-                val missatgeFinal = Uri.encode("Missatge enviat per: ${user!!.username}\n\n\nMissatge de correu:\n\n$missatgeUsuari")
+                val missatgeFinal = "Missatge enviat per: ${user!!.username}\n\n\nMissatge de correu:\n\n$missatgeUsuari"
 
                 val uri = Uri.parse("mailto:$destinataris?subject=$assumpte&body=$missatgeFinal")
 
@@ -62,6 +62,7 @@ class FormulariContacte : AppCompatActivity() {
                 } catch (e: ActivityNotFoundException) {
                     Toast.makeText(this, "No hi ha cap app de correu instal·lada", Toast.LENGTH_SHORT).show()
                 }
+
 
 
 
