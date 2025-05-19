@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonAfegirResultat = new Guna.UI2.WinForms.Guna2Button();
             this.buttonAfegirPosicio = new Guna.UI2.WinForms.Guna2Button();
@@ -46,7 +46,11 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Honeydew;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.buttonAfegirResultat);
             this.panel1.Controls.Add(this.buttonAfegirPosicio);
             this.panel1.Controls.Add(this.numericUpDownPosicio);
@@ -54,9 +58,9 @@
             this.panel1.Controls.Add(this.dataGridViewResultats);
             this.panel1.Controls.Add(this.materialLabel2);
             this.panel1.Controls.Add(this.materialLabel1);
-            this.panel1.Location = new System.Drawing.Point(-3, 61);
+            this.panel1.Location = new System.Drawing.Point(0, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(477, 389);
+            this.panel1.Size = new System.Drawing.Size(473, 387);
             this.panel1.TabIndex = 0;
             // 
             // buttonAfegirResultat
@@ -67,10 +71,10 @@
             this.buttonAfegirResultat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAfegirResultat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonAfegirResultat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonAfegirResultat.FillColor = System.Drawing.Color.LightGreen;
+            this.buttonAfegirResultat.FillColor = System.Drawing.Color.Green;
             this.buttonAfegirResultat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonAfegirResultat.ForeColor = System.Drawing.Color.Black;
-            this.buttonAfegirResultat.Location = new System.Drawing.Point(342, 318);
+            this.buttonAfegirResultat.ForeColor = System.Drawing.Color.White;
+            this.buttonAfegirResultat.Location = new System.Drawing.Point(336, 314);
             this.buttonAfegirResultat.Name = "buttonAfegirResultat";
             this.buttonAfegirResultat.Size = new System.Drawing.Size(119, 33);
             this.buttonAfegirResultat.TabIndex = 149;
@@ -83,9 +87,9 @@
             this.buttonAfegirPosicio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAfegirPosicio.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonAfegirPosicio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonAfegirPosicio.FillColor = System.Drawing.Color.LightGreen;
+            this.buttonAfegirPosicio.FillColor = System.Drawing.Color.Green;
             this.buttonAfegirPosicio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonAfegirPosicio.ForeColor = System.Drawing.Color.Black;
+            this.buttonAfegirPosicio.ForeColor = System.Drawing.Color.White;
             this.buttonAfegirPosicio.Location = new System.Drawing.Point(78, 229);
             this.buttonAfegirPosicio.Name = "buttonAfegirPosicio";
             this.buttonAfegirPosicio.Size = new System.Drawing.Size(75, 33);
@@ -106,7 +110,8 @@
             this.numericUpDownPosicio.Name = "numericUpDownPosicio";
             this.numericUpDownPosicio.Size = new System.Drawing.Size(132, 36);
             this.numericUpDownPosicio.TabIndex = 147;
-            this.numericUpDownPosicio.UpDownButtonFillColor = System.Drawing.Color.LightGreen;
+            this.numericUpDownPosicio.UpDownButtonFillColor = System.Drawing.Color.Green;
+            this.numericUpDownPosicio.UpDownButtonForeColor = System.Drawing.SystemColors.ControlLightLight;
             // 
             // comboBoxNomParticipant
             // 
@@ -125,31 +130,31 @@
             // 
             // dataGridViewResultats
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridViewResultats.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dataGridViewResultats.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewResultats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewResultats.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dataGridViewResultats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewResultats.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewResultats.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewResultats.ColumnHeadersHeight = 20;
             this.dataGridViewResultats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewResultats.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewResultats.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewResultats.GridColor = System.Drawing.Color.Black;
             this.dataGridViewResultats.Location = new System.Drawing.Point(159, 56);
             this.dataGridViewResultats.MultiSelect = false;
@@ -157,7 +162,7 @@
             this.dataGridViewResultats.ReadOnly = true;
             this.dataGridViewResultats.RowHeadersVisible = false;
             this.dataGridViewResultats.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewResultats.Size = new System.Drawing.Size(302, 167);
+            this.dataGridViewResultats.Size = new System.Drawing.Size(296, 163);
             this.dataGridViewResultats.TabIndex = 145;
             this.dataGridViewResultats.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewResultats.ThemeStyle.AlternatingRowsStyle.Font = null;

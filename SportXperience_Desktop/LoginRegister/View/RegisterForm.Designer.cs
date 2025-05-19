@@ -56,6 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Honeydew;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.buttonRegistrar);
             this.panel1.Controls.Add(this.buttonShowPasswordRegistrar);
             this.panel1.Controls.Add(this.textBoxContrasenyaReg);
@@ -74,9 +75,9 @@
             this.panel1.Controls.Add(this.materialLabel3);
             this.panel1.Controls.Add(this.materialLabel2);
             this.panel1.Controls.Add(this.materialLabel1);
-            this.panel1.Location = new System.Drawing.Point(-1, 58);
+            this.panel1.Location = new System.Drawing.Point(0, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(527, 615);
+            this.panel1.Size = new System.Drawing.Size(525, 613);
             this.panel1.TabIndex = 0;
             // 
             // buttonRegistrar
@@ -86,10 +87,10 @@
             this.buttonRegistrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonRegistrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonRegistrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonRegistrar.FillColor = System.Drawing.Color.LightGreen;
+            this.buttonRegistrar.FillColor = System.Drawing.Color.Green;
             this.buttonRegistrar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonRegistrar.ForeColor = System.Drawing.Color.Black;
-            this.buttonRegistrar.Location = new System.Drawing.Point(173, 538);
+            this.buttonRegistrar.ForeColor = System.Drawing.Color.White;
+            this.buttonRegistrar.Location = new System.Drawing.Point(171, 536);
             this.buttonRegistrar.Name = "buttonRegistrar";
             this.buttonRegistrar.Size = new System.Drawing.Size(180, 45);
             this.buttonRegistrar.TabIndex = 170;
@@ -100,7 +101,7 @@
             this.buttonShowPasswordRegistrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonShowPasswordRegistrar.BackColor = System.Drawing.Color.Transparent;
             this.buttonShowPasswordRegistrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonShowPasswordRegistrar.Location = new System.Drawing.Point(355, 497);
+            this.buttonShowPasswordRegistrar.Location = new System.Drawing.Point(353, 495);
             this.buttonShowPasswordRegistrar.Name = "buttonShowPasswordRegistrar";
             this.buttonShowPasswordRegistrar.Size = new System.Drawing.Size(25, 20);
             this.buttonShowPasswordRegistrar.TabIndex = 169;
@@ -120,7 +121,7 @@
             this.textBoxContrasenyaReg.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxContrasenyaReg.ForeColor = System.Drawing.Color.Black;
             this.textBoxContrasenyaReg.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxContrasenyaReg.Location = new System.Drawing.Point(74, 482);
+            this.textBoxContrasenyaReg.Location = new System.Drawing.Point(72, 480);
             this.textBoxContrasenyaReg.Name = "textBoxContrasenyaReg";
             this.textBoxContrasenyaReg.PlaceholderText = "";
             this.textBoxContrasenyaReg.SelectedText = "";
@@ -141,7 +142,7 @@
             this.textBoxNomUsuari.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxNomUsuari.ForeColor = System.Drawing.Color.Black;
             this.textBoxNomUsuari.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxNomUsuari.Location = new System.Drawing.Point(74, 398);
+            this.textBoxNomUsuari.Location = new System.Drawing.Point(72, 396);
             this.textBoxNomUsuari.Name = "textBoxNomUsuari";
             this.textBoxNomUsuari.PlaceholderText = "";
             this.textBoxNomUsuari.SelectedText = "";
@@ -161,7 +162,7 @@
             this.textBoxCorreu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxCorreu.ForeColor = System.Drawing.Color.Black;
             this.textBoxCorreu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxCorreu.Location = new System.Drawing.Point(74, 308);
+            this.textBoxCorreu.Location = new System.Drawing.Point(72, 306);
             this.textBoxCorreu.Name = "textBoxCorreu";
             this.textBoxCorreu.PlaceholderText = "";
             this.textBoxCorreu.SelectedText = "";
@@ -173,10 +174,11 @@
             this.dateTimePickerNaixement.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePickerNaixement.Checked = true;
             this.dateTimePickerNaixement.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerNaixement.FillColor = System.Drawing.Color.LightGreen;
+            this.dateTimePickerNaixement.FillColor = System.Drawing.Color.Green;
             this.dateTimePickerNaixement.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dateTimePickerNaixement.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.dateTimePickerNaixement.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNaixement.Location = new System.Drawing.Point(296, 227);
+            this.dateTimePickerNaixement.Location = new System.Drawing.Point(294, 225);
             this.dateTimePickerNaixement.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerNaixement.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerNaixement.Name = "dateTimePickerNaixement";
@@ -195,7 +197,7 @@
             this.comboBoxGenere.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.comboBoxGenere.ForeColor = System.Drawing.Color.Black;
             this.comboBoxGenere.ItemHeight = 30;
-            this.comboBoxGenere.Location = new System.Drawing.Point(74, 227);
+            this.comboBoxGenere.Location = new System.Drawing.Point(72, 225);
             this.comboBoxGenere.Name = "comboBoxGenere";
             this.comboBoxGenere.Size = new System.Drawing.Size(140, 36);
             this.comboBoxGenere.TabIndex = 164;
@@ -213,7 +215,7 @@
             this.textBoxCognoms.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxCognoms.ForeColor = System.Drawing.Color.Black;
             this.textBoxCognoms.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxCognoms.Location = new System.Drawing.Point(236, 142);
+            this.textBoxCognoms.Location = new System.Drawing.Point(234, 140);
             this.textBoxCognoms.Name = "textBoxCognoms";
             this.textBoxCognoms.PlaceholderText = "";
             this.textBoxCognoms.SelectedText = "";
@@ -233,7 +235,7 @@
             this.textBoxNom.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxNom.ForeColor = System.Drawing.Color.Black;
             this.textBoxNom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxNom.Location = new System.Drawing.Point(74, 142);
+            this.textBoxNom.Location = new System.Drawing.Point(72, 140);
             this.textBoxNom.Name = "textBoxNom";
             this.textBoxNom.PlaceholderText = "";
             this.textBoxNom.SelectedText = "";
@@ -253,7 +255,7 @@
             this.textBoxDNI.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxDNI.ForeColor = System.Drawing.Color.Black;
             this.textBoxDNI.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxDNI.Location = new System.Drawing.Point(74, 54);
+            this.textBoxDNI.Location = new System.Drawing.Point(72, 52);
             this.textBoxDNI.Name = "textBoxDNI";
             this.textBoxDNI.PlaceholderText = "";
             this.textBoxDNI.SelectedText = "";
@@ -266,7 +268,7 @@
             this.materialLabel8.AutoSize = true;
             this.materialLabel8.Depth = 0;
             this.materialLabel8.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel8.Location = new System.Drawing.Point(293, 209);
+            this.materialLabel8.Location = new System.Drawing.Point(291, 207);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
             this.materialLabel8.Size = new System.Drawing.Size(138, 19);
@@ -279,7 +281,7 @@
             this.materialLabel7.AutoSize = true;
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel7.Location = new System.Drawing.Point(233, 120);
+            this.materialLabel7.Location = new System.Drawing.Point(231, 118);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(73, 19);
@@ -292,7 +294,7 @@
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel6.Location = new System.Drawing.Point(71, 460);
+            this.materialLabel6.Location = new System.Drawing.Point(69, 458);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(94, 19);
@@ -305,7 +307,7 @@
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(71, 286);
+            this.materialLabel5.Location = new System.Drawing.Point(69, 284);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(123, 19);
@@ -318,7 +320,7 @@
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(71, 376);
+            this.materialLabel4.Location = new System.Drawing.Point(69, 374);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(88, 19);
@@ -331,7 +333,7 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(71, 209);
+            this.materialLabel3.Location = new System.Drawing.Point(69, 207);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(54, 19);
@@ -344,7 +346,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(71, 120);
+            this.materialLabel2.Location = new System.Drawing.Point(69, 118);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(39, 19);
@@ -357,7 +359,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(71, 32);
+            this.materialLabel1.Location = new System.Drawing.Point(69, 30);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(31, 19);

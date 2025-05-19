@@ -1640,6 +1640,7 @@ InsertarUbicacions()
             lot.checkBoxOpcio.Checked = false;
             lot.textBoxNomOpProd.Enabled = false;
             lot.dataGridViewOpcions.DataSource = new List<ViewOption>();
+            DataGridOpcionsColor();
         }
     }
 }

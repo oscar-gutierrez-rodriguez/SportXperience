@@ -46,6 +46,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Honeydew;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.textBoxNomCorreu);
             this.panel1.Controls.Add(this.buttonShowPassword);
             this.panel1.Controls.Add(this.textBoxContrasenya);
@@ -54,9 +55,9 @@
             this.panel1.Controls.Add(this.materialLabel1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.linkLabelRegistrat);
-            this.panel1.Location = new System.Drawing.Point(-4, 60);
+            this.panel1.Location = new System.Drawing.Point(0, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(511, 470);
+            this.panel1.Size = new System.Drawing.Size(502, 469);
             this.panel1.TabIndex = 0;
             // 
             // textBoxNomCorreu
@@ -72,7 +73,7 @@
             this.textBoxNomCorreu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxNomCorreu.ForeColor = System.Drawing.Color.Black;
             this.textBoxNomCorreu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxNomCorreu.Location = new System.Drawing.Point(91, 116);
+            this.textBoxNomCorreu.Location = new System.Drawing.Point(97, 86);
             this.textBoxNomCorreu.Name = "textBoxNomCorreu";
             this.textBoxNomCorreu.PlaceholderText = "";
             this.textBoxNomCorreu.SelectedText = "";
@@ -84,7 +85,7 @@
             this.buttonShowPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonShowPassword.BackColor = System.Drawing.Color.Transparent;
             this.buttonShowPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonShowPassword.Location = new System.Drawing.Point(373, 242);
+            this.buttonShowPassword.Location = new System.Drawing.Point(379, 212);
             this.buttonShowPassword.Name = "buttonShowPassword";
             this.buttonShowPassword.Size = new System.Drawing.Size(34, 20);
             this.buttonShowPassword.TabIndex = 32;
@@ -104,7 +105,7 @@
             this.textBoxContrasenya.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxContrasenya.ForeColor = System.Drawing.Color.Black;
             this.textBoxContrasenya.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxContrasenya.Location = new System.Drawing.Point(91, 226);
+            this.textBoxContrasenya.Location = new System.Drawing.Point(97, 196);
             this.textBoxContrasenya.Name = "textBoxContrasenya";
             this.textBoxContrasenya.PlaceholderText = "";
             this.textBoxContrasenya.SelectedText = "";
@@ -120,10 +121,10 @@
             this.buttonIniciSessio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonIniciSessio.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonIniciSessio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonIniciSessio.FillColor = System.Drawing.Color.LightGreen;
+            this.buttonIniciSessio.FillColor = System.Drawing.Color.Green;
             this.buttonIniciSessio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonIniciSessio.ForeColor = System.Drawing.Color.Black;
-            this.buttonIniciSessio.Location = new System.Drawing.Point(162, 302);
+            this.buttonIniciSessio.ForeColor = System.Drawing.Color.White;
+            this.buttonIniciSessio.Location = new System.Drawing.Point(168, 272);
             this.buttonIniciSessio.Name = "buttonIniciSessio";
             this.buttonIniciSessio.Size = new System.Drawing.Size(188, 45);
             this.buttonIniciSessio.TabIndex = 30;
@@ -135,7 +136,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(88, 204);
+            this.materialLabel2.Location = new System.Drawing.Point(94, 174);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(94, 19);
@@ -148,7 +149,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(88, 94);
+            this.materialLabel1.Location = new System.Drawing.Point(94, 64);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(227, 19);
@@ -159,7 +160,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(159, 364);
+            this.label4.Location = new System.Drawing.Point(165, 334);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(140, 13);
             this.label4.TabIndex = 27;
@@ -169,7 +170,7 @@
             // 
             this.linkLabelRegistrat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabelRegistrat.AutoSize = true;
-            this.linkLabelRegistrat.Location = new System.Drawing.Point(299, 364);
+            this.linkLabelRegistrat.Location = new System.Drawing.Point(305, 334);
             this.linkLabelRegistrat.Name = "linkLabelRegistrat";
             this.linkLabelRegistrat.Size = new System.Drawing.Size(51, 13);
             this.linkLabelRegistrat.TabIndex = 26;
@@ -182,6 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 527);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LoginForm";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);

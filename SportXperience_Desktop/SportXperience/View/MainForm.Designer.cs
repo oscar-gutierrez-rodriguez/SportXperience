@@ -93,9 +93,9 @@
             this.buttonResultats.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonResultats.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonResultats.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonResultats.FillColor = System.Drawing.Color.LightGreen;
+            this.buttonResultats.FillColor = System.Drawing.Color.Green;
             this.buttonResultats.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonResultats.ForeColor = System.Drawing.Color.Black;
+            this.buttonResultats.ForeColor = System.Drawing.Color.White;
             this.buttonResultats.Location = new System.Drawing.Point(1627, 682);
             this.buttonResultats.Name = "buttonResultats";
             this.buttonResultats.Size = new System.Drawing.Size(189, 45);
@@ -110,9 +110,9 @@
             this.materialButtonProdPart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.materialButtonProdPart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.materialButtonProdPart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.materialButtonProdPart.FillColor = System.Drawing.Color.LightGreen;
+            this.materialButtonProdPart.FillColor = System.Drawing.Color.Green;
             this.materialButtonProdPart.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.materialButtonProdPart.ForeColor = System.Drawing.Color.Black;
+            this.materialButtonProdPart.ForeColor = System.Drawing.Color.White;
             this.materialButtonProdPart.Location = new System.Drawing.Point(1421, 682);
             this.materialButtonProdPart.Name = "materialButtonProdPart";
             this.materialButtonProdPart.Size = new System.Drawing.Size(189, 45);
@@ -144,9 +144,9 @@
             this.buttonActualitzar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonActualitzar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonActualitzar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonActualitzar.FillColor = System.Drawing.Color.LightGreen;
+            this.buttonActualitzar.FillColor = System.Drawing.Color.Green;
             this.buttonActualitzar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonActualitzar.ForeColor = System.Drawing.Color.Black;
+            this.buttonActualitzar.ForeColor = System.Drawing.Color.White;
             this.buttonActualitzar.Location = new System.Drawing.Point(1226, 419);
             this.buttonActualitzar.Name = "buttonActualitzar";
             this.buttonActualitzar.Size = new System.Drawing.Size(118, 45);
@@ -161,9 +161,9 @@
             this.buttonAfegir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAfegir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonAfegir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonAfegir.FillColor = System.Drawing.Color.LightGreen;
+            this.buttonAfegir.FillColor = System.Drawing.Color.ForestGreen;
             this.buttonAfegir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonAfegir.ForeColor = System.Drawing.Color.Black;
+            this.buttonAfegir.ForeColor = System.Drawing.Color.White;
             this.buttonAfegir.Location = new System.Drawing.Point(1226, 332);
             this.buttonAfegir.Name = "buttonAfegir";
             this.buttonAfegir.Size = new System.Drawing.Size(118, 45);

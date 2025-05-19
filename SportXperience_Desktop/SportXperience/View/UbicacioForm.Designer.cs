@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.materialButtonConfirmarUbi = new Guna.UI2.WinForms.Guna2Button();
             this.materialButtonAfegirUbi = new Guna.UI2.WinForms.Guna2Button();
@@ -72,9 +72,9 @@
             this.materialButtonConfirmarUbi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.materialButtonConfirmarUbi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.materialButtonConfirmarUbi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.materialButtonConfirmarUbi.FillColor = System.Drawing.Color.LightGreen;
+            this.materialButtonConfirmarUbi.FillColor = System.Drawing.Color.Green;
             this.materialButtonConfirmarUbi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.materialButtonConfirmarUbi.ForeColor = System.Drawing.Color.Black;
+            this.materialButtonConfirmarUbi.ForeColor = System.Drawing.Color.White;
             this.materialButtonConfirmarUbi.Location = new System.Drawing.Point(948, 403);
             this.materialButtonConfirmarUbi.Name = "materialButtonConfirmarUbi";
             this.materialButtonConfirmarUbi.Size = new System.Drawing.Size(112, 33);
@@ -89,9 +89,9 @@
             this.materialButtonAfegirUbi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.materialButtonAfegirUbi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.materialButtonAfegirUbi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.materialButtonAfegirUbi.FillColor = System.Drawing.Color.LightGreen;
+            this.materialButtonAfegirUbi.FillColor = System.Drawing.Color.Green;
             this.materialButtonAfegirUbi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.materialButtonAfegirUbi.ForeColor = System.Drawing.Color.Black;
+            this.materialButtonAfegirUbi.ForeColor = System.Drawing.Color.White;
             this.materialButtonAfegirUbi.Location = new System.Drawing.Point(685, 403);
             this.materialButtonAfegirUbi.Name = "materialButtonAfegirUbi";
             this.materialButtonAfegirUbi.Size = new System.Drawing.Size(112, 33);
@@ -107,9 +107,9 @@
             this.materialButtonOrg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.materialButtonOrg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.materialButtonOrg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.materialButtonOrg.FillColor = System.Drawing.Color.LightGreen;
+            this.materialButtonOrg.FillColor = System.Drawing.Color.Green;
             this.materialButtonOrg.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.materialButtonOrg.ForeColor = System.Drawing.Color.Black;
+            this.materialButtonOrg.ForeColor = System.Drawing.Color.White;
             this.materialButtonOrg.Location = new System.Drawing.Point(366, 403);
             this.materialButtonOrg.Name = "materialButtonOrg";
             this.materialButtonOrg.Size = new System.Drawing.Size(112, 33);
@@ -125,9 +125,9 @@
             this.materialButtonSat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.materialButtonSat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.materialButtonSat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.materialButtonSat.FillColor = System.Drawing.Color.LightGreen;
+            this.materialButtonSat.FillColor = System.Drawing.Color.Green;
             this.materialButtonSat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.materialButtonSat.ForeColor = System.Drawing.Color.Black;
+            this.materialButtonSat.ForeColor = System.Drawing.Color.White;
             this.materialButtonSat.Location = new System.Drawing.Point(99, 403);
             this.materialButtonSat.Name = "materialButtonSat";
             this.materialButtonSat.Size = new System.Drawing.Size(112, 33);
@@ -177,30 +177,30 @@
             // 
             // dataGridViewUbicacions
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dataGridViewUbicacions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridViewUbicacions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewUbicacions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewUbicacions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.dataGridViewUbicacions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewUbicacions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewUbicacions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewUbicacions.ColumnHeadersHeight = 20;
             this.dataGridViewUbicacions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewUbicacions.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewUbicacions.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewUbicacions.GridColor = System.Drawing.Color.Black;
             this.dataGridViewUbicacions.Location = new System.Drawing.Point(685, 214);
             this.dataGridViewUbicacions.MultiSelect = false;

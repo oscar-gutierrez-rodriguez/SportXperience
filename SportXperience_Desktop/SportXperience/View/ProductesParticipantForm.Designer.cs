@@ -55,14 +55,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Honeydew;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dataGridViewTotal);
             this.panel1.Controls.Add(this.guna2DataGridView2);
             this.panel1.Controls.Add(this.dataGridViewProdPar);
             this.panel1.Controls.Add(this.materialLabel2);
             this.panel1.Controls.Add(this.materialLabel1);
-            this.panel1.Location = new System.Drawing.Point(-1, 62);
+            this.panel1.Location = new System.Drawing.Point(0, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(527, 437);
+            this.panel1.Size = new System.Drawing.Size(522, 432);
             this.panel1.TabIndex = 0;
             // 
             // dataGridViewTotal
@@ -92,12 +93,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTotal.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTotal.GridColor = System.Drawing.Color.Black;
-            this.dataGridViewTotal.Location = new System.Drawing.Point(84, 246);
+            this.dataGridViewTotal.Location = new System.Drawing.Point(84, 239);
             this.dataGridViewTotal.MultiSelect = false;
             this.dataGridViewTotal.Name = "dataGridViewTotal";
             this.dataGridViewTotal.ReadOnly = true;
             this.dataGridViewTotal.RowHeadersVisible = false;
-            this.dataGridViewTotal.Size = new System.Drawing.Size(342, 166);
+            this.dataGridViewTotal.Size = new System.Drawing.Size(335, 166);
             this.dataGridViewTotal.TabIndex = 28;
             this.dataGridViewTotal.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewTotal.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -204,7 +205,7 @@
             this.dataGridViewProdPar.Name = "dataGridViewProdPar";
             this.dataGridViewProdPar.ReadOnly = true;
             this.dataGridViewProdPar.RowHeadersVisible = false;
-            this.dataGridViewProdPar.Size = new System.Drawing.Size(342, 166);
+            this.dataGridViewProdPar.Size = new System.Drawing.Size(335, 159);
             this.dataGridViewProdPar.TabIndex = 26;
             this.dataGridViewProdPar.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewProdPar.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -234,7 +235,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(81, 224);
+            this.materialLabel2.Location = new System.Drawing.Point(81, 217);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(42, 19);
