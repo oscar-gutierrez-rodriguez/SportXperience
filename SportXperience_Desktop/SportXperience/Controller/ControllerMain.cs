@@ -627,6 +627,7 @@ namespace SportXperience.Controller
             {
                 products = new List<Product>();
             }
+
             fafegir.textBoxNom.Text = ev.Name;
             fafegir.textBoxDescripcio.Text = ev.Description;
             fafegir.textBoxPremi.Text = ev.Reward;
@@ -652,6 +653,7 @@ namespace SportXperience.Controller
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Error inesperat: " + ex.Message);
             }
 
 
@@ -1333,10 +1335,12 @@ InsertarUbicacions()
                     InsertarLot();
                 }
             }
-            //InsertarUbicacions();
-            Repositori.DelLot(l);            
-            InsertarActuProductes();
-            InsertarActuOptions();
+            if (actualitzarLot == true) {
+                //InsertarUbicacions();
+                Repositori.DelLot(l);
+                InsertarActuProductes();
+                InsertarActuOptions();
+            }
             Repositori.UpdEvent(events);
         }
 

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.materialButtonConfirmarUbi = new Guna.UI2.WinForms.Guna2Button();
             this.materialButtonAfegirUbi = new Guna.UI2.WinForms.Guna2Button();
@@ -49,6 +49,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Honeydew;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.materialButtonConfirmarUbi);
             this.panel1.Controls.Add(this.materialButtonAfegirUbi);
             this.panel1.Controls.Add(this.materialButtonOrg);
@@ -59,9 +60,9 @@
             this.panel1.Controls.Add(this.gMapControlUbi);
             this.panel1.Controls.Add(this.materialLabel2);
             this.panel1.Controls.Add(this.materialLabel1);
-            this.panel1.Location = new System.Drawing.Point(1, 59);
+            this.panel1.Location = new System.Drawing.Point(0, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1099, 471);
+            this.panel1.Size = new System.Drawing.Size(1095, 469);
             this.panel1.TabIndex = 0;
             // 
             // materialButtonConfirmarUbi
@@ -75,7 +76,7 @@
             this.materialButtonConfirmarUbi.FillColor = System.Drawing.Color.Green;
             this.materialButtonConfirmarUbi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.materialButtonConfirmarUbi.ForeColor = System.Drawing.Color.White;
-            this.materialButtonConfirmarUbi.Location = new System.Drawing.Point(948, 403);
+            this.materialButtonConfirmarUbi.Location = new System.Drawing.Point(942, 399);
             this.materialButtonConfirmarUbi.Name = "materialButtonConfirmarUbi";
             this.materialButtonConfirmarUbi.Size = new System.Drawing.Size(112, 33);
             this.materialButtonConfirmarUbi.TabIndex = 156;
@@ -92,7 +93,7 @@
             this.materialButtonAfegirUbi.FillColor = System.Drawing.Color.Green;
             this.materialButtonAfegirUbi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.materialButtonAfegirUbi.ForeColor = System.Drawing.Color.White;
-            this.materialButtonAfegirUbi.Location = new System.Drawing.Point(685, 403);
+            this.materialButtonAfegirUbi.Location = new System.Drawing.Point(679, 399);
             this.materialButtonAfegirUbi.Name = "materialButtonAfegirUbi";
             this.materialButtonAfegirUbi.Size = new System.Drawing.Size(112, 33);
             this.materialButtonAfegirUbi.TabIndex = 155;
@@ -110,7 +111,7 @@
             this.materialButtonOrg.FillColor = System.Drawing.Color.Green;
             this.materialButtonOrg.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.materialButtonOrg.ForeColor = System.Drawing.Color.White;
-            this.materialButtonOrg.Location = new System.Drawing.Point(366, 403);
+            this.materialButtonOrg.Location = new System.Drawing.Point(366, 399);
             this.materialButtonOrg.Name = "materialButtonOrg";
             this.materialButtonOrg.Size = new System.Drawing.Size(112, 33);
             this.materialButtonOrg.TabIndex = 154;
@@ -128,7 +129,7 @@
             this.materialButtonSat.FillColor = System.Drawing.Color.Green;
             this.materialButtonSat.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.materialButtonSat.ForeColor = System.Drawing.Color.White;
-            this.materialButtonSat.Location = new System.Drawing.Point(99, 403);
+            this.materialButtonSat.Location = new System.Drawing.Point(99, 399);
             this.materialButtonSat.Name = "materialButtonSat";
             this.materialButtonSat.Size = new System.Drawing.Size(112, 33);
             this.materialButtonSat.TabIndex = 153;
@@ -148,7 +149,7 @@
             this.TextBoxLongitud.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxLongitud.ForeColor = System.Drawing.Color.Black;
             this.TextBoxLongitud.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBoxLongitud.Location = new System.Drawing.Point(685, 145);
+            this.TextBoxLongitud.Location = new System.Drawing.Point(679, 145);
             this.TextBoxLongitud.Name = "TextBoxLongitud";
             this.TextBoxLongitud.PlaceholderText = "";
             this.TextBoxLongitud.SelectedText = "";
@@ -168,7 +169,7 @@
             this.TextBoxLatitud.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxLatitud.ForeColor = System.Drawing.Color.Black;
             this.TextBoxLatitud.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBoxLatitud.Location = new System.Drawing.Point(685, 57);
+            this.TextBoxLatitud.Location = new System.Drawing.Point(679, 57);
             this.TextBoxLatitud.Name = "TextBoxLatitud";
             this.TextBoxLatitud.PlaceholderText = "";
             this.TextBoxLatitud.SelectedText = "";
@@ -177,37 +178,37 @@
             // 
             // dataGridViewUbicacions
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridViewUbicacions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dataGridViewUbicacions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewUbicacions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewUbicacions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.dataGridViewUbicacions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewUbicacions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewUbicacions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewUbicacions.ColumnHeadersHeight = 20;
             this.dataGridViewUbicacions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewUbicacions.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewUbicacions.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewUbicacions.GridColor = System.Drawing.Color.Black;
-            this.dataGridViewUbicacions.Location = new System.Drawing.Point(685, 214);
+            this.dataGridViewUbicacions.Location = new System.Drawing.Point(679, 214);
             this.dataGridViewUbicacions.MultiSelect = false;
             this.dataGridViewUbicacions.Name = "dataGridViewUbicacions";
             this.dataGridViewUbicacions.ReadOnly = true;
             this.dataGridViewUbicacions.RowHeadersVisible = false;
-            this.dataGridViewUbicacions.Size = new System.Drawing.Size(375, 177);
+            this.dataGridViewUbicacions.Size = new System.Drawing.Size(375, 173);
             this.dataGridViewUbicacions.TabIndex = 150;
             this.dataGridViewUbicacions.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewUbicacions.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -256,7 +257,7 @@
             this.gMapControlUbi.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControlUbi.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControlUbi.ShowTileGridLines = false;
-            this.gMapControlUbi.Size = new System.Drawing.Size(613, 356);
+            this.gMapControlUbi.Size = new System.Drawing.Size(607, 352);
             this.gMapControlUbi.TabIndex = 149;
             this.gMapControlUbi.Zoom = 0D;
             // 
@@ -266,7 +267,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(683, 123);
+            this.materialLabel2.Location = new System.Drawing.Point(677, 123);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(68, 19);
@@ -279,7 +280,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(683, 35);
+            this.materialLabel1.Location = new System.Drawing.Point(677, 35);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(55, 19);
@@ -293,7 +294,7 @@
             this.ClientSize = new System.Drawing.Size(1095, 527);
             this.Controls.Add(this.panel1);
             this.Name = "UbicacioForm";
-            this.Text = "MapaForm";
+            this.Text = "Ubicació";
             this.Load += new System.EventHandler(this.UbicacioForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -63,7 +63,7 @@
             this.panel1.Controls.Add(this.materialLabel1);
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(521, 482);
+            this.panel1.Size = new System.Drawing.Size(537, 521);
             this.panel1.TabIndex = 0;
             // 
             // buttonAfegirProducte
@@ -77,7 +77,7 @@
             this.buttonAfegirProducte.FillColor = System.Drawing.Color.Green;
             this.buttonAfegirProducte.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonAfegirProducte.ForeColor = System.Drawing.Color.White;
-            this.buttonAfegirProducte.Location = new System.Drawing.Point(363, 403);
+            this.buttonAfegirProducte.Location = new System.Drawing.Point(379, 442);
             this.buttonAfegirProducte.Name = "buttonAfegirProducte";
             this.buttonAfegirProducte.Size = new System.Drawing.Size(129, 33);
             this.buttonAfegirProducte.TabIndex = 143;
@@ -189,7 +189,7 @@
             this.dataGridViewOpcions.Name = "dataGridViewOpcions";
             this.dataGridViewOpcions.ReadOnly = true;
             this.dataGridViewOpcions.RowHeadersVisible = false;
-            this.dataGridViewOpcions.Size = new System.Drawing.Size(280, 250);
+            this.dataGridViewOpcions.Size = new System.Drawing.Size(296, 289);
             this.dataGridViewOpcions.TabIndex = 28;
             this.dataGridViewOpcions.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewOpcions.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -254,7 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 546);
+            this.ClientSize = new System.Drawing.Size(537, 585);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LotForm";
