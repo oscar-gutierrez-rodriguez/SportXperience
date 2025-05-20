@@ -74,7 +74,7 @@ class AdapterXat(val llista: List<Comment>, val context: Context) :
 
     fun formatISOToDate(isoDate: String): String {
         val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
-        val outputFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
 
         return try {
             val parsedDate = inputFormat.parse(isoDate)

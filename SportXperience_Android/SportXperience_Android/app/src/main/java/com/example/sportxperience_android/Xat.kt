@@ -108,7 +108,7 @@ class Xat : AppCompatActivity() {
                 if (binding.tilMissatgeInsertar.hasFocus()) {
                     inputArea.post {
                         val inputHeight = inputArea.height
-                        inputArea.translationY = -(keypadHeight - inputHeight - 25).toFloat()
+                        inputArea.translationY = -(keypadHeight - inputHeight + 75 /*- 25*/).toFloat()
 
                     }
                 }

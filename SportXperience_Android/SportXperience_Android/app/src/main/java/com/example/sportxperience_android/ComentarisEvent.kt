@@ -66,6 +66,7 @@ class ComentarisEvent : AppCompatActivity() {
 
                 val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(binding.tilMissatgeInsertar.windowToken, 0)
+                binding.inputArea.translationY = 0f
                 binding.tilMissatgeInsertar.clearFocus()
 
                 mostrarComentaris()
@@ -110,7 +111,7 @@ class ComentarisEvent : AppCompatActivity() {
                 if (binding.tilMissatgeInsertar.hasFocus()) {
                     inputArea.post {
                         val inputHeight = inputArea.height
-                        inputArea.translationY = -(keypadHeight - inputHeight + 25).toFloat()
+                        inputArea.translationY = -(keypadHeight - inputHeight + 120 /*+ 25*/).toFloat()
 
                     }
                 }

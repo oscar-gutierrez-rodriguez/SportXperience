@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Normal"
-            android:textColor="@color/black"
+            android:textColor="@color/text_toggle_ruta_color"
             android:id="@+id/normal"
             android:backgroundTint="@color/normal_satelit_selector"
             app:strokeColor="@color/black"/>
@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Satèlit"
-            android:textColor="@color/black"
+            android:textColor="@color/text_toggle_ruta_color"
             android:id="@+id/satelit"
             android:backgroundTint="@color/normal_satelit_selector" />
     </com.google.android.material.button.MaterialButtonToggleGroup>
