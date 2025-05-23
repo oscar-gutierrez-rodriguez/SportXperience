@@ -908,12 +908,22 @@ namespace SportXperience.Controller
         private void ButtonImagen_Click(object sender, EventArgs e)
         {
 
+            
             archiu = new OpenFileDialog();
             archiu.Title = "Imagenes";
             archiu.ShowHelp = true;
             if (archiu.ShowDialog() == DialogResult.OK)
             {
-                fafegir.pictureBoxLogoEvent.Image = Image.FromFile(archiu.FileName);               
+                try
+                {
+                    fafegir.pictureBoxLogoEvent.Image = Image.FromFile(archiu.FileName);
+
+
+                }
+                catch
+                {
+                    MessageBox.Show("El format no és correcte.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             
         }
@@ -1158,6 +1168,7 @@ namespace SportXperience.Controller
             }
             Actuproducts = new List<Product>();
             products = new List<Product>();
+            archiu = new OpenFileDialog();
 
         }
 
@@ -1288,8 +1299,12 @@ InsertarUbicacions()
 
                 urlImage = task.Result;
             }
+            else
+            {
+                urlImage = ev.Image;
+            }
 
-            int numeroParticipants;
+                int numeroParticipants;
 
             if (fafegir.CheckBoxIlimitat.Checked)
             {

@@ -45,9 +45,7 @@ namespace LoginRegister.Controller
                 registerForm.buttonShowPasswordRegistrar.FlatAppearance.MouseOverBackColor = Color.White;
                 registerForm.buttonShowPasswordRegistrar.FlatAppearance.MouseDownBackColor = Color.White;
                 registerForm.comboBoxGenere.DataSource = Repositori.GetGender();
-                registerForm.comboBoxGenere.DisplayMember = "name";
-                loginForm.textBoxNomCorreu.Text = "pedri";
-                loginForm.textBoxContrasenya.Text = "1234";                
+                registerForm.comboBoxGenere.DisplayMember = "name";              
             }
 
             void setListeners()
