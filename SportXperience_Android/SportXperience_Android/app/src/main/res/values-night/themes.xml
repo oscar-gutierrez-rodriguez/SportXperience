@@ -1,7 +1,52 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.SportXperience_Android" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    <style name="Base.Theme.SportXperience_Android" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_primary_nigth</item>
+        <item name="colorOnPrimary">@color/md_theme_onPrimary_nigth</item>
+        <item name="colorPrimaryContainer">@color/md_theme_primaryContainer_nigth</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_onPrimaryContainer_nigth</item>
+        <item name="colorSecondary">@color/md_theme_secondary_nigth</item>
+        <item name="colorOnSecondary">@color/md_theme_onSecondary_nigth</item>
+        <item name="colorSecondaryContainer">@color/md_theme_secondaryContainer_nigth</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_onSecondaryContainer_nigth</item>
+        <item name="colorTertiary">@color/md_theme_tertiary_nigth</item>
+        <item name="colorOnTertiary">@color/md_theme_onTertiary_nigth</item>
+        <item name="colorTertiaryContainer">@color/md_theme_tertiaryContainer_nigth</item>
+        <item name="colorOnTertiaryContainer">@color/md_theme_onTertiaryContainer_nigth</item>
+        <item name="colorError">@color/md_theme_error_nigth</item>
+        <item name="colorOnError">@color/md_theme_onError_nigth</item>
+        <item name="colorErrorContainer">@color/md_theme_errorContainer_nigth</item>
+        <item name="colorOnErrorContainer">@color/md_theme_onErrorContainer_nigth</item>
+        <item name="android:colorBackground">@color/md_theme_background_nigth</item>
+        <item name="colorOnBackground">@color/md_theme_onBackground_nigth</item>
+        <item name="colorSurface">@color/md_theme_surface_nigth</item>
+        <item name="colorOnSurface">@color/md_theme_onSurface_nigth</item>
+        <item name="colorSurfaceVariant">@color/md_theme_surfaceVariant_nigth</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_onSurfaceVariant_nigth</item>
+        <item name="colorOutline">@color/md_theme_outline_nigth</item>
+        <item name="colorOutlineVariant">@color/md_theme_outlineVariant_nigth</item>
+        <item name="colorSurfaceInverse">@color/md_theme_inverseSurface_nigth</item>
+        <item name="colorOnSurfaceInverse">@color/md_theme_inverseOnSurface_nigth</item>
+        <item name="colorPrimaryInverse">@color/md_theme_inversePrimary_nigth</item>
+        <item name="colorPrimaryFixed">@color/md_theme_primaryFixed_nigth</item>
+        <item name="colorOnPrimaryFixed">@color/md_theme_onPrimaryFixed_nigth</item>
+        <item name="colorPrimaryFixedDim">@color/md_theme_primaryFixedDim_nigth</item>
+        <item name="colorOnPrimaryFixedVariant">@color/md_theme_onPrimaryFixedVariant_nigth</item>
+        <item name="colorSecondaryFixed">@color/md_theme_secondaryFixed_nigth</item>
+        <item name="colorOnSecondaryFixed">@color/md_theme_onSecondaryFixed_nigth</item>
+        <item name="colorSecondaryFixedDim">@color/md_theme_secondaryFixedDim_nigth</item>
+        <item name="colorOnSecondaryFixedVariant">@color/md_theme_onSecondaryFixedVariant_nigth</item>
+        <item name="colorTertiaryFixed">@color/md_theme_tertiaryFixed_nigth</item>
+        <item name="colorOnTertiaryFixed">@color/md_theme_onTertiaryFixed_nigth</item>
+        <item name="colorTertiaryFixedDim">@color/md_theme_tertiaryFixedDim_nigth</item>
+        <item name="colorOnTertiaryFixedVariant">@color/md_theme_onTertiaryFixedVariant_nigth</item>
+        <item name="colorSurfaceDim">@color/md_theme_surfaceDim_nigth</item>
+        <item name="colorSurfaceBright">@color/md_theme_surfaceBright_nigth</item>
+        <item name="colorSurfaceContainerLowest">@color/md_theme_surfaceContainerLowest_nigth</item>
+        <item name="colorSurfaceContainerLow">@color/md_theme_surfaceContainerLow_nigth</item>
+        <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer_nigth</item>
+        <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh_nigth</item>
+        <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest_nigth</item>
     </style>
 </resources>

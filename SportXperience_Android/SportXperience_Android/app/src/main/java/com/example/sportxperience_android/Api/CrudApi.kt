@@ -15,24 +15,22 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import kotlin.coroutines.CoroutineContext
 
-class CrudApi(context: Context) : CoroutineScope {
+class CrudApi(context: Context?) : CoroutineScope {
     private var job = Job()
 
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main + job
 
-    val urlApi = context.getString(R.string.ruta_api)
+    val urlApi = context!!.getString(R.string.ruta_api)
 
     private fun getClient(): OkHttpClient {
-        var loggin = HttpLoggingInterceptor()
+        val loggin = HttpLoggingInterceptor()
         loggin.setLevel(HttpLoggingInterceptor.Level.BODY)
-
         return OkHttpClient.Builder().addInterceptor(loggin).build()
     }
 
     private fun getRetrofit(): Retrofit {
         val gson = GsonBuilder().setLenient().create()
-
         return Retrofit.Builder().baseUrl(urlApi).client(getClient())
             .addConverterFactory(GsonConverterFactory.create(gson)).build()
     }
@@ -40,16 +38,16 @@ class CrudApi(context: Context) : CoroutineScope {
     fun getUserByUserPassword(username: String, password: String): User? {
         var usuari: User? = null
         runBlocking {
-            var resposta: Response<User>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java)
-                    .getUserByUserPassword(username, password)
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                usuari = resposta!!.body()
-            else
-                usuari = null
+            try {
+                var resposta: Response<User>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java)
+                        .getUserByUserPassword(username, password)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    usuari = resposta!!.body()
+            } catch (_: Exception) {}
         }
         return usuari
     }
@@ -57,15 +55,15 @@ class CrudApi(context: Context) : CoroutineScope {
     fun getUserByDni(dni: String): User? {
         var usuari: User? = null
         runBlocking {
-            var resposta: Response<User>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getUserByDni(dni)
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                usuari = resposta!!.body()
-            else
-                usuari = null
+            try {
+                var resposta: Response<User>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getUserByDni(dni)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    usuari = resposta!!.body()
+            } catch (_: Exception) {}
         }
         return usuari
     }
@@ -73,15 +71,15 @@ class CrudApi(context: Context) : CoroutineScope {
     fun getUserByUsername(username: String): User? {
         var usuari: User? = null
         runBlocking {
-            var resposta: Response<User>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getUserByUsername(username)
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                usuari = resposta!!.body()
-            else
-                usuari = null
+            try {
+                var resposta: Response<User>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getUserByUsername(username)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    usuari = resposta!!.body()
+            } catch (_: Exception) {}
         }
         return usuari
     }
@@ -89,29 +87,31 @@ class CrudApi(context: Context) : CoroutineScope {
     fun getUserByMail(mail: String): User? {
         var usuari: User? = null
         runBlocking {
-            var resposta: Response<User>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getUserByMail(mail)
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                usuari = resposta!!.body()
-            else
-                usuari = null
+            try {
+                var resposta: Response<User>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getUserByMail(mail)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    usuari = resposta!!.body()
+            } catch (_: Exception) {}
         }
         return usuari
     }
 
-
     fun addUser(user: User): User? {
         var afegit: User? = null
         runBlocking {
-            var resposta: Response<User>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).addUser(user)
-            }
-            cor.join()
-            afegit = resposta!!.body()
+            try {
+                var resposta: Response<User>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).addUser(user)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    afegit = resposta!!.body()
+            } catch (_: Exception) {}
         }
         return afegit
     }
@@ -119,32 +119,31 @@ class CrudApi(context: Context) : CoroutineScope {
     fun getGenderByName(name: String): Gender? {
         var gender: Gender? = null
         runBlocking {
-            var resposta: Response<Gender>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getGenderByName(name)
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                gender = resposta!!.body()
-            else
-                gender = null
+            try {
+                var resposta: Response<Gender>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getGenderByName(name)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    gender = resposta!!.body()
+            } catch (_: Exception) {}
         }
         return gender
     }
 
-
     fun getAllEvents(): List<Event>? {
         var events: List<Event>? = null
         runBlocking {
-            var resposta: Response<List<Event>>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getAllEvents()
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                events = resposta!!.body()
-            else
-                return@runBlocking null
+            try {
+                var resposta: Response<List<Event>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getAllEvents()
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    events = resposta!!.body()
+            } catch (_: Exception) {}
         }
         return events
     }
@@ -152,19 +151,18 @@ class CrudApi(context: Context) : CoroutineScope {
     fun getAllEventsByDni(dni: String): List<Event>? {
         var events: List<Event>? = null
         runBlocking {
-            var resposta: Response<List<Event>>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getAllEvents()
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                events = resposta!!.body()
-            else
-                return@runBlocking null
+            try {
+                var resposta: Response<List<Event>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getAllEvents()
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    events = resposta!!.body()
+            } catch (_: Exception) {}
         }
         return events
     }
-
 
     fun getAllEventsFilter(
         pagament: Int,
@@ -172,96 +170,338 @@ class CrudApi(context: Context) : CoroutineScope {
         ubicacio: String?,
         esport: String?,
         latitude: Double,
-        longitude: Double
+        longitude: Double,
+        dni: String
     ): List<Event>? {
         var events: List<Event>? = null
         runBlocking {
-            var resposta: Response<List<Event>>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getAllEventsFilter(pagament, date, ubicacio, esport, latitude, longitude)
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                events = resposta!!.body()
-            else
-                return@runBlocking null
+            try {
+                var resposta: Response<List<Event>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java)
+                        .getAllEventsFilter(pagament, date, ubicacio, esport, latitude, longitude, dni)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    events = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return events
+    }
+
+    fun getLotByEventId(eventId: Int): Lot? {
+        var lot: Lot? = null
+        runBlocking {
+            try {
+                var resposta: Response<Lot>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getLotByEventId(eventId)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    lot = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return lot
+    }
+
+    fun getOrganizerByEvent(eventId: Int): Participant? {
+        var par: Participant? = null
+        runBlocking {
+            try {
+                var resposta: Response<Participant>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getOrganizerByEventId(eventId)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    par = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return par
+    }
+
+    fun getOptionsByProduct(productId: Int): List<Option>? {
+        var options: List<Option>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<Option>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getOptionsByProduct(productId)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    options = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return options
+    }
+
+    fun getProductsByLot(lotId: Int): List<Product>? {
+        var products: List<Product>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<Product>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getProductsByLot(lotId)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    products = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return products
+    }
+
+    fun getCommentsByEventId(eventId: Int): List<Comment>? {
+        var comments: List<Comment>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<Comment>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getCommentsByEvent(eventId)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    comments = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return comments
+    }
+
+    fun addComment(comment: CommentPost): CommentPost? {
+        var afegit: CommentPost? = null
+        runBlocking {
+            try {
+                var resposta: Response<CommentPost>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).addComment(comment)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    afegit = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return afegit
+    }
+
+
+    fun getCommentsFiltre(comment : String, eventId: Int): List<Comment>? {
+        var comments: List<Comment>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<Comment>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getCommentFiltre(comment, eventId)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    comments = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return comments
+    }
+
+
+    fun addParticipant(participant: Participant): Participant? {
+        var afegit: Participant? = null
+        runBlocking {
+            try {
+                var resposta: Response<Participant>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).addParticipant(participant)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    afegit = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return afegit
+    }
+
+    fun addParticipantOption(participantOption: ParticipantOption): ParticipantOption? {
+        var afegit: ParticipantOption? = null
+        runBlocking {
+            try {
+                var resposta: Response<ParticipantOption>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).addParticipantOption(participantOption)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    afegit = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return afegit
+    }
+
+
+    fun getAllEventsParticipant(dni: String, data: String): MutableList<Event>? {
+        var events: MutableList<Event>? = null
+        runBlocking {
+            try {
+                var resposta: Response<MutableList<Event>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getEventsParticipants(dni, data)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    events = resposta!!.body()
+            } catch (_: Exception) {}
         }
         return events
     }
 
 
-    fun getLotByEventId(eventId: Int): Lot? {
-        var lot: Lot? = null
+    fun deleteParticipant(eventId: Int, userDni: String): Participant? {
+        var afegit: Participant? = null
         runBlocking {
-            var resposta: Response<Lot>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getLotByEventId(eventId)
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                lot = resposta!!.body()
-            else
-                return@runBlocking null
+            try {
+                var resposta: Response<Participant>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).deleteParticipant(eventId, userDni)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    afegit = resposta!!.body()
+            } catch (_: Exception) {}
         }
-        return lot
+        return afegit
     }
 
-    fun getOrganizerByEvent(eventId: Int): Participant {
-        var par: Participant? = null
+
+    fun getParticipantOptionByEventAndDni(eventId: Int, dni: String): List<ParticipantOption>? {
+        var events: List<ParticipantOption>? = null
         runBlocking {
-            var resposta: Response<Participant>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getOrganizerByEventId(eventId)
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                par = resposta!!.body()
-            else
-                return@runBlocking null
+            try {
+                var resposta: Response<List<ParticipantOption>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getParticipantOptionByEventAndDni(eventId, dni)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    events = resposta!!.body()
+            } catch (_: Exception) {}
         }
-        return par!!
+        return events
     }
 
-    fun getOptionsByProduct(productId: Int): List<Option> {
-        var options: List<Option>? = null
+
+    fun deleteParticipantOption(id: Int): ParticipantOption? {
+        var afegit: ParticipantOption? = null
         runBlocking {
-            var resposta: Response<List<Option>>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getOptionsByProduct(productId)
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                options = resposta!!.body()
+            try {
+                var resposta: Response<ParticipantOption>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).deleteParticipantOption(id)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    afegit = resposta!!.body()
+            } catch (_: Exception) {}
         }
-        return options!!
+        return afegit
     }
 
-    fun getProductsByLot(lotId: Int): List<Product> {
-        var products: List<Product>? = null
+
+    fun getAllLevels(): List<RecommendedLevel>? {
+        var levels: List<RecommendedLevel>? = null
         runBlocking {
-            var resposta: Response<List<Product>>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getProductsByLot(lotId)
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                products = resposta!!.body()
+            try {
+                var resposta: Response<List<RecommendedLevel>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getAllLevels()
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    levels = resposta!!.body()
+            } catch (_: Exception) {}
         }
-        return products!!
+        return levels
     }
 
-    fun getCommentsByEventId(eventId: Int): List<Comment> {
+
+    fun getUserResults(userDni: String): List<Resultat>? {
+        var resultats: List<Resultat>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<Resultat>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getUserResults(userDni)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    resultats = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return resultats
+    }
+
+
+    fun getResultsByEventId(eventId: Int): List<Resultat>? {
+        var resultats: List<Resultat>? = null
+        runBlocking {
+            try {
+                var resposta: Response<List<Resultat>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getResultatsByEventId(eventId)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    resultats = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return resultats
+    }
+
+
+    fun getResultsByEventIdAndUserDni(eventId: Int, userDni: String): ResultatNoDTO? {
+        var resultats : ResultatNoDTO? = null
+        runBlocking {
+            try {
+                var resposta: Response<ResultatNoDTO>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getResultatsByEventIdAndUserDni(eventId, userDni)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    resultats = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return resultats
+    }
+
+
+    fun deleteResult(id: Int): ResultatNoDTO? {
+        var eliminat: ResultatNoDTO? = null
+        runBlocking {
+            try {
+                var resposta: Response<ResultatNoDTO>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).deleteResultat(id)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    eliminat = resposta!!.body()
+            } catch (_: Exception) {}
+        }
+        return eliminat
+    }
+
+    fun getChatByEventId(eventId: Int): List<Comment>? {
         var comments: List<Comment>? = null
         runBlocking {
-            var resposta: Response<List<Comment>>? = null
-            val cor = launch {
-                resposta = getRetrofit().create(ApiService::class.java).getCommentsByEvent(eventId)
-            }
-            cor.join()
-            if (resposta!!.isSuccessful)
-                comments = resposta!!.body()
+            try {
+                var resposta: Response<List<Comment>>? = null
+                val cor = launch {
+                    resposta = getRetrofit().create(ApiService::class.java).getChatByEvent(eventId)
+                }
+                cor.join()
+                if (resposta!!.isSuccessful)
+                    comments = resposta!!.body()
+            } catch (_: Exception) {}
         }
-        return comments!!
+        return comments
     }
 
 }

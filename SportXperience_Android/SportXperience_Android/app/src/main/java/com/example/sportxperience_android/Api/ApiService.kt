@@ -2,6 +2,7 @@ package com.example.sportxperience_android.Api
 
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -37,7 +38,7 @@ interface ApiService {
     @GET("/api/events/{dni}")
     suspend fun getAllEventsByDni(@Path("dni") dni: String): Response<List<Event>>
 
-    @GET("/api/events/{pagament}/{date}/{ubicacio}/{esport}/{latitude}/{longitude}")
+    @GET("/api/events/{pagament}/{date}/{ubicacio}/{esport}/{latitude}/{longitude}/{dni}")
     suspend fun getAllEventsFilter(
         @Path("pagament") pagament: Int,
         @Path("date") date: String,
@@ -45,6 +46,7 @@ interface ApiService {
         @Path("esport") esport: String?,
         @Path("latitude") latitude: Double?,
         @Path("longitude") longitude: Double?,
+        @Path("dni") dni: String,
     ): Response<List<Event>>
 
 
@@ -63,5 +65,46 @@ interface ApiService {
     @GET("/api/messages/comments/{eventId}")
     suspend fun getCommentsByEvent(@Path("eventId") eventId: Int): Response<List<Comment>>
 
+    @POST("/api/messages/")
+    suspend fun addComment(@Body comment: CommentPost): Response<CommentPost>
+
+    @GET("/api/messages/{comment}/{eventId}")
+    suspend fun getCommentFiltre(@Path("comment") comment : String, @Path("eventId") eventId: Int): Response<List<Comment>>
+
+    @POST("/api/participants/")
+    suspend fun addParticipant(@Body participant: Participant): Response<Participant>
+
+    @POST("/api/participantsOptions/")
+    suspend fun addParticipantOption(@Body participantOption: ParticipantOption): Response<ParticipantOption>
+
+    @GET("/api/events/participant/{userDni}/{data}")
+    suspend fun getEventsParticipants(@Path("userDni") userDni : String, @Path("data") data : String): Response<MutableList<Event>>
+
+    @DELETE("/api/participants/{eventId}/{userDni}")
+    suspend fun deleteParticipant(@Path("eventId") eventId : Int, @Path("userDni") userDni : String): Response<Participant>
+
+    @GET("/api/participantsOptions/events/{id}/{userDni}")
+    suspend fun getParticipantOptionByEventAndDni(@Path("id") id : Int, @Path("userDni") userDni : String): Response<List<ParticipantOption>>
+
+    @DELETE("/api/participantsOptions/{id}")
+    suspend fun deleteParticipantOption(@Path("id") id : Int): Response<ParticipantOption>
+
+    @GET("/api/recommendedLevel")
+    suspend fun getAllLevels() : Response<List<RecommendedLevel>>
+
+    @GET("/api/results/users/{userDni}")
+    suspend fun getUserResults(@Path("userDni") userDni: String): Response<List<Resultat>>
+
+    @GET("/api/results/events/{eventId}")
+    suspend fun getResultatsByEventId(@Path("eventId") eventId: Int): Response<List<Resultat>>
+
+    @GET("/api/results/{eventId}/{userDni}")
+    suspend fun getResultatsByEventIdAndUserDni(@Path("eventId") eventId: Int, @Path("userDni") userDni: String): Response<ResultatNoDTO>
+
+    @DELETE("/api/results/{id}")
+    suspend fun deleteResultat(@Path("id") id : Int): Response<ResultatNoDTO>
+
+    @GET("/api/messages/chat/{eventId}")
+    suspend fun getChatByEvent(@Path("eventId") eventId: Int): Response<List<Comment>>
 
 }

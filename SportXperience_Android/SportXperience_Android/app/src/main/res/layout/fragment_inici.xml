@@ -1,61 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".FragmentsPrincipal.Inici">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:textSize="30sp"
-        android:textStyle="bold|italic"
-        android:textAlignment="center"
-        android:text="SportXperience" />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/carousel_inici"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="40dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:justificationMode="inter_word"
-        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the."
-        android:lineSpacingExtra="5dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="SportXperience"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/carousel_inici"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:gravity="center_horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="45dp"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="5dp"
+                android:text="Amb SportXperience pots consultar fàcilment tots els esdeveniments disponibles i accedir a la informació actualitzada en tot moment. Inscriu-te als esdeveniments que t'interessen amb només uns tocs. A més, podràs seguir els resultats i les novetats des del teu dispositiu, estiguis on estiguis." />
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="140dp"
-            android:layout_height="60dp"
-            android:textStyle="bold"
-            android:id="@+id/bt_nivell"
-            android:text="Quin és el meu nivell?"
-            android:layout_marginEnd="10dp"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="140dp"
-            android:layout_height="60dp"
-            android:textStyle="bold"
-            android:id="@+id/bt_form_contacte"
-            android:text="Formulari de contacte"
-            android:layout_marginStart="10dp"/>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/bt_nivell"
+                    android:layout_width="140dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Quin és el meu nivell?"
+                    android:textStyle="bold" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/bt_form_contacte"
+                    android:layout_width="140dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Formulari de contacte"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

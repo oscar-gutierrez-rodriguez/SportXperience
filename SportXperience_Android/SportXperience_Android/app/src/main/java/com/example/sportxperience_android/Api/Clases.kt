@@ -44,7 +44,10 @@ data class Event(
     val startDate: String,
     val ubicationId: Int,
     val latitude: Float,
-    val longitude: Float
+    val longitude: Float,
+    val participant : Boolean,
+    val organizer : Boolean,
+    val placesValides : Int
 ) : Parcelable
 
 
@@ -56,12 +59,12 @@ data class Lot(
 )
 
 data class Participant(
-    val event: Any,
+    val event: Any?,
     val eventId: Int,
     val organizer: Boolean,
-    val results: List<Any>,
+    val results: List<Any>?,
     val userDni: String,
-    val userDniNavigation: Any
+    val userDniNavigation: Any?
 )
 
 data class Product(
@@ -85,8 +88,55 @@ data class Comment(
     val messageId: Int,
     val publicMessage: Boolean,
     val publishedDate: String,
+    val userDni: String,
+    val usernameOrganizer: String
+)
+
+data class CommentPost(
+    val comment: String,
+    val event: Any?,
+    val eventId: Int,
+    val messageId: Int?,
+    val publicMessage: Boolean,
+    val publishedDate: String,
+    val userDni: String,
+    val userDniNavigation: Any?
+)
+
+data class ParticipantOption(
+    val eventId: Int,
+    val option: Any?,
+    val optionId: Int,
+    val participant: Any?,
+    val participantOptionId: Int?,
     val userDni: String
 )
+
+data class RecommendedLevel(
+    val events: List<Any>,
+    val name: String,
+    val recommendedLevelId: Int
+)
+
+data class Resultat(
+    val eventId: Int,
+    val name: String,
+    val position: Int,
+    val resultId: Int,
+    val userDni: String,
+    val image: String
+)
+
+data class ResultatNoDTO(
+    val eventId: Int,
+    val participant: Any,
+    val position: Int,
+    val resultId: Int,
+    val userDni: String
+)
+
+
+
 
 
 

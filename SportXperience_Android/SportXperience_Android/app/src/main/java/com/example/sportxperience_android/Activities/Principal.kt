@@ -1,11 +1,9 @@
-package com.example.sportxperience_android
+package com.example.sportxperience_android.Activities
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AppCompatActivity
@@ -18,11 +16,10 @@ import com.example.sportxperience_android.FragmentsPrincipal.Events
 import com.example.sportxperience_android.FragmentsPrincipal.Inici
 import com.example.sportxperience_android.FragmentsPrincipal.Participants
 import com.example.sportxperience_android.FragmentsPrincipal.Resultats
-import com.example.sportxperience_android.databinding.ActivityMainBinding
+import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.ActivityPrincipalBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.LatLng
 
 var ubicacioActual : LatLng? = null
@@ -40,6 +37,20 @@ class Principal : AppCompatActivity() {
     val REQUEST_LOCATION_CODE = 1
     var permisLocalitzacio = false
 
+    companion object {
+        const val SELECTED_ITEM_ID = "selectedItemId"
+    }
+
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_principal)
+        currentFragment?.let {
+            supportFragmentManager.putFragment(outState, "currentFragment", it)
+        }
+        outState.putInt(SELECTED_ITEM_ID, binding.bnv1.selectedItemId)
+    }
+
 
     @RequiresPermission(allOf = [Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION])
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,8 +58,8 @@ class Principal : AppCompatActivity() {
         enableEdgeToEdge()
 
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
@@ -57,23 +68,32 @@ class Principal : AppCompatActivity() {
 
         if (comprovarSiTenimElPermis()) {
             permisLocalitzacio = true
-
             fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-
-            fusedLocationClient.lastLocation
-                .addOnSuccessListener { ubicacio: Location? ->
-                    if (ubicacio != null) {
-                        ubicacioActual = LatLng(ubicacio.latitude, ubicacio.longitude)
-                    }
+            fusedLocationClient.lastLocation.addOnSuccessListener { ubicacio: Location? ->
+                if (ubicacio != null) {
+                    ubicacioActual = LatLng(ubicacio.latitude, ubicacio.longitude)
                 }
+            }
         } else {
             demanarPermisos()
         }
 
-        canviFragment(inici)
+        if (savedInstanceState != null) {
+            val fragment = supportFragmentManager.getFragment(savedInstanceState, "currentFragment")
+            fragment?.let {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fcv_principal, it)
+                    .commit()
+            }
+            val selectedItemId = savedInstanceState.getInt(SELECTED_ITEM_ID, R.id.menu_inici)
+            binding.bnv1.selectedItemId = selectedItemId // <- Esto restaura el ítem visual
+        } else {
+            canviFragment(inici)
+            binding.bnv1.selectedItemId = R.id.menu_inici
+        }
 
         binding.bnv1.setOnItemSelectedListener { item ->
-            when(item.itemId){
+            when (item.itemId) {
                 R.id.menu_inici -> {
                     canviFragment(inici)
                     true
@@ -82,18 +102,19 @@ class Principal : AppCompatActivity() {
                     canviFragment(events)
                     true
                 }
-                R.id.menu_participacions ->{
+                R.id.menu_participacions -> {
                     canviFragment(participants)
                     true
                 }
-                else -> {
+                R.id.menu_resultats -> {
                     canviFragment(resultats)
                     true
                 }
+                else -> false
             }
         }
-
     }
+
 
     fun canviFragment(frag: Fragment){
         val transaccio = supportFragmentManager.beginTransaction()

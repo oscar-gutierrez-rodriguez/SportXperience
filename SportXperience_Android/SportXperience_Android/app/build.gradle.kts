@@ -37,6 +37,10 @@ android {
     buildFeatures{
         viewBinding = true
     }
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
 }
 
 dependencies {
@@ -67,4 +71,8 @@ dependencies {
 
     implementation(libs.glide)
     implementation(kotlin("script-runtime"))
+
+    implementation("com.leinardi.android:speed-dial:3.3.0")
+
+
 }

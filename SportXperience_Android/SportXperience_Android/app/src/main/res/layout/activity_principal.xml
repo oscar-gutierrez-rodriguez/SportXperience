@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Principal">
+    tools:context=".Activities.Principal">
 
 
     <androidx.fragment.app.FragmentContainerView
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/bnv1"
         app:menu="@menu/bottom_menu"
-        android:background="?android:attr/windowBackground"
+        android:background="#8EC78E"
         android:fitsSystemWindows="true"
         app:labelVisibilityMode="labeled"
         app:layout_constraintStart_toStartOf="parent"

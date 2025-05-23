@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sportxperience_android.Api.Comment
 import com.example.sportxperience_android.Api.CrudApi
-import com.example.sportxperience_android.Api.Product
 import com.example.sportxperience_android.R
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -16,6 +15,8 @@ import java.util.Locale
 
 class AdapterComments(val llista: List<Comment>, val context: Context) :
     RecyclerView.Adapter<AdapterComments.ViewHolder>() {
+
+    val api = CrudApi(context)
 
     class ViewHolder(val vista: View) : RecyclerView.ViewHolder(vista) {
         val nomUsuari = vista.findViewById<TextView>(R.id.comentariNomUsuari_card)
@@ -33,7 +34,10 @@ class AdapterComments(val llista: List<Comment>, val context: Context) :
     override fun getItemCount() = llista.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.nomUsuari.setText(llista[position].userDni)
+
+        val userName = api.getUserByDni(llista[position].userDni)!!.username
+
+        holder.nomUsuari.setText(userName)
         holder.text.setText(llista[position].comment)
         holder.data.setText(formatISOToDate(llista[position].publishedDate))
     }

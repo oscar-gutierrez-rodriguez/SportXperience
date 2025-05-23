@@ -1,16 +1,22 @@
 package com.example.sportxperience_android.FragmentsPrincipal
 
+import android.graphics.Rect
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sportxperience_android.Adapters.AdapterEvents
 import com.example.sportxperience_android.Api.CrudApi
+import com.example.sportxperience_android.Login.user
+import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentEventsBinding
-import com.example.sportxperience_android.ubicacioActual
+import com.example.sportxperience_android.Activities.ubicacioActual
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -35,8 +41,26 @@ class Events : Fragment() {
 
     private var pagament: Int = 2
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        requireActivity().onBackPressedDispatcher.addCallback(
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    val transaccio = parentFragmentManager.beginTransaction()
+                    transaccio.replace(R.id.fcv_principal, Inici())
+                    transaccio.commit()
+                    parentFragmentManager.popBackStack()
+
+                    val bottomNavigationView =
+                        requireActivity().findViewById<BottomNavigationView>(R.id.bnv1)
+                    bottomNavigationView.selectedItemId = R.id.menu_inici
+                }
+            })
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -50,11 +74,11 @@ class Events : Fragment() {
 
         binding = FragmentEventsBinding.inflate(inflater, container, false)
 
+
         binding.evTotsDos.isChecked = true
 
-        if(ubicacioActual != null) {
-            mostrarEvents()
-        }
+        mostrarEvents()
+
 
 
         binding.evGratuit.setOnClickListener {
@@ -100,11 +124,37 @@ class Events : Fragment() {
             mostrarEvents()
         }
 
+
+        binding.main.viewTreeObserver.addOnGlobalLayoutListener {
+            val rect = Rect()
+            binding.main.getWindowVisibleDisplayFrame(rect)
+            val screenHeight = binding.main.rootView.height
+            val keypadHeight = screenHeight - rect.bottom
+
+
+            if (!(keypadHeight > screenHeight * 0.15)) {
+                clearAllEditTextFocus(binding.main)
+            }
+        }
+
         // Inflate the layout for this fragment
         return binding.root
     }
 
     companion object {
+        var refrescar = false
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (refrescar) {
+            mostrarEvents()
+            refrescar = false
+        }
+    }
+
+
+    /*companion object {
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
@@ -122,7 +172,7 @@ class Events : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
-    }
+    }*/
 
 
     fun mostrarEvents() {
@@ -134,14 +184,17 @@ class Events : Fragment() {
                 it,
                 if (binding.tilCiutat.text.toString().isNullOrEmpty()) "null" else binding.tilCiutat.text.toString(),
                 if (binding.tilEsport.text.toString().isNullOrEmpty()) "null" else binding.tilEsport.text.toString(),
-                ubicacioActual!!.latitude,
-                ubicacioActual!!.longitude
+                if (ubicacioActual != null) ubicacioActual!!.latitude else 0.0,
+                if (ubicacioActual != null) ubicacioActual!!.longitude else 0.0,
+                user!!.dni
             )
         }
 
 
         if (events != null) {
-            val adapter = context?.let { AdapterEvents(events, it) }
+
+            val eventsFiltrats = events.filter { (it.maxParticipantsNumber == 0 || it.placesValides != 0) && it.participant == false}
+            val adapter = context?.let { AdapterEvents(eventsFiltrats, it) }
 
             binding.recyclerEvents.layoutManager = LinearLayoutManager(context)
             binding.recyclerEvents.adapter = adapter
@@ -162,6 +215,16 @@ class Events : Fragment() {
             outputFormat.format(parsedDate ?: Date())
         } catch (e: Exception) {
             null
+        }
+    }
+
+    fun clearAllEditTextFocus(view: View) {
+        if (view is TextInputEditText && view.hasFocus()) {
+            view.clearFocus()
+        } else if (view is ViewGroup) {
+            for (i in 0 until view.childCount) {
+                clearAllEditTextFocus(view.getChildAt(i))
+            }
         }
     }
 }
