@@ -34,7 +34,7 @@ namespace ApiSportXperience.Controllers
         public async Task<ActionResult<User>> GetUserByUsername(string username)
         {
             var user = _context.Users
-                .AsEnumerable()
+                .AsEnumerable() 
                 .Where(x => x.Username.Equals(username, StringComparison.Ordinal))
                 .FirstOrDefault();
 

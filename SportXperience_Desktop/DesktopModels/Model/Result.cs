@@ -14,5 +14,7 @@ namespace SportXperience.Model
         public int? EventId { get; set; }
 
         public virtual Participant Participant { get; set; }
+
+        public Result() { }
     }
 }

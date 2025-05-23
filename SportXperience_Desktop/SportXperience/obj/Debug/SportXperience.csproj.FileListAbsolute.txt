@@ -57,3 +57,6 @@ C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\System.Data.SQLite.xml
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\System.Security.Principal.Windows.xml
 C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.View.UbicacioForm.resources
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.View.ProductesParticipantForm.resources
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\bin\Debug\Guna.UI2.dll
+C:\RepositorySportXperience\SportXperience\SportXperience_Desktop\SportXperience\obj\Debug\SportXperience.exe.config

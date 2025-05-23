@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ApiSportXperience.Models;
+using Newtonsoft.Json;
 using SportXperience.Model;
 using System;
 using System.Collections.Generic;
@@ -339,6 +340,21 @@ namespace DesktopModels.Model
             return l;
         }
 
+        public static Result InsResultats(Result result)
+        {
+            Result l = null;
+            try
+            {
+                l = (Result)MakeRequest("results/", "POST", result, typeof(Result)).Result;
+            }
+            catch { }
+            if (l == null)
+            {
+                l = new Result();
+            }
+            return l;
+        }
+
         public static Product GetProductsByLotIdAndName(int idLot,string nom)
         {
             Product la = null;
@@ -510,6 +526,70 @@ namespace DesktopModels.Model
             }
             return la;
         }
+
+        public static List<ParticipantDTO> GetParticipantByEventId(int EventId)
+        {
+            List<ParticipantDTO> la = null;
+            try
+            {
+                la = (List<ParticipantDTO>)MakeRequest("participants/noorganizer/" + EventId, "GET", null, typeof(List<ParticipantDTO>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<ParticipantDTO>();
+            }
+            return la;
+        }
+
+        public static List<ResultDTO> GetResultByEventId(int EventId)
+        {
+            List<ResultDTO> la = null;
+            try
+            {
+                la = (List<ResultDTO>)MakeRequest("results/events/" + EventId, "GET", null, typeof(List<ResultDTO>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<ResultDTO>();
+            }
+            return la;
+        }
+
+        public static void DelResultat(Result r)
+        {
+            int id = r.ResultId;
+            Result re = null;
+            try
+            {
+                re = (Result)MakeRequest("results/" + id, "DELETE", r, typeof(Result)).Result;
+            }
+            catch
+            {
+                if (re == null)
+                {
+                    re = new Result();
+                }
+            }
+
+        }
+
+        public static List<ParticipantOptionDTO> GetParticipantOptionsByEventId(int EventId)
+        {
+            List<ParticipantOptionDTO> la = null;
+            try
+            {
+                la = (List<ParticipantOptionDTO>)MakeRequest("participantsOptions/events/" + EventId, "GET", null, typeof(List<ParticipantOptionDTO>)).Result;
+            }
+            catch { }
+            if (la == null)
+            {
+                la = new List<ParticipantOptionDTO>();
+            }
+            return la;
+        }
+
 
         public static async Task<string> PostImageEvent(string rutaImagen)
         {

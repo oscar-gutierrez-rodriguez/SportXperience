@@ -17,6 +17,7 @@ namespace SportXperience.View
         public LoginForm()
         {
             InitializeComponent();
+
             materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
             materialSkinManager.EnforceBackcolorOnAllComponents = false;
             materialSkinManager.AddFormToManage(this);

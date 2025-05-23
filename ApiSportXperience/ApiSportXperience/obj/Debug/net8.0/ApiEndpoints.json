@@ -110,39 +110,8 @@
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.EventsController",
-    "Method": "GetEvents",
-    "RelativePath": "api/events/{lat}/{lon}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "lat",
-        "Type": "System.Single",
-        "IsRequired": true
-      },
-      {
-        "Name": "lon",
-        "Type": "System.Single",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.Event, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ApiSportXperience.Controllers.EventsController",
     "Method": "GetEventFiltre",
-    "RelativePath": "api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}",
+    "RelativePath": "api/events/{pagament}/{data}/{ubicacio}/{esport}/{latitude}/{longitude}/{dni}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -176,11 +145,16 @@
         "Name": "longitude",
         "Type": "System.Single",
         "IsRequired": true
+      },
+      {
+        "Name": "dni",
+        "Type": "System.String",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.EventDTO, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.EventDTOParticipant, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -269,6 +243,37 @@
     "ReturnTypes": [
       {
         "Type": "ApiSportXperience.Models.Event",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.EventsController",
+    "Method": "GetEventsParticipant",
+    "RelativePath": "api/events/participant/{userdni}/{data}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userdni",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "data",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.EventDTOParticipant, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -572,6 +577,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.MessagesController",
+    "Method": "GetMessagesChatByEvent",
+    "RelativePath": "api/messages/chat/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.MessageDTO, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.MessagesController",
@@ -923,6 +954,32 @@
   },
   {
     "ContainingType": "ApiSportXperience.Controllers.ParticipantsController",
+    "Method": "GetNoOrganizerByEvent",
+    "RelativePath": "api/participants/noorganizer/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.ParticipantDTO, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ParticipantsController",
     "Method": "GetOrganizerByEvent",
     "RelativePath": "api/participants/organizer/{eventId}",
     "HttpMethod": "GET",
@@ -938,6 +995,255 @@
     "ReturnTypes": [
       {
         "Type": "ApiSportXperience.Models.Participant",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ParticipantOptionsController",
+    "Method": "GetParticipantOptions",
+    "RelativePath": "api/participantsOptions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.ParticipantOption, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ParticipantOptionsController",
+    "Method": "PostParticipantOption",
+    "RelativePath": "api/participantsOptions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "participantOption",
+        "Type": "ApiSportXperience.Models.ParticipantOption",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSportXperience.Models.ParticipantOption",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ParticipantOptionsController",
+    "Method": "GetParticipantOption",
+    "RelativePath": "api/participantsOptions/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSportXperience.Models.ParticipantOption",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ParticipantOptionsController",
+    "Method": "PutParticipantOption",
+    "RelativePath": "api/participantsOptions/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "participantOption",
+        "Type": "ApiSportXperience.Models.ParticipantOption",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ParticipantOptionsController",
+    "Method": "DeleteParticipantOption",
+    "RelativePath": "api/participantsOptions/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ParticipantOptionsController",
+    "Method": "GetParticipantOptionByParticipantDni",
+    "RelativePath": "api/participantsOptions/{id}/{dni}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dni",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSportXperience.Models.ParticipantOption",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ParticipantOptionsController",
+    "Method": "GetParticipantOptionsByEvent",
+    "RelativePath": "api/participantsOptions/events/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.ParticipantOptionDTO, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ParticipantOptionsController",
+    "Method": "GetParticipantOptionByEventIdDni",
+    "RelativePath": "api/participantsOptions/events/{id}/{dni}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dni",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.ParticipantOption, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ParticipantOptionsController",
+    "Method": "GetParticipantOptionByOptionId",
+    "RelativePath": "api/participantsOptions/option/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.ParticipantOption, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ParticipantOptionsController",
+    "Method": "GetParticipantOptionByParticipantDni",
+    "RelativePath": "api/participantsOptions/participant/{dni}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dni",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.ParticipantOption, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1168,6 +1474,37 @@
   {
     "ContainingType": "ApiSportXperience.Controllers.ResultsController",
     "Method": "GetResult",
+    "RelativePath": "api/results/{eventId}/{userDni}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userDni",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ApiSportXperience.Models.Result",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiSportXperience.Controllers.ResultsController",
+    "Method": "GetResult",
     "RelativePath": "api/results/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -1244,7 +1581,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.Result, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.ResultDTO, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1270,7 +1607,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.Result, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiSportXperience.Models.ResultDTO, ApiSportXperience, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

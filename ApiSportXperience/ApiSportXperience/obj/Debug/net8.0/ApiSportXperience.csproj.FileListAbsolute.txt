@@ -274,12 +274,6 @@ C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\o
 C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\staticwebassets.build.json
 C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\staticwebassets.development.json
 C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\staticwebassets\msbuild.ApiSportXperience.Microsoft.AspNetCore.StaticWebAssets.props
-C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\staticwebassets\msbuild.ApiSportXperience.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\staticwebassets\msbuild.build.ApiSportXperience.props
-C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ApiSportXperience.props
-C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ApiSportXperience.props
-C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\staticwebassets.pack.json
 C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSport.9CC13B10.Up2Date
 C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSportXperience.dll
@@ -576,3 +570,8 @@ C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\n
 C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSportXperience.pdb
 C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSportXperience.genruntimeconfig.cache
 C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ref\ApiSportXperience.dll
+C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSportXperience.RazorAssemblyInfo.cache
+C:\SportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSportXperience.RazorAssemblyInfo.cs
+C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSportXperience.RazorAssemblyInfo.cache
+C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\ApiSportXperience.RazorAssemblyInfo.cs
+C:\RepositorySportXperience\SportXperience\ApiSportXperience\ApiSportXperience\obj\Debug\net8.0\staticwebassets.build.json.cache

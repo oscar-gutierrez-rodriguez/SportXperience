@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "mdmG6EI5lb0=",
+=======
+  "dgSpecHash": "6AAjtRXHkGo=",
+>>>>>>> Desktop
   "success": true,
   "projectFilePath": "C:\\SportXperience\\SportXperience\\ApiSportXperience\\ApiSportXperience\\ApiSportXperience.csproj",
   "expectedPackageFiles": [

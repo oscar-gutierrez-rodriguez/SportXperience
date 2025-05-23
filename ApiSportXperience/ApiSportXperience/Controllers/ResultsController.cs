@@ -23,16 +23,36 @@ namespace ApiSportXperience.Controllers
         // GET: api/Results
         [HttpGet]
         [Route("api/results/events/{eventId}")]
-        public async Task<ActionResult<IEnumerable<Result>>> GetResultsByEvent(int eventId)
+        public async Task<ActionResult<IEnumerable<ResultDTO>>> GetResultsByEvent(int eventId)
         {
-            return await _context.Results.Where(x => x.EventId == eventId).ToListAsync();
+            return await _context.Results.Where(x => x.EventId == eventId)
+               .Select(x => new ResultDTO
+               {
+                   ResultId = x.ResultId,
+                   EventId = x.EventId,
+                   UserDni = x.UserDni,
+                   Name = _context.Users.Where(y => y.Dni == x.UserDni).FirstOrDefault().Username,
+                   Position = x.Position
+               })
+               .OrderBy(x => x.Position)
+               .ToListAsync();
         }
 
         [HttpGet]
         [Route("api/results/users/{userDni}")]
-        public async Task<ActionResult<IEnumerable<Result>>> GetResultsByUser(string userDni)
+        public async Task<ActionResult<IEnumerable<ResultDTO>>> GetResultsByUser(string userDni)
         {
-            return await _context.Results.Where(x => x.UserDni.Equals(userDni)).ToListAsync();
+            return await _context.Results.Where(x => x.UserDni.Equals(userDni))
+                .Select(x => new ResultDTO
+                {
+                    EventId = x.EventId,
+                    UserDni = x.UserDni,
+                    Position = x.Position,
+                    ResultId = x.ResultId,
+                    Name = _context.Events.Where(y => y.EventId == x.EventId).FirstOrDefault().Name,
+                    Image = _context.Events.Where(y => y.EventId == x.EventId).FirstOrDefault().Image
+                })
+                .ToListAsync();
         }
 
         // GET: api/Results/5
@@ -41,6 +61,21 @@ namespace ApiSportXperience.Controllers
         public async Task<ActionResult<Result>> GetResult(int id)
         {
             var result = await _context.Results.FindAsync(id);
+
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return result;
+        }
+
+
+        [HttpGet]
+        [Route("api/results/{eventId}/{userDni}")]
+        public async Task<ActionResult<Result>> GetResult(int eventId, string userDni)
+        {
+            var result = await _context.Results.Where(x => x.EventId == eventId && x.UserDni.Equals(userDni)).FirstOrDefaultAsync();
 
             if (result == null)
             {
