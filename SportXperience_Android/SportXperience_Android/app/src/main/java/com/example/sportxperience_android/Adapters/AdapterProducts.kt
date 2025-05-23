@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.Product
 import com.example.sportxperience_android.R
-import com.example.sportxperience_android.numOpcions
+import com.example.sportxperience_android.Activities.numOpcions
 
 
 class AdapterProducts(val llista: List<Product>, val context: Context) :

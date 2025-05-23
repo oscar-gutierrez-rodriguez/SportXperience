@@ -1,6 +1,5 @@
-package com.example.sportxperience_android
+package com.example.sportxperience_android.Activities
 
-import android.content.Context
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
@@ -17,8 +16,11 @@ import com.example.sportxperience_android.Adapters.AdapterComments
 import com.example.sportxperience_android.Api.CommentPost
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Login.user
+import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.ActivityComentarisEventBinding
 import com.google.android.material.textfield.TextInputEditText
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class ComentarisEvent : AppCompatActivity() {
 
@@ -64,7 +66,7 @@ class ComentarisEvent : AppCompatActivity() {
 
                 binding.tilMissatgeInsertar.setText("")
 
-                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(binding.tilMissatgeInsertar.windowToken, 0)
                 binding.inputArea.translationY = 0f
                 binding.tilMissatgeInsertar.clearFocus()
@@ -131,8 +133,8 @@ class ComentarisEvent : AppCompatActivity() {
 
 
     fun getDataActual(): String {
-        val formatter = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
-        val now = java.time.LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
+        val now = LocalDateTime.now()
         return now.format(formatter)
     }
 

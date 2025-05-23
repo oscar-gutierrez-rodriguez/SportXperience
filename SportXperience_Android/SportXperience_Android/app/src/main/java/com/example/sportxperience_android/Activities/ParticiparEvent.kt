@@ -1,4 +1,4 @@
-package com.example.sportxperience_android
+package com.example.sportxperience_android.Activities
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -22,6 +22,7 @@ import com.example.sportxperience_android.Api.Event
 import com.example.sportxperience_android.Api.Participant
 import com.example.sportxperience_android.FragmentsPrincipal.Events
 import com.example.sportxperience_android.Login.user
+import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.ActivityParticiparEventBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 

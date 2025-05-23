@@ -1,6 +1,9 @@
 package com.example.sportxperience_android.FragmentsPrincipal
 
+import android.graphics.Rect
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +16,7 @@ import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentResultatsBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.textfield.TextInputEditText
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,6 +69,30 @@ class Resultats : Fragment() {
 
         mostrarResultats()
 
+        binding.tieFiltre.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                mostrarResultats()
+            }
+        })
+
+        binding.main.viewTreeObserver.addOnGlobalLayoutListener {
+            val rect = Rect()
+            binding.main.getWindowVisibleDisplayFrame(rect)
+            val screenHeight = binding.main.rootView.height
+            val keypadHeight = screenHeight - rect.bottom
+
+
+            if (!(keypadHeight > screenHeight * 0.15)) {
+                clearAllEditTextFocus(binding.main)
+            }
+        }
+
         return binding.root
     }
 
@@ -89,26 +117,36 @@ class Resultats : Fragment() {
     }
 
 
-    fun mostrarResultats(){
-
+    fun mostrarResultats() {
         val api = CrudApi(context)
-
         val resultats = api.getUserResults(user!!.dni)
 
-        if (resultats != null){
+        if (resultats != null) {
+            val adapter: AdapterResults
 
-            val adapter : AdapterResults
-            if(!binding.tieFiltre.text.toString().isNullOrEmpty()){
-                val resultatsFiltrats = resultats.filter { (it.name.contains(binding.tieFiltre.text.toString()))}
-                adapter = AdapterResults(resultatsFiltrats, context)
-            } else{
-                adapter = AdapterResults(resultats, context)
+            val filtre = binding.tieFiltre.text.toString()
+            adapter = if (filtre.isNotEmpty()) {
+                val resultatsFiltrats = resultats.filter {
+                    it.name.contains(filtre, ignoreCase = true)
+                }
+                AdapterResults(resultatsFiltrats, context)
+            } else {
+                AdapterResults(resultats, context)
             }
 
             binding.recyclerResultats.layoutManager = LinearLayoutManager(context)
             binding.recyclerResultats.adapter = adapter
-
         }
-
     }
+
+    fun clearAllEditTextFocus(view: View) {
+        if (view is TextInputEditText && view.hasFocus()) {
+            view.clearFocus()
+        } else if (view is ViewGroup) {
+            for (i in 0 until view.childCount) {
+                clearAllEditTextFocus(view.getChildAt(i))
+            }
+        }
+    }
+
 }

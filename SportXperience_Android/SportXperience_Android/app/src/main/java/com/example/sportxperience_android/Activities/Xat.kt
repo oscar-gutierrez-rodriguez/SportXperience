@@ -1,4 +1,4 @@
-package com.example.sportxperience_android
+package com.example.sportxperience_android.Activities
 
 import android.graphics.Rect
 import android.os.Bundle
@@ -10,13 +10,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.sportxperience_android.Adapters.AdapterComments
 import com.example.sportxperience_android.Adapters.AdapterXat
 import com.example.sportxperience_android.Api.CommentPost
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Login.user
+import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.ActivityXatBinding
 import com.google.android.material.textfield.TextInputEditText
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class Xat : AppCompatActivity() {
 
@@ -122,8 +124,8 @@ class Xat : AppCompatActivity() {
     }
 
     fun getDataActual(): String {
-        val formatter = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
-        val now = java.time.LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
+        val now = LocalDateTime.now()
         return now.format(formatter)
     }
 

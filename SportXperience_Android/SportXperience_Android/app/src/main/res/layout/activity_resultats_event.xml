@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".ComentarisEvent">
+    tools:context=".Activities.ComentarisEvent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +21,6 @@
             android:id="@+id/bt_tornar"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:scaleType="centerInside"
             android:padding="7dp" />
 
         <TextView

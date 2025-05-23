@@ -1,4 +1,4 @@
-package com.example.sportxperience_android
+package com.example.sportxperience_android.Activities
 
 import android.app.Activity
 import android.app.AlertDialog
@@ -16,6 +16,7 @@ import com.example.sportxperience_android.Api.ParticipantOption
 import com.example.sportxperience_android.Api.Product
 import com.example.sportxperience_android.FragmentsPrincipal.Events
 import com.example.sportxperience_android.Login.user
+import com.example.sportxperience_android.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.button.MaterialButton
 

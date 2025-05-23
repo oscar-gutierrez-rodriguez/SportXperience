@@ -1,4 +1,4 @@
-package com.example.sportxperience_android
+package com.example.sportxperience_android.Activities
 
 import android.os.Bundle
 import android.view.View
@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.sportxperience_android.Adapters.AdapterComments
 import com.example.sportxperience_android.Adapters.AdapterResultsEvent
 import com.example.sportxperience_android.Api.CrudApi
+import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.ActivityResultatsEventBinding
 
 class Resultats_Event : AppCompatActivity() {

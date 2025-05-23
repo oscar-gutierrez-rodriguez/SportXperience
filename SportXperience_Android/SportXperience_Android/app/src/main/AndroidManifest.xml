@@ -18,20 +18,20 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Xat"
+            android:name=".Activities.Xat"
             android:exported="false" />
         <activity
-            android:name=".Resultats_Event"
+            android:name=".Activities.Resultats_Event"
             android:exported="false" />
         <activity
-            android:name=".ComentarisEvent"
+            android:name=".Activities.ComentarisEvent"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ActivityRuta"
+            android:name=".Activities.ActivityRuta"
             android:exported="false" />
         <activity
-            android:name=".ParticiparEvent"
+            android:name=".Activities.ParticiparEvent"
             android:exported="false" />
         <activity
             android:name=".Formularis.FormulariContacte"
@@ -40,7 +40,7 @@
             android:name=".Formularis.FormulariNivell"
             android:exported="false" />
         <activity
-            android:name=".Principal"
+            android:name=".Activities.Principal"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".ComentarisEvent">
+    tools:context=".Activities.ComentarisEvent">
 
     <ImageView
         android:layout_width="50dp"
@@ -16,7 +16,6 @@
         android:id="@+id/bt_tornar"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:scaleType="centerInside"
         android:padding="7dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>

@@ -13,7 +13,7 @@ import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentEventsBinding
-import com.example.sportxperience_android.ubicacioActual
+import com.example.sportxperience_android.Activities.ubicacioActual
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.textfield.TextInputEditText

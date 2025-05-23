@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Api.User
-import com.example.sportxperience_android.Principal
+import com.example.sportxperience_android.Activities.Principal
 import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.FragmentIniciarSessioBinding
 import com.google.android.material.button.MaterialButton

@@ -11,7 +11,6 @@ import com.example.sportxperience_android.Api.Comment
 import com.example.sportxperience_android.Api.CrudApi
 import com.example.sportxperience_android.Login.user
 import com.example.sportxperience_android.R
-import com.example.sportxperience_android.eventParticipar
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

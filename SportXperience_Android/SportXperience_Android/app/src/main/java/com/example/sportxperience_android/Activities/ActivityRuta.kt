@@ -1,4 +1,4 @@
-package com.example.sportxperience_android
+package com.example.sportxperience_android.Activities
 
 import android.Manifest
 import android.content.Intent
@@ -6,15 +6,14 @@ import android.graphics.Color
 import android.location.Location
 import android.net.Uri
 import android.os.Bundle
-import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.sportxperience_android.Api.Ruta
+import com.example.sportxperience_android.R
 import com.example.sportxperience_android.WebServiceRuta.ApiRutes
 import com.example.sportxperience_android.databinding.ActivityRutaBinding
 import com.google.android.gms.maps.CameraUpdateFactory

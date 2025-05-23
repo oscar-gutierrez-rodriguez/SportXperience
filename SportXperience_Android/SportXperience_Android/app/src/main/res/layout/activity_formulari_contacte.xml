@@ -26,7 +26,6 @@
                 android:id="@+id/bt_tornar"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:scaleType="centerInside"
                 android:padding="7dp"/>
 
             <TextView

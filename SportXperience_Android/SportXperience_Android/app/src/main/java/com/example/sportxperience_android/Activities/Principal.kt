@@ -1,11 +1,9 @@
-package com.example.sportxperience_android
+package com.example.sportxperience_android.Activities
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AppCompatActivity
@@ -18,11 +16,10 @@ import com.example.sportxperience_android.FragmentsPrincipal.Events
 import com.example.sportxperience_android.FragmentsPrincipal.Inici
 import com.example.sportxperience_android.FragmentsPrincipal.Participants
 import com.example.sportxperience_android.FragmentsPrincipal.Resultats
-import com.example.sportxperience_android.databinding.ActivityMainBinding
+import com.example.sportxperience_android.R
 import com.example.sportxperience_android.databinding.ActivityPrincipalBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.LatLng
 
 var ubicacioActual : LatLng? = null
